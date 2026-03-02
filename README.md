@@ -12,48 +12,27 @@
 
 LLMs can reason using many structures: chains, trees, graphs, and more. But **how do you pick the right one?**
 
-```
-Without IoT                          With IoT
-─────────────                        ────────
-                                     
-"Solve this problem"                 "WHY am I reasoning?"
-       │                             "What must I AVOID?"
-       ▼                             "HOW will I know I succeeded?"
-  Always uses CoT                           │
-  (hope for the best)                       ▼
-                                     Select the RIGHT topology
-                                     for THIS specific task
-```
+Current practice relies on researcher intuition, prompt heuristics, or hardcoded defaults. No existing framework connects the *purpose* of a reasoning task to the *selection* of a reasoning structure.
+
+<p align="center">
+  <img src="paper/figure3_comparison.svg" alt="Without IoT vs With IoT" width="750"/>
+</p>
+
+## The Topology-Governance Gap
+
+We identify six distinct levels at which intent operates in reasoning. The first five are addressed by prior work. The sixth, **topology governance**, is the gap this paper fills.
+
+<p align="center">
+  <img src="paper/figure2_gap.svg" alt="The Topology-Governance Gap" width="700"/>
+</p>
 
 ## How IoT Works
 
-```mermaid
-flowchart LR
-    A["🎯 Reasoning Task"] --> B["📋 IoT Checkpoint"]
-    
-    subgraph IoT ["IoT Specification"]
-        B --> P["Purpose\n(WHY?)"]
-        B --> AP["Anti-Purpose\n(AVOID?)"]
-        B --> SS["Success Signal\n(DONE?)"]
-    end
-    
-    IoT --> C["⚙️ Topology Selection\n(Algorithm 1)"]
-    
-    C --> D{{"Best Topology"}}
-    D --> CoT["📝 Chain-of-Thought\n(sequential)"]
-    D --> ToT["🌳 Tree-of-Thought\n(exploratory)"]
-    D --> GoT["🕸️ Graph-of-Thoughts\n(interconnected)"]
-    D --> AoT["📊 Abstraction-of-Thought\n(hierarchical)"]
-    
-    CoT --> E["🔍 Drift Detection\n(Algorithm 2)"]
-    ToT --> E
-    GoT --> E
-    AoT --> E
-    
-    E -->|"Aligned"| F["✅ Continue"]
-    E -->|"Drifting"| G["🔄 Re-align or Switch"]
-    E -->|"Complete"| H["🏁 Terminate"]
-```
+IoT adds a **pre-reasoning checkpoint** that governs which topology to deploy, then monitors for **intent drift** during execution.
+
+<p align="center">
+  <img src="paper/figure1_architecture.svg" alt="IoT Architecture" width="850"/>
+</p>
 
 ## The IoT Triple
 
@@ -64,30 +43,18 @@ IoT = (Purpose, Anti-Purpose, Success Signal)
 ```
 
 | Primitive | Question | What It Prevents |
-|-----------|----------|-----------------|
+|-----------|----------|--------------------|
 | **Purpose** | WHY are we reasoning? | Aimless computation |
 | **Anti-Purpose** | What must we AVOID? | Technically valid but useless output |
 | **Success Signal** | HOW will we know? | Reasoning that never terminates |
 
-## Selection Table
-
-```mermaid
-graph TD
-    Q1{"What does the\nPurpose require?"}
-    Q1 -->|"Single valid path\nstep dependencies"| CoT["📝 Chain-of-Thought"]
-    Q1 -->|"Multiple alternatives\nuncertain best"| ToT["🌳 Tree-of-Thought"]
-    Q1 -->|"Feedback loops\nnon-linear"| GoT["🕸️ Graph-of-Thoughts"]
-    Q1 -->|"Classify type first\nthen details"| AoT["📊 Abstraction-of-Thought"]
-    Q1 -->|"Multiple phases\ndifferent modes"| Hyb["🔀 Hybrid"]
-    
-    style CoT fill:#4CAF50,color:#fff
-    style ToT fill:#2196F3,color:#fff
-    style GoT fill:#9C27B0,color:#fff
-    style AoT fill:#FF9800,color:#fff
-    style Hyb fill:#607D8B,color:#fff
-```
-
 ## Case Studies
+
+Same algorithm, different intents, different topology selections:
+
+<p align="center">
+  <img src="paper/figure4_cases.svg" alt="Case Studies" width="800"/>
+</p>
 
 | Case | Task | IoT Recommends | Why |
 |------|------|:--------------:|-----|
@@ -125,7 +92,11 @@ intent-of-thought/
 ├── LICENSE                   # Apache 2.0
 ├── paper/
 │   ├── intent_of_thought.md  # Full paper (readable)
-│   └── references.bib        # Bibliography (21 entries)
+│   ├── references.bib        # Bibliography (21 entries)
+│   ├── figure1_architecture.svg
+│   ├── figure2_gap.svg
+│   ├── figure3_comparison.svg
+│   └── figure4_cases.svg
 ├── iot/
 │   ├── __init__.py
 │   ├── specification.py      # IoT triple: Purpose, Anti-Purpose, Success Signal
