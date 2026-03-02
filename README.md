@@ -2,7 +2,8 @@
 
 > A Pre-Reasoning Governance Layer for Topology Selection in LLM Reasoning
 
-[![Paper](https://img.shields.io/badge/Paper-Arxiv-red)](https://arxiv.org/abs/XXXX.XXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18836659.svg)](https://doi.org/10.5281/zenodo.18836659)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](paper/intent_of_thought.pdf)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 
