@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Figure 4: Case Studies — IoT Topology Selection in Action</text>
+
+  <!-- ============ Case 1: Sequential ============ -->
+  <rect x="20" y="52" width="270" height="305" rx="10" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="20" y="52" width="270" height="40" rx="10" fill="#4CAF50"/>
+  <rect x="20" y="72" width="270" height="20" fill="#4CAF50"/>
+  <text x="155" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Case 1: Mathematical Proof</text>
+
+  <!-- IoT spec -->
+  <text x="36" y="112" font-size="10" font-weight="bold" fill="#2E7D32">P:</text>
+  <text x="50" y="112" font-size="10" fill="#333">Derive proof via logically</text>
+  <text x="50" y="124" font-size="10" fill="#333">dependent steps</text>
+
+  <text x="36" y="144" font-size="10" font-weight="bold" fill="#C62828">P̄:</text>
+  <text x="50" y="144" font-size="10" fill="#333">Skipping steps; exploring</text>
+  <text x="50" y="156" font-size="10" fill="#333">alternatives when path is clear</text>
+
+  <text x="36" y="176" font-size="10" font-weight="bold" fill="#1565C0">S:</text>
+  <text x="50" y="176" font-size="10" fill="#333">Each step follows logically</text>
+
+  <!-- Arrow -->
+  <line x1="155" y1="192" x2="155" y2="214" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="155" y="198" text-anchor="middle" font-size="9" fill="#777">Alg. 1</text>
+
+  <!-- Result -->
+  <rect x="55" y="218" width="200" height="44" rx="8" fill="white" stroke="#4CAF50" stroke-width="2"/>
+  <text x="155" y="237" text-anchor="middle" font-size="14" font-weight="bold" fill="#2E7D32">📝 Chain-of-Thought</text>
+  <text x="155" y="254" text-anchor="middle" font-size="10" fill="#555">Linear, step-by-step</text>
+
+  <!-- Rationale -->
+  <text x="155" y="286" text-anchor="middle" font-size="10" fill="#555" font-style="italic">"Single valid path exists.</text>
+  <text x="155" y="300" text-anchor="middle" font-size="10" fill="#555" font-style="italic">Each step builds on previous."</text>
+
+  <!-- Score -->
+  <rect x="105" y="314" width="100" height="24" rx="12" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1"/>
+  <text x="155" y="331" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32">Score: 2.0</text>
+
+  <!-- ============ Case 2: Exploratory ============ -->
+  <rect x="315" y="52" width="270" height="305" rx="10" fill="#E3F2FD" stroke="#2196F3" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="315" y="52" width="270" height="40" rx="10" fill="#2196F3"/>
+  <rect x="315" y="72" width="270" height="20" fill="#2196F3"/>
+  <text x="450" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Case 2: UI Design Challenge</text>
+
+  <!-- IoT spec -->
+  <text x="331" y="112" font-size="10" font-weight="bold" fill="#2E7D32">P:</text>
+  <text x="345" y="112" font-size="10" fill="#333">Discover and evaluate multiple</text>
+  <text x="345" y="124" font-size="10" fill="#333">viable design alternatives</text>
+
+  <text x="331" y="144" font-size="10" font-weight="bold" fill="#C62828">P̄:</text>
+  <text x="345" y="144" font-size="10" fill="#333">Committing to first idea;</text>
+  <text x="345" y="156" font-size="10" fill="#333">variations of one concept</text>
+
+  <text x="331" y="176" font-size="10" font-weight="bold" fill="#1565C0">S:</text>
+  <text x="345" y="176" font-size="10" fill="#333">3+ distinct layouts with trade-offs</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="192" x2="450" y2="214" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="450" y="198" text-anchor="middle" font-size="9" fill="#777">Alg. 1</text>
+
+  <!-- Result -->
+  <rect x="350" y="218" width="200" height="44" rx="8" fill="white" stroke="#2196F3" stroke-width="2"/>
+  <text x="450" y="237" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565C0">🌳 Tree-of-Thought</text>
+  <text x="450" y="254" text-anchor="middle" font-size="10" fill="#555">Branching, parallel</text>
+
+  <!-- Rationale -->
+  <text x="450" y="286" text-anchor="middle" font-size="10" fill="#555" font-style="italic">"Multiple alternatives needed.</text>
+  <text x="450" y="300" text-anchor="middle" font-size="10" fill="#555" font-style="italic">Evaluate before committing."</text>
+
+  <!-- Score -->
+  <rect x="400" y="314" width="100" height="24" rx="12" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+  <text x="450" y="331" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565C0">Score: 4.0</text>
+
+  <!-- ============ Case 3: Interconnected ============ -->
+  <rect x="610" y="52" width="270" height="305" rx="10" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="610" y="52" width="270" height="40" rx="10" fill="#9C27B0"/>
+  <rect x="610" y="72" width="270" height="20" fill="#9C27B0"/>
+  <text x="745" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Case 3: Hospital Readmission</text>
+
+  <!-- IoT spec -->
+  <text x="626" y="112" font-size="10" font-weight="bold" fill="#2E7D32">P:</text>
+  <text x="640" y="112" font-size="10" fill="#333">Map causal relationships</text>
+  <text x="640" y="124" font-size="10" fill="#333">including feedback loops</text>
+
+  <text x="626" y="144" font-size="10" font-weight="bold" fill="#C62828">P̄:</text>
+  <text x="640" y="144" font-size="10" fill="#333">Treating factors as independent</text>
+  <text x="640" y="156" font-size="10" fill="#333">when they interact</text>
+
+  <text x="626" y="176" font-size="10" font-weight="bold" fill="#1565C0">S:</text>
+  <text x="640" y="176" font-size="10" fill="#333">4+ factors, bidirectional deps</text>
+
+  <!-- Arrow -->
+  <line x1="745" y1="192" x2="745" y2="214" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="745" y="198" text-anchor="middle" font-size="9" fill="#777">Alg. 1</text>
+
+  <!-- Result -->
+  <rect x="645" y="218" width="200" height="44" rx="8" fill="white" stroke="#9C27B0" stroke-width="2"/>
+  <text x="745" y="237" text-anchor="middle" font-size="14" font-weight="bold" fill="#7B1FA2">🕸️ Graph-of-Thoughts</text>
+  <text x="745" y="254" text-anchor="middle" font-size="10" fill="#555">Networked, non-linear</text>
+
+  <!-- Rationale -->
+  <text x="745" y="286" text-anchor="middle" font-size="10" fill="#555" font-style="italic">"Feedback loops detected.</text>
+  <text x="745" y="300" text-anchor="middle" font-size="10" fill="#555" font-style="italic">Graph structure required."</text>
+
+  <!-- Score -->
+  <rect x="695" y="314" width="100" height="24" rx="12" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1"/>
+  <text x="745" y="331" text-anchor="middle" font-size="11" font-weight="bold" fill="#7B1FA2">Score: 7.0</text>
+
+  <!-- Bottom label -->
+  <text x="450" y="375" text-anchor="middle" font-size="11" fill="#555">Same algorithm, different intents → different topology selections</text>
+</svg>
