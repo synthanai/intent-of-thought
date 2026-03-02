@@ -4,59 +4,96 @@
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv-red)](https://arxiv.org/abs/XXXX.XXXXX)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 
-## What is IoT?
+---
 
-When an LLM reasons, it uses a *topology*: Chain-of-Thought (linear), Tree-of-Thought (branching), Graph-of-Thoughts (networked), or others. But **which topology should it use for a given task?**
+## The Problem
 
-Current practice: intuition, heuristics, or hardcoded defaults.
+LLMs can reason using many structures: chains, trees, graphs, and more. But **how do you pick the right one?**
 
-**Intent of Thought** proposes a better way: before reasoning begins, state **why** you're reasoning, **what** would make it worthless, and **how** you'll know you succeeded. These three primitives govern which topology gets deployed.
+```
+Without IoT                          With IoT
+─────────────                        ────────
+                                     
+"Solve this problem"                 "WHY am I reasoning?"
+       │                             "What must I AVOID?"
+       ▼                             "HOW will I know I succeeded?"
+  Always uses CoT                           │
+  (hope for the best)                       ▼
+                                     Select the RIGHT topology
+                                     for THIS specific task
+```
+
+## How IoT Works
+
+```mermaid
+flowchart LR
+    A["🎯 Reasoning Task"] --> B["📋 IoT Checkpoint"]
+    
+    subgraph IoT ["IoT Specification"]
+        B --> P["Purpose\n(WHY?)"]
+        B --> AP["Anti-Purpose\n(AVOID?)"]
+        B --> SS["Success Signal\n(DONE?)"]
+    end
+    
+    IoT --> C["⚙️ Topology Selection\n(Algorithm 1)"]
+    
+    C --> D{{"Best Topology"}}
+    D --> CoT["📝 Chain-of-Thought\n(sequential)"]
+    D --> ToT["🌳 Tree-of-Thought\n(exploratory)"]
+    D --> GoT["🕸️ Graph-of-Thoughts\n(interconnected)"]
+    D --> AoT["📊 Abstraction-of-Thought\n(hierarchical)"]
+    
+    CoT --> E["🔍 Drift Detection\n(Algorithm 2)"]
+    ToT --> E
+    GoT --> E
+    AoT --> E
+    
+    E -->|"Aligned"| F["✅ Continue"]
+    E -->|"Drifting"| G["🔄 Re-align or Switch"]
+    E -->|"Complete"| H["🏁 Terminate"]
+```
+
+## The IoT Triple
+
+Every reasoning task gets a three-part checkpoint before topology selection:
 
 ```
 IoT = (Purpose, Anti-Purpose, Success Signal)
 ```
 
-| Primitive | Question | Example |
-|-----------|----------|---------|
-| **Purpose** | WHY are we reasoning? | "Map causal relationships including feedback loops" |
-| **Anti-Purpose** | What must we AVOID? | "Treating factors as independent when they interact" |
-| **Success Signal** | HOW will we know we succeeded? | "At least 4 factors with bidirectional dependencies" |
+| Primitive | Question | What It Prevents |
+|-----------|----------|-----------------|
+| **Purpose** | WHY are we reasoning? | Aimless computation |
+| **Anti-Purpose** | What must we AVOID? | Technically valid but useless output |
+| **Success Signal** | HOW will we know? | Reasoning that never terminates |
 
-## How It Works
+## Selection Table
 
-**Algorithm 1: Topology Selection**
+```mermaid
+graph TD
+    Q1{"What does the\nPurpose require?"}
+    Q1 -->|"Single valid path\nstep dependencies"| CoT["📝 Chain-of-Thought"]
+    Q1 -->|"Multiple alternatives\nuncertain best"| ToT["🌳 Tree-of-Thought"]
+    Q1 -->|"Feedback loops\nnon-linear"| GoT["🕸️ Graph-of-Thoughts"]
+    Q1 -->|"Classify type first\nthen details"| AoT["📊 Abstraction-of-Thought"]
+    Q1 -->|"Multiple phases\ndifferent modes"| Hyb["🔀 Hybrid"]
+    
+    style CoT fill:#4CAF50,color:#fff
+    style ToT fill:#2196F3,color:#fff
+    style GoT fill:#9C27B0,color:#fff
+    style AoT fill:#FF9800,color:#fff
+    style Hyb fill:#607D8B,color:#fff
 ```
-Input:  IoT specification, problem context
-Output: Ranked list of recommended topologies
 
-1. Extract the dominant reasoning requirement from Purpose
-2. Match to topology using the selection table
-3. Apply Anti-Purpose constraints (demote violating topologies)
-4. Output ranked list, most aligned first
-```
+## Case Studies
 
-**Selection Table:**
-
-| Purpose Type | Recommended Topology |
-|:-------------|:--------------------|
-| Sequential derivation | Chain-of-Thought |
-| Parallel exploration | Tree-of-Thought |
-| Interconnected analysis | Graph-of-Thoughts |
-| Hierarchical classification | Abstraction-of-Thought |
-| Multi-phase complex | Hybrid |
-
-**Algorithm 2: Intent Drift Detection**
-```
-During reasoning, continuously check:
-- Is reasoning still aligned with Purpose?
-- Has it entered Anti-Purpose territory?
-- Is the Success Signal satisfied?
-
-If drift detected: re-evaluate topology.
-If Anti-Purpose violated: immediate correction.
-If Success Signal met: terminate.
-```
+| Case | Task | IoT Recommends | Why |
+|------|------|:--------------:|-----|
+| 1 | Mathematical proof | 📝 **CoT** | Single valid path, each step depends on previous |
+| 2 | UI design challenge | 🌳 **ToT** | Must explore 3+ alternatives before committing |
+| 3 | Hospital readmission analysis | 🕸️ **GoT** | Feedback loops between staffing, planning, education |
 
 ## Quick Start
 
@@ -72,9 +109,12 @@ iot = IntentOfThought(
 
 # Select topology
 selector = TopologySelector()
-recommendation = selector.select(iot, context="systems analysis")
-print(recommendation)
-# => TopologyRecommendation(primary='GoT', fallback='ToT', rationale='...')
+result = selector.select(iot, context="systems analysis")
+
+print(result)
+# => Recommended: GoT
+#    The Purpose involves interconnected factors with feedback
+#    loops, requiring a graph structure for refinement and merging.
 ```
 
 ## Repository Structure
@@ -85,21 +125,19 @@ intent-of-thought/
 ├── LICENSE                   # Apache 2.0
 ├── paper/
 │   ├── intent_of_thought.md  # Full paper (readable)
-│   └── references.bib        # Bibliography
+│   └── references.bib        # Bibliography (21 entries)
 ├── iot/
 │   ├── __init__.py
 │   ├── specification.py      # IoT triple: Purpose, Anti-Purpose, Success Signal
 │   ├── selector.py           # Algorithm 1: Topology Selection
 │   └── drift.py              # Algorithm 2: Intent Drift Detection
 └── examples/
-    ├── case1_sequential.py   # Mathematical proof (IoT -> CoT)
-    ├── case2_parallel.py     # UI design challenge (IoT -> ToT)
-    └── case3_interconnected.py # Hospital readmission (IoT -> GoT)
+    ├── case1_sequential.py   # Mathematical proof → CoT
+    ├── case2_parallel.py     # UI design → ToT
+    └── case3_interconnected.py # Hospital analysis → GoT
 ```
 
 ## Citation
-
-If you use Intent of Thought in your research, please cite:
 
 ```bibtex
 @article{mohamedkani2026intent,
