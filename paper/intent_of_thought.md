@@ -272,7 +272,17 @@ TSB would consist of:
 
 We invite the research community to contribute problems, intent specifications, and expert topology labels to accelerate the development of this benchmark.
 
-### 5.3 Broader Implications
+### 5.3 Concurrent and Related Work
+
+During the preparation of this paper, two related works came to our attention that further validate the topology-governance gap.
+
+**STELAR-VISION** \cite{stelar2025vision} investigates test-time topology selection for Vision-Language Models (VLMs), training models to autonomously select between Chain, Tree, and Graph reasoning structures. While STELAR-VISION addresses topology selection in the vision domain, IoT operates at the general-purpose reasoning level and introduces the governance triple (Purpose, Anti-Purpose, Success Signal) as the selection criterion, rather than learning selection from task-specific training data. The two approaches are complementary: STELAR-VISION's learned selection could serve as the execution layer beneath IoT's intent-governed selection.
+
+**Framework of Thoughts (FoT)** \cite{ding2024fot} proposes a general-purpose foundational framework for building and optimising dynamic reasoning schemes. FoT provides the meta-architecture for composing reasoning structures, but does not address the governance question of *which* structure to deploy for a given purpose. IoT fills this gap: it can serve as the governance layer that informs FoT's dynamic scheme construction.
+
+The emergence of these concurrent works, each addressing adjacent aspects of the topology-governance problem, reinforces our claim that this gap is a recognised need in the field.
+
+### 5.4 Broader Implications
 
 IoT suggests a broader architectural principle: reasoning systems benefit from a layered governance structure where *why* (purpose) informs *what type* (problem classification) informs *how* (step-by-step execution). This layered architecture separates concerns: the purpose layer handles goal specification and drift detection, the classification layer handles problem decomposition, and the execution layer handles step-level reasoning. Each layer can be improved independently.
 
