@@ -2,6 +2,7 @@
 
 > A Pre-Reasoning Governance Layer for Topology Selection in LLM Reasoning
 
+[![arXiv](https://img.shields.io/badge/arXiv-2503.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2503.XXXXX)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18836659.svg)](https://doi.org/10.5281/zenodo.18836659)
 [![SSRN](https://img.shields.io/badge/SSRN-6328878-blue)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6328878)
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)](paper/intent_of_thought.pdf)
@@ -117,8 +118,9 @@ intent-of-thought/
   title={Intent of Thought: A Pre-Reasoning Governance Layer for
          Topology Selection in LLM Reasoning},
   author={Mohamed Kani, Naveen Riaz},
-  journal={arXiv preprint},
-  year={2026}
+  journal={arXiv preprint arXiv:2503.XXXXX},
+  year={2026},
+  url={https://arxiv.org/abs/2503.XXXXX}
 }
 ```
 
