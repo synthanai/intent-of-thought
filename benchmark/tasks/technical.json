@@ -1,0 +1,202 @@
+[
+  {
+    "id": "TECH-01", "domain": "technical", "optimal_topology": "GoT",
+    "task": "Analyse the cascading failure risks in a microservices architecture where Service A depends on B and C, B depends on D, C depends on D and E, and E has a circuit breaker to an external API. Map the failure propagation paths.",
+    "gold_iot": {
+      "purpose": "Map the dependency graph and failure propagation paths in the microservices architecture",
+      "anti_purpose": "Must not analyse service failures independently when they cascade through shared dependencies",
+      "success_signal": "A dependency graph with failure propagation paths, single points of failure, and resilience recommendations"
+    },
+    "rationale": "Service dependencies form a directed graph with shared nodes. Graph topology essential."
+  },
+  {
+    "id": "TECH-02", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Debug a race condition in a producer-consumer queue. The consumer reads a null value despite the queue showing non-zero size. Trace the execution sequence to identify where the interleaving causes the bug.",
+    "gold_iot": {
+      "purpose": "Trace the execution interleaving step-by-step to identify the exact point where the race condition occurs",
+      "anti_purpose": "Must not suggest fixes without first identifying the exact interleaving that causes the null read",
+      "success_signal": "A step-by-step execution trace showing Thread A and Thread B interleaving with the exact steps that produce the bug"
+    },
+    "rationale": "Sequential execution tracing. Each step depends on the previous state."
+  },
+  {
+    "id": "TECH-03", "domain": "technical", "optimal_topology": "ToT",
+    "task": "A startup needs to choose a database for their real-time analytics platform. Compare PostgreSQL with TimescaleDB extension, ClickHouse, and Apache Druid across query performance, operational complexity, cost, and ecosystem maturity.",
+    "gold_iot": {
+      "purpose": "Evaluate three database options across four dimensions for a real-time analytics use case",
+      "anti_purpose": "Must not default to the most popular option without considering the specific workload characteristics",
+      "success_signal": "A comparison matrix with benchmark-informed scores and a recommendation matched to the workload profile"
+    },
+    "rationale": "Three independent options, four evaluation criteria. Parallel comparison."
+  },
+  {
+    "id": "TECH-04", "domain": "technical", "optimal_topology": "GoT",
+    "task": "Analyse the interaction between caching layers in a distributed system: CDN cache, application cache (Redis), database query cache, and OS page cache. How do invalidation strategies interact and where can stale data propagate?",
+    "gold_iot": {
+      "purpose": "Map the multi-layer caching interaction network and stale data propagation paths",
+      "anti_purpose": "Must not analyse each cache layer independently when invalidation in one affects freshness guarantees in others",
+      "success_signal": "A cache interaction diagram showing invalidation dependencies, stale data windows, and a coherent invalidation strategy"
+    },
+    "rationale": "Four interacting cache layers. Invalidation in one propagates to others."
+  },
+  {
+    "id": "TECH-05", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Derive the time complexity of a recursive Fibonacci implementation. Show the recurrence relation, draw the recursion tree structure, count the nodes, and express the final complexity in Big-O notation.",
+    "gold_iot": {
+      "purpose": "Derive the time complexity through sequential mathematical analysis",
+      "anti_purpose": "Must not state O(2^n) without showing the derivation steps",
+      "success_signal": "Step-by-step: recurrence relation T(n) = T(n-1) + T(n-2) + O(1), tree analysis, node counting, Big-O conclusion"
+    },
+    "rationale": "Sequential mathematical derivation. Each step builds on the previous."
+  },
+  {
+    "id": "TECH-06", "domain": "technical", "optimal_topology": "ToT",
+    "task": "Design an authentication system for a mobile app. Compare three approaches: JWT with refresh tokens, session-based auth with Redis, and OAuth 2.0 with PKCE. Evaluate security, user experience, offline capability, and implementation complexity.",
+    "gold_iot": {
+      "purpose": "Compare three authentication approaches across four dimensions for a mobile app context",
+      "anti_purpose": "Must not default to JWT without considering its revocation limitations for mobile",
+      "success_signal": "A comparison matrix with mobile-specific considerations and a justified architectural recommendation"
+    },
+    "rationale": "Three authentication approaches to evaluate in parallel."
+  },
+  {
+    "id": "TECH-07", "domain": "technical", "optimal_topology": "GoT",
+    "task": "Analyse the observability gap in a Kubernetes cluster running 50 microservices. How do metrics (Prometheus), logs (Loki), and traces (Jaeger) correlate to diagnose a latency spike that affects 3 services but originates in a shared database connection pool?",
+    "gold_iot": {
+      "purpose": "Correlate three observability signals across multiple services to diagnose a latency spike originating in shared infrastructure",
+      "anti_purpose": "Must not diagnose from a single signal type when the root cause spans metrics, logs, and traces",
+      "success_signal": "A correlation map linking metric anomalies to log events to trace spans, with the root cause identified at the shared connection pool"
+    },
+    "rationale": "Three signal types that must be correlated across services. Graph of relationships."
+  },
+  {
+    "id": "TECH-08", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Implement a binary search algorithm for a sorted array. Walk through the logic step by step: initialise boundaries, calculate midpoint, compare, adjust boundaries, handle termination. Then trace execution on the array [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] searching for 23.",
+    "gold_iot": {
+      "purpose": "Explain binary search algorithm step by step, then trace execution on a specific input",
+      "anti_purpose": "Must not present the algorithm without tracing it on the example to verify correctness",
+      "success_signal": "Algorithm steps, then a trace table showing left, right, mid, comparison, and result at each iteration"
+    },
+    "rationale": "Sequential algorithm explanation and execution trace."
+  },
+  {
+    "id": "TECH-09", "domain": "technical", "optimal_topology": "ToT",
+    "task": "A team needs to migrate from a monolith to microservices. Compare three migration strategies: strangler fig pattern, big bang rewrite, and domain-driven decomposition. Evaluate across risk, timeline, team impact, and data migration complexity.",
+    "gold_iot": {
+      "purpose": "Compare three migration strategies across four risk dimensions for a monolith-to-microservices transition",
+      "anti_purpose": "Must not recommend strangler fig by default without considering whether the monolith structure supports incremental extraction",
+      "success_signal": "A strategy comparison with risk-weighted analysis and a phased recommendation"
+    },
+    "rationale": "Three independent strategies to evaluate. Parallel comparison needed."
+  },
+  {
+    "id": "TECH-10", "domain": "technical", "optimal_topology": "GoT",
+    "task": "A CI/CD pipeline is flaky: builds pass locally but fail intermittently in CI. Analyse the interaction between test parallelisation, shared database state, time-dependent tests, and container resource limits as potential causes.",
+    "gold_iot": {
+      "purpose": "Map the interaction network of four potential flakiness causes and identify which combinations produce intermittent failures",
+      "anti_purpose": "Must not fix one cause without checking whether it interacts with others to produce the flaky behaviour",
+      "success_signal": "An interaction map showing which cause combinations produce flakiness, with a prioritised remediation plan"
+    },
+    "rationale": "Four interacting causes. Fixing one may unmask or worsen another."
+  },
+  {
+    "id": "TECH-11", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Convert a given ERD (Entity-Relationship Diagram) with entities Customer, Order, Product, and OrderItem into normalised relational tables. Apply 1NF, 2NF, and 3NF sequentially.",
+    "gold_iot": {
+      "purpose": "Apply normalisation forms sequentially to convert an ERD into normalised relational tables",
+      "anti_purpose": "Must not jump to 3NF without demonstrating 1NF and 2NF compliance at each step",
+      "success_signal": "Tables at each normalisation stage with the specific violations identified and resolved at each step"
+    },
+    "rationale": "Sequential normalisation process. Each form must be verified before the next."
+  },
+  {
+    "id": "TECH-12", "domain": "technical", "optimal_topology": "ToT",
+    "task": "Choose a message broker for an event-driven architecture. Compare Apache Kafka, RabbitMQ, and AWS SNS/SQS across throughput, ordering guarantees, operational burden, and cost at 100K messages/second.",
+    "gold_iot": {
+      "purpose": "Compare three message brokers across four dimensions at a specific throughput target",
+      "anti_purpose": "Must not evaluate at low throughput and extrapolate to target scale",
+      "success_signal": "A comparison with performance data at target scale and a recommendation considering operational capability"
+    },
+    "rationale": "Three options to compare in parallel across multiple criteria."
+  },
+  {
+    "id": "TECH-13", "domain": "technical", "optimal_topology": "GoT",
+    "task": "Analyse the security threat model for a banking API. Map the relationships between authentication bypass, SQL injection, rate limiting gaps, TLS misconfiguration, and logging blind spots. How does exploitation of one vulnerability enable or amplify others?",
+    "gold_iot": {
+      "purpose": "Map the threat interaction network showing how exploitation of one vulnerability amplifies others",
+      "anti_purpose": "Must not score each vulnerability independently when combined exploitation chains exist",
+      "success_signal": "A threat graph with exploitation chains, combined severity amplification factors, and a prioritised remediation sequence"
+    },
+    "rationale": "Vulnerabilities interact. Auth bypass + SQL injection is worse than either alone."
+  },
+  {
+    "id": "TECH-14", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Explain how a TCP three-way handshake works. Describe the SYN, SYN-ACK, and ACK messages, the sequence numbers at each step, and what state each endpoint is in after each message.",
+    "gold_iot": {
+      "purpose": "Explain the TCP handshake as a sequential three-step protocol with state transitions",
+      "anti_purpose": "Must not describe the handshake without showing sequence numbers and endpoint states",
+      "success_signal": "Three steps with message type, sequence/acknowledgement numbers, and client/server state at each step"
+    },
+    "rationale": "Purely sequential three-step protocol. Order matters."
+  },
+  {
+    "id": "TECH-15", "domain": "technical", "optimal_topology": "ToT",
+    "task": "A team needs to implement full-text search. Compare Elasticsearch, Meilisearch, and PostgreSQL full-text search across relevance quality, indexing speed, operational complexity, and resource consumption for a 10M document corpus.",
+    "gold_iot": {
+      "purpose": "Compare three search solutions across four dimensions at a specific corpus scale",
+      "anti_purpose": "Must not dismiss PostgreSQL FTS without evaluating whether it meets requirements at this scale",
+      "success_signal": "A comparison matrix with scale-appropriate benchmarks and a justified recommendation"
+    },
+    "rationale": "Three options to evaluate. Parallel comparison across criteria."
+  },
+  {
+    "id": "TECH-16", "domain": "technical", "optimal_topology": "GoT",
+    "task": "Diagnose why a distributed system is experiencing increasing latency. Analyse the interaction between garbage collection pauses, network congestion, lock contention, and connection pool exhaustion across 5 service instances.",
+    "gold_iot": {
+      "purpose": "Map the causal interaction network between four performance degradation factors across distributed instances",
+      "anti_purpose": "Must not attribute latency to a single cause when multiple factors interact to create cascading degradation",
+      "success_signal": "A causal interaction map with feedback loops, amplification factors, and the root cause chain"
+    },
+    "rationale": "Four interacting factors with feedback loops. GC pauses cause lock contention which causes pool exhaustion."
+  },
+  {
+    "id": "TECH-17", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Walk through the execution of a merge sort algorithm on the array [38, 27, 43, 3, 9, 82, 10]. Show each division step, each merge step, and the state of the array at each stage.",
+    "gold_iot": {
+      "purpose": "Trace merge sort execution step by step showing division and merge phases",
+      "anti_purpose": "Must not skip intermediate steps or show only the final sorted result",
+      "success_signal": "Complete trace: division tree, merge steps with comparisons shown, final sorted array"
+    },
+    "rationale": "Sequential algorithm trace. Each step must be shown."
+  },
+  {
+    "id": "TECH-18", "domain": "technical", "optimal_topology": "ToT",
+    "task": "A company needs to choose a container orchestration solution for their ML training workloads. Compare Kubernetes with GPU operator, Slurm, and Ray Cluster across GPU utilisation, job scheduling flexibility, developer experience, and cost.",
+    "gold_iot": {
+      "purpose": "Compare three orchestration solutions for ML training workloads across four dimensions",
+      "anti_purpose": "Must not default to Kubernetes without assessing whether Slurm's HPC scheduling is better suited for batch training",
+      "success_signal": "A comparison matrix with ML-workload-specific evaluation and a recommendation based on team capability"
+    },
+    "rationale": "Three options to evaluate in parallel for a specific workload type."
+  },
+  {
+    "id": "TECH-19", "domain": "technical", "optimal_topology": "GoT",
+    "task": "Analyse the data consistency challenges in an eventual consistency system where Service A writes to DB-A, publishes an event, and Services B and C consume the event to update DB-B and DB-C. What happens when B succeeds but C fails? Map all failure scenarios.",
+    "gold_iot": {
+      "purpose": "Map all failure scenarios and consistency states in the distributed event processing pipeline",
+      "anti_purpose": "Must not analyse only the happy path when partial failure creates inconsistent states across databases",
+      "success_signal": "A state diagram showing all possible consistency states, failure scenarios, and compensation strategies"
+    },
+    "rationale": "Distributed consistency requires mapping all state combinations. Graph of failure scenarios."
+  },
+  {
+    "id": "TECH-20", "domain": "technical", "optimal_topology": "CoT",
+    "task": "Calculate the storage requirements for a time-series database ingesting 50,000 data points per second, with each point requiring 32 bytes, a 30-day retention period, and a 2x compression ratio. Show each step.",
+    "gold_iot": {
+      "purpose": "Calculate storage requirements through sequential arithmetic with clear intermediate results",
+      "anti_purpose": "Must not provide the final answer without showing the unit conversions and intermediate calculations",
+      "success_signal": "Step-by-step: points/sec → points/day → bytes/day → bytes/30 days → post-compression → human-readable units"
+    },
+    "rationale": "Sequential calculation. Each step depends on the previous result."
+  }
+]

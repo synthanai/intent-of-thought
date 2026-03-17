@@ -1,0 +1,202 @@
+[
+  {
+    "id": "MED-01", "domain": "medical", "optimal_topology": "GoT",
+    "task": "A 45-year-old patient presents with fatigue, joint pain, and a butterfly-shaped facial rash. Analyse the symptom interactions and identify the most likely diagnosis.",
+    "gold_iot": {
+      "purpose": "Identify interacting symptom clusters that point to a systemic condition",
+      "anti_purpose": "Must not treat symptoms independently when they co-occur diagnostically",
+      "success_signal": "A relationship map showing symptom co-occurrence patterns leading to a ranked differential diagnosis"
+    },
+    "rationale": "Symptoms interact non-linearly (lupus triad). GoT needed to model co-occurrence edges."
+  },
+  {
+    "id": "MED-02", "domain": "medical", "optimal_topology": "CoT",
+    "task": "Calculate the appropriate dosage of vancomycin for a 70kg patient with a creatinine clearance of 45 mL/min, given the standard loading dose protocol.",
+    "gold_iot": {
+      "purpose": "Derive the correct dosage through sequential pharmacokinetic calculation",
+      "anti_purpose": "Must not skip renal adjustment steps or use standard dosing for impaired clearance",
+      "success_signal": "A step-by-step calculation showing weight-based loading dose, renal adjustment factor, and final dosage with units"
+    },
+    "rationale": "Pure sequential calculation. Each step depends on previous. CoT is optimal."
+  },
+  {
+    "id": "MED-03", "domain": "medical", "optimal_topology": "ToT",
+    "task": "A hospital needs to choose between three triage systems: ESI, MTS, and CTAS. Compare them across accuracy, training cost, and implementation time for a 200-bed regional hospital.",
+    "gold_iot": {
+      "purpose": "Evaluate three independent triage alternatives to recommend the best fit",
+      "anti_purpose": "Must not evaluate systems sequentially and anchor on the first option analysed",
+      "success_signal": "A comparison matrix with scores across all criteria and a justified recommendation"
+    },
+    "rationale": "Three independent options to evaluate in parallel. ToT enables unbiased comparison."
+  },
+  {
+    "id": "MED-04", "domain": "medical", "optimal_topology": "GoT",
+    "task": "Analyse the cascading effects of a hospital-wide nursing shortage on patient outcomes, readmission rates, medication errors, and staff burnout. Consider feedback loops.",
+    "gold_iot": {
+      "purpose": "Map the causal cascade and feedback loops between staffing shortage and multiple outcome variables",
+      "anti_purpose": "Must not treat outcome variables as independent when they reinforce each other",
+      "success_signal": "A causal dependency graph with bidirectional edges showing feedback loops and severity weights"
+    },
+    "rationale": "Multiple interacting variables with feedback loops. GoT required."
+  },
+  {
+    "id": "MED-05", "domain": "medical", "optimal_topology": "CoT",
+    "task": "Trace the pathophysiology of diabetic ketoacidosis from insulin deficiency through metabolic derangement to clinical presentation. Explain each step in the causal chain.",
+    "gold_iot": {
+      "purpose": "Explain the linear causal chain from insulin deficiency to clinical DKA",
+      "anti_purpose": "Must not jump to clinical presentation without explaining intermediate metabolic steps",
+      "success_signal": "A complete causal chain: insulin lack, gluconeogenesis, lipolysis, ketone production, acidosis, symptoms"
+    },
+    "rationale": "Linear causal chain. Each step causes the next. Pure CoT."
+  },
+  {
+    "id": "MED-06", "domain": "medical", "optimal_topology": "ToT",
+    "task": "A patient with chronic lower back pain has failed conservative treatment. Evaluate surgical options: spinal fusion, disc replacement, and laminectomy. Consider pain relief, recovery time, long-term mobility, and complication risk.",
+    "gold_iot": {
+      "purpose": "Compare three surgical options across four outcome dimensions to identify the best candidate",
+      "anti_purpose": "Must not recommend based on a single dimension or evaluate options sequentially",
+      "success_signal": "A decision matrix scoring each option across all four dimensions with a justified recommendation"
+    },
+    "rationale": "Three independent options, four criteria. Parallel evaluation needed."
+  },
+  {
+    "id": "MED-07", "domain": "medical", "optimal_topology": "GoT",
+    "task": "A patient is on warfarin, metformin, and lisinopril. They are prescribed ciprofloxacin for a UTI. Analyse the drug interaction network and identify all clinically significant interactions.",
+    "gold_iot": {
+      "purpose": "Map all pairwise and higher-order drug interactions in the patient's medication profile",
+      "anti_purpose": "Must not check interactions only pairwise when three-way interactions may exist",
+      "success_signal": "An interaction graph showing all significant interactions with severity ratings and clinical recommendations"
+    },
+    "rationale": "Drug interactions form a network. Pairwise checking misses higher-order effects."
+  },
+  {
+    "id": "MED-08", "domain": "medical", "optimal_topology": "CoT",
+    "task": "Interpret the following ABG results: pH 7.28, pCO2 55 mmHg, HCO3 24 mEq/L, PaO2 60 mmHg. Identify the acid-base disorder and determine if there is compensation.",
+    "gold_iot": {
+      "purpose": "Systematically interpret arterial blood gas results using the standard 5-step approach",
+      "anti_purpose": "Must not skip steps or jump to diagnosis without checking compensation",
+      "success_signal": "Step-by-step: assess pH, identify primary disorder, check compensation, calculate anion gap, final diagnosis"
+    },
+    "rationale": "Standard sequential diagnostic algorithm. Each step informs the next."
+  },
+  {
+    "id": "MED-09", "domain": "medical", "optimal_topology": "ToT",
+    "task": "Design a clinical trial protocol for testing a new anti-hypertensive drug. Generate three different study designs (RCT, crossover, adaptive) and evaluate which is most appropriate for a Phase III trial.",
+    "gold_iot": {
+      "purpose": "Explore three alternative clinical trial designs and select the most appropriate for Phase III",
+      "anti_purpose": "Must not default to RCT without considering whether alternatives offer advantages",
+      "success_signal": "Three fully specified design sketches with a comparative evaluation and justified selection"
+    },
+    "rationale": "Three design alternatives to explore before committing. ToT enables fair evaluation."
+  },
+  {
+    "id": "MED-10", "domain": "medical", "optimal_topology": "CoT",
+    "task": "A 30-year-old woman presents with amenorrhea, galactorrhea, and visual field defects. Walk through the diagnostic workup from most to least likely diagnosis.",
+    "gold_iot": {
+      "purpose": "Derive the most likely diagnosis through sequential clinical reasoning from symptoms to lab tests to imaging",
+      "anti_purpose": "Must not order expensive imaging before ruling out simpler explanations",
+      "success_signal": "A logical diagnostic sequence: symptom analysis, hormone panel interpretation, imaging, final diagnosis"
+    },
+    "rationale": "Sequential diagnostic workup. Each finding narrows the differential."
+  },
+  {
+    "id": "MED-11", "domain": "medical", "optimal_topology": "GoT",
+    "task": "Analyse the relationship between hospital readmission rates, nurse-to-patient ratios, discharge planning quality, and patient education completeness. How do these factors interact?",
+    "gold_iot": {
+      "purpose": "Map the bidirectional causal relationships between four factors affecting hospital readmissions",
+      "anti_purpose": "Must not model factors as independent predictors when they have feedback relationships",
+      "success_signal": "A causal graph with weighted edges showing how each factor influences and is influenced by the others"
+    },
+    "rationale": "Four interacting factors with feedback loops. Graph topology required."
+  },
+  {
+    "id": "MED-12", "domain": "medical", "optimal_topology": "CoT",
+    "task": "Calculate the Glasgow Coma Scale score for a patient who opens eyes to pain, makes incomprehensible sounds, and demonstrates flexion withdrawal to pain.",
+    "gold_iot": {
+      "purpose": "Calculate GCS by scoring each component sequentially and summing",
+      "anti_purpose": "Must not estimate the total without scoring each component individually",
+      "success_signal": "Three individual scores (E, V, M) with justification and a total GCS score"
+    },
+    "rationale": "Simple sequential scoring. Each component is independent and additive."
+  },
+  {
+    "id": "MED-13", "domain": "medical", "optimal_topology": "ToT",
+    "task": "A rural clinic needs to implement a telemedicine platform. Evaluate three options: Zoom Health, Doxy.me, and a custom-built solution. Consider HIPAA compliance, cost, bandwidth requirements, and patient ease of use.",
+    "gold_iot": {
+      "purpose": "Compare three telemedicine platform options across four criteria for a resource-constrained rural setting",
+      "anti_purpose": "Must not dismiss the custom option without evaluating its strengths or accept the cheapest without considering compliance",
+      "success_signal": "A weighted comparison matrix with a justified recommendation considering the rural constraint"
+    },
+    "rationale": "Three independent options, four criteria. Parallel evaluation."
+  },
+  {
+    "id": "MED-14", "domain": "medical", "optimal_topology": "GoT",
+    "task": "A patient with Type 2 diabetes, hypertension, and depression is non-adherent to medication. Analyse how these three conditions and their treatments interact to create barriers to adherence.",
+    "gold_iot": {
+      "purpose": "Map the interaction network between three comorbidities and their treatments affecting medication adherence",
+      "anti_purpose": "Must not address each condition's adherence barriers in isolation when they compound each other",
+      "success_signal": "An interaction map showing how depression affects diabetes management, how side effects compound across treatments, and where intervention points exist"
+    },
+    "rationale": "Three conditions with cross-interactions affecting a shared outcome. Graph needed."
+  },
+  {
+    "id": "MED-15", "domain": "medical", "optimal_topology": "CoT",
+    "task": "Convert a patient's vancomycin trough level from conventional units to SI units, then determine if the level is therapeutic, subtherapeutic, or supratherapeutic based on the target range.",
+    "gold_iot": {
+      "purpose": "Perform unit conversion then compare to therapeutic range in a sequential procedure",
+      "anti_purpose": "Must not compare values without completing the unit conversion first",
+      "success_signal": "Conversion calculation with correct conversion factor, converted value, therapeutic range comparison, and clinical interpretation"
+    },
+    "rationale": "Pure sequential calculation with dependent steps."
+  },
+  {
+    "id": "MED-16", "domain": "medical", "optimal_topology": "ToT",
+    "task": "A hospital emergency department is experiencing overcrowding. Generate three different intervention strategies (staffing changes, process redesign, diversion protocols) and evaluate their likely impact on wait times, patient safety, and cost.",
+    "gold_iot": {
+      "purpose": "Explore three independent intervention strategies and compare their multi-dimensional impact",
+      "anti_purpose": "Must not implement the obvious solution without evaluating alternatives",
+      "success_signal": "Three detailed intervention proposals with comparative impact analysis and implementation recommendation"
+    },
+    "rationale": "Three independent strategies to explore. ToT for parallel evaluation."
+  },
+  {
+    "id": "MED-17", "domain": "medical", "optimal_topology": "GoT",
+    "task": "Analyse the systemic factors contributing to medical errors in a hospital: fatigue, communication gaps, electronic health record usability, staffing ratios, and training quality. Map their interactions.",
+    "gold_iot": {
+      "purpose": "Map the causal network of five systemic factors contributing to medical errors with interaction weights",
+      "anti_purpose": "Must not treat factors as independent root causes when they form reinforcing loops",
+      "success_signal": "A systems map with directed edges showing causal relationships, feedback loops, and leverage points for intervention"
+    },
+    "rationale": "Five interacting systemic factors. Feedback loops between fatigue and errors."
+  },
+  {
+    "id": "MED-18", "domain": "medical", "optimal_topology": "CoT",
+    "task": "A patient presents with chest pain. Apply the HEART score algorithm to determine their risk of major adverse cardiac event using: History (atypical, 0), ECG (non-specific ST changes, 1), Age (52, 1), Risk factors (hypertension + smoking, 2), Troponin (slightly elevated, 1).",
+    "gold_iot": {
+      "purpose": "Apply the HEART score by scoring each component sequentially and determining the risk category",
+      "anti_purpose": "Must not assign the risk category without calculating all five components",
+      "success_signal": "Five component scores with justification, total score, and risk category with recommended disposition"
+    },
+    "rationale": "Sequential scoring algorithm. Each component scored independently, then summed."
+  },
+  {
+    "id": "MED-19", "domain": "medical", "optimal_topology": "ToT",
+    "task": "A healthcare system wants to reduce diagnostic errors. Evaluate three approaches: mandatory second opinions, AI-assisted diagnosis, and structured diagnostic checklists. Consider accuracy improvement, cost, physician acceptance, and implementation timeline.",
+    "gold_iot": {
+      "purpose": "Compare three diagnostic error reduction strategies across four dimensions",
+      "anti_purpose": "Must not favour the technology solution without considering adoption barriers",
+      "success_signal": "A multi-criteria evaluation with scoring across all dimensions and a phased implementation recommendation"
+    },
+    "rationale": "Three independent strategies, four evaluation criteria. Parallel comparison."
+  },
+  {
+    "id": "MED-20", "domain": "medical", "optimal_topology": "GoT",
+    "task": "Analyse the relationship between antibiotic resistance, hospital infection control practices, antibiotic prescribing patterns, patient outcomes, and pharmaceutical industry incentives. How do these factors create a systemic crisis?",
+    "gold_iot": {
+      "purpose": "Map the complex systems dynamics of antibiotic resistance including feedback loops between prescribing, resistance, outcomes, and industry",
+      "anti_purpose": "Must not present this as a simple cause-effect chain when there are reinforcing feedback loops",
+      "success_signal": "A systems dynamics map with reinforcing and balancing loops, delay indicators, and intervention leverage points"
+    },
+    "rationale": "Complex adaptive system with reinforcing loops. GoT essential."
+  }
+]

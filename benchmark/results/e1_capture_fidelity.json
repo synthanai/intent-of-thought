@@ -1,0 +1,6242 @@
+[
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.29,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.04458427429199219,
+    "metadata": {
+      "iot_purpose": "Analyse the relationship between three court precedents: Smith v",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.285,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Apply the four-factor fair use test (17 U",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.33999999999999997,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02288818359375,
+    "metadata": {
+      "iot_purpose": "A tech company is choosing between three IP protection strategies for their AI algorithm: patent, tr",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.026941299438476562,
+    "metadata": {
+      "iot_purpose": "Analyse the regulatory interaction between GDPR, the EU AI Act, and the Digital Services Act for a c",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.295,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Determine whether a non-compete clause is enforceable under California law",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.285,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "A startup founder is choosing a corporate structure",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Analyse how employment law, immigration law, and tax law interact for a company hiring a remote work",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.32499999999999996,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.030040740966796875,
+    "metadata": {
+      "iot_purpose": "Apply the Howey test to determine whether a cryptocurrency token offering constitutes a security und",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.31999999999999995,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "A company discovered a data breach affecting 50,000 customers in the EU, US, and Australia",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.026941299438476562,
+    "metadata": {
+      "iot_purpose": "Trace the procedural steps required to file a patent application in the United States, from inventio",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.025033950805664062,
+    "metadata": {
+      "iot_purpose": "A social media company faces claims under Section 230, defamation law, and the First Amendment for h",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.29,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "A software company wants to open-source its core product",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0247955322265625,
+    "metadata": {
+      "iot_purpose": "Determine whether an employer violated the WARN Act (Worker Adjustment and Retraining Notification A",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.022172927856445312,
+    "metadata": {
+      "iot_purpose": "Analyse how antitrust law, data privacy law, and consumer protection law simultaneously constrain a ",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.27499999999999997,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "A non-profit organisation wants to restructure",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0247955322265625,
+    "metadata": {
+      "iot_purpose": "Apply the reasonable person standard to determine whether a store owner's failure to clear an icy si",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.27999999999999997,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0152587890625,
+    "metadata": {
+      "iot_purpose": "A multinational is restructuring its supply chain",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.27499999999999997,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.014781951904296875,
+    "metadata": {
+      "iot_purpose": "A family is planning their estate",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.31999999999999995,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Determine the statute of limitations for a breach of written contract claim in New York",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": null,
+    "capture_fidelity": 0.345,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.025033950805664062,
+    "metadata": {
+      "iot_purpose": "Analyse the interconnected legal risks of an AI company that trains models on scraped web data: copy",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.3,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "A 45-year-old patient presents with fatigue, joint pain, and a butterfly-shaped facial rash",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.335,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Calculate the appropriate dosage of vancomycin for a 70kg patient with a creatinine clearance of 45 ",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.3,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "A hospital needs to choose between three triage systems: ESI, MTS, and CTAS",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.33,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.021219253540039062,
+    "metadata": {
+      "iot_purpose": "Analyse the cascading effects of a hospital-wide nursing shortage on patient outcomes, readmission r",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.31,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Trace the pathophysiology of diabetic ketoacidosis from insulin deficiency through metabolic derange",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.29,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "A patient with chronic lower back pain has failed conservative treatment",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.275,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.014781951904296875,
+    "metadata": {
+      "iot_purpose": "A patient is on warfarin, metformin, and lisinopril",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.27,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0152587890625,
+    "metadata": {
+      "iot_purpose": "Interpret the following ABG results: pH 7",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.29,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Design a clinical trial protocol for testing a new anti-hypertensive drug",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-10",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.29,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "A 30-year-old woman presents with amenorrhea, galactorrhea, and visual field defects",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-11",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.315,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Analyse the relationship between hospital readmission rates, nurse-to-patient ratios, discharge plan",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-12",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.335,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02288818359375,
+    "metadata": {
+      "iot_purpose": "Calculate the Glasgow Coma Scale score for a patient who opens eyes to pain, makes incomprehensible ",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.28,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015735626220703125,
+    "metadata": {
+      "iot_purpose": "A rural clinic needs to implement a telemedicine platform",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-14",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.3,
+    "selected_topology": "AoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018358230590820312,
+    "metadata": {
+      "iot_purpose": "A patient with Type 2 diabetes, hypertension, and depression is non-adherent to medication",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 1.0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-15",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.335,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Convert a patient's vancomycin trough level from conventional units to SI units, then determine if t",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-16",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.27,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "A hospital emergency department is experiencing overcrowding",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-17",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.335,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Analyse the systemic factors contributing to medical errors in a hospital: fatigue, communication ga",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-18",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.265,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.014066696166992188,
+    "metadata": {
+      "iot_purpose": "A patient presents with chest pain",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-19",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.275,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015020370483398438,
+    "metadata": {
+      "iot_purpose": "A healthcare system wants to reduce diagnostic errors",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-20",
+    "domain": "medical",
+    "capture_mode": null,
+    "capture_fidelity": 0.33,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Analyse the relationship between antibiotic resistance, hospital infection control practices, antibi",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-01",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.32999999999999996,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.025987625122070312,
+    "metadata": {
+      "iot_purpose": "Analyse the cascading failure risks in a microservices architecture where Service A depends on B and",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-02",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.27,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015735626220703125,
+    "metadata": {
+      "iot_purpose": "Debug a race condition in a producer-consumer queue",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-03",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.29,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "A startup needs to choose a database for their real-time analytics platform",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-04",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.32999999999999996,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Analyse the interaction between caching layers in a distributed system: CDN cache, application cache",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-05",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.275,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Derive the time complexity of a recursive Fibonacci implementation",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 1.0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-06",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.27,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015974044799804688,
+    "metadata": {
+      "iot_purpose": "Design an authentication system for a mobile app",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-07",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.285,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Analyse the observability gap in a Kubernetes cluster running 50 microservices",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-08",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.275,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.014781951904296875,
+    "metadata": {
+      "iot_purpose": "Implement a binary search algorithm for a sorted array",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-09",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.28,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015974044799804688,
+    "metadata": {
+      "iot_purpose": "A team needs to migrate from a monolith to microservices",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-10",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.295,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "A CI/CD pipeline is flaky: builds pass locally but fail intermittently in CI",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-11",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.31499999999999995,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Convert a given ERD (Entity-Relationship Diagram) with entities Customer, Order, Product, and OrderI",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-12",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.27,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015735626220703125,
+    "metadata": {
+      "iot_purpose": "Choose a message broker for an event-driven architecture",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-13",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.275,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015020370483398438,
+    "metadata": {
+      "iot_purpose": "Analyse the security threat model for a banking API",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-14",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.265,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015020370483398438,
+    "metadata": {
+      "iot_purpose": "Explain how a TCP three-way handshake works",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-15",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.265,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015020370483398438,
+    "metadata": {
+      "iot_purpose": "A team needs to implement full-text search",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-16",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.275,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016689300537109375,
+    "metadata": {
+      "iot_purpose": "Diagnose why a distributed system is experiencing increasing latency",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-17",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.32499999999999996,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018358230590820312,
+    "metadata": {
+      "iot_purpose": "Walk through the execution of a merge sort algorithm on the array [38, 27, 43, 3, 9, 82, 10]",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-18",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.3,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "A company needs to choose a container orchestration solution for their ML training workloads",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-19",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.32999999999999996,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02384185791015625,
+    "metadata": {
+      "iot_purpose": "Analyse the data consistency challenges in an eventual consistency system where Service A writes to ",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-20",
+    "domain": "technical",
+    "capture_mode": null,
+    "capture_fidelity": 0.32999999999999996,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Calculate the storage requirements for a time-series database ingesting 50,000 data points per secon",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.028848648071289062,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.505,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0247955322265625,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.025033950805664062,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.505,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02384185791015625,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.515,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015974044799804688,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.505,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.025033950805664062,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.485,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Trace the process step by step showing all intermediate states",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.55,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.031232833862304688,
+    "metadata": {
+      "iot_purpose": "A social media company faces claims under Section 230, defamation law, and the First Amendment for h",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.505,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.515,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.505,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.505,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not evaluate legal frameworks in isolation when they interact",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.47,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Trace the process step by step showing all intermediate states",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02288818359375,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-10",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48499999999999993,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02384185791015625,
+    "metadata": {
+      "iot_purpose": "Trace the process step by step showing all intermediate states",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-11",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-12",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.022172927856445312,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-14",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-15",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-16",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0247955322265625,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-17",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-18",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02384185791015625,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not miss symptom interactions or contraindications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-19",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-20",
+    "domain": "medical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-01",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.4799999999999999,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-02",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.475,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Trace the process step by step showing all intermediate states",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-03",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02288818359375,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-04",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016689300537109375,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-05",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48999999999999994,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-06",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-07",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.47,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-08",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-09",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-10",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.014781951904296875,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-11",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.48999999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-12",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-13",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.012874603271484375,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-14",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.45999999999999996,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Explain how a TCP three-way handshake works",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-15",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-16",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.49499999999999994,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.012874603271484375,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not treat factors independently when they interact with each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-17",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.475,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Trace the process step by step showing all intermediate states",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-18",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.52,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Compare and evaluate the options presented to select the best approach",
+      "iot_anti_purpose": "Must not anchor on the first option evaluated or use a single criterion",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-19",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.4799999999999999,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.013828277587890625,
+    "metadata": {
+      "iot_purpose": "Analyse the relationships and interactions described in the task",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-20",
+    "domain": "technical",
+    "capture_mode": "IMPLICIT",
+    "capture_fidelity": 0.485,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Apply the specified method step by step to reach a definitive answer",
+      "iot_anti_purpose": "Must not diagnose issues independently when they cascade",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Map the precedent relationship network to determine which rulings apply and how they interact",
+      "iot_anti_purpose": "Must not evaluate precedents independently when they modify or contradict each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019311904907226562,
+    "metadata": {
+      "iot_purpose": "Analyse each of the four fair use factors sequentially and reach a conclusion",
+      "iot_anti_purpose": "Must not skip any factor or reach a conclusion before analysing all four",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Evaluate three IP protection options across four dimensions to select the best strategy",
+      "iot_anti_purpose": "Must not default to patents without considering trade secret advantages for algorithms",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the regulatory overlap network between three EU laws for AI content moderation",
+      "iot_anti_purpose": "Must not treat each regulation independently when requirements interact and potentially conflict",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Apply the California non-compete analysis sequentially: general rule, then exceptions",
+      "iot_anti_purpose": "Must not jump to exceptions without first establishing the general prohibition",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three corporate structures across four criteria for a mission-driven startup",
+      "iot_anti_purpose": "Must not assume C-Corp is default for startups without evaluating B-Corp advantages for this founder",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Map the multi-jurisdictional legal interaction network for cross-border remote employment",
+      "iot_anti_purpose": "Must not analyse each legal domain in isolation when obligations in one affect compliance in another",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Apply the four-prong Howey test sequentially to determine security classification",
+      "iot_anti_purpose": "Must not conclude without analysing all four prongs: investment of money, common enterprise, expecta",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.825,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.020265579223632812,
+    "metadata": {
+      "iot_purpose": "Evaluate three breach response strategies across three dimensions for a multi-jurisdictional inciden",
+      "iot_anti_purpose": "Must not assume immediate disclosure is always best without considering multi-jurisdictional timing ",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Describe the sequential patent filing procedure from start to grant",
+      "iot_anti_purpose": "Must not skip procedural steps or present the process as non-sequential",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Map the legal tension network between three intersecting legal frameworks for content liability",
+      "iot_anti_purpose": "Must not analyse each framework in isolation when Section 230 immunity may conflict with defamation ",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Compare three open-source licensing options across four strategic dimensions",
+      "iot_anti_purpose": "Must not choose the most permissive license without considering competitive and patent implications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.023126602172851562,
+    "metadata": {
+      "iot_purpose": "Apply the WARN Act requirements sequentially: threshold check, notice period check, exceptions check",
+      "iot_anti_purpose": "Must not conclude violation without checking whether the employer qualifies for any statutory except",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Map the multi-regulatory constraint network for a data-rich tech acquisition",
+      "iot_anti_purpose": "Must not clear antitrust review without considering that data concentration creates privacy and cons",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three restructuring options across tax, governance, and mission dimensions",
+      "iot_anti_purpose": "Must not evaluate financial viability without assessing mission alignment for each option",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7900000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Apply the negligence elements sequentially: duty, breach, causation, damages",
+      "iot_anti_purpose": "Must not find negligence without establishing all four elements",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Map the four-way legal interaction network for supply chain restructuring",
+      "iot_anti_purpose": "Must not optimise for tariff reduction if it creates labour law violations or environmental non-comp",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 2.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three estate planning strategies across four dimensions for a specific family situation",
+      "iot_anti_purpose": "Must not recommend the most complex option without considering whether simpler approaches achieve th",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.865,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Apply the statute of limitations rules sequentially: identify the limitation period, determine accru",
+      "iot_anti_purpose": "Must not assume the standard accrual date without checking whether the discovery rule applies",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Map the legal risk interaction network for AI training data practices",
+      "iot_anti_purpose": "Must not assess each risk independently when a ruling in one area establishes precedent affecting ot",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 2.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Identify interacting symptom clusters that point to a systemic condition",
+      "iot_anti_purpose": "Must not treat symptoms independently when they co-occur diagnostically",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Derive the correct dosage through sequential pharmacokinetic calculation",
+      "iot_anti_purpose": "Must not skip renal adjustment steps or use standard dosing for impaired clearance",
+      "scores": {
+        "CoT": 4.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Evaluate three independent triage alternatives to recommend the best fit",
+      "iot_anti_purpose": "Must not evaluate systems sequentially and anchor on the first option analysed",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Map the causal cascade and feedback loops between staffing shortage and multiple outcome variables",
+      "iot_anti_purpose": "Must not treat outcome variables as independent when they reinforce each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 4.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016689300537109375,
+    "metadata": {
+      "iot_purpose": "Explain the linear causal chain from insulin deficiency to clinical DKA",
+      "iot_anti_purpose": "Must not jump to clinical presentation without explaining intermediate metabolic steps",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three surgical options across four outcome dimensions to identify the best candidate",
+      "iot_anti_purpose": "Must not recommend based on a single dimension or evaluate options sequentially",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8150000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019311904907226562,
+    "metadata": {
+      "iot_purpose": "Map all pairwise and higher-order drug interactions in the patient's medication profile",
+      "iot_anti_purpose": "Must not check interactions only pairwise when three-way interactions may exist",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Systematically interpret arterial blood gas results using the standard 5-step approach",
+      "iot_anti_purpose": "Must not skip steps or jump to diagnosis without checking compensation",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Explore three alternative clinical trial designs and select the most appropriate for Phase III",
+      "iot_anti_purpose": "Must not default to RCT without considering whether alternatives offer advantages",
+      "scores": {
+        "CoT": 0,
+        "ToT": 2.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-10",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Derive the most likely diagnosis through sequential clinical reasoning from symptoms to lab tests to",
+      "iot_anti_purpose": "Must not order expensive imaging before ruling out simpler explanations",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-11",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8150000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the bidirectional causal relationships between four factors affecting hospital readmissions",
+      "iot_anti_purpose": "Must not model factors as independent predictors when they have feedback relationships",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 3.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-12",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015020370483398438,
+    "metadata": {
+      "iot_purpose": "Calculate GCS by scoring each component sequentially and summing",
+      "iot_anti_purpose": "Must not estimate the total without scoring each component individually",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8500000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Compare three telemedicine platform options across four criteria for a resource-constrained rural se",
+      "iot_anti_purpose": "Must not dismiss the custom option without evaluating its strengths or accept the cheapest without c",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-14",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02288818359375,
+    "metadata": {
+      "iot_purpose": "Map the interaction network between three comorbidities and their treatments affecting medication ad",
+      "iot_anti_purpose": "Must not address each condition's adherence barriers in isolation when they compound each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-15",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Perform unit conversion then compare to therapeutic range in a sequential procedure",
+      "iot_anti_purpose": "Must not compare values without completing the unit conversion first",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-16",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Explore three independent intervention strategies and compare their multi-dimensional impact",
+      "iot_anti_purpose": "Must not implement the obvious solution without evaluating alternatives",
+      "scores": {
+        "CoT": 0,
+        "ToT": 2.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-17",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "Map the causal network of five systemic factors contributing to medical errors with interaction weig",
+      "iot_anti_purpose": "Must not treat factors as independent root causes when they form reinforcing loops",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 6.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-18",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Apply the HEART score by scoring each component sequentially and determining the risk category",
+      "iot_anti_purpose": "Must not assign the risk category without calculating all five components",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-19",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Compare three diagnostic error reduction strategies across four dimensions",
+      "iot_anti_purpose": "Must not favour the technology solution without considering adoption barriers",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-20",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.86,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Map the complex systems dynamics of antibiotic resistance including feedback loops between prescribi",
+      "iot_anti_purpose": "Must not present this as a simple cause-effect chain when there are reinforcing feedback loops",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 3.0,
+        "AoT": 0,
+        "Hybrid": 1.0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-01",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8200000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the dependency graph and failure propagation paths in the microservices architecture",
+      "iot_anti_purpose": "Must not analyse service failures independently when they cascade through shared dependencies",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-02",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.85,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "Trace the execution interleaving step-by-step to identify the exact point where the race condition o",
+      "iot_anti_purpose": "Must not suggest fixes without first identifying the exact interleaving that causes the null read",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-03",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Evaluate three database options across four dimensions for a real-time analytics use case",
+      "iot_anti_purpose": "Must not default to the most popular option without considering the specific workload characteristic",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-04",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the multi-layer caching interaction network and stale data propagation paths",
+      "iot_anti_purpose": "Must not analyse each cache layer independently when invalidation in one affects freshness guarantee",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 2.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-05",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7850000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Derive the time complexity through sequential mathematical analysis",
+      "iot_anti_purpose": "Must not state O(2^n) without showing the derivation steps",
+      "scores": {
+        "CoT": 4.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 1.0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-06",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8200000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Compare three authentication approaches across four dimensions for a mobile app context",
+      "iot_anti_purpose": "Must not default to JWT without considering its revocation limitations for mobile",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-07",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.865,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Correlate three observability signals across multiple services to diagnose a latency spike originati",
+      "iot_anti_purpose": "Must not diagnose from a single signal type when the root cause spans metrics, logs, and traces",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-08",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019311904907226562,
+    "metadata": {
+      "iot_purpose": "Explain binary search algorithm step by step, then trace execution on a specific input",
+      "iot_anti_purpose": "Must not present the algorithm without tracing it on the example to verify correctness",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-09",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.84,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three migration strategies across four risk dimensions for a monolith-to-microservices trans",
+      "iot_anti_purpose": "Must not recommend strangler fig by default without considering whether the monolith structure suppo",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-10",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.865,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Map the interaction network of four potential flakiness causes and identify which combinations produ",
+      "iot_anti_purpose": "Must not fix one cause without checking whether it interacts with others to produce the flaky behavi",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-11",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Apply normalisation forms sequentially to convert an ERD into normalised relational tables",
+      "iot_anti_purpose": "Must not jump to 3NF without demonstrating 1NF and 2NF compliance at each step",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-12",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8150000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Compare three message brokers across four dimensions at a specific throughput target",
+      "iot_anti_purpose": "Must not evaluate at low throughput and extrapolate to target scale",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-13",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8200000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "Map the threat interaction network showing how exploitation of one vulnerability amplifies others",
+      "iot_anti_purpose": "Must not score each vulnerability independently when combined exploitation chains exist",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-14",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8200000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Explain the TCP handshake as a sequential three-step protocol with state transitions",
+      "iot_anti_purpose": "Must not describe the handshake without showing sequence numbers and endpoint states",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 1.0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-15",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three search solutions across four dimensions at a specific corpus scale",
+      "iot_anti_purpose": "Must not dismiss PostgreSQL FTS without evaluating whether it meets requirements at this scale",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-16",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Map the causal interaction network between four performance degradation factors across distributed i",
+      "iot_anti_purpose": "Must not attribute latency to a single cause when multiple factors interact to create cascading degr",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 4.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-17",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8200000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Trace merge sort execution step by step showing division and merge phases",
+      "iot_anti_purpose": "Must not skip intermediate steps or show only the final sorted result",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-18",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Compare three orchestration solutions for ML training workloads across four dimensions",
+      "iot_anti_purpose": "Must not default to Kubernetes without assessing whether Slurm's HPC scheduling is better suited for",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-19",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Map all failure scenarios and consistency states in the distributed event processing pipeline",
+      "iot_anti_purpose": "Must not analyse only the happy path when partial failure creates inconsistent states across databas",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-20",
+    "domain": "technical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8200000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.22602081298828125,
+    "metadata": {
+      "iot_purpose": "Calculate storage requirements through sequential arithmetic with clear intermediate results",
+      "iot_anti_purpose": "Must not provide the final answer without showing the unit conversions and intermediate calculations",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Map the precedent relationship network to determine which rulings apply and how they interact",
+      "iot_anti_purpose": "Must not evaluate precedents independently when they modify or contradict each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Analyse each of the four fair use factors sequentially and reach a conclusion",
+      "iot_anti_purpose": "Must not skip any factor or reach a conclusion before analysing all four",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Evaluate three IP protection options across four dimensions to select the best strategy",
+      "iot_anti_purpose": "Must not default to patents without considering trade secret advantages for algorithms",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the regulatory overlap network between three EU laws for AI content moderation",
+      "iot_anti_purpose": "Must not treat each regulation independently when requirements interact and potentially conflict",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Apply the California non-compete analysis sequentially: general rule, then exceptions",
+      "iot_anti_purpose": "Must not jump to exceptions without first establishing the general prohibition",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three corporate structures across four criteria for a mission-driven startup",
+      "iot_anti_purpose": "Must not assume C-Corp is default for startups without evaluating B-Corp advantages for this founder",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the multi-jurisdictional legal interaction network for cross-border remote employment",
+      "iot_anti_purpose": "Must not analyse each legal domain in isolation when obligations in one affect compliance in another",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.020265579223632812,
+    "metadata": {
+      "iot_purpose": "Apply the four-prong Howey test sequentially to determine security classification",
+      "iot_anti_purpose": "Must not conclude without analysing all four prongs: investment of money, common enterprise, expecta",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.020265579223632812,
+    "metadata": {
+      "iot_purpose": "Evaluate three breach response strategies across three dimensions for a multi-jurisdictional inciden",
+      "iot_anti_purpose": "Must not assume immediate disclosure is always best without considering multi-jurisdictional timing ",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01621246337890625,
+    "metadata": {
+      "iot_purpose": "Describe the sequential patent filing procedure from start to grant",
+      "iot_anti_purpose": "Must not skip procedural steps or present the process as non-sequential",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02002716064453125,
+    "metadata": {
+      "iot_purpose": "Map the legal tension network between three intersecting legal frameworks for content liability",
+      "iot_anti_purpose": "Must not analyse each framework in isolation when Section 230 immunity may conflict with defamation ",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three open-source licensing options across four strategic dimensions",
+      "iot_anti_purpose": "Must not choose the most permissive license without considering competitive and patent implications",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Apply the WARN Act requirements sequentially: threshold check, notice period check, exceptions check",
+      "iot_anti_purpose": "Must not conclude violation without checking whether the employer qualifies for any statutory except",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the multi-regulatory constraint network for a data-rich tech acquisition",
+      "iot_anti_purpose": "Must not clear antitrust review without considering that data concentration creates privacy and cons",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Compare three restructuring options across tax, governance, and mission dimensions",
+      "iot_anti_purpose": "Must not evaluate financial viability without assessing mission alignment for each option",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Apply the negligence elements sequentially: duty, breach, causation, damages",
+      "iot_anti_purpose": "Must not find negligence without establishing all four elements",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the four-way legal interaction network for supply chain restructuring",
+      "iot_anti_purpose": "Must not optimise for tariff reduction if it creates labour law violations or environmental non-comp",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 2.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Compare three estate planning strategies across four dimensions for a specific family situation",
+      "iot_anti_purpose": "Must not recommend the most complex option without considering whether simpler approaches achieve th",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.024080276489257812,
+    "metadata": {
+      "iot_purpose": "Apply the statute of limitations rules sequentially: identify the limitation period, determine accru",
+      "iot_anti_purpose": "Must not assume the standard accrual date without checking whether the discovery rule applies",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Map the legal risk interaction network for AI training data practices",
+      "iot_anti_purpose": "Must not assess each risk independently when a ruling in one area establishes precedent affecting ot",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 2.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Identify interacting symptom clusters that point to a systemic condition",
+      "iot_anti_purpose": "Must not treat symptoms independently when they co-occur diagnostically",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018358230590820312,
+    "metadata": {
+      "iot_purpose": "Derive the correct dosage through sequential pharmacokinetic calculation",
+      "iot_anti_purpose": "Must not skip renal adjustment steps or use standard dosing for impaired clearance",
+      "scores": {
+        "CoT": 4.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015735626220703125,
+    "metadata": {
+      "iot_purpose": "Evaluate three independent triage alternatives to recommend the best fit",
+      "iot_anti_purpose": "Must not evaluate systems sequentially and anchor on the first option analysed",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Map the causal cascade and feedback loops between staffing shortage and multiple outcome variables",
+      "iot_anti_purpose": "Must not treat outcome variables as independent when they reinforce each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 4.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Explain the linear causal chain from insulin deficiency to clinical DKA",
+      "iot_anti_purpose": "Must not jump to clinical presentation without explaining intermediate metabolic steps",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Compare three surgical options across four outcome dimensions to identify the best candidate",
+      "iot_anti_purpose": "Must not recommend based on a single dimension or evaluate options sequentially",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Map all pairwise and higher-order drug interactions in the patient's medication profile",
+      "iot_anti_purpose": "Must not check interactions only pairwise when three-way interactions may exist",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Systematically interpret arterial blood gas results using the standard 5-step approach",
+      "iot_anti_purpose": "Must not skip steps or jump to diagnosis without checking compensation",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Explore three alternative clinical trial designs and select the most appropriate for Phase III",
+      "iot_anti_purpose": "Must not default to RCT without considering whether alternatives offer advantages",
+      "scores": {
+        "CoT": 0,
+        "ToT": 2.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-10",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Derive the most likely diagnosis through sequential clinical reasoning from symptoms to lab tests to",
+      "iot_anti_purpose": "Must not order expensive imaging before ruling out simpler explanations",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-11",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Map the bidirectional causal relationships between four factors affecting hospital readmissions",
+      "iot_anti_purpose": "Must not model factors as independent predictors when they have feedback relationships",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 3.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-12",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.015735626220703125,
+    "metadata": {
+      "iot_purpose": "Calculate GCS by scoring each component sequentially and summing",
+      "iot_anti_purpose": "Must not estimate the total without scoring each component individually",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Compare three telemedicine platform options across four criteria for a resource-constrained rural se",
+      "iot_anti_purpose": "Must not dismiss the custom option without evaluating its strengths or accept the cheapest without c",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-14",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.022172927856445312,
+    "metadata": {
+      "iot_purpose": "Map the interaction network between three comorbidities and their treatments affecting medication ad",
+      "iot_anti_purpose": "Must not address each condition's adherence barriers in isolation when they compound each other",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-15",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Perform unit conversion then compare to therapeutic range in a sequential procedure",
+      "iot_anti_purpose": "Must not compare values without completing the unit conversion first",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-16",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Explore three independent intervention strategies and compare their multi-dimensional impact",
+      "iot_anti_purpose": "Must not implement the obvious solution without evaluating alternatives",
+      "scores": {
+        "CoT": 0,
+        "ToT": 2.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-17",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.05030632019042969,
+    "metadata": {
+      "iot_purpose": "Map the causal network of five systemic factors contributing to medical errors with interaction weig",
+      "iot_anti_purpose": "Must not treat factors as independent root causes when they form reinforcing loops",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 6.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-18",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Apply the HEART score by scoring each component sequentially and determining the risk category",
+      "iot_anti_purpose": "Must not assign the risk category without calculating all five components",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-19",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Compare three diagnostic error reduction strategies across four dimensions",
+      "iot_anti_purpose": "Must not favour the technology solution without considering adoption barriers",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "MED-20",
+    "domain": "medical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0209808349609375,
+    "metadata": {
+      "iot_purpose": "Map the complex systems dynamics of antibiotic resistance including feedback loops between prescribi",
+      "iot_anti_purpose": "Must not present this as a simple cause-effect chain when there are reinforcing feedback loops",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 3.0,
+        "AoT": 0,
+        "Hybrid": 1.0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-01",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Map the dependency graph and failure propagation paths in the microservices architecture",
+      "iot_anti_purpose": "Must not analyse service failures independently when they cascade through shared dependencies",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-02",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019788742065429688,
+    "metadata": {
+      "iot_purpose": "Trace the execution interleaving step-by-step to identify the exact point where the race condition o",
+      "iot_anti_purpose": "Must not suggest fixes without first identifying the exact interleaving that causes the null read",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-03",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Evaluate three database options across four dimensions for a real-time analytics use case",
+      "iot_anti_purpose": "Must not default to the most popular option without considering the specific workload characteristic",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-04",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019311904907226562,
+    "metadata": {
+      "iot_purpose": "Map the multi-layer caching interaction network and stale data propagation paths",
+      "iot_anti_purpose": "Must not analyse each cache layer independently when invalidation in one affects freshness guarantee",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 2.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-05",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Derive the time complexity through sequential mathematical analysis",
+      "iot_anti_purpose": "Must not state O(2^n) without showing the derivation steps",
+      "scores": {
+        "CoT": 4.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 1.0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-06",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Compare three authentication approaches across four dimensions for a mobile app context",
+      "iot_anti_purpose": "Must not default to JWT without considering its revocation limitations for mobile",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-07",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.022172927856445312,
+    "metadata": {
+      "iot_purpose": "Correlate three observability signals across multiple services to diagnose a latency spike originati",
+      "iot_anti_purpose": "Must not diagnose from a single signal type when the root cause spans metrics, logs, and traces",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-08",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Explain binary search algorithm step by step, then trace execution on a specific input",
+      "iot_anti_purpose": "Must not present the algorithm without tracing it on the example to verify correctness",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-09",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018358230590820312,
+    "metadata": {
+      "iot_purpose": "Compare three migration strategies across four risk dimensions for a monolith-to-microservices trans",
+      "iot_anti_purpose": "Must not recommend strangler fig by default without considering whether the monolith structure suppo",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-10",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.020265579223632812,
+    "metadata": {
+      "iot_purpose": "Map the interaction network of four potential flakiness causes and identify which combinations produ",
+      "iot_anti_purpose": "Must not fix one cause without checking whether it interacts with others to produce the flaky behavi",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-11",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Apply normalisation forms sequentially to convert an ERD into normalised relational tables",
+      "iot_anti_purpose": "Must not jump to 3NF without demonstrating 1NF and 2NF compliance at each step",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-12",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.01811981201171875,
+    "metadata": {
+      "iot_purpose": "Compare three message brokers across four dimensions at a specific throughput target",
+      "iot_anti_purpose": "Must not evaluate at low throughput and extrapolate to target scale",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-13",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Map the threat interaction network showing how exploitation of one vulnerability amplifies others",
+      "iot_anti_purpose": "Must not score each vulnerability independently when combined exploitation chains exist",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-14",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Explain the TCP handshake as a sequential three-step protocol with state transitions",
+      "iot_anti_purpose": "Must not describe the handshake without showing sequence numbers and endpoint states",
+      "scores": {
+        "CoT": 1.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 1.0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-15",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0171661376953125,
+    "metadata": {
+      "iot_purpose": "Compare three search solutions across four dimensions at a specific corpus scale",
+      "iot_anti_purpose": "Must not dismiss PostgreSQL FTS without evaluating whether it meets requirements at this scale",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-16",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.019073486328125,
+    "metadata": {
+      "iot_purpose": "Map the causal interaction network between four performance degradation factors across distributed i",
+      "iot_anti_purpose": "Must not attribute latency to a single cause when multiple factors interact to create cascading degr",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 4.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-17",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.016927719116210938,
+    "metadata": {
+      "iot_purpose": "Trace merge sort execution step by step showing division and merge phases",
+      "iot_anti_purpose": "Must not skip intermediate steps or show only the final sorted result",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 1.0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-18",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.017881393432617188,
+    "metadata": {
+      "iot_purpose": "Compare three orchestration solutions for ML training workloads across four dimensions",
+      "iot_anti_purpose": "Must not default to Kubernetes without assessing whether Slurm's HPC scheduling is better suited for",
+      "scores": {
+        "CoT": 0,
+        "ToT": 1.0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-19",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.018835067749023438,
+    "metadata": {
+      "iot_purpose": "Map all failure scenarios and consistency states in the distributed event processing pipeline",
+      "iot_anti_purpose": "Must not analyse only the happy path when partial failure creates inconsistent states across databas",
+      "scores": {
+        "CoT": 0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  },
+  {
+    "task_id": "TECH-20",
+    "domain": "technical",
+    "capture_mode": "COLLABORATIVE",
+    "capture_fidelity": 1.0,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.02193450927734375,
+    "metadata": {
+      "iot_purpose": "Calculate storage requirements through sequential arithmetic with clear intermediate results",
+      "iot_anti_purpose": "Must not provide the final answer without showing the unit conversions and intermediate calculations",
+      "scores": {
+        "CoT": 2.0,
+        "ToT": 0,
+        "GoT": 0,
+        "AoT": 0,
+        "Hybrid": 0
+      }
+    }
+  }
+]

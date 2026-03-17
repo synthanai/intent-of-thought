@@ -1,0 +1,1712 @@
+[
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7900000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.865,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.825,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8500000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8150000000000001,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "CoT"
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7900000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.865,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.825,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8500000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8150000000000001,
+    "selected_topology": "ToT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "ToT"
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-16",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7900000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-19",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.865,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-02",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8050000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-05",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-08",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8100000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.825,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-18",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8400000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-03",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.81,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-06",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-09",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-13",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8500000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8450000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-17",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8250000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "LEG-20",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8350000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-01",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7950000000000002,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-04",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8300000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  },
+  {
+    "task_id": "MED-07",
+    "domain": "medical",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.8150000000000001,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": null,
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "forced": true,
+      "forced_topology": "GoT"
+    }
+  }
+]
