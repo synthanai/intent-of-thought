@@ -1,0 +1,23 @@
+# Section 1: Introduction
+
+The proliferation of reasoning topologies for large language models---from chain-of-thought prompting [Wei et al., 2022] through tree-of-thought [Yao et al., 2024] and graph-of-thought [Besta et al., 2024]---has created a governance gap. Each topology imposes a structural commitment on how the model reasons: CoT constrains reasoning to a linear chain, ToT introduces branching and backtracking, GoT permits merging and refinement across nodes. Yet no established mechanism governs *which* topology should be deployed for a given task, *what* reasoning must avoid, or *how* to recover when the wrong topology is selected.
+
+This gap has practical consequences. In our experimental evaluation across 486 scored reasoning episodes (Section 5), using tree-of-thought on interconnected analytical tasks produced a mean quality score of 1.00 out of 3.00---a catastrophic failure. The same tasks under chain-of-thought scored 2.47. The topology itself was not defective; the *governance* was absent. Without a mechanism to connect task intent to topology selection, practitioners face a silent hazard: a reasoning topology that is structurally sound but strategically wrong.
+
+We introduce **Intent of Thought (IoT)**,[^1] a pre-reasoning governance layer that addresses this gap through three contributions:
+
+[^1]: We use IoT throughout to denote Intent of Thought, not to be confused with the Internet of Things or Iteration of Thought [Radha et al., 2024].
+
+1. **The IoT Framework** (Section 3). We define an *intent triple* $(P, \bar{P}, S)$ comprising a stated Purpose ($P$), an Anti-Purpose ($\bar{P}$: what reasoning must avoid), and a Success Signal ($S$: how to judge adequacy). A topology selection function $f(\text{IoT}, \text{context}) \to T^*$ maps the triple to a recommended topology, and a drift detection function $\delta(\text{trace}, P) \to [0,1]$ monitors alignment during reasoning.
+
+2. **The IoT Lifecycle** (Section 4). The framework alone assumes intent is given correctly and governance operates forward-only. We relax these assumptions by introducing the *Capture Spectrum* (five modes of intent elicitation, from zero-shot inference to learned capture) and *Retrospective Judgement* (backward intent reconstruction that diagnoses failure as False Capture, False Selection, or False Execution). Together, these complete a closed-loop lifecycle: Capture $\to$ Select $\to$ Monitor $\to$ Judge $\to$ Learn $\to$ Capture.
+
+3. **Empirical Validation** (Section 5). We evaluate IoT governance across 705 scored reasoning episodes, 7 models (7B to 120B parameters), 18 tasks across 6 domains, and 4 topologies. Key findings:
+   - Adding an IoT governance triple improves reasoning quality by **+15.7%** (mean score 2.10 $\to$ 2.43, $n = 486$).
+   - Weaker models benefit disproportionately: 7B models gain +33%, while 120B models gain +16%, suggesting governance functions as a **cognitive equaliser**.
+   - Governance rescues mismatched topologies: tree-of-thought quality improves from 1.67 to 2.28 (+37%) under IoT, while already-robust chain-of-thought gains only +3.8%.
+   - The Anti-Purpose primitive ($\bar{P}$) provides a measurable +4% drift protection when present ($n = 88$).
+
+Beyond framework and lifecycle, we present a longitudinal case study (Section 6) of a multi-agent debate protocol that evolved through 75 iterations under IoT governance, demonstrating the lifecycle operating in a production system. We discuss limitations honestly in Section 7: at current model scales (7B--120B), chain-of-thought is a robust default, and the topology selection function's empirical value is in failure protection rather than optimal selection. We argue that this is an architectural feature, not a weakness: the governance layer prepares the system for conditions where defaults are no longer sufficient.
+
+The remainder of this paper is organised as follows. Section 2 surveys related work on reasoning topologies, intent governance, and failure analysis. Section 3 presents the IoT framework. Section 4 introduces the lifecycle. Section 5 reports experimental results. Section 6 presents the case study. Section 7 discusses limitations and implications. Section 8 concludes.
