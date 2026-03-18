@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__analyse_scenario__generative__methodical_engineer",
+  "model": "gemini-2.5-pro",
+  "task": "analyse_scenario",
+  "task_label": "Analyse Business Scenario",
+  "variation": "generative",
+  "variation_label": "Generative",
+  "personality": "methodical_engineer",
+  "personality_label": "Methodical Engineer",
+  "system_prompt": "[methodical_engineer] [generative]",
+  "user_prompt": "analyse_scenario",
+  "response": "I'd architect a systematic investigation pipeline with clear inputs, transformations, and outputs.\n\nPhase 1, Data Infrastructure: Set up a Churn Event Store capturing not just who churned but the full behavioral sequence leading to departure. Track last 30/60/90-day feature usage frequency, support ticket volume, session duration trends, and billing interaction events. These signals typically precede churn by 6-8 weeks.\n\nPhase 2, Hypothesis Registry: The CEO's hypothesis (competition) is one entry. Add: (H1) Feature velocity is degrading UX coherence. (H2) Rapid hiring introduces architectural debt surfacing as bugs. (H3) High NPS masks bimodal satisfaction. (H4) Growth attracted customer segments with different retention profiles. Each gets a testable prediction and data pipeline.\n\nPhase 3, Metric Decomposition: Current metrics are too aggregated. Build: Net Revenue Retention segmented by cohort. Feature Adoption Rate (percentage of new features used within 30 days). Engineering Efficiency Ratio (features per engineer per sprint vs. bugs introduced). The 40% feature increase means nothing without adoption data.\n\nPhase 4, Root Cause Decision Tree: Feed decomposed metrics into a structured framework. IF cohort analysis shows tenure-based churn AND feature adoption declining THEN root cause is product-direction misalignment, not competition. Converts a narrative into a testable model.\n\nThe 30 new engineers should include at least 2 data engineers assigned to this observability layer. You cannot fix what you cannot measure, and right now you're measuring the wrong things.",
+  "elapsed_seconds": 0.0,
+  "word_count": 226,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}

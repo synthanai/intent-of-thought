@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__analyse_scenario__engaging__methodical_engineer",
+  "model": "gemini-2.5-pro",
+  "task": "analyse_scenario",
+  "task_label": "Analyse Business Scenario",
+  "variation": "engaging",
+  "variation_label": "Engaging",
+  "personality": "methodical_engineer",
+  "personality_label": "Methodical Engineer",
+  "system_prompt": "[methodical_engineer] [engaging]",
+  "user_prompt": "analyse_scenario",
+  "response": "The structural isomorphism I see maps to a distributed systems problem: the split-brain scenario.\n\nIn distributed computing, split-brain occurs when a cluster partitions into groups that each believe they're operating correctly but are actually diverging. Both report healthy status, both process requests, but synchronization is lost and data inconsistency grows silently until catastrophic reconciliation failure.\n\nYour business has split-brain: Group A (measured by NPS, velocity, headcount) shows healthy. Group B (measured by churn) shows degradation. The CEO's single-cause hypothesis is the monitoring dashboard showing green while the cluster is partitioned.\n\nIn systems engineering, we resolve split-brain through patterns that translate directly. Consensus Protocol: implement a shared source-of-truth metric. Net Revenue Retention by segment combines satisfaction and departure into one number.\n\nHeartbeat Mechanism: establish liveness checks between development and outcomes. Currently, features ship without validation that they reduce churn or increase engagement. Add a 30-day adoption heartbeat: if fewer than 20% of target users adopt within 30 days, flag it.\n\nQuorum Resolution: when metrics disagree, you need a tiebreaker. Customer Exit Interviews provide ground truth resolving the NPS vs. churn partition.\n\nThe engineering analogy extends further: rapid scaling without proportional integration testing is exactly how technical debt accumulates invisibly. Your 30 new engineers without proportional customer feedback loops is organizational debt accumulating in the same way.",
+  "elapsed_seconds": 0.0,
+  "word_count": 215,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}

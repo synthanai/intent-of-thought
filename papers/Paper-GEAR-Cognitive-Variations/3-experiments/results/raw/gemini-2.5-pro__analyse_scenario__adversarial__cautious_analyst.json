@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__analyse_scenario__adversarial__cautious_analyst",
+  "model": "gemini-2.5-pro",
+  "task": "analyse_scenario",
+  "task_label": "Analyse Business Scenario",
+  "variation": "adversarial",
+  "variation_label": "Adversarial",
+  "personality": "cautious_analyst",
+  "personality_label": "Cautious Analyst",
+  "system_prompt": "[cautious_analyst] [adversarial]",
+  "user_prompt": "analyse_scenario",
+  "response": "The CEO's hypothesis is dangerously convenient. Let me carefully enumerate what this data actually reveals versus what is being assumed.\n\nAssumption 1: \"Churn is due to competition.\" Where is the evidence? Has anyone asked departing customers where they went? Without exit data, this is narrative, not analysis. Competition is the default explanation executives reach for because it externalizes blame. It requires no self-examination.\n\nAssumption 2: \"High NPS means customers are satisfied.\" NPS measures willingness to recommend, not likelihood to stay. A customer can score you 9/10 on \"would you recommend?\" while simultaneously planning to leave because a competitor offers a specific feature they need. NPS correlation with retention varies dramatically by industry and customer segment.\n\nAssumption 3: \"Shipping 40% more features is positive.\" More features can actively harm retention. Every new feature increases cognitive load, creates new bug surface area, and potentially destabilizes workflows that existing customers depend on. Was any feature specifically requested by customers who subsequently churned?\n\nAssumption 4: \"Hiring 30 engineers demonstrates investment.\" Rapid hiring dilutes team knowledge density. The ratio of institutional knowledge holders to newcomers shifted from perhaps 80:20 to 65:35 in one quarter. This degrades code quality, architecture coherence, and customer empathy simultaneously.\n\nThe most concerning gap: no one appears to have segmented the churning customers. Are they small accounts or enterprise? New or tenured? High-engagement or dormant? Without this decomposition, the CEO's \"competition\" hypothesis is unfalsifiable, which makes it useless as a diagnostic tool.",
+  "elapsed_seconds": 0.0,
+  "word_count": 241,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}

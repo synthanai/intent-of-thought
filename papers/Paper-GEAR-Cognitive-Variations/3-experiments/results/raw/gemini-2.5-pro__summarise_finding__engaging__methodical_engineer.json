@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__summarise_finding__engaging__methodical_engineer",
+  "model": "gemini-2.5-pro",
+  "task": "summarise_finding",
+  "task_label": "Summarise Research Finding",
+  "variation": "engaging",
+  "variation_label": "Engaging",
+  "personality": "methodical_engineer",
+  "personality_label": "Methodical Engineer",
+  "system_prompt": "[methodical_engineer] [engaging]",
+  "user_prompt": "summarise_finding",
+  "response": "The four-factor structure maps to a well-known architectural pattern: dimensional decomposition. Let me trace the structural isomorphisms.\n\nIn database design, normalization decomposes a monolithic table into independent relations to eliminate redundancy and update anomalies. Newton et al. have performed the cognitive equivalent: normalizing \"thinking style\" from one overloaded dimension into four independent relations. The functional dependency between AOT and Effortful Thinking is weak (r=0.31), confirming they're independent attributes that should not be stored in the same column.\n\nIn signal processing, this parallels principal component analysis decomposing a complex signal into orthogonal components. The 265 items from 15 scales were a complex signal. The four factors are the orthogonal components. Each thinking style assessment that uses a single scale is listening to all components through one channel, inevitably conflating independent signals.\n\nConnection to type theory: the prior model treated thinking style as a sum type (either intuitive OR analytical). The four-factor model reveals it as a product type (a tuple of four independent values). This is a fundamental type error in the existing literature: they modeled a product as a sum.\n\nThe practical system design implication: any assessment, recommendation, or decision-support system built on the single-continuum model is operating on an incorrect data schema. The four-factor model requires four independent features, not one composite score. Machine learning models trained on composite thinking-style scores have a feature engineering bug that this research identifies and corrects.",
+  "elapsed_seconds": 0.0,
+  "word_count": 233,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}

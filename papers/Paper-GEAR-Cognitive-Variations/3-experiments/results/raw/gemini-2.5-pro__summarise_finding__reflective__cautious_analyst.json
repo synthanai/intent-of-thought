@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__summarise_finding__reflective__cautious_analyst",
+  "model": "gemini-2.5-pro",
+  "task": "summarise_finding",
+  "task_label": "Summarise Research Finding",
+  "variation": "reflective",
+  "variation_label": "Reflective",
+  "personality": "cautious_analyst",
+  "personality_label": "Cautious Analyst",
+  "system_prompt": "[cautious_analyst] [reflective]",
+  "user_prompt": "summarise_finding",
+  "response": "Reflecting on what this study teaches us about the evolution of psychological measurement, I see it as part of a recurring pattern in the behavioral sciences: the decomposition of monolithic constructs.\n\nThe history of intelligence testing followed this arc. Spearman proposed a single factor 'g.' Thurstone decomposed it into primary mental abilities. Gardner expanded to multiple intelligences. Each iteration revealed that the previous monolithic construct was hiding genuine multidimensionality. Newton et al. continue this tradition for thinking style.\n\nWhat this pattern teaches us: initial unidimensional models are useful simplifications that eventually become harmful constraints. The intuitive-analytical continuum simplified research design for decades but may have systematically obscured important individual differences. An \"analytical thinker\" who scores high on Effortful Thinking but low on AOT has been invisible to any instrument built on the single-continuum model.\n\nThe r=0.31 finding also teaches a lesson about correlation magnitude: in psychology, moderate correlations are often treated as evidence of shared constructs. But r=0.31 means 90% of the variance is unshared. This reminds us that our intuitions about what \"correlates\" are poorly calibrated. We need explicit thresholds for when correlation implies shared versus independent dimensions.\n\nLooking backward at my own assumptions, I recognized that I had implicitly assumed analytical and open-minded thinking were more closely linked than this data suggests. The study serves as a useful correction, and the finding that these are largely independent should make us cautious about other assumed associations in cognitive science.",
+  "elapsed_seconds": 0.0,
+  "word_count": 240,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}

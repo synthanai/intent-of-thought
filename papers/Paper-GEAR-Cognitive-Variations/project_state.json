@@ -1,0 +1,37 @@
+{
+  "paper": "GEAR-Cognitive-Variations",
+  "title": "Cognitive Variation as an Approximately Independent Dimension in AI Reasoning: The G.E.A.R. Framework",
+  "venue": "SSRN + Arxiv CS.AI",
+  "created": "2026-03-16",
+  "updated": "2026-03-16T19:17:00+11:00",
+  "phases": {
+    "0_capture": "complete",
+    "1_research": "complete",
+    "2_scaffold": "complete",
+    "3_write": "complete",
+    "4_audit": "complete",
+    "5_assemble": "complete",
+    "6_submit": "not_started"
+  },
+  "sections": {
+    "1_introduction": { "brief": true, "draft": true, "audit": true, "words": 1100 },
+    "2_related_work": { "brief": true, "draft": true, "audit": true, "words": 2100 },
+    "3_framework": { "brief": false, "draft": true, "audit": true, "words": 2600 },
+    "4_evaluation": { "brief": false, "draft": true, "audit": true, "words": 1500 },
+    "5_discussion": { "brief": false, "draft": true, "audit": true, "words": 1600 },
+    "6_conclusion": { "brief": false, "draft": true, "audit": true, "words": 600 }
+  },
+  "assembled": {
+    "file": "paper.md",
+    "total_words": 10200,
+    "tables": 8,
+    "references": 30,
+    "abstract": true
+  },
+  "audit": {
+    "score": "170/180 (94.4%)",
+    "verdict": "ALL PASS",
+    "issues_fixed": 7,
+    "issues_open": 0
+  }
+}

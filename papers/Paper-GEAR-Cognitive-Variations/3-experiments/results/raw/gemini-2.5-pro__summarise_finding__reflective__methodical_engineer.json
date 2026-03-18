@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__summarise_finding__reflective__methodical_engineer",
+  "model": "gemini-2.5-pro",
+  "task": "summarise_finding",
+  "task_label": "Summarise Research Finding",
+  "variation": "reflective",
+  "variation_label": "Reflective",
+  "personality": "methodical_engineer",
+  "personality_label": "Methodical Engineer",
+  "system_prompt": "[methodical_engineer] [reflective]",
+  "user_prompt": "summarise_finding",
+  "response": "The Newton et al. finding prompts an update to several mental models about thinking style assessment and cognitive architecture.\n\nPrevious model: Thinking style exists on a single continuum with \"intuitive\" and \"analytical\" as poles. Assessment instruments should place individuals on this continuum. Updated model: Thinking style is a four-dimensional vector. The single-continuum model is a dimensionality reduction error that loses approximately 90% of the variance (based on the r=0.31 inter-dimension correlations).\n\nThis has specific engineering implications for any system that models user cognition.\n\nSchema update: User thinking profiles should store four independent scores, not one composite. Any recommendation engine built on a single \"analytical score\" has a data model bug.\n\nAssessment pipeline update: instruments must measure each dimension with independent item sets. Cross-loading items (those that correlate with multiple dimensions) should be flagged and potentially excluded to maintain dimensional independence.\n\nValidation protocol update: any new thinking style instrument should report the full correlation matrix among its dimensions. A well-constructed four-factor instrument should show inter-dimension correlations below r=0.35 and within-dimension item-total correlations above r=0.50.\n\nThe finding also updates my model of factor analysis interpretation. The four factors emerged from 265 items across 15 scales. This suggests that much of the existing thinking style literature is measuring overlapping combinations of these four dimensions without knowing it. A systematic re-analysis of published scales through the four-factor lens would likely reveal which scales are pure measures of single dimensions and which are noisy composites.\n\nKey takeaway: in measurement architecture, dimensional independence is a design requirement, not a discovered property. Build for four dimensions from the start.",
+  "elapsed_seconds": 0.0,
+  "word_count": 262,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}

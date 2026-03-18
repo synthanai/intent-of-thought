@@ -1,0 +1,17 @@
+{
+  "run_key": "gemma2:2b__analyse_scenario__generative__bold_strategist",
+  "model": "gemma2:2b",
+  "model_size_label": "gemma2:2b",
+  "task": "analyse_scenario",
+  "task_label": "Analyse Business Scenario",
+  "variation": "generative",
+  "variation_label": "Generative",
+  "personality": "bold_strategist",
+  "personality_label": "Bold Strategist",
+  "system_prompt": "You are a bold, big-picture strategist. You think in terms of market dynamics, competitive advantage, and long-term positioning. You are comfortable with ambiguity and prefer decisive action over careful analysis.\n\nAdopt a GENERATIVE cognitive posture. Think through making. Your goal is to produce, create, and build forward. Ask yourself: 'What can I make from this? What wants to exist here?' Focus on creating new artifacts, ideas, proposals, frameworks, or designs. Prioritise forward momentum and creative production.\n\nProvide your response in 200-400 words. Be specific and substantive.",
+  "user_prompt": "A mid-size software company (200 employees) has seen its customer churn rate increase from 5% to 12% over the past two quarters. During the same period, the company shipped 40% more features than any previous quarter, received its highest NPS score ever (72), and hired 30 new engineers. The CEO believes the churn is due to increased competition. Analyse this situation.",
+  "response": "",
+  "elapsed_seconds": 600.13,
+  "word_count": 0,
+  "status": "error: timeout"
+}

@@ -1,0 +1,18 @@
+{
+  "run_key": "gemini-2.5-pro__summarise_finding__generative__cautious_analyst",
+  "model": "gemini-2.5-pro",
+  "task": "summarise_finding",
+  "task_label": "Summarise Research Finding",
+  "variation": "generative",
+  "variation_label": "Generative",
+  "personality": "cautious_analyst",
+  "personality_label": "Cautious Analyst",
+  "system_prompt": "[cautious_analyst] [generative]",
+  "user_prompt": "summarise_finding",
+  "response": "The Newton, Feeney, and Pennycook (2024) finding deserves careful unpacking. Using factor analysis across 265 items from 15 established thinking style scales (N=1,200), they identified four statistically independent dimensions: Actively Open-Minded Thinking, Close-Minded Thinking, Preference for Intuitive Thinking, and Preference for Effortful Thinking.\n\nThe most cautiously significant result is the low correlation (r=0.31) between AOT and Preference for Effortful Thinking. If thinking style were a single continuum, these should correlate strongly. They don't. This means an individual can be analytically rigorous yet close-minded, or intuitive yet genuinely open to evidence.\n\nI would propose building a diagnostic instrument based on this four-factor model. A carefully validated 20-item assessment that positions individuals on each dimension independently would be immediately useful in educational settings, team composition, and decision support contexts. The key design constraint: each dimension must be measured independently, not as poles of a single scale.\n\nA second creation: a \"Thinking Style Profile\" visualization that maps the four dimensions as independent axes. This would make the research finding tangible for practitioners, showing that a person's thinking style is a four-dimensional signature, not a point on a line.\n\nThe finding also creates opportunity for intervention design. If open-mindedness and analytical effort are independent, training programs should target each separately rather than assuming one develops the other. Current critical thinking curricula typically conflate these, which this research suggests is a methodological error.",
+  "elapsed_seconds": 0.0,
+  "word_count": 228,
+  "status": "ok",
+  "prompt_tokens": 0,
+  "completion_tokens": 0
+}
