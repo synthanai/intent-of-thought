@@ -118,6 +118,10 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{1.5em}
 
 % Page geometry
 \usepackage[margin=1.8cm]{geometry}

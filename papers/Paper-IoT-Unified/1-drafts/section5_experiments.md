@@ -155,7 +155,7 @@ The CoT robustness pattern holds across all models tested, including the weakest
 
 ## 5.5 Experiment 9: Frontier Model Generalisation ($n = 72$)
 
-**Hypothesis.** The governance uplift observed in local 7B--14B models generalizes to frontier API models, though the absolute magnitude of the uplift will scale inversely with the model's baseline capability.
+**Hypothesis.** The governance uplift observed in local 7B--14B models generalises to frontier API models, though the absolute magnitude of the uplift will scale inversely with the model's baseline capability.
 
 ### Design
 
