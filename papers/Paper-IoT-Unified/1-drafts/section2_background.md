@@ -16,33 +16,23 @@ Despite these advances in dynamic routing and meta-reasoning, the topology gover
 
 The notion that AI systems should be governed by explicit intent has precedents across several domains, none of which address reasoning topology governance directly.
 
-**Prompt engineering and instruction tuning** [Brown et al., 2020; Ouyang et al., 2022] provide mechanisms for specifying *what* a model should produce, but do not govern *how* it should reason internally. A prompt produces a task output $O$ consumed by the user. An IoT Capture, by contrast, produces a governance triple $(P, \bar{P}, S)$ consumed by a topology selection function $f$. Different type signatures entail different architectural roles.
+**Prompt engineering and instruction tuning** [Brown et al., 2020] provide mechanisms for specifying *what* a model should produce, but do not govern *how* it should reason internally. Similarly, **structured output formats** (e.g., JSON mode) only constrain the final form, not the generative process. 
 
-**Structured output formats** (JSON mode, function calling) constrain the *form* of model output but not the *governance* of the reasoning process that produces it.
+Broader frameworks like **user intent modelling** in search [Broder, 2002] and **AI safety tiers** (e.g., Anthropic's ASL) operate either too broadly at the dialogue/system level or ignore task-specific reasoning governance entirely. A model at ASL-2 uses the same reasoning topology whether the task is routine or safety-critical.
 
-**User intent modelling in information retrieval** [Broder, 2002; Radlinski and Craswell, 2017] classifies information needs (navigational, informational, transactional) but does not connect these classifications to reasoning topology selection.
+IoT draws its primary inspiration from **BDI (Belief-Desire-Intention) architectures** [Bratman, 1987; Cohen and Levesque, 1990], which formalise agent commitment. IoT adapts this tradition for LLMs: reasoning persists until the Success Signal is satisfied, the Purpose is judged unachievable, or Anti-Purpose is violated.
 
-**Conversational intent detection** in natural language understanding classifies user actions (booking, searching, asking) but operates at the dialogue level, not the reasoning level.
-
-**AI safety frameworks** (Anthropic's ASL tiers, OpenAI safety levels) provide model-level governance proportional to capability, but do not address task-level reasoning governance. A model at ASL-2 uses the same reasoning topology whether the task is routine or safety-critical.
-
-**BDI (Belief-Desire-Intention) architectures** [Bratman, 1987; Cohen and Levesque, 1990] formalise agent commitment in terms of intentions that persist until achieved, believed unachievable, or superseded. IoT draws on this tradition for its commitment termination semantics: reasoning persists until the Success Signal is satisfied, the Purpose is judged unachievable, or Anti-Purpose is violated.
-
-The common gap across all these precedents is that none of them ask: "Given this reasoning task's purpose, which reasoning topology should govern the process, and what should we do when it fails?"
+The common gap across these precedents is that none ask: "Given this purpose, which reasoning topology should govern the process, and what should we do when it fails?"
 
 ## 2.3 Reasoning Failure Analysis
 
 When LLM reasoning fails, existing approaches diagnose failure at different levels of abstraction, none of which address topology-level diagnosis.
 
-**Chain-of-thought error analysis** [Ling et al., 2023; Golovneva et al., 2023] catalogues errors at the trace level: arithmetic mistakes, logical gaps, hallucinated facts. These are step-level failures within a fixed topology.
+When LLMs fail, existing approaches diagnose the failure at the trace level rather than the topology level. **Chain-of-thought error analysis** [Ling et al., 2023] and **process reward models** [Lightman et al., 2023] evaluate the correctness of individual reasoning steps. However, step-correctness does not guarantee topology-correctness: every step may be locally valid while the overall structure is fundamentally misaligned with the intended task.
 
-**Process reward models** [Lightman et al., 2023] evaluate the correctness of individual reasoning steps, enabling fine-grained feedback. But step-correctness does not address topology-correctness: every step may be locally valid while the overall reasoning structure is misaligned with the task.
+Self-corrective frameworks like **Reflexion** [Shinn et al., 2023] improve outputs iteratively but reflect inherently on the *result*, not the *topology selection*. An agent using Reflexion may retry endlessly with the wrong structural approach, producing refinements constrained by a flawed architectural commitment. 
 
-**Reflexion** [Shinn et al., 2023] introduces self-evaluation where an agent reflects on its output and attempts to improve on subsequent trials. The reflection is on the *output*, not on the *topology selection*. An agent using Reflexion may retry with the same (wrong) topology, producing refinements that are structurally constrained by the same architectural commitment.
-
-**Interpretability and attribution methods** [Doshi-Velez and Kim, 2017] explain *what* a model computed, not *why* it chose a particular reasoning strategy.
-
-None of these approaches ask: "Was the right reasoning topology selected for this purpose?" This is the question Retrospective Judgement (Section 4.3) is designed to answer.
+None of these approaches ask: "Was the right reasoning topology selected for this purpose?" This is the exact question Retrospective Judgement (Section 4.3) is designed to answer.
 
 ## 2.4 Positioning: The Differentiation Table
 

@@ -46,7 +46,13 @@ This interaction implies that topology selection is not merely a function of tas
 
 When reasoning fails despite governance, the system must diagnose *why*. Retrospective Judgement is backward intent reconstruction: given a failed reasoning trace and the original IoT specification, reconstruct what the intent *should have been* and classify the failure mode.
 
-**Definition 3 (Retrospective Judgement Function).** Let $\mathcal{J}: \text{trace} \times \text{IoT}_{\text{original}} \to (\text{failure\_mode}, \text{IoT}_{\text{reconstructed}}, \text{action})$ denote the judgement function that diagnoses reasoning failure.
+**Definition 3 (Retrospective Judgement Function).** Let 
+
+$$
+\mathcal{J}: \text{trace} \times \text{IoT}_{\text{original}} \to (\text{failure\_mode}, \text{IoT}_{\text{reconstructed}}, \text{action})
+$$ 
+
+denote the judgement function that diagnoses reasoning failure.
 
 The three failure modes form a diagnostic hierarchy:
 
@@ -104,3 +110,5 @@ The loop is not merely circular; it is adaptive. Each iteration improves the sys
 L4 is the most architecturally distinctive capture mode and the most speculative. Where L0 through L3 operate at inference time, L4 operates at training time: the model has internalised intent-topology mappings from prior data, enabling auto-generation of IoT triples without explicit elicitation.
 
 Training-time tool integration provides a partial precedent: Toolformer [Schick et al., 2023] trains models to decide *when and how* to invoke external tools. L4 extends this: instead of learning to produce *tool invocations*, the model learns to produce *governance triples*. We do not evaluate L4 empirically in this paper and include it as a theoretical contribution that defines the spectrum's upper bound.
+
+With the theoretical lifecycle established—from explicit L0 capture up to speculative L4 internalisation—the architectural question naturally shifts from *how* to govern topologies to *whether* this governance actually yields measurable improvements. Section 5 transitions from this theoretical foundation into a rigorous empirical barrage, explicitly tracking whether forcing these structural constraints successfully prevents the catastrophic cognitive drift predicted by our failure taxonomy.
