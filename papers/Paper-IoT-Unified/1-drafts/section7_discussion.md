@@ -12,7 +12,15 @@ Third, **the findings are bounded by model scale**. At 7B--120B parameters, mode
 
 We do not claim that CoT robustness will persist at all scales, for all task types, and for all models. We claim that at current model scales, the true value of the Intent of Thought framework is its ability to impose structural governance, mitigate cognitive drift, and reduce catastrophic reasoning mismatch. We believe this focus on robust governance is a more honest and operationally useful contribution than prescribing context-free topology choices.
 
-## 7.2 Limitations
+## 7.2 Practical Deployment & High-Stakes Translation
+
+The empirical validation of the IoT framework (Section 5) extends beyond abstract reasoning benchmarks into highly practical deployment scenarios. In production systems where LLMs act as autonomous agents, the governance triple ($P, \bar{P}, S$) provides a necessary bridge between theoretical reasoning topologies and safe, predictable execution in real-world environments.
+
+Consider the application of IoT in **Information Security Auditing**. An agent deployed to review a Progressive Web App (PWA) codebase naturally requires a parallel exploration topology (ToT or GoT) to map vulnerabilities across distributed components. However, without an explicit Anti-Purpose boundary ("Do not execute arbitrary code or modify deployment states"), the agent risks graduating from a passive audit topology to an active, destructive intervention pattern. IoT governance prevents this catastrophic mutation by structurally embedding the negative boundary ($\bar{P}$) into the reasoning loop before the topology begins expanding.
+
+Similarly, in **Academic Synthesis** and asynchronous data pipelines, the Success Signal ($S$) dictates the closure condition for resource-intensive graph-of-thought (GoT) iterations. An agent instructed to "synthesize literature on model routing" will spin indefinitely or hallucinate connections if unbounded. By specifying an explicit, verifiable state change ($S$: "A 3-paragraph synthesis statement comparing CoT to IoT with exactly 3 cited sources"), the governance layer overrides the topology's natural tendency toward infinite expansion. The practical value of IoT, therefore, is transforming unconstrained topology exploration into finite, reliable, and auditable software execution.
+
+## 7.3 Limitations
 
 **Model scale.** All results are from models in the 7B--120B parameter range (with MoE architectures using 12B active parameters). Results may not generalise to frontier models (GPT-4, Claude 3.5, Gemini 1.5 Pro) or to very small models (<3B). Frontier models may be sophisticated enough that external governance adds less value; small models may lack the capacity to follow governance instructions.
 
@@ -26,7 +34,7 @@ We do not claim that CoT robustness will persist at all scales, for all task typ
 
 **Single-episode evaluation.** Experiments measure IoT governance in single reasoning episodes. The Learning Loop (Section 4.4) is validated only through the case study (Section 6), not through controlled longitudinal experiments.
 
-## 7.3 Broader Implications
+## 7.4 Broader Implications
 
 **Governance as cognitive equaliser.** The inverse correlation between model capability and governance benefit (Finding 1) has practical implications for agentic AI deployment. If weaker models benefit disproportionately from governance (+33% for 7B models), then IoT provides a mechanism for democratising reasoning quality: organisations that cannot deploy frontier models can still achieve competitive reasoning outcomes through governance scaffolding. This has cost implications: a well-governed 7B model may outperform an ungoverned 14B model, reducing the computational requirements for acceptable reasoning quality.
 
