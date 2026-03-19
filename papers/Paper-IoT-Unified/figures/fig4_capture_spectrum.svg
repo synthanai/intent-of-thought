@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="l0grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cbd5e1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l1grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#bfdbfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l2grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l3grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l4grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow4" x="-3%" y="-3%" width="106%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="360" fill="#f8fafc" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Figure 4: The IoT Capture Spectrum (L0-L4)</text>
+  <text x="400" y="48" text-anchor="middle" font-size="10" fill="#64748b">Five modes of intent elicitation with increasing fidelity</text>
+
+  <!-- Fidelity arrow -->
+  <line x1="60" y1="305" x2="740" y2="305" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow2)"/>
+  <text x="60" y="330" font-size="9" fill="#64748b">Low fidelity</text>
+  <text x="700" y="330" text-anchor="end" font-size="9" fill="#64748b">High fidelity</text>
+  <text x="400" y="348" text-anchor="middle" font-size="10" font-weight="500" fill="#3b82f6">φ(IoT_capture) → [0,1]</text>
+
+  <!-- L0 -->
+  <g filter="url(#shadow4)">
+    <rect x="40" y="70" width="130" height="220" rx="10" fill="url(#l0grad)" stroke="#94a3b8" stroke-width="1"/>
+    <rect x="40" y="70" width="130" height="35" rx="10" fill="#94a3b8"/>
+    <rect x="40" y="90" width="130" height="15" fill="#94a3b8"/>
+    <text x="105" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="white">L0 Zero</text>
+    <text x="105" y="125" text-anchor="middle" font-size="9" fill="#334155" font-weight="500">System infers</text>
+    <text x="105" y="138" text-anchor="middle" font-size="9" fill="#334155" font-weight="500">from context</text>
+    <text x="105" y="165" text-anchor="middle" font-size="9" fill="#64748b">P: inferred</text>
+    <text x="105" y="180" text-anchor="middle" font-size="9" fill="#64748b">P̄: absent</text>
+    <text x="105" y="195" text-anchor="middle" font-size="9" fill="#64748b">S: generic</text>
+    <rect x="55" y="215" width="100" height="22" rx="4" fill="#f1f5f9"/>
+    <text x="105" y="230" text-anchor="middle" font-size="8" fill="#475569">Defaults to CoT</text>
+    <rect x="55" y="250" width="100" height="22" rx="4" fill="#dcfce7"/>
+    <text x="105" y="265" text-anchor="middle" font-size="8" fill="#166534">Low-stakes tasks</text>
+  </g>
+
+  <!-- L1 -->
+  <g filter="url(#shadow4)">
+    <rect x="185" y="70" width="130" height="220" rx="10" fill="url(#l1grad)" stroke="#93c5fd" stroke-width="1"/>
+    <rect x="185" y="70" width="130" height="35" rx="10" fill="#60a5fa"/>
+    <rect x="185" y="90" width="130" height="15" fill="#60a5fa"/>
+    <text x="250" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="white">L1 Implicit</text>
+    <text x="250" y="125" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="500">Lightweight</text>
+    <text x="250" y="138" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="500">extraction</text>
+    <text x="250" y="165" text-anchor="middle" font-size="9" fill="#1e3a5f">P: extracted</text>
+    <text x="250" y="180" text-anchor="middle" font-size="9" fill="#1e3a5f">P̄: partial</text>
+    <text x="250" y="195" text-anchor="middle" font-size="9" fill="#1e3a5f">S: inferred</text>
+    <rect x="200" y="215" width="100" height="22" rx="4" fill="#eff6ff"/>
+    <text x="250" y="230" text-anchor="middle" font-size="8" fill="#1e40af">Domain cues</text>
+    <rect x="200" y="250" width="100" height="22" rx="4" fill="#fef9c3"/>
+    <text x="250" y="265" text-anchor="middle" font-size="8" fill="#854d0e">Medium tasks</text>
+  </g>
+
+  <!-- L2 (highlighted, experimentally tested) -->
+  <g filter="url(#shadow4)">
+    <rect x="330" y="60" width="140" height="235" rx="10" fill="url(#l2grad)" stroke="#2563eb" stroke-width="2.5"/>
+    <rect x="330" y="60" width="140" height="35" rx="10" fill="#2563eb"/>
+    <rect x="330" y="80" width="140" height="15" fill="#2563eb"/>
+    <text x="400" y="83" text-anchor="middle" font-size="14" font-weight="700" fill="white">L2 Prompted</text>
+    <text x="400" y="115" text-anchor="middle" font-size="9" fill="white" font-weight="500">Structured</text>
+    <text x="400" y="128" text-anchor="middle" font-size="9" fill="white" font-weight="500">elicitation</text>
+    <text x="400" y="155" text-anchor="middle" font-size="9" fill="#dbeafe">P: explicit</text>
+    <text x="400" y="170" text-anchor="middle" font-size="9" fill="#dbeafe">P̄: explicit</text>
+    <text x="400" y="185" text-anchor="middle" font-size="9" fill="#dbeafe">S: explicit</text>
+    <rect x="345" y="205" width="110" height="22" rx="4" fill="#1e40af"/>
+    <text x="400" y="220" text-anchor="middle" font-size="8" font-weight="600" fill="white">+15.7% uplift</text>
+    <rect x="345" y="235" width="110" height="22" rx="4" fill="#16a34a"/>
+    <text x="400" y="250" text-anchor="middle" font-size="8" font-weight="600" fill="white">TESTED (n=486)</text>
+    <rect x="345" y="263" width="110" height="22" rx="4" fill="#f59e0b"/>
+    <text x="400" y="278" text-anchor="middle" font-size="8" font-weight="600" fill="white">Full triple (P,P̄,S)</text>
+  </g>
+
+  <!-- L3 -->
+  <g filter="url(#shadow4)">
+    <rect x="485" y="70" width="130" height="220" rx="10" fill="url(#l3grad)" stroke="#1d4ed8" stroke-width="1"/>
+    <rect x="485" y="70" width="130" height="35" rx="10" fill="#1d4ed8"/>
+    <rect x="485" y="90" width="130" height="15" fill="#1d4ed8"/>
+    <text x="550" y="93" text-anchor="middle" font-size="13" font-weight="700" fill="white">L3 Collaborative</text>
+    <text x="550" y="125" text-anchor="middle" font-size="9" fill="#dbeafe" font-weight="500">Interactive</text>
+    <text x="550" y="138" text-anchor="middle" font-size="9" fill="#dbeafe" font-weight="500">refinement loop</text>
+    <text x="550" y="165" text-anchor="middle" font-size="9" fill="#dbeafe">P: validated</text>
+    <text x="550" y="180" text-anchor="middle" font-size="9" fill="#dbeafe">P̄: validated</text>
+    <text x="550" y="195" text-anchor="middle" font-size="9" fill="#dbeafe">S: validated</text>
+    <rect x="500" y="215" width="100" height="22" rx="4" fill="#1e3a8a"/>
+    <text x="550" y="230" text-anchor="middle" font-size="8" fill="white">Multi-turn dialog</text>
+    <rect x="500" y="250" width="100" height="22" rx="4" fill="#fecaca"/>
+    <text x="550" y="265" text-anchor="middle" font-size="8" fill="#991b1b">High-stakes</text>
+  </g>
+
+  <!-- L4 -->
+  <g filter="url(#shadow4)">
+    <rect x="630" y="70" width="130" height="220" rx="10" fill="url(#l4grad)" stroke="#1e3a8a" stroke-width="1" stroke-dasharray="4,3"/>
+    <rect x="630" y="70" width="130" height="35" rx="10" fill="#1e3a8a"/>
+    <rect x="630" y="90" width="130" height="15" fill="#1e3a8a"/>
+    <text x="695" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="white">L4 Learned</text>
+    <text x="695" y="125" text-anchor="middle" font-size="9" fill="#c7d2fe" font-weight="500">Training-time</text>
+    <text x="695" y="138" text-anchor="middle" font-size="9" fill="#c7d2fe" font-weight="500">internalisation</text>
+    <text x="695" y="165" text-anchor="middle" font-size="9" fill="#c7d2fe">P: auto-generated</text>
+    <text x="695" y="180" text-anchor="middle" font-size="9" fill="#c7d2fe">P̄: auto-generated</text>
+    <text x="695" y="195" text-anchor="middle" font-size="9" fill="#c7d2fe">S: auto-generated</text>
+    <rect x="645" y="215" width="100" height="22" rx="4" fill="#312e81"/>
+    <text x="695" y="230" text-anchor="middle" font-size="8" fill="white">cf. Toolformer</text>
+    <rect x="645" y="250" width="100" height="22" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="695" y="265" text-anchor="middle" font-size="8" fill="#64748b">THEORETICAL</text>
+  </g>
+</svg>

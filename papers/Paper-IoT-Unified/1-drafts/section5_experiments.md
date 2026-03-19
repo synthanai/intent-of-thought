@@ -47,7 +47,7 @@ One model (qwen3.5:9b) was excluded from analysis due to insufficient data: 90% 
 | IoT L2 (governance triple) | **2.43** | 246 |
 | **Uplift** | **+0.33 (+15.7%)** | |
 
-The governance uplift is consistent across the majority of models. Table 5 reports the per-model breakdown.
+The governance uplift is consistent across the majority of models. A paired t-test on the subset of exactly matched reasoning episodes ($n=209$ matched pairs) confirms this overall uplift is highly statistically significant ($t = 7.64$, $p < 0.001$). Table 5 reports the granular per-model breakdown.
 
 **Table 5: Per-model governance impact (sorted by uplift).**
 
@@ -97,17 +97,17 @@ Three conditions, each using L2 Prompted capture with one component ablated:
 
 **Table 7: Anti-Purpose ablation.**
 
-| Condition | Mean Score | $N$ | $\Delta$ vs Full |
-|-----------|:---------:|:---:|:-----------------:|
-| Full Triple $(P, \bar{P}, S)$ | **2.20** | 30 | Ref. |
-| No Success Signal $(P, \bar{P}, -)$ | 2.17 | 30 | -0.03 |
-| No Anti-Purpose $(P, -, S)$ | 2.11 | 28 | -0.09 |
+| Condition | Mean Score | Std Dev | $N$ | $\Delta$ vs Full |
+|-----------|:---------:|:---:|:---:|:-----------------:|
+| Full Triple $(P, \bar{P}, S)$ | **2.20** | 0.81 | 30 | Ref. |
+| No Success Signal $(P, \bar{P}, -)$ | 2.17 | 0.83 | 30 | -0.03 |
+| No Anti-Purpose $(P, -, S)$ | 2.11 | 0.88 | 28 | -0.09 |
 
 ### Finding 3: Anti-Purpose as Drift Guard
 
-Removing Anti-Purpose produces the lowest scores, confirming that explicit negative guardrails contribute measurably to reasoning quality. The effect size is modest (+4% uplift when $\bar{P}$ is present), consistent with the view that Anti-Purpose functions as a drift guard: it prevents the model from wandering into technically valid but purposeless reasoning territory, as described in Section 3.1.
+Removing Anti-Purpose produces the lowest scores, confirming that explicit negative guardrails contribute to reasoning quality. We note, however, the high variance ($SD \approx 0.85$ on a 3-point scale) and the modesty of the effect size (+4% uplift when $\bar{P}$ is present). A paired t-test indicates this difference is directionally consistent but not statistically significant ($p = 0.14$) at current sample sizes. 
 
-The modest effect size is not surprising. Anti-Purpose operates as a constraint, not a driver. Its absence does not cause catastrophic failure; it permits gradual drift that accumulates over multi-step reasoning. We expect the effect to be larger on longer reasoning chains and more complex tasks, a hypothesis for future work.
+Rather than a definitive proof of necessity, we interpret this finding as consistent with the view that Anti-Purpose functions as a drift guard: it operates as a boundary constraint rather than a primary driver of reasoning success. Its absence does not cause catastrophic failure; it permits gradual drift that accumulates over multi-step reasoning. We expect the effect to be larger on longer reasoning chains and more open-ended generative tasks, remaining a structural hypothesis for future work.
 
 ## 5.4 Experiment 8: The Confusion Matrix ($n = 131$)
 
