@@ -40,10 +40,10 @@ Table 1 positions IoT relative to existing approaches across four dimensions.
 
 | Dimension | Prompt Engineering | IoT Capture | Failure Analysis | IoT Judgement |
 |-----------|-------------------|-------------|------------------|---------------|
-| **Input** | Task instructions | Governance triple $(P, \bar{P}, S)$ | Reasoning trace | Trace + original IoT spec |
+| **Input** | Task instructions | Governance triple (Purpose, Anti-Purpose, Success Signal) | Reasoning trace | Trace + original IoT spec |
 | **Governs** | Task execution | Topology selection | Step correctness | Topology + intent correctness |
-| **Output** | Task result | Selected topology $T^*$ | Error location | Diagnosis + corrective action |
-| **Feedback** | None (open loop) | Fidelity gradient $\varphi$ | Debug information | Learning loop ($\to$ better capture) |
+| **Output** | Task result | Selected topology | Error location | Diagnosis + corrective action |
+| **Feedback** | None (open loop) | Fidelity gradient | Debug information | Learning loop (improved capture) |
 | **Operates at** | Instruction level | Governance level | Trace level | Lifecycle level |
 
 *Table 1: Positioning of IoT relative to existing approaches. IoT operates at the governance level (connecting intent to topology) and the lifecycle level (connecting failure to learning). Existing approaches operate at the instruction or trace level.*

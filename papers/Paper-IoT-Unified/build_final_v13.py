@@ -71,17 +71,8 @@ body_tex = re.sub(r'(\\end\{longtable\})\n\}', r'\1', body_tex)
 body_tex = body_tex.replace(r'\begin{Shaded}', r'{\small\begin{Shaded}')
 body_tex = body_tex.replace(r'\end{Shaded}', r'\end{Shaded}}')
 
-# 5. Convert longtable to floating tabular to eliminate BOTH page gaps and table breaks
-body_tex = re.sub(
-    r'\\begin\{longtable\}\[\](\{@\{\}[^}]+\}@\{\})',
-    r'\\begin{table}[htbp]\n\\centering\n\\small\n\\begin{tabular}\1',
-    body_tex
-)
-body_tex = body_tex.replace(r'\end{longtable}', r'\end{tabular}' + '\n' + r'\end{table}')
-body_tex = body_tex.replace(r'\endhead', '')
-body_tex = body_tex.replace(r'\endfirsthead', '')
-body_tex = body_tex.replace(r'\endfoot', '')
-body_tex = body_tex.replace(r'\endlastfoot', '')
+# 5. Keep longtable intact (previous tabular conversion regex was broken)
+# Tables render correctly as native longtable environments
 
 # 6. Global Em-Dash Eradication (User Rules Compliance)
 body_tex = body_tex.replace('---', ', ')

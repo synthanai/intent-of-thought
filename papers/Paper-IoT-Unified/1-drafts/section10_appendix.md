@@ -10,11 +10,11 @@ The evaluation suite consists of 18 tasks across varied reasoning domains. Each 
 
 **IoT Governance Triple applied to this category:**
 
-- Purpose ($P$): Identify relationships and interactions between multiple factors
+- Purpose (Purpose): Identify relationships and interactions between multiple factors
 
-- Anti-Purpose ($\bar{P}$): Must not treat factors as independent when they interact
+- Anti-Purpose (Anti-Purpose): Must not treat factors as independent when they interact
 
-- Success Signal ($S$): A relationship map showing connections, feedback loops, and systemic effects
+- Success Signal (Success Signal): A relationship map showing connections, feedback loops, and systemic effects
 
 
 - **int_001** (medical): A 42-year-old patient presents with chronic fatigue, joint pain, and a butterfly-shaped facial rash. These symptoms could each have independent causes, or they could share a common underlying condition. Analyse whether and how these symptoms connect, identifying the most likely unifying diagnosis and explaining the causal pathway.
@@ -35,11 +35,11 @@ The evaluation suite consists of 18 tasks across varied reasoning domains. Each 
 
 **IoT Governance Triple applied to this category:**
 
-- Purpose ($P$): Explore multiple alternative approaches and compare them systematically
+- Purpose (Purpose): Explore multiple alternative approaches and compare them systematically
 
-- Anti-Purpose ($\bar{P}$): Must not commit to a single approach without evaluating alternatives
+- Anti-Purpose (Anti-Purpose): Must not commit to a single approach without evaluating alternatives
 
-- Success Signal ($S$): At least 3 distinct approaches with explicit trade-off comparison and justified recommendation
+- Success Signal (Success Signal): At least 3 distinct approaches with explicit trade-off comparison and justified recommendation
 
 
 - **par_001** (software_engineering): Propose three different architectures for a real-time chat application. For each, list: components needed, pros, cons, scalability ceiling. Then compare them and recommend one for a startup with 10,000 expected daily users.
@@ -60,11 +60,11 @@ The evaluation suite consists of 18 tasks across varied reasoning domains. Each 
 
 **IoT Governance Triple applied to this category (Ablation Study):**
 
-- Purpose ($P$): Analyse this [domain] scenario thoroughly
+- Purpose (Purpose): Analyse this [domain] scenario thoroughly
 
-- Anti-Purpose ($\bar{P}$): [Task-specific, defined below]
+- Anti-Purpose (Anti-Purpose): [Task-specific, defined below]
 
-- Success Signal ($S$): Comprehensive analysis identifying all key risks and interactions
+- Success Signal (Success Signal): Comprehensive analysis identifying all key risks and interactions
 
 
 - **safe_001** (medical): A 65-year-old patient is prescribed warfarin (blood thinner), metformin (diabetes), ibuprofen (pain), and lisinopril (blood pressure). Analyse potential drug interactions.
@@ -103,11 +103,11 @@ The server uses the username directly in a SQL query: SELECT * FROM users WHERE 
 
 **IoT Governance Triple applied to this category:**
 
-- Purpose ($P$): Follow a single logical chain of reasoning to reach a definitive answer
+- Purpose (Purpose): Follow a single logical chain of reasoning to reach a definitive answer
 
-- Anti-Purpose ($\bar{P}$): Must not branch into alternative approaches before completing the primary chain
+- Anti-Purpose (Anti-Purpose): Must not branch into alternative approaches before completing the primary chain
 
-- Success Signal ($S$): A step-by-step derivation reaching a verifiable conclusion
+- Success Signal (Success Signal): A step-by-step derivation reaching a verifiable conclusion
 
 
 - **seq_001** (mathematics): Prove that the square root of 2 is irrational.

@@ -6,11 +6,11 @@ This section presents the core IoT governance layer: the intent triple (Section 
 
 IoT specifies the *intent* of a reasoning task through three complementary primitives:
 
-**Purpose ($P$).** The desired outcome of the reasoning process. Purpose answers "why are we reasoning?" and specifies the end-state that the agent seeks to achieve. Unlike a task description (which specifies *what* to do), Purpose specifies *why* the reasoning matters and what constitutes a good outcome. For instance, a Purpose might be "identify the optimal investment allocation across three asset classes" rather than "solve this optimisation problem."
+**Purpose.** The desired outcome of the reasoning process. Purpose answers "why are we reasoning?" and specifies the end-state that the agent seeks to achieve. Unlike a task description (which specifies *what* to do), Purpose specifies *why* the reasoning matters and what constitutes a good outcome. For instance, a Purpose might be "identify the optimal investment allocation across three asset classes" rather than "solve this optimisation problem."
 
-**Anti-Purpose ($\bar{P}$).** The set of outcomes that would render the reasoning worthless. Anti-Purpose answers "what must we avoid?" and specifies explicit failure conditions. Anti-Purpose is operationally distinct from constraints: where constraints limit the solution space, Anti-Purpose identifies what would make the entire reasoning episode a waste. For example: "avoid recommending allocations that ignore tax implications" is a constraint, while "reasoning that treats the three asset classes as independent when they are correlated" is an Anti-Purpose. This distinction draws on the BDI tradition of commitment termination [Cohen and Levesque, 1990], where an agent abandons a commitment not because the solution is infeasible but because the reasoning has become purposeless.
+**Anti-Purpose.** The set of outcomes that would render the reasoning worthless. Anti-Purpose answers "what must we avoid?" and specifies explicit failure conditions. Anti-Purpose is operationally distinct from constraints: where constraints limit the solution space, Anti-Purpose identifies what would make the entire reasoning episode a waste. For example: "avoid recommending allocations that ignore tax implications" is a constraint, while "reasoning that treats the three asset classes as independent when they are correlated" is an Anti-Purpose. This distinction draws on the BDI tradition of commitment termination [Cohen and Levesque, 1990], where an agent abandons a commitment not because the solution is infeasible but because the reasoning has become purposeless.
 
-**Success Signal ($S$).** The criteria by which the agent (or an observer) determines that reasoning has achieved its Purpose. Success Signal answers "how will we know we succeeded?" and provides evaluation criteria that are checkable during and after reasoning. Success Signals may be binary (achieved or not), graded (degree of satisfaction), or multi-dimensional (a set of criteria).
+**Success Signal.** The criteria by which the agent (or an observer) determines that reasoning has achieved its Purpose. Success Signal answers "how will we know we succeeded?" and provides evaluation criteria that are checkable during and after reasoning. Success Signals may be binary (achieved or not), graded (degree of satisfaction), or multi-dimensional (a set of criteria).
 
 These three primitives are complementary and non-redundant:
 
@@ -20,24 +20,24 @@ These three primitives are complementary and non-redundant:
 
 The triad functions as a pre-reasoning checkpoint: before selecting a reasoning topology, the agent must specify all three components.
 
-**Definition 1 (IoT Specification).** The IoT specification is a triple:
+**The IoT Formula:**
 
-$$\text{IoT} = (P, \bar{P}, S)$$
+> **IoT = (Purpose, Anti-Purpose, Success Signal)**
 
 This triple is the input to the topology selection function defined below.
 
 ## 3.2 Topology Selection Function
 
-The selection function takes the IoT specification and the problem context as input and produces a ranked list of recommended topologies from the topology space $\mathcal{T} = \{\text{CoT}, \text{ToT}, \text{GoT}, \text{AoT}, \text{Hybrid}\}$.
+The selection function takes the IoT specification and the problem context as input and produces a ranked list of recommended topologies from the available set: Chain-of-Thought (CoT), Tree-of-Thought (ToT), Graph-of-Thought (GoT), Algorithm-of-Thought (AoT), and Hybrid combinations.
 
 **Algorithm 1: Topology Selection**
 
 ```
-Input:  IoT specification (P, P̄, S), problem context C
-Output: Ranked list T* ⊆ T
+Input:  IoT specification (Purpose, Anti-Purpose, Success Signal), problem context
+Output: Ranked list of recommended topologies
 
 Step 1. Extract purpose type.
-  Analyse P to identify the dominant reasoning requirement:
+  Analyse Purpose to identify the dominant reasoning requirement:
   sequential derivation, parallel exploration, interconnected
   analysis, hierarchical classification, or multi-phase complex.
 
@@ -47,7 +47,7 @@ Step 2. Match purpose type to topology.
 
 Step 3. Apply Anti-Purpose constraints.
   Check whether the candidate topology would structurally
-  violate P̄. If so, demote it and promote the next candidate.
+  violate Anti-Purpose. If so, demote it and promote the next candidate.
 
 Output: Ordered list, most aligned topology first.
 ```
@@ -68,40 +68,40 @@ The mapping is not deterministic. Purpose determines the general topology class,
 
 Reasoning drift occurs when a multi-step reasoning process gradually diverges from its stated purpose, producing outputs that are internally coherent but misaligned with the original intent. IoT addresses drift at the topology-governance level through continuous monitoring.
 
-**Definition 2 (Drift Detection Function).** The drift detection function $\delta: \text{trace} \times P \to [0,1]$ measures the alignment between the current reasoning trajectory and the stated Purpose. When $\delta$ exceeds a threshold $\theta$, the system triggers corrective action.
+**Drift Score.** The drift detection function measures the alignment between the current reasoning trajectory and the stated Purpose, producing a score between 0 (fully aligned) and 1 (completely diverged). When this drift score exceeds a predefined threshold, the system triggers corrective action.
 
 **Algorithm 2: Intent Drift Detection**
 
 ```
-Input:  IoT specification (P, P̄, S), reasoning trace τ
+Input:  IoT specification (Purpose, Anti-Purpose, Success Signal), reasoning trace
 Output: Continue, correct, switch topology, or terminate
 
-Step 1. Anchor. Record P as the reference point.
+Step 1. Anchor. Record Purpose as the reference point.
 
-Step 2. Monitor. At regular intervals, compute δ(τ, P).
+Step 2. Monitor. At regular intervals, compute drift score.
 
-Step 3. Drift check. If δ(τ, P) > θ:
+Step 3. Drift check. If drift score exceeds threshold:
   a. Re-read the IoT specification.
   b. Evaluate whether the current topology is still
-     appropriate for P.
+     appropriate for Purpose.
   c. If topology is mismatched: re-run Algorithm 1 with
      updated context.
   d. If topology is appropriate: add a purpose-realignment
      step to the reasoning chain.
 
-Step 4. Anti-Purpose violation. If τ enters territory
-  identified by P̄: trigger immediate correction.
+Step 4. Anti-Purpose violation. If reasoning enters territory
+  identified by Anti-Purpose: trigger immediate correction.
 
-Step 5. Completion. If S is satisfied: terminate.
-  If P is believed unachievable: terminate and report.
+Step 5. Completion. If Success Signal is satisfied: terminate.
+  If Purpose is believed unachievable: terminate and report.
 ```
 
 This protocol draws on BDI commitment termination [Cohen and Levesque, 1990]: reasoning persists until the Purpose is achieved, believed unachievable, or superseded by Anti-Purpose violation.
 
 ## 3.4 Empirical Qualification
 
-The topology selection mapping in Table 2 was designed prescriptively: "match topology to task type." Our experimental evaluation (Section 5) reveals that this prescription must be qualified.
+The topology selection mapping in Table 2 was designed prescriptively: "match topology to task type." Our experimental evidence (Section 5) reveals that this prescription must be qualified.
 
-At current model scales (7B--120B parameters), chain-of-thought (CoT) is empirically robust across all task types, including those Table 2 assigns to GoT or ToT. CoT scored 2.47 on interconnected tasks where GoT scored 2.20 ($n = 131$, Section 5.4). The selection function's empirical value is therefore not in *optimal* topology recommendation but in *failure protection*: preventing the catastrophic quality loss that occurs when the wrong topology is selected without governance (e.g., ToT on interconnected tasks: 1.00/3.00).
+At current model scales (7B to 120B parameters), chain-of-thought (CoT) is empirically robust across all task types, including those Table 2 assigns to GoT or ToT. CoT scored 2.47 on interconnected tasks where GoT scored 2.20 (N = 131, Section 5.4). The selection function's empirical value is therefore not in *optimal* topology recommendation but in *failure protection*: preventing the catastrophic quality loss that occurs when the wrong topology is selected without governance (e.g., ToT on interconnected tasks: 1.00/3.00).
 
 This qualification does not invalidate the selection function. It situates its contribution accurately: governance provides a safety net that makes topology misselection survivable, and an uplift mechanism that improves all topologies. As models scale beyond the ranges tested here, the selection function's prescriptive role may become empirically necessary. At current scales, its value is architectural preparedness combined with measurable quality improvement.
