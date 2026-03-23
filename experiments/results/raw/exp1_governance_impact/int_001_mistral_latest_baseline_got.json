@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "To analyze this task, we can build a relationship graph to better understand the interconnections between the key factors involved.\n\n1. Key factors:\n   - Chronic fatigue\n   - Joint pain\n   - Butterfly-shaped facial rash\n   - Age (42 years old)\n   - Gender (not specified)\n   - Potential underlying conditions (e.g., Rheumatoid Arthritis, Lupus, Chronic Fatigue Syndrome)\n\n2. Relationships:\n   - Chronic fatigue can be a symptom of multiple underlying conditions (e.g., Rheumatoid Arthritis, Lupus, Chronic Fatigue Syndrome)\n   - Joint pain can be a symptom of multiple underlying conditions (e.g., Rheumatoid Arthritis, Osteoarthritis, Gout)\n   - The butterfly-shaped facial rash is a characteristic symptom of Lupus and Dermatomyositis\n   - Age (42 years old) may not directly relate to the symptoms, but it can influence the probability of certain underlying conditions (e.g., Rheumatoid Arthritis and Lupus are more common in middle-aged individuals)\n   - Gender (not specified) may influence the probability of certain underlying conditions (e.g., Rheumatoid Arthritis is more common in women, while Gout is more common in men)\n\n3. Relationships as edges:\n   - Chronic fatigue -- is a symptom of --> Multiple underlying conditions (Rheumatoid Arthritis, Lupus, Chronic Fatigue Syndrome)\n   - Joint pain -- is a symptom of --> Multiple underlying conditions (Rheumatoid Arthritis, Osteoarthritis, Gout)\n   - Butterfly-shaped facial rash -- is a characteristic symptom of --> Lupus, Dermatomyositis\n   - Age (42 years old) -- may influence the probability of --> Multiple underlying conditions (Rheumatoid Arthritis, Lupus, Gout)\n   - Gender (not specified) -- may influence the probability of --> Multiple underlying conditions (Rheumatoid Arthritis, Gout)\n\n4. Feedback loops or circular dependencies:\n   - There is no obvious feedback loop or circular dependency in this case, as the symptoms are independent variables and their underlying causes are not directly connected.\n\n5. Central factors:\n   - Multiple underlying conditions are most central, as they are the cause of the symptoms.\n\n6. Synthesized analysis:\n   - The symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash may share a common underlying condition, such as Lupus or Dermatomyositis. The symptoms can also be caused by various other conditions with similar or overlapping symptoms.\n   - Age and gender may influence the probability of certain underlying conditions, but they do not directly cause the symptoms.\n   - Further investigation and diagnostic tests are necessary to determine the specific underlying condition causing these symptoms.",
+  "response_length": 2638,
+  "elapsed_seconds": 61.62,
+  "tokens": {
+    "prompt_tokens": 215,
+    "completion_tokens": 695,
+    "total_duration_ms": 61609.041708
+  },
+  "timestamp": "2026-03-06T08:43:47.255476",
+  "score": 1,
+  "score_reason": "The model lists conditions for each symptom independently without effectively connecting them through the autoimmune mechanism of SLE/Lupus.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:26:44.315798"
+}

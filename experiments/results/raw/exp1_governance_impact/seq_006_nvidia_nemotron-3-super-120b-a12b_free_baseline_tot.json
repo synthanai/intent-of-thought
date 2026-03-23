@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_nvidia_nemotron-3-super-120b-a12b_free_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "**APPROACH 1: Stepwise Algorithm (Clinical Decision Tree)**  \n  Description: Begin with the CBC abnormality (low Hb). Check MCV to classify anemia as microcytic, normocytic, or macrocytic. Since MCV is low (<80 fL), proceed to iron studies: low serum ferritin (<20\u202fng/mL) confirms iron deficiency; elevated TIBC (>370\u202f\u00b5g/dL) further supports it. Rule out thalassemia by considering normal RDW (if available) or hemoglobin electrophoresis if ferritin is not low. Conclude iron\u2011deficiency anemia.  \n  Strengths:  \n  - Systematic, ensures no key lab is overlooked.  \n  - Easy to teach and apply in bedside or exam settings.  \n  Weaknesses:  \n  - May be overly rigid if atypical presentations (e.g., concomitant inflammation) exist.  \n  - Relies on having all intermediate values (e.g., RDW) for differential; missing data can stall the algorithm.  \n  Suitability: HIGH  \n\n**APPROACH 2: Pattern\u2011Recognition / Diagnostic Criteria Approach**  \n  Description: Recognize the classic triad of microcytic anemia (low Hb + low MCV), low ferritin, and high TIBC as the hallmark pattern of iron\u2011deficiency anemia. Match the patient\u2019s values to this pattern and assign the diagnosis directly, with a brief check for confounding factors (e.g., chronic disease, thalassemia).  \n  Strengths:  \n  - Fast; leverages expert intuition and pattern matching.    - Minimal steps \u2013 useful when time is limited.  \n  Weaknesses:    - Risk of premature closure if the pattern is atypical (e.g., ferritin falsely normal in inflammation).  \n  - Less transparent for learners; harder to audit the reasoning process.    Suitability: MEDIUM  \n\n**APPROACH 3: Bayesian Probabilistic Approach**  \n  Description: Assign pre\u2011test probabilities to causes of microcytic anemia (iron deficiency, thalassemia, anemia of chronic disease, sideroblastic). Use likelihood ratios derived from each lab result (e.g., low ferritin LR+ \u224810 for iron deficiency; high TIBC LR+ \u22488). Multiply pre\u2011test odds by LRs to obtain post\u2011test probability for each etiology. The diagnosis with the highest post\u2011test probability is selected.  \n  Strengths:  \n  - Quantifies uncertainty and integrates multiple data points objectively.    - Allows updating as new information (e.g., RDW, hemoglobin electrophoresis) becomes available.  \n  Weaknesses:  \n  - Requires access to reliable likelihood ratios and pre\u2011test prevalence data, which may not be readily available.  \n  - More complex and time\u2011consuming; prone to calculation errors if not aided by a calculator or decision\u2011support tool.  \n  Suitability: LOW  \n\n**COMPARISON**  \n| Aspect | Approach 1 (Algorithm) | Approach 2 (Pattern) | Approach 3 (Bayesian) |\n|--------|------------------------|----------------------|-----------------------|\n| Speed | Moderate (few steps) | Very fast (instant) | Slow (calculations) |\n| Transparency | High (clear decision points) | Low (intuitive) | Moderate (explicit math) |\n| Robustness to atypical data | Moderate (can stall) | Low (risk of mis\u2011pattern) | High (updates with new data) |\n| Resource needs | Minimal (just labs) | Minimal | Requires LR tables/calc |\n| Suitability for this case | HIGH | MEDIUM | LOW |\n\n**RECOMMENDATION**  \nApproach\u202f1 (Stepwise Algorithm) is the best choice for this scenario. It provides a",
+  "response_length": 3250,
+  "elapsed_seconds": 9.15,
+  "tokens": {
+    "prompt_tokens": 316,
+    "completion_tokens": 1024,
+    "total_duration_ms": 9145.15
+  },
+  "timestamp": "2026-03-17T14:12:18.134291",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly diagnoses iron deficiency anemia and provides step-by-step reasoning through the lab values, but it does not explicitly address all four steps as outlined in the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:55:39.650655"
+}

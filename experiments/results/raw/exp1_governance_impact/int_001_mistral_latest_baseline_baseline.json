@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "Given the symptoms presented - chronic fatigue, joint pain, and a butterfly-shaped facial rash - one possible common underlying condition could be Systemic Lupus Erythematosus (SLE), a chronic autoimmune disease.\n\n1. Butterfly-shaped facial rash (malar rash): The most common skin manifestation of SLE is the malar rash, also known as the \"butterfly rash,\" which appears as a red, inflamed rash across the bridge of the nose and cheeks. This rash can be one of the first signs of SLE.\n\n2. Chronic fatigue: Fatigue is a common symptom of many autoimmune diseases, including SLE. It can be caused by the inflammation and the energy required by the body to fight off the immune system's attack on its own tissues.\n\n3. Joint pain: Joint pain and inflammation are also common in SLE. The joint pain can range from mild to severe and can affect any joint, but it often occurs in the hands, wrists, and knees.\n\nIn SLE, the immune system produces antibodies that attack healthy tissue, leading to inflammation and damage in various organs. The specific symptoms and organs affected can vary greatly from person to person, but the common link is the immune system's overactive response.\n\nThe interconnections between these symptoms in SLE can be explained as follows:\n\n- The immune system's attack on healthy tissue can cause inflammation, which can lead to fatigue as the body works to fight off this inflammation.\n- The inflammation caused by SLE can also affect joints, leading to joint pain.\n- The malar rash is a result of the immune system's attack on the skin tissue in the facial area.\n\nHowever, it's important to note that while SLE is a possible explanation for these symptoms, other conditions could also cause similar symptoms. A proper diagnosis should be made by a healthcare professional based on a comprehensive physical examination and diagnostic tests.",
+  "response_length": 1861,
+  "elapsed_seconds": 39.85,
+  "tokens": {
+    "prompt_tokens": 73,
+    "completion_tokens": 448,
+    "total_duration_ms": 39836.958417
+  },
+  "timestamp": "2026-03-06T07:41:20.837428",
+  "score": 2,
+  "score_reason": "The response identifies SLE as the connector of symptoms but provides only basic explanations for their interconnections without emphasizing the importance of treating them together due to the autoimmune mechanism.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:17:31.230353"
+}

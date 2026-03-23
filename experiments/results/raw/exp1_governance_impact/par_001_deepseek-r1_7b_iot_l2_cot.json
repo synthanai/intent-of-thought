@@ -1,0 +1,25 @@
+{
+  "run_id": "par_001_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket monolith, event-driven microservices, serverless with pub/sub). Must compare on: scalability, development speed, cost. MVP recommendation should favour simplicity.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures, clear trade-off comparison, justified MVP recommendation. Score 2 if: 3 architectures but weak comparison. Score 1 if: fewer than 3 or no comparison. Score 0 if: single architecture or irrelevant.",
+  "response": "**Proposed Architectures for a Real-Time Chat Application**\n\n1. **Echo Server Model**\n   - **Core Components**: Central server, clients, and a messaging layer.\n   - **Communication Protocol**: TCP/IP stack, possibly WebSocket for bidirectional communication.\n   - **Trade-offs**: Simple and easy to implement, central server acts as a single point of failure. Scalability issues with many clients.\n   - **Evaluation**: Best for a small team due to simplicity and ease of development, especially for building an MVP.\n\n2. **P2P Model**\n   - **Core Components**: Client-server pairs, each handling their own connections.\n   - **Communication Protocol**: Direct peer-to-peer connections using a robust protocol like UDP or a messaging middleware.\n   - **Trade-offs**: Load distributed among clients, no single point of failure. Increased complexity and potential for higher overhead with many clients.\n   - **Evaluation**: Suitable for scalability but may complicate development for a small team.\n\n3. **Event-driven Architecture**\n   - **Core Components**: Decoupled business logic and infrastructure, using event sourcing for tracking changes and distribution.\n   - **Communication Protocol**: Middleware for event distribution, such as RabbitMQ or Kafka.\n   - **Trade-offs**: Highly scalable and future-proof, but complex to implement and requires expertise in event-driven systems.\n   - **Evaluation**: Offers scalability but is more complex, making it less ideal for a small team building an MVP.\n\n**Evaluation for a Team of Two Developers**\n\nThe Echo Server Model is recommended for this team. Its simplicity aligns well with the team's size, allowing both developers to focus on different aspects without complex coordination issues. While it may not scale well with many users, it provides a straightforward MVP that can be expanded later. P2P and Event-driven models are more complex and better suited for larger teams or future scalability needs.",
+  "response_length": 1951,
+  "elapsed_seconds": 73.14,
+  "tokens": {
+    "prompt_tokens": 196,
+    "completion_tokens": 878,
+    "total_duration_ms": 73115.414542
+  },
+  "timestamp": "2026-03-06T03:41:18.987738",
+  "score": 2,
+  "score_reason": "The response includes three distinct architectures, provides clear trade-offs on scalability, development speed, and cost, and justifies the MVP recommendation favoring simplicity.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T01:30:13.246265"
+}

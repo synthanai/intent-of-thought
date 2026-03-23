@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="fidelity" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#eab308" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="420" fill="url(#bg2)" rx="12"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#e2e8f0" font-size="18" font-weight="700">Figure 2: The IoT Capture Spectrum</text>
+  <text x="450" y="53" text-anchor="middle" fill="#94a3b8" font-size="12">Five modes of intent elicitation with fidelity gradient</text>
+
+  <!-- Fidelity gradient bar -->
+  <rect x="80" y="75" width="740" height="20" rx="4" fill="url(#fidelity)"/>
+  <text x="80" y="72" fill="#64748b" font-size="10">Low Fidelity (φ→0)</text>
+  <text x="820" y="72" text-anchor="end" fill="#64748b" font-size="10">High Fidelity (φ→1)</text>
+  <text x="450" y="90" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="600">φ (Capture Fidelity)</text>
+
+  <!-- Mode cards -->
+  <!-- L0 Zero -->
+  <rect x="80" y="115" width="135" height="130" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="147" y="138" text-anchor="middle" fill="#fca5a5" font-size="13" font-weight="700">L0 Zero</text>
+  <text x="147" y="155" text-anchor="middle" fill="#94a3b8" font-size="10">System infers</text>
+  <text x="147" y="168" text-anchor="middle" fill="#94a3b8" font-size="10">from context alone</text>
+  <line x1="95" y1="180" x2="200" y2="180" stroke="#334155" stroke-width="1"/>
+  <text x="147" y="196" text-anchor="middle" fill="#64748b" font-size="9">P inferred</text>
+  <text x="147" y="209" text-anchor="middle" fill="#64748b" font-size="9">Anti-P absent</text>
+  <text x="147" y="222" text-anchor="middle" fill="#64748b" font-size="9">S generic</text>
+  <text x="147" y="238" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">φ ≈ 0.2</text>
+
+  <!-- L1 Implicit -->
+  <rect x="230" y="115" width="135" height="130" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+  <text x="297" y="138" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700">L1 Implicit</text>
+  <text x="297" y="155" text-anchor="middle" fill="#94a3b8" font-size="10">Extracted from</text>
+  <text x="297" y="168" text-anchor="middle" fill="#94a3b8" font-size="10">user phrasing</text>
+  <line x1="245" y1="180" x2="350" y2="180" stroke="#334155" stroke-width="1"/>
+  <text x="297" y="196" text-anchor="middle" fill="#64748b" font-size="9">P extracted</text>
+  <text x="297" y="209" text-anchor="middle" fill="#64748b" font-size="9">Anti-P partial</text>
+  <text x="297" y="222" text-anchor="middle" fill="#64748b" font-size="9">S inferred</text>
+  <text x="297" y="238" text-anchor="middle" fill="#f97316" font-size="9" font-weight="600">φ ≈ 0.4</text>
+
+  <!-- L2 Prompted -->
+  <rect x="380" y="115" width="135" height="130" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+  <text x="447" y="138" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">L2 Prompted</text>
+  <text x="447" y="155" text-anchor="middle" fill="#94a3b8" font-size="10">Structured</text>
+  <text x="447" y="168" text-anchor="middle" fill="#94a3b8" font-size="10">questions elicit</text>
+  <line x1="395" y1="180" x2="500" y2="180" stroke="#334155" stroke-width="1"/>
+  <text x="447" y="196" text-anchor="middle" fill="#64748b" font-size="9">P explicit</text>
+  <text x="447" y="209" text-anchor="middle" fill="#64748b" font-size="9">Anti-P explicit</text>
+  <text x="447" y="222" text-anchor="middle" fill="#64748b" font-size="9">S specified</text>
+  <text x="447" y="238" text-anchor="middle" fill="#eab308" font-size="9" font-weight="600">φ ≈ 0.7</text>
+
+  <!-- L3 Collaborative -->
+  <rect x="530" y="115" width="135" height="130" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <text x="597" y="138" text-anchor="middle" fill="#86efac" font-size="13" font-weight="700">L3 Collab</text>
+  <text x="597" y="155" text-anchor="middle" fill="#94a3b8" font-size="10">Interactive</text>
+  <text x="597" y="168" text-anchor="middle" fill="#94a3b8" font-size="10">refinement loop</text>
+  <line x1="545" y1="180" x2="650" y2="180" stroke="#334155" stroke-width="1"/>
+  <text x="597" y="196" text-anchor="middle" fill="#64748b" font-size="9">P validated</text>
+  <text x="597" y="209" text-anchor="middle" fill="#64748b" font-size="9">Anti-P validated</text>
+  <text x="597" y="222" text-anchor="middle" fill="#64748b" font-size="9">S negotiated</text>
+  <text x="597" y="238" text-anchor="middle" fill="#22c55e" font-size="9" font-weight="600">φ ≈ 0.9</text>
+
+  <!-- L4 Learned -->
+  <rect x="680" y="115" width="135" height="130" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="747" y="138" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">L4 Learned</text>
+  <text x="747" y="155" text-anchor="middle" fill="#94a3b8" font-size="10">Training-time</text>
+  <text x="747" y="168" text-anchor="middle" fill="#94a3b8" font-size="10">internalisation</text>
+  <line x1="695" y1="180" x2="800" y2="180" stroke="#334155" stroke-width="1"/>
+  <text x="747" y="196" text-anchor="middle" fill="#64748b" font-size="9">P auto-generated</text>
+  <text x="747" y="209" text-anchor="middle" fill="#64748b" font-size="9">Anti-P learned</text>
+  <text x="747" y="222" text-anchor="middle" fill="#64748b" font-size="9">S predicted</text>
+  <text x="747" y="238" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="600">φ variable</text>
+
+  <!-- Topology safe zone -->
+  <text x="450" y="275" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600">Safe Topology Range</text>
+  
+  <!-- CoT safe zone (spans all) -->
+  <rect x="80" y="285" width="740" height="24" rx="4" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+  <text x="450" y="301" text-anchor="middle" fill="#86efac" font-size="10" font-weight="600">CoT (safe default at any fidelity)</text>
+  
+  <!-- ToT safe zone (L1+) -->
+  <rect x="230" y="315" width="590" height="24" rx="4" fill="#eab308" opacity="0.15" stroke="#eab308" stroke-width="1" opacity="0.3"/>
+  <text x="525" y="331" text-anchor="middle" fill="#fde047" font-size="10" font-weight="600">ToT (requires φ ≥ 0.4)</text>
+  
+  <!-- GoT safe zone (L2+) -->
+  <rect x="380" y="345" width="440" height="24" rx="4" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="1" opacity="0.3"/>
+  <text x="600" y="361" text-anchor="middle" fill="#fdba74" font-size="10" font-weight="600">GoT / Hybrid (requires φ ≥ 0.6)</text>
+
+  <!-- Elevation threshold -->
+  <line x1="310" y1="100" x2="310" y2="375" stroke="#ef4444" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="310" y="395" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">θ_elevate</text>
+  <text x="310" y="407" text-anchor="middle" fill="#64748b" font-size="8">Elevate capture mode if φ below threshold</text>
+
+  <!-- Paper reference -->
+  <text x="450" y="415" text-anchor="middle" fill="#475569" font-size="9">Mohamed Kani (2026). The IoT Lifecycle.</text>
+</svg>

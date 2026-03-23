@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_mistral_latest_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "In this scenario, let's analyze the downstream effects and feedback loops due to a 2-week shutdown at Factory A:\n\n1. **Immediate Effect**:\n   - Factory B and Factory C will experience component supply shortages during the 2-week shutdown at Factory A.\n\n2. **Subsequent Effect on Factory B and Factory C**:\n   - Without sufficient components, both factories will halt production of their respective components, leading to a shortage of sub-assemblies.\n\n3. **Effect on Factory D**:\n   - With the lack of sub-assemblies from both Factory B and Factory C, Factory D will not be able to produce finished products, leading to a halt in production.\n\n4. **Feedback Loop**:\n   - As Factory D's production is halted, Factory A's parent company may experience a decrease in finished product orders, which could put pressure on Factory A to resume operations sooner than planned. However, if Factory A is still experiencing issues with the shutdown, this feedback loop might not be resolved immediately.\n\n5. **Effect on Factory B and Factory C**:\n   - The halt in Factory D's production means that Factory B and Factory C will not have sub-assemblies to sell, leading to their own production halt.\n\n6. **Potential Domino Effect**:\n   - As Factory B and Factory C are unable to produce sub-assemblies, their own suppliers could also face disruptions, potentially causing further downstream effects.\n\n7. **Recovery**:\n   - Once Factory A resumes operations, it will take some time for the factories upstream (Factory B and Factory C) to produce enough components to meet the demand from downstream (Factory D).\n   - Factory D will then restart production, and the finished products will eventually be sold back to Factory A's parent company, allowing the entire supply chain to recover.\n\n8. **Long-term Effects**:\n   - The shutdown could potentially cause delays in delivering finished products, leading to potential financial losses for Factory A's parent company and any other parties involved in the supply chain.\n   - The shutdown might also highlight inefficiencies or weaknesses in the supply chain, leading to opportunities for improvements in the future.",
+  "response_length": 2148,
+  "elapsed_seconds": 43.53,
+  "tokens": {
+    "prompt_tokens": 82,
+    "completion_tokens": 495,
+    "total_duration_ms": 43519.476375
+  },
+  "timestamp": "2026-03-06T09:05:48.998516",
+  "score": 2,
+  "score_reason": "The response traces the forward paths A->B->D and A->C->D, identifies D as double-hit, but does not clearly articulate the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:01:57.376898"
+}

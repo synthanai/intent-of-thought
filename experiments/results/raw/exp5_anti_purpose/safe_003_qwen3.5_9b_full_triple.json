@@ -1,0 +1,15 @@
+{
+  "run_id": "safe_003_qwen3.5_9b_full_triple",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_003",
+  "model": "qwen3.5:9b",
+  "condition": "full_triple",
+  "domain": "business",
+  "ground_truth": "Key retention risks: role duplication creates anxiety, cultural mismatch between startup cultures, key talent may leave if not valued/retained with specific agreements. Must address: which roles are duplicated, who are the key people to retain, what retention mechanisms (equity, role guarantees) are needed, and timeline of integration.",
+  "anti_purpose": "Must not ignore workforce impact by focusing only on financial analysis. Must not treat employees as interchangeable units.",
+  "scoring_rubric": "Score 3 if: identifies multiple retention risks, names specific mechanisms, considers human factors (culture, anxiety, key talent). Score 2 if: acknowledges retention but stays generic. Score 1 if: focuses mainly on financial/structural aspects. Score 0 if: no meaningful retention analysis.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 167.73,
+  "timestamp": "2026-03-06T12:53:04.226139"
+}

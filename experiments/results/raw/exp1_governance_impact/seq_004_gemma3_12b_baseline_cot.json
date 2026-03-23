@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_gemma3_12b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "STEP 1: Calculate the distance covered by the first train before the second train departs.\nThe first train leaves at 09:00 and the second at 09:30, meaning the first train travels for 30 minutes (0.5 hours) before the second train starts. We need to find the distance it covers in this time.\nDistance = Speed x Time = 80 km/h * 0.5 h = 40 km\nRESULT: The first train travels 40 km before the second train starts.\nCONNECTION: This establishes the relative distance between the two trains when the second train begins its journey. The next step will calculate the remaining distance.\n\nSTEP 2: Calculate the remaining distance between the two trains after the first train has traveled for 30 minutes.\nThe total distance between Station A and Station B is 320 km. The first train has already covered 40 km.\nRemaining Distance = Total Distance - Distance covered by first train = 320 km - 40 km = 280 km\nRESULT: The distance between the two trains when the second train starts is 280 km.\nCONNECTION: Now we know the distance the two trains need to close to meet. The next step will calculate their relative speed.\n\nSTEP 3: Calculate the relative speed of the two trains.\nSince the trains are traveling towards each other, their speeds add up.\nRelative Speed = Speed of first train + Speed of second train = 80 km/h + 120 km/h = 200 km/h\nRESULT: The relative speed of the two trains is 200 km/h.\nCONNECTION: Knowing the relative speed and the remaining distance allows us to calculate the time it takes for them to meet.\n\nSTEP 4: Calculate the time it takes for the two trains to meet after the second train departs.\nTime = Distance / Speed = 280 km / 200 km/h = 1.4 hours\nRESULT: The trains will meet 1.4 hours after the second train departs.\nCONNECTION: We now have the time elapsed since the second train started moving. The next step converts this to hours and minutes.\n\nSTEP 5: Convert the time to hours and minutes.\n1.4 hours is equal to 1 hour and 0.4 hours. To convert 0.4 hours to minutes, multiply by 60: 0.4 h * 60 min/h = 24 minutes.\nTherefore, the time taken is 1 hour and 24 minutes.\nRESULT: The trains meet 1 hour and 24 minutes after 09:30.\nCONNECTION: We now have the time elapsed in a more understandable format. The next step calculates the actual meeting time.\n\nSTEP 6: Calculate the meeting time.\nThe second train leaves at 09:30. They meet 1 hour and 24 minutes later.\nMeeting Time = 09:30 + 1 hour 24 minutes = 10:54\nRESULT: The trains meet at 10:54.\nCONNECTION: We now know the exact time they meet. The next step will calculate the distance from Station A.\n\nSTEP 7: Calculate the distance from Station A where the trains meet.\nThe first train left at 09:00 and they meet at 10:54, so the first train traveled for 1 hour and 54 minutes (1.9 hours).\nDistance from Station A = Speed of first train * Time traveled by first train = 80 km/h * 1.9 h = 152 km\nRESULT: The trains meet 152 km from Station A.\nCONNECTION: This completes the calculation of both the meeting time and the location.\n\nFINAL ANSWER: The trains meet at 10:54, and they meet 152 km from Station A.\nCONFIDENCE: HIGH",
+  "response_length": 3098,
+  "elapsed_seconds": 139.45,
+  "tokens": {
+    "prompt_tokens": 181,
+    "completion_tokens": 857,
+    "total_duration_ms": 139422.844208
+  },
+  "timestamp": "2026-03-17T14:22:40.387634",
+  "score": 3,
+  "score_reason": "The response correctly calculates both the meeting time (10:54) and distance from Station A (152 km), with clear and logical reasoning throughout.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:56:52.418563"
+}

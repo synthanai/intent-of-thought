@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen2.5_7b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, I will use the graph-of-thought approach. This method is most suitable because it allows for the mapping of interconnected factors and their potential interactions, which is essential for understanding the relationships between the patient's symptoms and identifying a possible underlying condition.\n\n### Graph-of-Thought Analysis\n\n**Nodes:**\n1. **Chronic Fatigue**\n2. **Joint Pain**\n3. **Butterfly-Shaped Facial Rash**\n4. **Systemic Lupus Erythematosus (SLE)**\n5. **Autoimmune Disorders**\n6. **Inflammatory Processes**\n7. **Immune System Dysregulation**\n8. **Environmental Factors**\n9. **Genetic Predispositions**\n\n**Edges (Relationships):**\n- **Chronic Fatigue \u2192 Autoimmune Disorders**: Chronic fatigue is a common symptom in autoimmune disorders.\n- **Joint Pain \u2192 Autoimmune Disorders**: Joint pain is often a symptom of autoimmune conditions.\n- **Butterfly-Shaped Facial Rash \u2192 Systemic Lupus Erythematosus (SLE)**: A butterfly-shaped facial rash is a hallmark sign of SLE.\n- **Systemic Lupus Erythematosus (SLE) \u2192 Autoimmune Disorders**: SLE is a type of autoimmune disorder.\n- **Systemic Lupus Erythematosus (SLE) \u2192 Inflammatory Processes**: SLE leads to chronic inflammation.\n- **Systemic Lupus Erythematosus (SLE) \u2192 Immune System Dysregulation**: SLE involves dysregulation of the immune system.\n- **Systemic Lupus Erythematosus (SLE) \u2192 Genetic Predispositions**: There is a genetic component to SLE.\n- **Systemic Lupus Erythematosus (SLE) \u2192 Environmental Factors**: Environmental factors can trigger or exacerbate SLE in individuals with a genetic predisposition.\n\n### Feedback Loops and Systemic Effects:\n- **Feedback Loop 1 (Autoimmune Disorders - Inflammatory Processes - Immune System Dysregulation)**:\n  - Autoimmune disorders lead to chronic inflammation, which in turn dysregulates the immune system. This dysregulation can further exacerbate the inflammatory response, creating a vicious cycle.\n\n- **Feedback Loop 2 (Genetic Predispositions - Environmental Factors - Systemic Lupus Erythematosus (SLE))**:\n  - Individuals with genetic predispositions may develop SLE when exposed to certain environmental factors. This interplay between genetics and environment can trigger the onset or progression of SLE.\n\n### Conclusion:\nThe symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash could be interconnected through a common underlying condition such as Systemic Lupus Erythematosus (SLE). The relationships between these symptoms and the potential underlying causes involve complex interactions, including autoimmune processes, immune dysregulation, and genetic and environmental factors. These interconnections can lead to feedback loops that perpetuate the symptoms and the condition.",
+  "response_length": 2739,
+  "elapsed_seconds": 50.99,
+  "tokens": {
+    "prompt_tokens": 235,
+    "completion_tokens": 607,
+    "total_duration_ms": 50977.63075
+  },
+  "timestamp": "2026-03-06T08:46:50.288145",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition, explains the mechanistic link through autoimmune inflammation, and warns against treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:14:26.455456"
+}

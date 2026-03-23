@@ -1,0 +1,22 @@
+{
+  "run_id": "seq_006_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "prompt": "Task: A patient's blood test shows: Hemoglobin 8.2 g/dL (normal 12-16), MCV 68 fL (normal 80-100), Serum ferritin 8 ng/mL (normal 20-200), TIBC 450 \u03bcg/dL (normal 250-370). Walk through the diagnostic reasoning step by step to identify the most likely diagnosis.\n\nProvide your answer with clear reasoning.",
+  "response": "Let's walk through the diagnostic reasoning step by step:\n\n1. Hemoglobin Analysis:\n- Value: 8.2 g/dL (significantly below normal range of 12-16)\n- Indicates anemia\n\n2. MCV (Mean Corpuscular Volume) Analysis:\n- Value: 68 fL (below normal range of 80-100)\n- Suggests microcytic anemia\n\n3. Ferritin Analysis:\n- Value: 8 ng/mL (well below normal range of 20-200)\n- Indicates low iron stores\n\n4. TIBC (Total Iron Binding Capacity):\n- Value: 450 \u03bcg/dL (elevated above normal range of 250-370)\n- Suggests iron deficiency\n\nDiagnostic Reasoning:\n- Low hemoglobin + microcytic MCV + low ferritin + high TIBC\n- Classic presentation of IRON DEFICIENCY ANEMIA\n\nLikely Causes to Investigate:\n- Chronic blood loss (menstrual, GI bleeding)\n- Inadequate dietary iron intake\n- Malabsorption\n- Pregnancy\n\nRecommended Next Steps:\n- Confirm diagnosis with iron studies\n- Identify underlying cause\n- Iron supplementation\n- Potential further diagnostic workup",
+  "response_length": 936,
+  "elapsed_seconds": 5.66,
+  "tokens": {
+    "prompt_tokens": 113,
+    "completion_tokens": 297,
+    "total_tokens": 410
+  },
+  "timestamp": "2026-03-19T16:04:58.067374"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "**Analysis of Symptoms and Underlying Condition**\n\nThe patient presents with three symptoms: chronic fatigue, joint pain, and a butterfly-shaped rash. These symptoms can be analyzed for potential common underlying conditions using a systemic approach.\n\n1. **Symptom Analysis:**\n   - **Chronic Fatigue:** Commonly associated with various conditions such as heart issues, diabetes, anemia, stress, or parasitic infections.\n   - **Joint Pain:** Often linked to arthritis, including rheumatoid arthritis, but can also be related to systemic infections.\n   - **Butterfly-shaped Rash:** Typically suggests systemic infections like Lyme disease or parasitic infections.\n\n2. **Potential Underlying Conditions:**\n   - **Lyme Disease:** A systemic infection that often presents with fatigue, joint pain, and a rash, aligning with the symptoms.\n   - **Parasitic Infections:** Such as leprosy, which can cause a butterfly rash and systemic symptoms like fatigue and joint pain.\n\n3. **Interconnections:**\n   - The symptoms likely stem from a systemic infection affecting multiple body systems. Lyme disease is a prime example, where the rash, fatigue, and joint pain are interconnected through the infection.\n\n**Conclusion:**\nThe symptoms could be linked through a systemic infection, possibly Lyme disease or a parasitic infection. These conditions explain the interconnected nature of the symptoms, with the rash, fatigue, and joint pain stemming from a common cause.",
+  "response_length": 1456,
+  "elapsed_seconds": 81.52,
+  "tokens": {
+    "prompt_tokens": 209,
+    "completion_tokens": 979,
+    "total_duration_ms": 81493.856708
+  },
+  "timestamp": "2026-03-06T08:28:06.994392",
+  "score": 1,
+  "score_reason": "The model lists conditions for each symptom independently without connecting them through autoimmune inflammation as required by the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T19:50:48.916480"
+}

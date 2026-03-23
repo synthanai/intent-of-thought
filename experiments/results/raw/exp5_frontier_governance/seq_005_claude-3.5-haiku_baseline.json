@@ -1,0 +1,22 @@
+{
+  "run_id": "seq_005_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "prompt": "Task: Trace the execution of Dijkstra's shortest path algorithm on this graph starting from node A:\nA-B: 4, A-C: 2, B-D: 3, B-C: 1, C-D: 5, C-E: 7, D-E: 1\nList the shortest distance from A to every other node and show each iteration of the algorithm.\n\nProvide your answer with clear reasoning.",
+  "response": "I'll solve this step by step using Dijkstra's algorithm:\n\nInitial Setup:\n- Unvisited nodes: A, B, C, D, E\n- Distances: A(0), B(\u221e), C(\u221e), D(\u221e), E(\u221e)\n\nIteration 1 (Start at A):\n- Current node: A\n- Update neighbors:\n  B: min(\u221e, 0+4) = 4\n  C: min(\u221e, 0+2) = 2\n- Distances now: A(0), B(4), C(2), D(\u221e), E(\u221e)\n- Mark A as visited\n\nIteration 2 (Smallest unvisited distance: C):\n- Current node: C\n- Update neighbors:\n  B: min(4, 2+1) = 3\n  D: min(\u221e, 2+5) = 7\n  E: min(\u221e, 2+7) = 9\n- Distances: A(0), B(3), C(2), D(7), E(9)\n- Mark C as visited\n\nIteration 3 (Smallest unvisited distance: B):\n- Current node: B\n- Update neighbors:\n  D: min(7, 3+3) = 6\n- Distances: A(0), B(3), C(2), D(6), E(9)\n- Mark B as visited\n\nIteration 4 (Smallest unvisited distance: D):\n- Current node: D\n- Update neighbors:\n  E: min(9, 6+1) = 7\n- Final distances: A(0), B(3), C(2), D(6), E(7)\n\nFinal shortest path distances from A:\nA: 0\nB: 3\nC: 2\nD: 6\nE: 7",
+  "response_length": 916,
+  "elapsed_seconds": 7.22,
+  "tokens": {
+    "prompt_tokens": 107,
+    "completion_tokens": 441,
+    "total_tokens": 548
+  },
+  "timestamp": "2026-03-19T16:04:41.067804"
+}

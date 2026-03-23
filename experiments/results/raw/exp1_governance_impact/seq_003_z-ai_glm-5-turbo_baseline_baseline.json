@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "We need to convert decimal 1247 to binary. Show working step by step, but final answer format: ANSWER: [final answer in one sentence], REASONING: [reasoning process], CONFIDENCE: [HIGH/MEDIUM/LOW].\n\nWe must produce a step-by-step reasoning, but final answer should be a single sentence with the binary representation. Typically, binary is written as a string of bits, maybe with spaces for readability? But one sentence: \"The binary representation of 1247 is 10011100000.\" Or something like that. Let's compute.\n\n1247 decimal to binary: Divide by 2 repeatedly, record remainders.\n\n1247 \u00f7 2 = 623 remainder 1\n623 \u00f7 2 = 311 remainder 1\n311 \u00f7 2 = 155 remainder 1\n155 \u00f7 2 = 77 remainder 1\n77 \u00f7 2 = 38 remainder 1\n38 \u00f7 2 = 19 remainder 0\n19 \u00f7 2 = 9 remainder 1\n9 \u00f7 2 = 4 remainder 1\n4 \u00f7 2 = 2 remainder 0\n2 \u00f7 2 = 1 remainder 0\n1 \u00f7 2 = 0 remainder 1\n\nNow read remainders from last to first: 1 0 0 1 1 1 0 0 0 0 0? Let's list in order from last remainder (most significant) to first remainder (least significant). The last division gave remainder 1 (when we got quotient 0). Then previous remainder from step 2 \u00f7 2 gave remainder 0? Wait careful:\n\nWe need to write the remainders in reverse order: The first remainder (from 1247/2) is the least significant bit (LSB). The last remainder (from 1/2) is the most significant bit (MSB). So we list from bottom to top.\n\nOur steps:\n\n1247 \u00f7 2: quotient 623, remainder 1 (LSB)\n623 \u00f7 2: quotient 311, remainder 1\n311 \u00f7 2: quotient 155, remainder 1\n155 \u00f7 2: quotient 77, remainder 1\n77 \u00f7 2: quotient 38, remainder 1\n38 \u00f7 2: quotient 19, remainder 0\n19 \u00f7 2: quotient 9, remainder 1\n9 \u00f7 2: quotient 4, remainder 1\n4 \u00f7 2: quotient 2, remainder 0\n2 \u00f7 2: quotient 1, remainder 0\n1 \u00f7 2: quotient 0, remainder 1 (MSB)\n\nNow reading from MSB to LSB: the remainders from last step to first: 1 (from 1/2), then 0 (from 2/2), then 0 (from 4/2), then 1 (from 9/2), then 1 (from 19/2), then 0 (from 38/2), then 1 (from 77/2), then 1 (from 155/2), then 1 (from 311/2), then 1 (from 623/2), then 1 (from 1247/2). So the bits: 1 0 0 1 1 0 1 1 1 1 1? Wait, I need to be systematic.\n\nLet's list remainders in order of computation (top to bottom) and then reverse:\n\n1) 1247 \u00f7 2 -> rem 1\n2) 623 \u00f7 2 -> rem 1\n3) 311 \u00f7 2 -> rem 1\n4) 155 \u00f7 2 -> rem 1\n5) 77 \u00f7 2 -> rem 1\n6) 38 \u00f7 2 -> rem 0\n7) 19 \u00f7 2 -> rem 1\n8) 9 \u00f7 2 -> rem 1\n9) 4 \u00f7 2 -> rem 0\n10) 2 \u00f7 2 -> rem 0\n11) 1 \u00f7 2 -> rem 1\n\nNow reverse: start from step 11: 1, step 10: 0, step 9: 0, step 8: 1, step 7: 1, step 6: 0, step 5: 1, step 4: 1, step 3: 1, step 2: 1, step 1: 1.\n\nSo the binary number is: 1 0 0 1 1 0 1 1 1 1 1? That's",
+  "response_length": 2594,
+  "elapsed_seconds": 10.28,
+  "tokens": {
+    "prompt_tokens": 59,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10277.74
+  },
+  "timestamp": "2026-03-17T13:55:25.978692",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model provided the correct steps but arrived at an incorrect binary representation (10011011111 instead of 10011100000).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:42:36.288031"
+}

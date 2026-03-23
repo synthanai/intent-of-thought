@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_nvidia_nemotron-3-super-120b-a12b_free_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "APPROACH 1: Repeated Division\u2011by\u20112 (Remainder Method)  \n  Description: Starting with the decimal number 1247, repeatedly divide by 2, recording the remainder each time. The binary representation is obtained by reading the remainders from bottom to top.  \n    Step\u202f1: 1247 \u00f7 2 = 623 remainder\u202f1  \n    Step\u202f2: 623 \u00f7 2 = 311 remainder\u202f1  \n    Step\u202f3: 311 \u00f7 2 = 155 remainder\u202f1  \n    Step\u202f4: 155 \u00f7 2 = 77 remainder\u202f1  \n    Step\u202f5: 77 \u00f7 2 = 38 remainder\u202f1      Step\u202f6: 38 \u00f7 2 = 19 remainder\u202f0  \n    Step\u202f7: 19 \u00f7 2 = 9 remainder\u202f1  \n    Step\u202f8: 9 \u00f7 2 = 4 remainder\u202f1      Step\u202f9: 4 \u00f7 2 = 2 remainder\u202f0  \n    Step\u202f10: 2 \u00f7 2 = 1 remainder\u202f0  \n    Step\u202f11: 1 \u00f7 2 = 0 remainder\u202f1  \n    Reading remainders upward gives **10011011111\u2082**.    Strengths:  \n    - Simple algorithm that works for any integer size.  \n    - No need to memorize powers of two; only basic division is required.  \n  Weaknesses:  \n    - Produces the bits in reverse order, requiring a final reversal step.  \n    - For very large numbers many division steps are needed, which can be tedious by hand.  \n  Suitability: HIGH  \n\nAPPROACH 2: Subtractive Powers\u2011of\u2011Two Method  \n  Description: Determine the largest power of two \u2264 the number, subtract it, record a\u202f1 for that position, then repeat with the remainder using the next lower power of two, recording\u202f0 when a power cannot be subtracted.  \n    Powers of two: 1024,\u202f512,\u202f256,\u202f128,\u202f64,\u202f32,\u202f16,\u202f8,\u202f4,\u202f2,\u202f1  \n    1247 \u2013 1024 = 223 \u2192 bit\u202f10\u202f=\u202f1      223 \u2013 512  (cannot) \u2192 bit\u202f9\u202f=\u202f0  \n    22",
+  "response_length": 1499,
+  "elapsed_seconds": 18.33,
+  "tokens": {
+    "prompt_tokens": 240,
+    "completion_tokens": 1024,
+    "total_duration_ms": 18331.67
+  },
+  "timestamp": "2026-03-17T13:58:14.004714",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The model's response correctly converts 1247 to binary as 10011011111 using the division-by-2 method with clear step-by-step divisions and valid remainders.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:21:33.700269"
+}

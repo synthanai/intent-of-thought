@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_phi4_14b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "For this task, the most appropriate reasoning approach is the **graph-of-thought**. The task involves interconnected factors with relationships, requiring an analysis of how these connections affect the supply chain when Factory A experiences a shutdown. This approach allows for mapping out the factors and their interactions, capturing the complexity of the supply chain, including feedback loops and systemic effects.\n\n### Analysis\n\n1. **Initial Impact**:\n   - **Factory A Shutdown**: Factory A supplies components to both Factory B and Factory C. A 2-week shutdown means both factories will experience a shortage of components.\n\n2. **Downstream Effects**:\n   - **Factory B and Factory C**: Without components from Factory A, both factories will likely reduce or halt production of sub-assemblies.\n   - **Factory D**: Factory D receives sub-assemblies from both Factory B and Factory C. A reduction or halt in sub-assemblies from these factories will affect Factory D's ability to produce finished products.\n\n3. **Feedback Loops**:\n   - **Factory D to Factory A's Parent Company**: Factory D sells finished products to Factory A's parent company. A decrease in finished products affects sales and potentially the financial performance of the parent company.\n   - **Parent Company to Factory A**: If the parent company experiences reduced sales or financial pressure, it may influence decisions regarding Factory A, such as increasing pressure to resume operations or finding alternative suppliers.\n\n4. **Systemic Effects**:\n   - **Supply Chain Disruption**: The entire supply chain is disrupted, affecting production schedules, delivery timelines, and potentially leading to financial losses.\n   - **Inventory Management**: Factories B, C, and D may need to adjust their inventory strategies, possibly leading to increased costs or stockouts.\n   - **Long-term Relationships**: Prolonged disruption might strain relationships between the factories and the parent company, leading to a reevaluation of supplier dependencies.\n\n### Relationship Map\n\n- **Factory A** \u2192 Supplies components to \u2192 **Factory B** and **Factory C**\n- **Factory B** and **Factory C** \u2192 Supply sub-assemblies to \u2192 **Factory D**\n- **Factory D** \u2192 Sells finished products to \u2192 **Factory A's Parent Company**\n- **Feedback Loop**: \n  - **Factory A's Parent Company** \u2192 Influences decisions on \u2192 **Factory A** (e.g., finding alternatives, financial pressure)\n\n### Conclusion\n\nUsing the graph-of-thought approach, we have mapped out the interconnected factors and their relationships, capturing the downstream effects and feedback loops resulting from Factory A's shutdown. This comprehensive view helps in understanding the systemic impact on the supply chain.",
+  "response_length": 2728,
+  "elapsed_seconds": 90.11,
+  "tokens": {
+    "prompt_tokens": 224,
+    "completion_tokens": 531,
+    "total_duration_ms": 90025.412458
+  },
+  "timestamp": "2026-03-06T09:25:18.480838",
+  "score": 3,
+  "score_reason": "The model output traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company, meeting all criteria for a score of 3.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:23:50.071830"
+}

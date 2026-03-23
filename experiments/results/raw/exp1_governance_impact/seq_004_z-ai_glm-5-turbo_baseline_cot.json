@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_z-ai_glm-5-turbo_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "STEP 1: Calculate the distance Train 1 travels before Train 2 starts moving. I am doing this because Train 2 leaves 30 minutes after Train 1, and establishing their positions at a common starting time (09:30) simplifies the problem. Train 1 travels for 0.5 hours at 80 km/h, covering a distance of 40 km. This connects to the next step because it allows us to determine the remaining distance between the two trains at 09:30.\n\nSTEP 2: Determine the remaining distance between the trains at 09:30. I am doing this to set up the core closing-speed calculation. Since the total distance is 320 km and Train 1 is already 40 km away from Station A, the remaining distance between the trains is 320 km - 40 km = 280 km. This connects to the next step because we need this distance to calculate how long it takes for them to meet.\n\nSTEP 3: Calculate the relative speed of the two trains. I am doing this because the trains are moving towards each other, meaning the gap between them closes at the sum of their individual speeds. The relative speed is 80 km/h + 120 km/h = 200 km/h. This connects to the next step because we will use this speed to find the time it takes to close the 280 km gap.\n\nSTEP 4: Calculate the time it takes for the trains to meet after 09:30. I am doing this to find the duration of their simultaneous travel. Dividing the remaining distance by the relative speed gives 280 km / 200 km/h = 1.4 hours. Con",
+  "response_length": 1422,
+  "elapsed_seconds": 11.42,
+  "tokens": {
+    "prompt_tokens": 159,
+    "completion_tokens": 1024,
+    "total_duration_ms": 11421.8
+  },
+  "timestamp": "2026-03-17T14:01:25.764624",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The model's response correctly calculates the meeting time (10:54) and distance from Station A (152 km), with clear reasoning and no errors.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:23:12.333265"
+}

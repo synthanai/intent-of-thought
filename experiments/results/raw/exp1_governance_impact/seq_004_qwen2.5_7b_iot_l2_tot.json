@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_qwen2.5_7b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because this task requires sequential logical steps to determine when and where the trains meet.\nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer.\nANTI-PURPOSE CHECK: Must not branch into alternative approaches before completing the primary chain.\n\n[Your full reasoning using the selected approach]\n\n1. First, calculate the distance covered by the first train in the 30 minutes (0.5 hours) head start:\n   - Distance = Speed \u00d7 Time\n   - Distance_1st_train_head_start = 80 km/h \u00d7 0.5 h = 40 km\n\n2. At 09:30, both trains are now closing the gap between them at a combined speed of 80 km/h + 120 km/h:\n   - Combined Speed = 80 km/h + 120 km/h = 200 km/h\n\n3. Determine the remaining distance to be covered after the head start:\n   - Initial Distance Between Stations = 320 km\n   - Remaining Distance After Head Start = 320 km - 40 km = 280 km\n\n4. Calculate the time it takes for both trains to meet from 09:30 onwards by dividing the remaining distance by their combined speed:\n   - Time_to_meet = Remaining_Distance / Combined_Speed\n   - Time_to_meet = 280 km / 200 km/h = 1.4 hours\n\n5. Convert the meeting time to a specific hour and minute after 09:30:\n   - Meeting Time from 09:30 = 1.4 hours = 1 hour + 0.4 \u00d7 60 minutes = 1 hour 24 minutes\n   - Therefore, the trains meet at 10:54 (09:30 + 1:24)\n\n6. Calculate the distance from Station A where they meet:\n   - Distance_from_A = Speed_of_1st_train \u00d7 Time_to_meet\n   - Distance_from_A = 80 km/h \u00d7 1.4 hours = 112 km\n\nANSWER: The trains meet at 10:54, and the meeting point is 112 km from Station A.\n\nSUCCESS SIGNAL MET: YES, as we have followed a step-by-step derivation to reach a definitive conclusion.\nANTI-PURPOSE VIOLATED: NO\nCONFIDENCE: HIGH",
+  "response_length": 1756,
+  "elapsed_seconds": 43.94,
+  "tokens": {
+    "prompt_tokens": 357,
+    "completion_tokens": 519,
+    "total_duration_ms": 43926.735625
+  },
+  "timestamp": "2026-03-17T14:32:54.939947",
+  "score": 2,
+  "score_reason": "The model correctly follows the logical steps but makes an arithmetic error in calculating the distance from Station A.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:22:09.725753"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_qwen2.5_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "To prove that the square root of 2 is irrational, we can use a classic proof by contradiction. This method involves assuming the opposite of what we want to prove and then showing that this assumption leads to a contradiction.\n\n**Step 1: Assume the opposite.**\n\nAssume that the square root of 2 is rational. If the square root of 2 is rational, it can be expressed as a fraction in lowest terms, say \\(\\frac{a}{b}\\), where \\(a\\) and \\(b\\) are integers with no common factors other than 1 (i.e., the fraction is in its simplest form), and \\(b \\neq 0\\).\n\nSo, we have:\n\\[\n\\sqrt{2} = \\frac{a}{b}\n\\]\n\n**Step 2: Square both sides.**\n\nSquare both sides of the equation to eliminate the square root:\n\\[\n2 = \\left(\\frac{a}{b}\\right)^2\n\\]\n\\[\n2 = \\frac{a^2}{b^2}\n\\]\n\n**Step 3: Clear the fraction.**\n\nMultiply both sides of the equation by \\(b^2\\) to clear the fraction:\n\\[\n2b^2 = a^2\n\\]\n\n**Step 4: Analyze the equation.**\n\nThis equation tells us that \\(a^2\\) is an even number (since it is equal to \\(2b^2\\), and \\(2b^2\\) is clearly even). Therefore, \\(a\\) itself must be even (if \\(a\\) were odd, \\(a^2\\) would be odd). Let \\(a = 2k\\) for some integer \\(k\\).\n\nSubstitute \\(a = 2k\\) into the equation:\n\\[\n2b^2 = (2k)^2\n\\]\n\\[\n2b^2 = 4k^2\n\\]\n\n**Step 5: Simplify the equation.**\n\nDivide both sides by 2:\n\\[\nb^2 = 2k^2\n\\]\n\n**Step 6: Analyze the new equation.**\n\nThis equation tells us that \\(b^2\\) is also even, and therefore \\(b\\) must be even (for the same reason as above).\n\n**Step 7: Reach a contradiction.**\n\nIf both \\(a\\) and \\(b\\) are even, they share a common factor of 2. This contradicts our initial assumption that \\(\\frac{a}{b}\\) is in its simplest form (i.e., \\(a\\) and \\(b\\) have no common factors other than 1).\n\n**Conclusion:**\n\nSince our assumption that \\(\\sqrt{2}\\) is rational leads to a contradiction, we conclude that \\(\\sqrt{2}\\) must be irrational.",
+  "response_length": 1855,
+  "elapsed_seconds": 48.4,
+  "tokens": {
+    "prompt_tokens": 41,
+    "completion_tokens": 574,
+    "total_duration_ms": 48375.19925
+  },
+  "timestamp": "2026-03-05T23:37:53.957507",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction with all necessary steps clearly outlined and explained.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T10:53:15.605865"
+}

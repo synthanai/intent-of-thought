@@ -1,0 +1,19 @@
+{
+  "run_id": "seq_003_mistral_latest_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "cot",
+  "model": "mistral:latest",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "1. Identify the number to be converted: The decimal number to be converted is 1247.\n   Result: 1247 (base 10)\n\n2. Understand the conversion process: Convert each digit of the decimal number to its binary equivalent, working from right to left.\n   Result: Understanding of the conversion process established.\n\n3. Break down the decimal number into individual digits: Write 1247 as 7 + 4 * 100 + 2 * 1000 + 1 * 10000\n   Result: 7, 4, 2, 1\n\n4. Convert each decimal digit to binary:\n   a) Convert 7 (base 10) to binary: Since 7 is less than 8 (2^3), it can be represented as a sum of powers of 2: 7 = 1*2^3 + 1*2^1.\n       Result: 111 (base 2)\n\n   b) Convert 4 (base 10) to binary: Since 4 is less than 8 (2^3), it can be represented as a sum of powers of 2: 4 = 1*2^2.\n       Result: 100 (base 2)\n\n   c) Convert 2 (base 10) to binary: Since 2 is less than 4 (2^2), it can be represented as a sum of powers of 2: 2 = 1*2^1.\n       Result: 10 (base 2)\n\n   d) Convert 1 (base 10) to binary: Since 1 is 1 (2^0), it can be represented as a single 1.\n       Result: 1 (base 2)\n\n5. Arrange the binary numbers in reverse order: Combine the binary numbers from step 4 in reverse order: 10 (base 2) + 100 (base 2) + 111 (base 2)\n   Result: 1110100 (base 2)\n\n6. State the final answer: The binary equivalent of the decimal number 1247 is 1110100.\n   Result: 1110100 (base 2)",
+  "response_length": 1360,
+  "elapsed_seconds": 69.07,
+  "timestamp": "2026-03-06T15:50:43.663740",
+  "score": 0,
+  "score_reason": "The model used an incorrect method for converting the decimal number to binary and produced the wrong answer.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T00:13:12.427444"
+}

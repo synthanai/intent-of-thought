@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "### Step-by-Step Analysis of the Supply Chain Task\n\n#### 1. **Identify Key Factors, Entities, or Variables Involved**\n- Factory A\n- Factory B\n- Factory C\n- Factory D\n- Parent Company\n\n#### 2. **Determine Relationships Between Factors**\n- Factory A supplies components to Factory B and Factory C.\n- Factory B supplies sub-assemblies to Factory D.\n- Factory C supplies sub-assemblies to Factory D.\n- Factory D sells finished products back to Factory A's parent company.\n\n#### 3. **Draw Relationships as Edges**\n- Factory A \u2192 Factory B\n- Factory A \u2192 Factory C\n- Factory B \u2192 Factory D\n- Factory C \u2192 Factory D\n- Factory D \u2192 Parent Company\n\n#### 4. **Identify Feedback Loops or Circular Dependencies**\n- The Parent Company's dependency on Factory D's output can create a feedback loop if the Parent Company seeks alternative suppliers or production methods in response to D's shutdown, potentially affecting the supply chain further.\n\n#### 5. **Determine Central Factors**\n- Factory A: Central as it is the starting point.\n- Factory D: Central as it is a major",
+  "response_length": 1054,
+  "elapsed_seconds": 89.36,
+  "tokens": {
+    "prompt_tokens": 200,
+    "completion_tokens": 1024,
+    "total_duration_ms": 89332.633583
+  },
+  "timestamp": "2026-03-06T10:11:47.138455",
+  "score": 2,
+  "score_reason": "The model correctly traces the paths A->B->D and A->C->D and identifies D as double-hit, but it misses the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:19:14.940334"
+}

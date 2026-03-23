@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_gemma3_12b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the problem requires a sequential, step-by-step calculation to determine the meeting time and distance.\n\nPURPOSE CHECK: The goal is to determine the time and distance at which two trains, starting at different locations and times, will meet.\n\nANTI-PURPOSE CHECK: I will avoid exploring alternative solutions or scenarios before completing the primary calculation.\n\nHere's the chain-of-thought reasoning:\n\n1. **Account for the Head Start:** The first train leaves at 09:00 and the second leaves at 09:30. This means the first train has a 30-minute head start. We need to calculate the distance covered by the first train in those 30 minutes.\n   * Time = 30 minutes = 0.5 hours\n   * Distance = Speed x Time = 80 km/h * 0.5 h = 40 km\n\n2. **Remaining Distance:** After the first train's head start, the remaining distance between the two trains is:\n   * Remaining Distance = Total Distance - Distance Covered = 320 km - 40 km = 280 km\n\n3. **Relative Speed:**  The trains are traveling towards each other, so their speeds add up to find the relative speed.\n   * Relative Speed = Speed of Train A + Speed of Train B = 80 km/h + 120 km/h = 200 km/h\n\n4. **Time to Meet:** Now we can calculate the time it takes for the trains to meet, considering the remaining distance and their relative speed.\n   * Time to Meet = Remaining Distance / Relative Speed = 280 km / 200 km/h = 1.4 hours\n\n5. **Convert Time to Hours and Minutes:** 1.4 hours is equal to 1 hour and 0.4 * 60 = 24 minutes.\n\n6. **Meeting Time:** The second train left at 09:30. They meet 1 hour and 24 minutes after the second train leaves.\n   * Meeting Time = 09:30 + 1 hour 24 minutes = 10:54\n\n7. **Distance from Station A:** The first train traveled for a total of 0.5 hours (head start) + 1.4 hours (until they meet) = 1.9 hours.\n   * Distance from Station A = Speed of Train A * Total Time = 80 km/h * 1.9 h = 152 km\n\nANSWER: The trains meet at 10:54, and they meet 152 km from Station A.\n\nSUCCESS SIGNAL MET: YES. I have provided a step-by-step derivation, starting from the given information and following a logical sequence of calculations to reach a verifiable conclusion (meeting time and distance). Each step is clearly explained.\n\nANTI-PURPOSE VIOLATED: NO. I have focused solely on the primary chain of reasoning and have not explored alternative solutions.\n\nCONFIDENCE: HIGH",
+  "response_length": 2370,
+  "elapsed_seconds": 101.53,
+  "tokens": {
+    "prompt_tokens": 355,
+    "completion_tokens": 661,
+    "total_duration_ms": 101492.334625
+  },
+  "timestamp": "2026-03-17T14:24:21.924757",
+  "score": 3,
+  "score_reason": "The response correctly calculates the meeting time (10:54) and distance from Station A (152 km), using clear and logical reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:58:18.845663"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen2.5_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "Certainly! Let's approach this step-by-step to determine whether the chronic fatigue, joint pain, and butterfly-shaped facial rash could share a common underlying condition.\n\n### Step 1: Identify the Symptoms\n**Action:** List the symptoms provided.\n**Result:** Chronic fatigue, joint pain, and a butterfly-shaped facial rash.\n**Explanation:** These are the symptoms that we need to analyze for potential interconnections.\n\n### Step 2: Consider Independent Causes for Each Symptom\n**Action:** Identify common causes for each symptom individually.\n**Result:**\n- **Chronic Fatigue:** Could be due to sleep disorders, stress, anemia, thyroid issues, or chronic infections.\n- **Joint Pain:** Could be related to arthritis, gout, lupus, or other autoimmune conditions.\n- **Butterfly-shaped Facial Rash:** Commonly associated with systemic lupus erythematosus (SLE) or other autoimmune disorders.\n**Explanation:** Understanding independent causes helps us see if any overlap exists.\n\n### Step 3: Assess Common Causes for All Symptoms\n**Action:** Look for common underlying conditions that could explain all three symptoms simultaneously.\n**Result:** Systemic lupus erythematosus (SLE) is a condition that can cause chronic fatigue, joint pain, and a butterfly-shaped facial rash.\n**Explanation:** SLE is an autoimmune disease where the immune system attacks the body's tissues, leading to various symptoms. This condition is known to cause fatigue, joint pain, and a characteristic rash, making it a strong candidate for a common underlying cause.\n\n### Step 4: Analyze the Interconnections Between the Symptoms\n**Action:** Identify potential interconnections between the symptoms in the context of SLE.\n**Result:**\n- **Fatigue and Joint Pain:** Both can be symptoms of SLE due to the inflammation and immune system activity.\n- **Facial Rash and Fatigue:** The facial rash can develop as a result of skin involvement, and fatigue can be a systemic symptom of the disease.\n- **Joint Pain and Facial Rash:** Both can be manifestations of the same underlying immune response.\n**Explanation:** Each symptom can be explained by the same underlying process, supporting the idea that they share a common cause.\n\n### Step 5: Conclude on the Common Underlying Condition\n**Action:** Determine if SLE is a plausible common underlying condition.\n**Result:** SLE is a plausible common underlying condition that could explain the patient's symptoms.\n**Explanation:** Given the presence of a characteristic facial rash, fatigue, and joint pain, SLE is a strong possibility, especially if other systemic symptoms are present or if the patient has a history of autoimmune diseases.\n\n### Step 6: Suggest Further Diagnostic Steps\n**Action:** Recommend further diagnostic steps to confirm SLE.\n**Result:** Recommend a comprehensive evaluation including blood tests for antinuclear antibodies (ANA), complement levels, and other relevant markers, as well as a physical examination and possibly a skin biopsy.\n**Explanation:** These tests can help confirm the presence of SLE and guide appropriate treatment.\n\nBy following these steps, we have logically connected the patient's symptoms to a common underlying condition (SLE) and identified the interconnections between the symptoms.",
+  "response_length": 3253,
+  "elapsed_seconds": 57.25,
+  "tokens": {
+    "prompt_tokens": 143,
+    "completion_tokens": 648,
+    "total_duration_ms": 57227.167208
+  },
+  "timestamp": "2026-03-06T08:03:28.619959",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition, explains the mechanistic link through autoimmune inflammation, and warns against treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T22:53:20.060594"
+}

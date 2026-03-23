@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_mistral_latest_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "In the specific case where only 5% of elements are out of place in an array of 10,000 integers, the performance of sorting algorithms can vary significantly. Here's a comparison of Insertion Sort, Merge Sort, and QuickSort for this scenario:\n\n1. Insertion Sort:\nInsertion sort is a simple sorting algorithm that works by building a sorted array one item at a time. In the best-case scenario (sorted input), its time complexity is O(n), and in the average case, it's O(n^2). In the worst-case scenario (reverse sorted input), its time complexity is still O(n^2). However, in the nearly-sorted case (like the one described), Insertion Sort performs well due to its in-place nature and low overhead. The time complexity for the nearly-sorted case can be approximated as O(n^2) since most elements are already in the correct position, and the remaining elements require swapping with their correct positions, which still has a quadratic time complexity but with a smaller constant multiplier.\n\n2. Merge Sort:\nMerge sort is a divide-and-conquer algorithm that works by recursively dividing the input into smaller sub-arrays until reaching a base case (usually a single element), then merging the sorted sub-arrays back together. Its time complexity is O(n log n) in the average and worst cases. In the nearly-sorted case, Merge Sort has to perform the merging process more times due to the smaller sub-arrays being nearly sorted. As a result, its time complexity is approximately O(n log n) for the nearly-sorted case.\n\n3. QuickSort:\nQuicksort is another divide-and-conquer algorithm that works by selecting a pivot element and partitioning the array around the pivot, placing all elements less than the pivot on its left and all elements greater on its right. Its average time complexity is O(n log n), but its worst-case time complexity is O(n^2) when the input is either sorted or reverse sorted. In the nearly-sorted case, Quicksort's performance can be affected by the choice of pivot. If the pivot is chosen poorly (e.g., the median), it can lead to an unbalanced partition and cause the algorithm to perform suboptimally. However, if the pivot is chosen wisely (e.g., the median of the first, middle, and last elements), Quicksort can perform well in the nearly-sorted case. Its time complexity for the nearly-sorted case can be approximated as O(n log n) due to the efficient partitioning.\n\nRecommendation:\nIn the specific case where only 5% of elements are out of place in an array of 10,000 integers, all three algorithms (Insertion Sort, Merge Sort, and QuickSort) can be considered as viable options. However, since Insertion Sort has a lower constant multiplier for the time complexity in the nearly-sorted case, it might offer better performance in terms of execution time, especially for smaller datasets.\n\nFor larger datasets or when dealing with more unsorted input, Merge Sort and Quicksort are more suitable due to their average and worst-case time complexity of O(n log n). Choosing between Merge Sort and Quicksort would depend on factors such as memory constraints (Merge Sort requires additional space for temporary arrays) and the quality of the pivot selection (Quicksort).",
+  "response_length": 3193,
+  "elapsed_seconds": 66.17,
+  "tokens": {
+    "prompt_tokens": 68,
+    "completion_tokens": 771,
+    "total_duration_ms": 66153.213166
+  },
+  "timestamp": "2026-03-06T04:43:48.981240",
+  "score": 2,
+  "score_reason": "The model correctly recommends Insertion Sort for nearly-sorted data but provides weak analysis by not fully explaining why its O(n) complexity makes it optimal in this scenario.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:58:56.682480"
+}

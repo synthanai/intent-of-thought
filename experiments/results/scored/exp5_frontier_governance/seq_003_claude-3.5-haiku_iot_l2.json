@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the mathematics reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: Convert the decimal number 1247 to binary. Show all your working step by step.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Chain of Thought (CoT) because this is a systematic conversion process with clear sequential steps from decimal to binary representation\n\nPURPOSE CHECK: Accurately convert 1247 to binary through a methodical step-by-step process\n\nANTI-PURPOSE CHECK: Avoid guessing, skipping steps, or producing an incorrect binary representation\n\nREASONING STEPS:\n1. To convert decimal to binary, divide repeatedly by 2 and track remainders\n2. Start with 1247 \u00f7 2:\n   1247 \u00f7 2 = 623 remainder 1\n3. Continue dividing quotients by 2:\n   623 \u00f7 2 = 311 remainder 1\n   311 \u00f7 2 = 155 remainder 1\n   155 \u00f7 2 = 77  remainder 1\n   77 \u00f7 2 = 38   remainder 1\n   38 \u00f7 2 = 19   remainder 0\n   19 \u00f7 2 = 9    remainder 1\n   9 \u00f7 2 = 4     remainder 1\n   4 \u00f7 2 = 2     remainder 0\n   2 \u00f7 2 = 1     remainder 0\n   1 \u00f7 2 = 0     remainder 1\n\n4. Read remainders from bottom to top to get binary\n\nANSWER: 10011011111\n\nSUCCESS SIGNAL MET: YES, complete step-by-step conversion with verifiable process\nANTI-PURPOSE VIOLATED: NO\nCONFIDENCE: HIGH",
+  "response_length": 1024,
+  "elapsed_seconds": 6.8,
+  "tokens": {
+    "prompt_tokens": 309,
+    "completion_tokens": 385,
+    "total_tokens": 694
+  },
+  "timestamp": "2026-03-19T16:04:17.532045",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

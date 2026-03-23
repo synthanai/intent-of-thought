@@ -1,0 +1,26 @@
+Before answering, consider the following governance specification for this reasoning task:
+
+PURPOSE: {purpose}
+ANTI-PURPOSE (what you must avoid): {anti_purpose}
+SUCCESS SIGNAL (how to judge your output): {success_signal}
+
+Select the most appropriate reasoning approach:
+- If the task requires sequential logical steps, use chain-of-thought (step by step)
+- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)
+- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)
+
+State which approach you chose and why, then proceed.
+
+Task: {task_text}
+
+FORMAT YOUR RESPONSE AS:
+SELECTED APPROACH: [CoT/ToT/GoT] because [reason]
+PURPOSE CHECK: [restate the purpose in your own words]
+ANTI-PURPOSE CHECK: [state what you will avoid]
+
+[Your full reasoning using the selected approach]
+
+ANSWER: [your final answer]
+SUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]
+ANTI-PURPOSE VIOLATED: [YES/NO]
+CONFIDENCE: [HIGH/MEDIUM/LOW]

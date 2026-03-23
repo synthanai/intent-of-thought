@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "**Final Recommendation: Insertion Sort**\n\n**Analysis and Comparison:**\n\n1. **Insertion Sort:**\n   - **Strengths:** \n     - Efficient for nearly sorted arrays, with an average case time complexity of O(n) when the array is nearly sorted.\n     - Low overhead and memory usage, making it suitable for small to medium datasets.\n     - Simple to implement and understand.\n   - **Weaknesses:**\n     - Worst-case time complexity is O(n\u00b2), which could be a concern if the array becomes significantly unsorted.\n     - Slightly higher memory usage compared to in-place sorts like quicksort.\n   - **Suitability:** High, especially given the nearly sorted nature of the array. It is the best choice for this specific scenario.\n\n2. **Merge Sort:**\n   - **Strengths:**\n     - Consistent O(n log n) time complexity, providing reliable performance regardless of the initial array state.\n     - Stable sorting algorithm, preserving the relative order of equal elements.",
+  "response_length": 952,
+  "elapsed_seconds": 88.96,
+  "tokens": {
+    "prompt_tokens": 134,
+    "completion_tokens": 1024,
+    "total_duration_ms": 88938.622167
+  },
+  "timestamp": "2026-03-06T05:33:08.204571",
+  "score": 2,
+  "score_reason": "The analysis correctly recommends insertion sort for nearly-sorted data but lacks detailed comparison of complexities and reasoning for merge/quick sorts in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:10:38.816788"
+}

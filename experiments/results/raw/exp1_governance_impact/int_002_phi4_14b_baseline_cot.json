@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_phi4_14b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "To analyze the downstream effects of a 2-week shutdown at Factory A in this supply chain, we will follow a step-by-step logical sequence, tracing the impact on each factory and identifying any feedback loops that might occur.\n\n1. **Identify Initial Impact on Factories B and C**\n   - **Action:** Determine how the shutdown at Factory A affects its direct suppliers, Factories B and C.\n   - **Result:** Factories B and C will not receive components from Factory A for 2 weeks.\n   - **Connection to Next Step:** The lack of components will impact their production capabilities, which in turn affects their ability to supply sub-assemblies to Factory D.\n\n2. **Assess Impact on Factory B**\n   - **Action:** Evaluate how the absence of components from Factory A affects Factory B's production of sub-assemblies.\n   - **Result:** Factory B will halt or reduce its production of sub-assemblies for 2 weeks.\n   - **Connection to Next Step:** This reduction in sub-assemblies will affect Factory D's ability to produce finished products.\n\n3. **Assess Impact on Factory C**\n   - **Action:** Evaluate how the absence of components from Factory A affects Factory C's production of sub-assemblies.\n   - **Result:** Factory C will also halt or reduce its production of sub-assemblies for 2 weeks.\n   - **Connection to Next Step:** Similar to Factory B, this reduction will impact Factory D's production of finished products.\n\n4. **Determine Impact on Factory D**\n   - **Action:** Analyze how the reduced supply of sub-assemblies from Factories B and C affects Factory D's production.\n   - **Result:** Factory D will experience a decrease in its ability to produce finished products due to the lack of sub-assemblies.\n   - **Connection to Next Step:** This decrease in finished products will affect sales to Factory A's parent company.\n\n5. **Assess Feedback Loop to Factory A's Parent Company**\n   - **Action:** Determine how the reduction in finished products impacts Factory A's parent company.\n   - **Result:** Factory A's parent company will receive fewer finished products, potentially affecting sales and revenue.\n   - **Connection to Next Step:** The parent company may need to adjust its sales strategy or manage customer expectations due to the reduced supply.\n\n6. **Evaluate Potential Long-Term Effects**\n   - **Action:** Consider any long-term consequences of the shutdown, such as strained relationships or financial impacts.\n   - **Result:** The parent company might seek alternative suppliers or renegotiate terms with Factories B and C. Factories B and C might look for alternative component suppliers to mitigate future risks.\n   - **Connection to Next Step:** These adjustments could lead to changes in the supply chain dynamics, affecting future operations and strategies.\n\n7. **Identify Feedback Loops**\n   - **Action:** Identify any feedback loops that might occur due to the initial shutdown.\n   - **Result:** The parent company's reduced sales could lead to decreased orders for Factory A, potentially affecting its future production plans even after the shutdown.\n   - **Connection to Next Step:** This feedback loop highlights the interconnected nature of the supply chain and the importance of managing disruptions effectively.\n\nBy following these steps, we have traced the downstream effects of Factory A's shutdown, identified the impact on each factory, and recognized potential feedback loops within the supply chain. This comprehensive analysis helps in understanding the ripple effects and preparing for future disruptions.",
+  "response_length": 3539,
+  "elapsed_seconds": 123.27,
+  "tokens": {
+    "prompt_tokens": 132,
+    "completion_tokens": 701,
+    "total_duration_ms": 123256.371875
+  },
+  "timestamp": "2026-03-06T09:43:57.347127",
+  "score": 3,
+  "score_reason": "The response traces all paths (A->B->D, A->C->D), identifies D as double-hit, and finds the feedback loop to A's parent company, satisfying all criteria for a score of 3.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:20:57.328895"
+}

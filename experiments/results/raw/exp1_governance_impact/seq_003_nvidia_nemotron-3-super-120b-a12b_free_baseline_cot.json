@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_nvidia_nemotron-3-super-120b-a12b_free_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "We need to produce step-by-step conversion of decimal 1247 to binary, with clear steps, showing division by 2 remainders, etc. Provide step numbers, description, result, connection. Finally final answer and confidence. Should follow format. Let's produce steps:\n\nStep 1: Start with number 1247, divide by 2, record remainder.\nStep 2: Continue dividing quotient by 2 until quotient 0.\nWe'll show each division step.\n\nLet's compute: 1247/2 = 623 remainder 1.\n623/2 = 311 remainder 1.\n311/2 = 155 remainder 1.\n155/2 = 77 remainder 1.\n77/2 = 38 remainder 1.\n38/2 = 19 remainder 0.\n19/2 = 9 remainder 1.\n9/2 = 4 remainder 1.\n4/2 = 2 remainder 0.\n2/2 = 1 remainder 0.\n1/2 = 0 remainder 1.\n\nNow reading remainders from bottom up: 1 0 0 1 1 0 1 1 1 1 1? Let's list: Starting from last remainder: remainder of 1/2 = 1, then 2/2 remainder 0, then 4/2 remainder 0, then 9/2 remainder 1, then 19/2 remainder 1, then 38/2 remainder 0, then 77/2 remainder 1, then 155/2 remainder 1, then 311/2 remainder 1, then 623/2 remainder 1, then 1247/2 remainder 1. So binary: 10011011111? Wait check: we have 11 bits: 1 0 0 1 1 0 1 1 1 1 1 => 10011011111. Let's verify: compute decimal: bits from MSB: 1*2^10=1024, 0*2^9=0,0*2^8=0,1*2^7=128 =>1152,1*2^6=64 =>1216,0*2^5=0 =>1216,1*2^4=16 =>1232,1*2^3=8 =>1240,1*2^2=4 =>1244,1*2^1=2 =>1246,1*2^0=1 =>1247. Yes correct.\n\nThus final answer: 1247_10 = 10011011111_2.\n\nWe need to format: each step with description, result, connection. Provide maybe 12 steps (including initial). Let's produce:\n\nStep 1: Set n = 1247, prepare to repeatedly divide by 2 and record remainders.\nResult: n = 1247.\nConnection: will divide n by 2.\n\nStep 2: Divide 1247 by 2 \u2192 quotient 623, remainder 1.\nResult: remainder 1 (least significant bit).\nConnection: use quotient 623 for next division.\n\nStep 3: Divide 623 by 2 \u2192 quotient 311, remainder 1.\nResult: remainder 1.\nConnection: continue with quotient 311.\n\nStep 4: Divide 311 by 2 \u2192 quotient 155, remainder 1.\nResult: remainder 1.\nConnection: continue with 155.\n\nStep 5: Divide 155 by 2 \u2192 quotient 77, remainder 1.\nResult: remainder 1.\nConnection: continue with 77.\n\nStep 6: Divide 77 by 2 \u2192 quotient 38, remainder 1.\nResult: remainder 1.\nConnection: continue with 38.\n\nStep 7: Divide 38 by 2 \u2192 quotient 19, remainder 0.\nResult: remainder 0.\nConnection: continue with 19.\n\nStep 8: Divide 19 by 2 \u2192 quotient 9, remainder 1.\nResult: remainder 1.\nConnection: continue with 9.\n\nStep 9: Divide 9 by 2 \u2192 quotient 4, remainder 1.\nResult: remainder 1.\nConnection: continue with 4.\n\nStep 10: Divide 4 by 2 \u2192 quotient 2, remainder",
+  "response_length": 2575,
+  "elapsed_seconds": 22.13,
+  "tokens": {
+    "prompt_tokens": 143,
+    "completion_tokens": 1024,
+    "total_duration_ms": 22131.12
+  },
+  "timestamp": "2026-03-17T13:57:13.493094",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The model's response correctly converts the decimal number to binary, provides clear step-by-step division with remainders, and verifies correctness by converting back to decimal.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:17:59.631845"
+}

@@ -1,0 +1,16 @@
+{
+  "run_id": "seq_006_nvidia_nemotron-3-super-120b-a12b_free_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "got",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.2,
+  "timestamp": "2026-03-17T14:23:28.272423",
+  "backend": "openrouter"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_001_nvidia_nemotron-3-super-120b-a12b_free_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "ANSWER: The square root of 2 is irrational.  \nREASONING: Assume, for contradiction, that \u221a2 is rational, so \u221a2 = a/b where a and b are coprime integers with b \u2260 0. Squaring gives 2 = a\u00b2/b\u00b2 \u21d2 a\u00b2 = 2b\u00b2, implying a\u00b2 is even, so a is even; write a = 2k. Substituting yields (2k)\u00b2 = 2b\u00b2 \u21d2 4k\u00b2 = 2b\u00b2 \u21d2 b\u00b2 = 2k\u00b2, so b\u00b2 is even, making b even. Thus both a and b share a factor 2, contradicting the assumption that they are coprime. Hence \u221a2 cannot be rational.  \nCONFIDENCE: HIGH",
+  "response_length": 471,
+  "elapsed_seconds": 13.89,
+  "tokens": {
+    "prompt_tokens": 73,
+    "completion_tokens": 271,
+    "total_duration_ms": 13888.94
+  },
+  "timestamp": "2026-03-17T13:49:22.632543",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction for the irrationality of sqrt(2) with all necessary steps clearly explained.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:59:50.642039"
+}

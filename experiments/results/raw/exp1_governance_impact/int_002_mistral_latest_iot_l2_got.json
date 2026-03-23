@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_mistral_latest_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "Approach: graph-of-thought (map factors and edges)\n\nReasoning:\n1. First, let's create nodes for each factory (A, B, C, D) and Factory A's parent company (P).\n\n   Nodes:\n   A - Factory A\n   B - Factory B\n   C - Factory C\n   D - Factory D\n   P - Factory A's parent company\n\n2. Connect the nodes with edges representing the supply relationships between the factories:\n\n   A -> B, C (A supplies components to B and C)\n   B -> D (B supplies sub-assemblies to D)\n   C -> D (C supplies sub-assemblies to D)\n\n3. Now, let's add an edge to show the sales relationship between Factory D and Factory A's parent company:\n\n   D -> P\n\n4. To analyze the effects of a 2-week shutdown at Factory A, we can remove the A node from our graph, which will break the supply chains from A to B and C.\n\n5. This disruption will cause B and C to halt their production of sub-assemblies, which in turn will stop Factory D from producing finished products.\n\n6. With no new finished products being produced, Factory D will not be able to sell anything to Factory A's parent company, P.\n\n7. However, this creates a feedback loop, as the shutdown at Factory A prevents them from purchasing finished products from Factory D, which in turn prevents Factory D from selling products, further exacerbating the impact on Factory A.\n\n8. To fully understand the downstream effects, we can continue tracing the edges to identify any additional factories or entities that might be affected.\n\n9. In this case, the immediate downstream effects include the halting of production at Factories B, C, and D, as well as the disruption in the sales relationship between Factory D and Factory A's parent company. The feedback loop further emphasizes the interconnectedness of these factories and the potential ripple effects of a shutdown at Factory A.",
+  "response_length": 1800,
+  "elapsed_seconds": 39.24,
+  "tokens": {
+    "prompt_tokens": 255,
+    "completion_tokens": 464,
+    "total_duration_ms": 39230.723375
+  },
+  "timestamp": "2026-03-06T10:08:20.688435",
+  "score": 3,
+  "score_reason": "The response traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company, satisfying all additional scoring criteria.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:18:22.044636"
+}

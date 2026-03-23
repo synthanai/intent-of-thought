@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_z-ai_glm-5-turbo_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "SELECTED APPROACH: CoT because the task requires sequential logical steps to interpret a specific set of laboratory values and build a single definitive diagnosis without branching into alternative differentials.\nPURPOSE",
+  "response_length": 220,
+  "elapsed_seconds": 9.86,
+  "tokens": {
+    "prompt_tokens": 346,
+    "completion_tokens": 1024,
+    "total_duration_ms": 9855.79
+  },
+  "timestamp": "2026-03-17T14:10:09.323766",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The response correctly identifies iron deficiency anaemia but does not provide the step-by-step reasoning through all four lab values as required.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T18:02:08.888726"
+}

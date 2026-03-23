@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_mistral_latest_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Approach chosen: chain-of-thought (step by step)\n\nExplanation: The task requires a sequential logical process of dividing the decimal number by 2 and recording the remainders to obtain the binary representation. This is a straightforward process without a need to explore multiple alternatives or map interconnected factors.\n\nSolution:\n\n1. Start with the decimal number 1247.\n2. Divide the number by 2: 1247 / 2 = 623 with a remainder of 1. Write down the remainder (1) and keep the quotient (623).\n3. Repeat the process with the quotient (623) and divide it by 2: 623 / 2 = 311 with a remainder of 1. Write down the remainder (1) and keep the quotient (311).\n4. Continue dividing the quotients by 2 and writing down the remainders until you reach a quotient of 1:\n   311 / 2 = 155 with a remainder of 1.\n  155 / 2 = 77 with a remainder of 1.\n  77 / 2 = 38 with a remainder of 1.\n  38 / 2 = 19 with a remainder of 0.\n  19 / 2 = 9 with a remainder of 1.\n   9 / 2 = 4 with a remainder of 1.\n   4 / 2 = 2 with a remainder of 0.\n   2 / 2 = 1 with a remainder of 0.\n  1 / 2 = 0 with a remainder of 1.\n\n5. Reverse the sequence of remainders to obtain the binary representation: 1 1 0 0 0 1 1 0 0 1.\n\nThe binary representation of the decimal number 1247 is 10000110011.",
+  "response_length": 1262,
+  "elapsed_seconds": 39.84,
+  "tokens": {
+    "prompt_tokens": 205,
+    "completion_tokens": 446,
+    "total_duration_ms": 39830.801833
+  },
+  "timestamp": "2026-03-06T02:54:09.676695",
+  "score": 2,
+  "score_reason": "The model provided the correct method and some steps but made an error in reading the remainders bottom-up, resulting in an incorrect binary representation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:07:02.237110"
+}

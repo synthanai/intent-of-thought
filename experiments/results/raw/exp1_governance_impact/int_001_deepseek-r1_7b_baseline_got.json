@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "**Analysis of Symptoms and Underlying Condition**\n\n**1. Key Factors Identified:**\n- **Symptoms:** Chronic Fatigue, Joint Pain, Butterfly-shaped Rash.\n- **Underlying Conditions:** Inflammatory Bowel Disease, Rheumatoid Arthritis, Psoriasis, Zika Virus.\n\n**2. Relationships Between Factors:**\n- **Chronic Fatigue & Joint Pain:** Likely related through conditions like rheumatoid arthritis.\n- **Chronic Fatigue & Rash:** Potentially linked through autoimmune conditions affecting systemic symptoms.\n- **Joint Pain & Rash:** Connected via psoriatic arthritis, where skin condition triggers joint issues.\n\n**3. Feedback Loops:**\n- A feedback loop exists where an underlying condition causes joint pain, leading to a skin rash, which in turn reinforces the condition.\n\n**4. Central Factors:**\n- **Underlying Condition:** Serves as the central factor linking all symptoms.\n- **Rash:** May act as a key indicator of an autoimmune process affecting multiple areas.\n\n**5. Feedback Loop Explanation:**\n- An autoimmune condition could cause joint pain, which affects the skin, leading to the rash, thereby reinforcing the initial condition.\n\n**6. Synthesis:**\n- The interconnections suggest a potential autoimmune process, possibly systemic, tying together chronic fatigue, joint pain, and the rash. The feedback loop highlights the need for a holistic approach, considering how symptoms may mutually reinforce each",
+  "response_length": 1403,
+  "elapsed_seconds": 89.33,
+  "tokens": {
+    "prompt_tokens": 192,
+    "completion_tokens": 1024,
+    "total_duration_ms": 89309.793958
+  },
+  "timestamp": "2026-03-06T08:48:19.626248",
+  "score": 2,
+  "score_reason": "The model identifies multiple conditions but fails to correctly identify SLE as the unifying factor and does not adequately explain how all three symptoms are mechanistically linked through autoimmune inflammation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T19:45:05.797812"
+}

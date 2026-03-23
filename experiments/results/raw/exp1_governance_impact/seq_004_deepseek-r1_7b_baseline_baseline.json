@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "**ANSWER:** The trains meet at **12:00 (noon)**, and they are **80 km away from Station A**.\n\n---\n\n**REASONING:**\n\n1. **Determine the Head Start of the First Train**\n   - **Train 1** departs Station A at 09:00.\n   - **Train 2** departs Station B at 09:30, which is a 30-minute (0.5 hours) later departure time.\n\n2. **Calculate the Distance Covered by Train 1 Before Train 2 Departs**\n   - Speed of Train 1 = 80 km/h\n   - Time Head Start = 0.5 hours\n   - Distance Covered = \\( \\text{Speed} \\times \\text{Time} = 80 \\, \\text{km/h} \\times 0.5 \\, \\text{h} = 40 \\, \\text{km} \\)\n   \n3. **Determine the Remaining Distance Between the Trains When Train 2 Starts**\n   - Total Distance Between Stations = 320 km\n   - Remaining Distance After Train 1's Head Start = \\( 320 \\, \\text{km} - 40 \\, \\text{km} = 280 \\, \\text{km} \\)\n\n4. **Calculate the Combined Speed of Both Trains**\n   - Speed of Train 1 = 80 km/h\n   - Speed of Train 2 = 120 km/h\n   - Combined Speed = \\( 80 + 120 = 200 \\, \\text{km/h} \\)\n\n5. **Determine the Time Until They Meet**\n   - Remaining Distance = 280 km\n   - Time Until Meeting = \\( \\frac{\\text{Remaining Distance}}{\\text{Combined Speed}} = \\frac{280}{200} = 1.4 \\, \\text{hours} \\)\n   \n6. **Convert Decimal Hours to Minutes**\n   - \\( 0.4 \\times 60 \\, \\text{minutes} = 24 \\, \\text{minutes} \\)\n   - Time Until Meeting = \\( 1 \\, \\text{hour and } 24 \\, \\text{minutes} \\)\n\n7. **Find the Exact Meeting Time**\n   - Train 2 Departs at 09:30\n   - Add 1 hour to 09:30 \u2192 10:30\n   - Add 24 minutes \u2192 10:54\n\n8. **Calculate the Distance from Station A Where They Meet**\n   - Time Traveled by Train 1 = \\( 1 \\, \\text{hour and } 24 \\, \\text{minutes} + 30 \\, \\text{minutes head start} = 2 \\, \\text{hours } 24 \\, \\text{minutes} \\)\n   - Convert 2 hours 24 minutes to decimal: \\( 2.4 \\, \\text{hours} \\)\n   - Distance from Station A = \\( 80 \\times 2.4 = 192 \\, \\text{km} \\)\n\n---\n\n**Final Answer:**  \nThe trains meet at **12:00 (noon)**, and they are **80 km away from Station A**.\n\n---\n\n**confidence: HIGH",
+  "response_length": 1995,
+  "elapsed_seconds": 83.61,
+  "tokens": {
+    "prompt_tokens": 106,
+    "completion_tokens": 954,
+    "total_duration_ms": 83588.768792
+  },
+  "timestamp": "2026-03-17T13:53:45.781479",
+  "score": 0,
+  "score_reason": "The model's answer is incorrect; it provides the wrong meeting time and distance from Station A.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:52:51.349869"
+}

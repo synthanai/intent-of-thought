@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_qwen2.5_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "STEP 1: Calculate the distance covered by the first train before the second train starts.\n- The first train leaves at 09:00 and travels at 80 km/h. By 09:30, it has been traveling for 0.5 hours.\n- Distance = Speed \u00d7 Time\n- Distance covered by the first train in 0.5 hours = 80 km/h \u00d7 0.5 h = 40 km\n\nSTEP 2: Determine the relative speed of the two trains when they start moving towards each other.\n- The second train leaves at 09:30 and travels at 120 km/h towards Station A.\n- Relative speed is the sum of their speeds because they are moving towards each other.\n- Relative speed = 80 km/h + 120 km/h = 200 km/h\n\nSTEP 3: Calculate the remaining distance between the two trains when the second train starts.\n- The initial distance between Station A and Station B is 320 km.\n- Subtract the 40 km that the first train has already covered from this total distance.\n- Remaining distance = 320 km - 40 km = 280 km\n\nSTEP 4: Calculate the time it takes for the two trains to meet after the second train starts.\n- Time = Distance / Relative Speed\n- Time taken for them to meet = 280 km / 200 km/h = 1.4 hours\n\nSTEP 5: Determine the meeting time.\n- The second train leaves at 09:30, and they take 1.4 hours to meet.\n- Meeting time = 09:30 + 1.4 hours\n- Convert 0.4 hour into minutes: 0.4 \u00d7 60 = 24 minutes\n- Meeting time = 09:54\n\nSTEP 6: Calculate the distance from Station A to the meeting point.\n- The first train travels at 80 km/h for 1.4 hours after it has already covered 40 km.\n- Distance traveled by the first train in 1.4 hours = 80 km/h \u00d7 1.4 h = 112 km\n- Total distance from Station A to the meeting point = Initial 40 km + 112 km = 152 km\n\nFINAL ANSWER: The trains meet at 09:54, and they are 152 km from Station A.\nCONFIDENCE: HIGH",
+  "response_length": 1734,
+  "elapsed_seconds": 50.15,
+  "tokens": {
+    "prompt_tokens": 192,
+    "completion_tokens": 534,
+    "total_duration_ms": 50135.395167
+  },
+  "timestamp": "2026-03-17T14:11:21.315638",
+  "score": 2,
+  "score_reason": "The model correctly calculates the distance from Station A to the meeting point (152 km) but makes an arithmetic error in determining the meeting time (09:54 instead of 10:54).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:18:59.313197"
+}

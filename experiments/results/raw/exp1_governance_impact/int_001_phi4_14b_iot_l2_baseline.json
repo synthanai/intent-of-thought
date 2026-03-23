@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_phi4_14b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, the most appropriate reasoning approach is the **graph-of-thought**. This is because the task involves analyzing interconnected factors (symptoms) to determine if they share a common underlying condition, and if so, to map out their interconnections and interactions. This approach will allow us to create a relationship map showing connections, feedback loops, and systemic effects among the symptoms.\n\n### Analysis:\n\n1. **Symptoms Overview:**\n   - **Chronic Fatigue:** Can be caused by a variety of conditions including chronic fatigue syndrome, anemia, thyroid disorders, depression, or autoimmune diseases.\n   - **Joint Pain:** Commonly associated with arthritis, lupus, rheumatoid arthritis, or infections.\n   - **Butterfly-shaped Facial Rash:** Characteristically associated with systemic lupus erythematosus (SLE).\n\n2. **Potential Common Underlying Condition:**\n   - **Systemic Lupus Erythematosus (SLE):** SLE is an autoimmune disease that can cause all three symptoms:\n     - **Chronic Fatigue:** Due to the body's immune response and inflammation.\n     - **Joint Pain:** Arthritis is a common manifestation of SLE.\n     - **Butterfly-shaped Facial Rash:** A hallmark sign of SLE.\n\n3. **Interconnections and Systemic Effects:**\n   - **Autoimmune Response:** In SLE, the immune system attacks healthy tissues, leading to inflammation and tissue damage, which can cause joint pain and fatigue.\n   - **Inflammation:** Chronic inflammation from SLE can lead to fatigue and exacerbate joint pain.\n   - **Photosensitivity:** The butterfly rash is often triggered or worsened by sunlight exposure, which can also affect mood and energy levels, contributing to fatigue.\n\n### Relationship Map:\n\n- **Chronic Fatigue \u2194 Joint Pain:** Both are exacerbated by inflammation and immune response in SLE.\n- **Joint Pain \u2194 Butterfly-shaped Facial Rash:** Both are symptoms of SLE, linked by the underlying autoimmune activity.\n- **Chronic Fatigue \u2194 Butterfly-shaped Facial Rash:** Both can be influenced by the systemic effects of SLE, including inflammation and photosensitivity.\n\n### Conclusion:\n\nThe symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash are interconnected and can share a common underlying condition, such as systemic lupus erythematosus (SLE). The graph-of-thought approach helps illustrate how these symptoms are not independent but are linked through the systemic effects of an autoimmune disease, providing a comprehensive view of their interactions and interdependencies.",
+  "response_length": 2523,
+  "elapsed_seconds": 87.58,
+  "tokens": {
+    "prompt_tokens": 215,
+    "completion_tokens": 517,
+    "total_duration_ms": 87559.524125
+  },
+  "timestamp": "2026-03-06T08:00:58.785291",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition, explains how all three symptoms are linked through autoimmune inflammation, and warns against treating them independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T21:14:38.190307"
+}

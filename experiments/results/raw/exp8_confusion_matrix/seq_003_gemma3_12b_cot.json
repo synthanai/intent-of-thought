@@ -1,0 +1,19 @@
+{
+  "run_id": "seq_003_gemma3_12b_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "cot",
+  "model": "gemma3:12b",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Okay, let's convert the decimal number 1247 to binary, following a single, logical chain of reasoning (repeated division by 2) and showing all steps.\n\n1. **Initial Setup & Goal:** We want to convert 1247 (decimal) to binary. The standard method is to repeatedly divide by 2 and record the remainders.  The remainders, read in reverse order, will form the binary representation.\n\n2. **First Division:** Divide 1247 by 2.\n   * Calculation: 1247 / 2 = 623.5\n   * Result: Quotient = 623, Remainder = 1\n\n3. **Second Division:** Divide the quotient (623) from the previous step by 2.\n   * Calculation: 623 / 2 = 311.5\n   * Result: Quotient = 311, Remainder = 1\n\n4. **Third Division:** Divide the quotient (311) from the previous step by 2.\n   * Calculation: 311 / 2 = 155.5\n   * Result: Quotient = 155, Remainder = 1\n\n5. **Fourth Division:** Divide the quotient (155) from the previous step by 2.\n   * Calculation: 155 / 2 = 77.5\n   * Result: Quotient = 77, Remainder = 1\n\n6. **Fifth Division:** Divide the quotient (77) from the previous step by 2.\n   * Calculation: 77 / 2 = 38.5\n   * Result: Quotient = 38, Remainder = 1\n\n7. **Sixth Division:** Divide the quotient (38) from the previous step by 2.\n   * Calculation: 38 / 2 = 19\n   * Result: Quotient = 19, Remainder = 0\n\n8. **Seventh Division:** Divide the quotient (19) from the previous step by 2.\n   * Calculation: 19 / 2 = 9.5\n   * Result: Quotient = 9, Remainder = 1\n\n9. **Eighth Division:** Divide the quotient (9) from the previous step by 2.\n   * Calculation: 9 / 2 = 4.5\n   * Result: Quotient = 4, Remainder = 1\n\n10. **Ninth Division:** Divide the quotient (4) from the previous step by 2.\n    * Calculation: 4 / 2 = 2\n    * Result: Quotient = 2, Remainder = 0\n\n11. **Tenth Division:** Divide the quotient (2) from the previous step by 2.\n    * Calculation: 2 / 2 = 1\n    * Result: Quotient = 1, Remainder = 0\n\n12. **Eleventh Division:** Divide the quotient (1) from the previous step by 2.\n    * Calculation: 1 / 2 = 0.5\n    * Result: Quotient = 0, Remainder = 1\n\n13. **Final Step & Binary Construction:** We've reached a quotient of 0, so we stop. Now, read the remainders in reverse order.\n\n14. **Result:** The remainders in reverse order are: 10011111111.\n\nTherefore, 1247 in decimal is equal to 10011111111 in binary.",
+  "response_length": 2279,
+  "elapsed_seconds": 137.02,
+  "timestamp": "2026-03-06T15:58:33.148371",
+  "score": 2,
+  "score_reason": "The steps are correct and detailed, but the final binary result (10011111111) is incorrect; it should be 10011011111.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T00:06:03.314416"
+}

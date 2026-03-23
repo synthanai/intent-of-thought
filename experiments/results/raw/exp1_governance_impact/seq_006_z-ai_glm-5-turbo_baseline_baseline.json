@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_z-ai_glm-5-turbo_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "ANSWER: The most likely diagnosis is iron deficiency anemia.\nREASONING: The patient is anemic, indicated by a low hemoglobin level of 8.2 g/dL. The low Mean Corpuscular Volume (MCV) of 68 fL classifies this as a microcytic anemia. The serum ferritin of 8 ng/mL is low, which is a highly specific indicator of depleted total body iron stores. Furthermore, the Total Iron Binding Capacity (TIBC) is elevated at 450 \u03bcg/dL; in the setting of iron deficiency, the liver produces more transferrin in an attempt to maximize the transport of the limited available iron. The combination of microcytic anemia, low ferritin, and high TIBC is the classic pathognomonic laboratory profile for iron deficiency anemia, effectively ruling out other microcytic anemias like thalassemia (normal/high ferritin) or anemia of chronic disease (normal/high ferritin, low/normal TIBC).\nCONFIDENCE: HIGH",
+  "response_length": 878,
+  "elapsed_seconds": 6.81,
+  "tokens": {
+    "prompt_tokens": 121,
+    "completion_tokens": 563,
+    "total_duration_ms": 6807.45
+  },
+  "timestamp": "2026-03-17T14:09:58.465405",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly diagnoses iron deficiency anemia with thorough step-by-step reasoning through all four lab values.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:57:35.413957"
+}

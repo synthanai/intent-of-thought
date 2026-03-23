@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_phi4_14b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "For this task, the most appropriate reasoning approach is the graph-of-thought. This is because the task involves identifying relationships and interactions between multiple factors in a supply chain. The factors are interconnected, and the task requires mapping these connections, including feedback loops and systemic effects.\n\n### Graph-of-Thought Approach:\n\n1. **Identify Key Nodes and Connections:**\n   - **Factory A**: Supplies components to Factory B and Factory C.\n   - **Factory B**: Receives components from Factory A and supplies sub-assemblies to Factory D.\n   - **Factory C**: Receives components from Factory A and supplies sub-assemblies to Factory D.\n   - **Factory D**: Receives sub-assemblies from both Factory B and Factory C, sells finished products to Factory A's parent company.\n\n2. **Map Initial Impact of Factory A's Shutdown:**\n   - **Factory B and Factory C**: Both will experience a shortage of components, potentially halting or slowing production of sub-assemblies for Factory D.\n\n3. **Trace Downstream Effects:**\n   - **Factory D**: With reduced sub-assemblies from Factory B and Factory C, Factory D's production of finished products will decrease.\n   - **Factory A's Parent Company**: Will receive fewer finished products from Factory D, potentially affecting sales and revenue.\n\n4. **Identify Feedback Loops:**\n   - **Factory D's Reduced Output**: May lead to increased pressure on Factory B and Factory C to optimize or find alternative component sources.\n   - **Factory A's Parent Company**: May pressure Factory A to expedite recovery or find alternative suppliers, impacting strategic decisions.\n\n5. **Systemic Effects:**\n   - **Supply Chain Disruption**: The entire supply chain experiences delays, affecting delivery schedules and customer satisfaction.\n   - **Financial Impact**: Potential financial losses for all factories involved due to decreased production and sales.\n\n### Relationship Map:\n\n- **Factory A** \u2192 Supplies components to \u2192 **Factory B** and **Factory C**\n- **Factory B** \u2192 Supplies sub-assemblies to \u2192 **Factory D**\n- **Factory C** \u2192 Supplies sub-assemblies to \u2192 **Factory D**\n- **Factory D** \u2192 Sells finished products to \u2192 **Factory A's Parent Company**\n\n### Feedback Loops:\n\n- **Factory D's Reduced Output** \u2194 Pressure on **Factory B** and **Factory C** to find alternatives\n- **Factory A's Parent Company** \u2194 Pressure on **Factory A** to recover or find alternatives\n\n### Systemic Effects:\n\n- **Supply Chain Disruption**: Delays and reduced production across the chain.\n- **Financial Impact**: Potential revenue loss and increased costs due to inefficiencies.\n\nBy using the graph-of-thought approach, we can effectively map out the interconnected factors and their relationships, ensuring a comprehensive understanding of the supply chain dynamics and the systemic effects of Factory A's shutdown.",
+  "response_length": 2857,
+  "elapsed_seconds": 97.68,
+  "tokens": {
+    "prompt_tokens": 224,
+    "completion_tokens": 579,
+    "total_duration_ms": 97655.72925
+  },
+  "timestamp": "2026-03-06T09:45:35.026632",
+  "score": 3,
+  "score_reason": "The response correctly traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:24:48.549800"
+}

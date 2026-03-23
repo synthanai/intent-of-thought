@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_qwen2.5_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "Let's break down the task and build the relationship graph step by step.\n\n### Step 1: Identify Key Factors, Entities, or Variables Involved\n- **Factory A**: Supplies components to Factory B and Factory C.\n- **Factory B**: Supplies sub-assemblies to Factory D.\n- **Factory C**: Supplies sub-assemblies to Factory D.\n- **Factory D**: Sells finished products to Factory A's parent company.\n- **Factory A's Parent Company**: Receives finished products from Factory D.\n- **2-Week Shutdown of Factory A**: This is the initial condition.\n\n### Step 2: Determine Relationships Between Factors\n- **Factory A --(supplies components)--> Factory B**\n- **Factory A --(supplies components)--> Factory C**\n- **Factory B --(supplies sub-assemblies)--> Factory D**\n- **Factory C --(supplies sub-assemblies)--> Factory D**\n- **Factory D --(sells finished products)--> Factory A's Parent Company**\n- **Feedback Loop**: Factory A's shutdown affects Factory D, which in turn affects Factory A through its parent company.\n\n### Step 3: Draw the Relationships as a List of Edges\n1. Factory A --(supplies components)--> Factory B\n2. Factory A --(supplies components)--> Factory C\n3. Factory B --(supplies sub-assemblies)--> Factory D\n4. Factory C --(supplies sub-assemblies)--> Factory D\n5. Factory D --(sells finished products)--> Factory A's Parent Company\n6. Factory A's Parent Company --(receives finished products)--> Factory D\n\n### Step 4: Identify Feedback Loops or Circular Dependencies\n- **Feedback Loop**: The shutdown of Factory A affects Factory D's production capabilities, and Factory D's reduced production affects Factory A's parent company, which might in turn impact Factory D's operations (through supply chain disruptions or financial constraints).\n\n### Step 5: Determine Which Factors are Most Central\n- **Factory A**: Central as it is the initial source of supply and its shutdown significantly impacts the entire supply chain.\n- **Factory D**: Central as it receives components from both Factory B and Factory C, and it is the final producer of finished products.\n- **Factory A's Parent Company**: Central as it receives finished products from Factory D, and its operations might be affected by supply chain disruptions.\n\n### Step 6: Synthesise the Analysis\n- **Initial Condition**: Factory A experiences a 2-week shutdown.\n- **Immediate Effects**:\n  - Factory B and Factory C will experience a reduction in component supply.\n  - Factory D will receive fewer sub-assemblies.\n- **Short-Term Effects**:\n  - Factory D will have reduced production of finished products.\n  - Factory A's parent company will receive fewer finished products.\n- **Long-Term Effects**:\n  - Reduced production at Factory D could lead to backorders or delayed deliveries to Factory A's parent company.\n  - Factory A might experience a backlog in component supply once it resumes operations.\n  - The feedback loop between Factory D and Factory A's parent company could lead to further adjustments in production schedules and inventory management.\n\n### Summary of Downstream Effects\n1. **Factory B and Factory C**: Reduced component supply, potential operational disruptions.\n2. **Factory D**: Reduced sub-assembly and finished product production.\n3. **Factory A's Parent Company**: Reduced finished product supply, potential impact on operations.\n4. **Feedback Loop**: Potential adjustments and constraints in the supply chain, affecting all entities involved.\n\nThis synthesis takes into account the interconnections between the factors and the feedback loops, providing a comprehensive view of the downstream effects of Factory A's shutdown.",
+  "response_length": 3610,
+  "elapsed_seconds": 67.74,
+  "tokens": {
+    "prompt_tokens": 226,
+    "completion_tokens": 767,
+    "total_duration_ms": 67718.640542
+  },
+  "timestamp": "2026-03-06T10:09:28.429925",
+  "score": 3,
+  "score_reason": "The model output correctly traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:30:46.936028"
+}

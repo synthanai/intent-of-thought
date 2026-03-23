@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_qwen3.5_9b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "**Selected Reasoning Approach:** Chain-of-Thought (CoT)\n\n**Reasoning for Selection:**\nThe task requires proving a mathematical fact using proof by contradiction. This method relies on a strict, linear sequence of logical deductions: assume the opposite of the claim, derive necessary consequences based on definitions and properties of integers, identify a specific inconsistency within",
+  "response_length": 386,
+  "elapsed_seconds": 157.5,
+  "tokens": {
+    "prompt_tokens": 178,
+    "completion_tokens": 1024,
+    "total_duration_ms": 157473.38
+  },
+  "timestamp": "2026-03-06T00:46:02.561063",
+  "score": 2,
+  "score_reason": "The model correctly identifies the need for proof by contradiction and outlines the general approach but does not provide all specific steps or complete the logical sequence required to reach the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T11:34:40.653098"
+}

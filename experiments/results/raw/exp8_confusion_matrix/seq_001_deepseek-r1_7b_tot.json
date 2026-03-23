@@ -1,0 +1,19 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_tot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "tot",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "To prove that the square root of 2 is irrational, I can use the classic proof by contradiction. Here's how it works step-by-step:\n\n1. **Assumption**: Assume, for contradiction, that \u221a2 is rational. This means it can be expressed as a fraction a/b, where a and b are integers with no common factors (i.e., the fraction is in lowest terms).\n\n2. **Equation**: Start with the equation \u221a2 = a/b. Squaring both sides gives 2 = a\u00b2/b\u00b2.\n\n3. **Rearrangement**: Multiply both sides by b\u00b2 to get 2b\u00b2 = a\u00b2.\n\n4. **Evenness of a\u00b2**: Since a\u00b2 = 2b\u00b2, a\u00b2 is even. This implies that a must be even (because the square of an odd number is odd).\n\n5. **Expressing a**: Let a = 2k, where k is an integer. Substitute back into the equation: (2k)\u00b2 = 2b\u00b2 \u21d2 4k\u00b2 = 2b\u00b2.\n\n6. **Simplification**: Divide both sides by 2 to get 2k\u00b2 = b\u00b2. This implies that b\u00b2 is even, and thus b is also even.\n\n7. **Contradiction**: Both a and b are even, meaning they have a common factor of 2. This contradicts the initial assumption that a and b have no common factors.\n\n8. **Conclusion**: Since our assumption leads to a contradiction, \u221a2 cannot be expressed as a ratio of two integers. Therefore, \u221a2 is irrational.\n\nThis method is straightforward and effective, providing a clear proof of the irrationality of \u221a2.",
+  "response_length": 1269,
+  "elapsed_seconds": 86.9,
+  "timestamp": "2026-03-06T14:58:01.987710",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction with all necessary steps and reasoning to demonstrate the irrationality of \u221a2.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T22:57:05.995630"
+}

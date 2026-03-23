@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_phi4_14b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "### Chosen Approach: Graph-of-Thought\n\n**Reasoning:**  \nThe task involves identifying and mapping the interconnected relationships and interactions between various factories in a supply chain. The relationships include direct supply lines, feedback loops, and systemic effects, which align well with the graph-of-thought approach. This approach will allow us to visualize the connections and interactions between the factories effectively.\n\n### Relationship Map and Analysis\n\n1. **Initial Impact: Factory A's Shutdown**\n   - Factory A experiences a 2-week shutdown, ceasing the supply of components to both Factory B and Factory C.\n   \n2. **Direct Downstream Effects:**\n   - **Factory B:** \n     - Receives no components from Factory A, halting its production of sub-assemblies.\n     - Cannot supply sub-assemblies to Factory D.\n   - **Factory C:**\n     - Similarly, receives no components from Factory A, halting its production of sub-assemblies.\n     - Cannot supply sub-assemblies to Factory D.\n\n3. **Secondary Effects on Factory D:**\n   - Receives no sub-assemblies from both Factory B and Factory C.\n   - Production of finished products is halted or significantly reduced.\n   - Sales of finished products to Factory A's parent company are affected.\n\n4. **Feedback Loops:**\n   - **Factory A's Parent Company:**\n     - Experiences a shortage of finished products due to Factory D's production halt.\n     - This may lead to pressure on Factory D to expedite production once components are available.\n   - **Factory D:**\n     - May seek alternative suppliers or expedite production once Factory A resumes operations.\n     - Could lead to increased costs or changes in order priorities.\n\n5. **Systemic Effects:**\n   - **Inventory Management:**\n     - Factories B and C may need to manage existing inventory of components and sub-assemblies.\n     - Factory D may need to adjust inventory levels and manage backorders.\n   - **Operational Adjustments:**\n     - Factories B, C, and D might need to adjust their operational schedules and workforce.\n   - **Financial Implications:**\n     - Potential financial impact due to delayed production and sales.\n     - Possible renegotiation of contracts or terms with Factory A's parent company.\n\n### Conclusion\n\nThe graph-of-thought approach effectively captures the complex web of interactions and feedback loops resulting from Factory A's shutdown. By mapping these relationships, we can visualize the cascading effects throughout the supply chain and anticipate potential responses and adjustments by the involved parties.",
+  "response_length": 2563,
+  "elapsed_seconds": 87.14,
+  "tokens": {
+    "prompt_tokens": 224,
+    "completion_tokens": 514,
+    "total_duration_ms": 87115.269208
+  },
+  "timestamp": "2026-03-06T10:06:44.106740",
+  "score": 3,
+  "score_reason": "The model output correctly traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:27:01.676669"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "The task involves analyzing the downstream effects of a 2-week shutdown at Factory A in a supply chain. Here's the structured breakdown:\n\n1. **Factory A Shutdown**: Factory A stops operations, halting the supply of components to Factory B and Factory C.\n\n2. **Impact on Factories B and C**: Since B and C rely on components from A, they are unable to continue their production processes.\n\n3. **Impact on Factory D**: Factories B and C supply sub-assemblies to Factory D. With B and C unable to provide these sub-assemblies, Factory D cannot produce its finished goods, leading to a shutdown.\n\n4. **Impact on Factory A's Parent Company**: Factory D sells finished products to the parent company. The shutdown of D results in reduced production, affecting the parent company's supply chain and revenue.\n\n**Conclusion**: The shutdown at Factory A propagates through the supply chain, causing a ripple effect that ultimately impacts Factory D and subsequently the parent company. There is no direct feedback loop mentioned in the scenario, so the analysis stops at the parent company's level.",
+  "response_length": 1088,
+  "elapsed_seconds": 77.9,
+  "tokens": {
+    "prompt_tokens": 217,
+    "completion_tokens": 909,
+    "total_duration_ms": 77875.255166
+  },
+  "timestamp": "2026-03-06T09:30:58.654640",
+  "score": 2,
+  "score_reason": "The response traces the forward paths A->B->D and A->C->D, identifies D as double-hit, but misses the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:21:32.767228"
+}

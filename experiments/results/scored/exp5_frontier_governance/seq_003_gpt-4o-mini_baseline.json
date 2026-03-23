@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_gpt-4o-mini_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "gpt-4o-mini",
+  "model_id": "openai/gpt-4o-mini",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "prompt": "Task: Convert the decimal number 1247 to binary. Show all your working step by step.\n\nProvide your answer with clear reasoning.",
+  "response": "To convert the decimal number 1247 to binary, we can use the method of successive division by 2, keeping track of the remainders. Here's a step-by-step breakdown:\n\n1. **Divide the number by 2**: Write down the quotient and the remainder.\n2. **Repeat the process**: Take the quotient and divide it by 2 again, continuing until the quotient is 0.\n3. **Collect the remainders**: The binary representation is formed by the remainders read in reverse order (from last to first).\n\nLet's go through the steps:\n\n1. **1247 \u00f7 2**\n   - Quotient: 623\n   - Remainder: 1\n\n2. **623 \u00f7 2**\n   - Quotient: 311\n   - Remainder: 1\n\n3. **311 \u00f7 2**\n   - Quotient: 155\n   - Remainder: 1\n\n4. **155 \u00f7 2**\n   - Quotient: 77\n   - Remainder: 1\n\n5. **77 \u00f7 2**\n   - Quotient: 38\n   - Remainder: 1\n\n6. **38 \u00f7 2**\n   - Quotient: 19\n   - Remainder: 0\n\n7. **19 \u00f7 2**\n   - Quotient: 9\n   - Remainder: 1\n\n8. **9 \u00f7 2**\n   - Quotient: 4\n   - Remainder: 1\n\n9. **4 \u00f7 2**\n   - Quotient: 2\n   - Remainder: 0\n\n10. **2 \u00f7 2**\n    - Quotient: 1\n    - Remainder: 0\n\n11. **1 \u00f7 2**\n    - Quotient: 0\n    - Remainder: 1\n\nNow, we compile the remainders from the last division to the first:\n\n- The remainders collected are: 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1\n- Reading these from bottom to top gives us: **10011001111**\n\nThus, the binary representation of the decimal number 1247 is:\n\n**1247 in binary is 10011001111.**",
+  "response_length": 1363,
+  "elapsed_seconds": 8.87,
+  "tokens": {
+    "prompt_tokens": 34,
+    "completion_tokens": 507,
+    "total_tokens": 541
+  },
+  "timestamp": "2026-03-19T15:56:36.524492",
+  "score": 2,
+  "judge_model": "phi4:14b",
+  "judge_raw": "2"
+}

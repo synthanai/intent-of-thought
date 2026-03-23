@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_gemma3_12b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "Okay, let's prove that the square root of 2 is irrational using proof by contradiction. Here's a step-by-step breakdown:\n\n**1. Assumption for Contradiction:**\n\n1. **What:** We begin by assuming the opposite of what we want to prove. We'll assume that the square root of 2 *is* rational.\n2. **Result:**  Assume \u221a2 is rational.\n3. **Connection:** This is the standard starting point for a proof by contradiction.  If we can show that this assumption leads to a logical absurdity, then our original statement (that \u221a2 is irrational) must be true.\n\n**2. Definition of Rational Number:**\n\n1. **What:**  A rational number can be expressed as a fraction p/q, where p and q are integers, and q is not zero.  We'll also assume that the fraction is in its simplest form (i.e., p and q have no common factors other than 1).\n2. **Result:** If \u221a2 is rational, then \u221a2 = p/q, where p and q are integers, q \u2260 0, and p/q is in its simplest form (gcd(p, q) = 1).\n3. **Connection:** This step formalizes what it means for \u221a2 to be rational, allowing us to manipulate the equation.  The \"simplest form\" assumption is crucial for the contradiction to arise.\n\n**3. Squaring Both Sides:**\n\n1. **What:** We square both sides of the equation to eliminate the square root.\n2. **Result:** (\u221a2)\u00b2 = (p/q)\u00b2  =>  2 = p\u00b2/q\u00b2\n3. **Connection:** Squaring both sides allows us to move away from the square root and work with integers, making the next manipulation easier.\n\n**4. Rearranging the Equation:**\n\n1. **What:** We rearrange the equation to isolate p\u00b2 in terms of q\u00b2.\n2. **Result:**  2q\u00b2 = p\u00b2\n3. **Connection:** This step makes it easier to show that p\u00b2 must be even.\n\n**5. Deduction: p\u00b2 is Even:**\n\n1. **What:** We analyze the equation 2q\u00b2 = p\u00b2. Since 2q\u00b2 is an even number (because it's 2 multiplied by an integer), it follows that p\u00b2 must also be even.\n2. **Result:** p\u00b2 is even.\n3. **Connection:** This is a key deduction.  If p\u00b2 is even, then p must also be even (see explanation below).\n\n*Explanation of why p\u00b2 being even implies p is even:*  If p were odd, it could be written as 2k+1 for some integer k. Then p\u00b2 = (2k+1)\u00b2 = 4k\u00b2 + 4k + 1 = 2(2k\u00b2 + 2k) + 1, which is odd.  Since p\u00b2 is even, p *cannot* be odd, so it must be even.\n\n**6. Expressing p as 2k:**\n\n1. **What:**  If p is even, then it can be written as 2k for some integer k.\n2. **Result:**  p = 2k, where k is an integer.\n3. **Connection:** This step substitutes a general expression for p, allowing us to further simplify the equation.\n\n**7. Substitution into the Original Equation:**\n\n1. **What:** We substitute p = 2k back into the equation 2q\u00b2 = p\u00b2.\n2. **Result:** 2q\u00b2 = (2k)\u00b2  =>  2q\u00b2 = 4k\u00b2\n3. **Connection:** This step allows us to simplify the equation further and connect q to k.\n\n**8. Simplification:**\n\n1. **What:** We divide both sides of the equation by 2.\n2. **Result:** q\u00b2 = 2k\u00b2\n3. **Connection:** This step reveals that q\u00b2 must also be even, mirroring the earlier finding about p\u00b2.\n\n**9. Deduction: q\u00b2 is Even:**\n\n1. **What:** Since q\u00b2 = 2k\u00b2, and 2k\u00b2 is an even number, q\u00b2 must also be even.\n2. **Result:** q\u00b2 is even.\n3. **Connection:** This step continues the pattern of showing that both p and q are even.\n\n**10. Deduction: q is Even:**\n\n1. **What:** If q\u00b2 is even, then q must also be even (for the same reasoning as in step 5).\n2. **Result:** q is even.\n3. **Connection:**  This is a critical step.  We now have shown that *both* p and q are even.\n\n**11.",
+  "response_length": 3414,
+  "elapsed_seconds": 172.79,
+  "tokens": {
+    "prompt_tokens": 77,
+    "completion_tokens": 1024,
+    "total_duration_ms": 172742.040166
+  },
+  "timestamp": "2026-03-06T00:07:30.275757",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction, detailing each step clearly and leading to the logical conclusion that both p and q are even, contradicting their assumption of being in lowest terms.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:07:10.526282"
+}

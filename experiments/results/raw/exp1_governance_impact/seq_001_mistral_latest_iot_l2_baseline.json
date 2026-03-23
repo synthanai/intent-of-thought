@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_mistral_latest_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "Approach chosen: Chain-of-thought (step by step)\n\nReasoning:\n1. First, we define an irrational number as a number that cannot be expressed as a simple fraction.\n2. We know that the square root of a perfect square is a rational number. For example, the square root of 4 is 2.\n3. However, if we consider the square root of 2, let's call it \u221a2 = x. This means that x^2 = 2.\n4. Since x is a rational number, it can be expressed as a simple fraction, say x = p/q, where p and q are integers that have no common factors other than 1 (i.e., they are coprime).\n5. Substituting x into the equation x^2 = 2, we get (p/q)^2 = 2.\n6. Cross-multiplying, we get p^2 = 2q^2.\n7. This equation implies that p^2 is an even number because it is equal to 2 times a square number (q^2).\n8. If p^2 is even, then p must also be even (since the only way an even number squared can equal an even number is if the original number is even).\n9. If p is even, then p can be written as 2k for some integer k. Substituting this into our equation from step 6, we get (2k)^2 = 2q^2, which simplifies to 4k^2 = 2q^2.\n10. This means that q^2 is twice an integer (4k^2), so q^2 is even. Since the square of an integer is always an integer, this implies that q is even as well.\n11. But we assumed that p and q are coprime, meaning they share no common factors other than 1. However, since both p and q are even, they share the common factor of 2, which contradicts our assumption.\n12. Therefore, the assumption that \u221a2 is rational leads to a contradiction, and thus \u221a2 must be irrational.\n\nThe reasoning provided here follows a single logical chain of steps, avoiding the exploration of multiple alternatives or the mapping of interconnected factors, as requested by the governance specification.",
+  "response_length": 1758,
+  "elapsed_seconds": 40.48,
+  "tokens": {
+    "prompt_tokens": 198,
+    "completion_tokens": 514,
+    "total_duration_ms": 40470.486958
+  },
+  "timestamp": "2026-03-05T23:37:05.556739",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction with all necessary steps clearly outlined.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:46:23.922234"
+}

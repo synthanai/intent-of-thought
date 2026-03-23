@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_mistral_latest_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "Approach chosen: Chain-of-thought (step by step)\n\nReasoning:\n1. We start by defining what is meant by an irrational number. An irrational number is a number that cannot be expressed as a simple fraction (ratio of two integers).\n\n2. Next, we recall the definition of the square root of a number. The square root of a number is a value that, when multiplied by itself, gives the original number. For example, the square root of 4 is 2 because 2*2 = 4.\n\n3. Now, let's assume, for the sake of contradiction, that the square root of 2 is rational. This means it can be expressed as a simple fraction, say a/b, where a and b are integers and b is not equal to zero.\n\n4. If the square root of 2 is rational, then (2*a^2) = b^2. This equation implies that 2*a^2 is a perfect square, so it can be written as a square times some integer. Let's say 2*a^2 = (square_number)*c^2.\n\n5. Now, we can equate the left and right sides of the equation from step 4: 2*a^2 = (square_number)*c^2. Since a^2 is a factor on the left side, we can write a^2 = (square_number)*(1/c^2).\n\n6. This means a^2 is a rational number because it can be expressed as a simple fraction. However, this contradicts our initial assumption that the square root of 2 is rational, as a^2 is half of the original number, and it is supposed to be a square.\n\n7. Since we've reached a contradiction, our initial assumption that the square root of 2 is rational must be false. Therefore, the square root of 2 is irrational.\n\nIn summary, the square root of 2 is irrational because if we assume it's rational, we end up with a contradiction, and we cannot express it as a simple fraction.",
+  "response_length": 1635,
+  "elapsed_seconds": 39.83,
+  "tokens": {
+    "prompt_tokens": 198,
+    "completion_tokens": 466,
+    "total_duration_ms": 39825.573208
+  },
+  "timestamp": "2026-03-06T00:15:22.792479",
+  "score": 2,
+  "score_reason": "The response correctly concludes that sqrt(2) is irrational using contradiction but contains minor gaps and inaccuracies in the logical steps.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:56:54.210444"
+}

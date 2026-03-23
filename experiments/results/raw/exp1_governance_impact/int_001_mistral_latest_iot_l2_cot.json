@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "Approach chosen: Graph-of-thought (map factors and edges)\n\nReasoning:\n\n1. Identify the three symptoms: Chronic fatigue, joint pain, and a butterfly-shaped facial rash.\n\n2. Research potential underlying conditions that could cause these symptoms. Some possibilities include Lupus, Rheumatoid Arthritis, Fibromyalgia, and other autoimmune disorders, viral infections, or chronic fatigue syndrome.\n\n3. Map the potential underlying conditions as nodes in a graph. Connect the nodes with edges if there's evidence of their co-occurrence or shared symptoms.\n\n4. Analyze the relationships and interactions between the conditions. For example, Lupus and Rheumatoid Arthritis are both autoimmune disorders that can cause joint pain, chronic fatigue, and a butterfly-shaped facial rash. In this case, these two conditions would be closely connected in the graph.\n\n5. Identify feedback loops or systemic effects. For example, chronic fatigue can worsen joint pain and vice versa, creating a feedback loop between these symptoms.\n\n6. The final output is a relationship map showing connections, feedback loops, and systemic effects between the potential underlying conditions and their symptoms. This map can help guide further diagnostic tests and treatment strategies.",
+  "response_length": 1257,
+  "elapsed_seconds": 25.42,
+  "tokens": {
+    "prompt_tokens": 246,
+    "completion_tokens": 292,
+    "total_duration_ms": 25404.497625
+  },
+  "timestamp": "2026-03-06T08:02:31.372072",
+  "score": 2,
+  "score_reason": "The model identifies lupus as a connector but lacks detailed explanation of how autoimmune inflammation links all three symptoms mechanistically and does not emphasize the risk of treating them independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:38:59.063425"
+}

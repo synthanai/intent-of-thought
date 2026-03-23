@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_gemma3_12b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "I will use a **chain-of-thought** approach. This task requires a single, logical proof, making a sequential, step-by-step derivation the most appropriate and efficient method. Tree-of-thought and graph-of-thought are unnecessary because there's a defined, linear path to proving irrationality.\n\nHere's the proof by contradiction:\n\n1. **Assumption for Contradiction:** Assume, for the sake of contradiction, that \u221a2 is rational. This means \u221a2 can be expressed as a fraction p/q, where p and q are integers and q \u2260 0. Furthermore, we can assume that p/q is in its simplest form; that is, p and q have no common factors (they are coprime).\n\n2. **Equation from the Assumption:** If \u221a2 = p/q, then squaring both sides gives us 2 = p\u00b2/q\u00b2.\n\n3. **Rearranging the Equation:** Multiplying both sides by q\u00b2 yields 2q\u00b2 = p\u00b2.\n\n4. **Deduction about p\u00b2:**  The equation 2q\u00b2 = p\u00b2 tells us that p\u00b2 is an even number.  Because p\u00b2 is even, p itself must also be even (if p were odd, then p\u00b2 would be odd).\n\n5. **Expressing p as an Even Number:** Since p is even, we can express it as p = 2k, where k is another integer.\n\n6. **Substitution:** Substituting p = 2k into the equation 2q\u00b2 = p\u00b2 gives us 2q\u00b2 = (2k)\u00b2.\n\n7. **Simplification:** Simplifying the equation, we get 2q\u00b2 = 4k\u00b2.\n\n8. **Further Simplification:** Dividing both sides by 2 yields q\u00b2 = 2k\u00b2.\n\n9. **Deduction about q\u00b2:** The equation q\u00b2 = 2k\u00b2 tells us that q\u00b2 is an even number.\n\n10. **Deduction about q:** Since q\u00b2 is even, q itself must also be even.\n\n11. **Contradiction:** We have now shown that both p and q are even. This contradicts our initial assumption that p and q have no common factors (they were assumed to be coprime).\n\n12. **Conclusion:** Because our initial assumption led to a contradiction, the assumption must be false. Therefore, \u221a2 is irrational.",
+  "response_length": 1809,
+  "elapsed_seconds": 80.04,
+  "tokens": {
+    "prompt_tokens": 182,
+    "completion_tokens": 505,
+    "total_duration_ms": 79991.942833
+  },
+  "timestamp": "2026-03-06T00:08:50.316498",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction for the irrationality of sqrt(2) with all necessary steps clearly outlined.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:21:15.508483"
+}

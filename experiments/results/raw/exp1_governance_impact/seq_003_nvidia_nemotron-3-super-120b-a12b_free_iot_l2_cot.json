@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "SELECTED APPROACH: CoT because converting a decimal number to binary requires a sequential series of division\u2011by\u20112 steps, each depending on the previous result, fitting a single logical chain.  \nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive binary representation of 1247.  \nANTI-PURPOSE CHECK: Avoid exploring alternative conversion methods or branching into multiple approaches before completing the primary division\u2011by\u20112 chain.  \n\n**Step\u2011by\u2011step conversion (Chain\u2011of\u2011Thought):**  \n1. 1247 \u00f7 2 = 623 remainder **1**  \n2. 623 \u00f7 2 = 311 remainder **1**  \n3. 311 \u00f7 2 = 155 remainder **1**  \n4. 155 \u00f7 2 = 77 remainder **1**  \n5. 77 \u00f7 2 = 38 remainder **1**  \n6.",
+  "response_length": 692,
+  "elapsed_seconds": 14.71,
+  "tokens": {
+    "prompt_tokens": 315,
+    "completion_tokens": 1024,
+    "total_duration_ms": 14706.28
+  },
+  "timestamp": "2026-03-17T13:57:29.202721",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response provides the correct binary conversion of 1247 to 10011011111 with complete and clear step-by-step division steps.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:24:00.552488"
+}

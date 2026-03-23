@@ -1,0 +1,18 @@
+{
+  "run_id": "int_002_nvidia_nemotron-3-super-120b-a12b_free_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Indirect: C can't supply B (B doubly hit). B can't produce final products. D loses supply from both B and C. A's shutdown creates a cascade that affects all nodes, with B hit worst (loses both direct and indirect supply).",
+  "scoring_rubric": "Score 3 if: traces all direct AND indirect effects, identifies B as worst-hit, maps the full cascade. Score 2 if: gets direct effects but misses some indirect cascades. Score 1 if: only identifies direct effects. Score 0 if: misses the interconnected nature.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.09,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:17:38.242015",
+  "backend": "openrouter"
+}

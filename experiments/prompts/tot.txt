@@ -1,0 +1,26 @@
+Generate at least 3 different approaches to the following task. For each approach:
+1. Describe the approach clearly
+2. List its strengths (at least 2)
+3. List its weaknesses or risks (at least 2)
+4. Rate its suitability (HIGH/MEDIUM/LOW) for this specific scenario
+
+After presenting all approaches, compare them side by side and recommend the best one with justification.
+
+Task: {task_text}
+
+FORMAT YOUR RESPONSE AS:
+APPROACH 1: [name]
+  Description: [...]
+  Strengths: [...]
+  Weaknesses: [...]
+  Suitability: [HIGH/MEDIUM/LOW]
+
+APPROACH 2: [name]
+  (same structure)
+
+APPROACH 3: [name]
+  (same structure)
+
+COMPARISON: [side-by-side trade-off analysis]
+RECOMMENDATION: [which approach and why]
+CONFIDENCE: [HIGH/MEDIUM/LOW]

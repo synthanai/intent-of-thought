@@ -1,0 +1,18 @@
+{
+  "run_id": "int_005_z-ai_glm-5-turbo_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_005",
+  "task_category": "interconnected",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Wolf removal -> deer population explosion -> overgrazing of grass -> grass decline -> rabbit population declines (less food) -> fox population declines (less prey). Oak seedlings also overgrazed by deer -> forest regeneration fails -> regime shift from mixed ecosystem to degraded grassland. This mirrors the actual Yellowstone trophic cascade.",
+  "scoring_rubric": "Score 3 if: traces full trophic cascade through multiple levels with temporal dynamics and regime shift. Score 2 if: gets direct effects (deer explosion) but misses downstream cascades. Score 1 if: only identifies wolf-deer relationship. Score 0 if: treats species independently.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.11,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:18:38.162467",
+  "backend": "openrouter"
+}

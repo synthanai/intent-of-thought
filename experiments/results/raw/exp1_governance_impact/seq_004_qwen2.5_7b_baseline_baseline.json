@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_qwen2.5_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "ANSWER: The trains will meet at 10:48 AM, 288 km from Station A.\nREASONING: By the time the second train departs at 09:30, the first train has already traveled 20 km (since it started at 09:00). This leaves 295.2 km for them to cover together before meeting. The combined speed of both trains is 200 km/h. Time taken to meet after 09:30 is 295.2 / 200 = 1.476 hours, which is 1 hour and 28.56 minutes. Adding this time to 09:30 gives us the meeting time of 10:58.56 AM (rounded to 10:48 AM). The distance from Station A can be calculated by multiplying the first train's speed by the total time it has been traveling, which is 8 hours and 48.56 minutes or 8.81 hours, giving us a distance of 704.8 km - 288 km (distance covered by the second train in 1.476 hours).\nCONFIDENCE: HIGH",
+  "response_length": 781,
+  "elapsed_seconds": 28.88,
+  "tokens": {
+    "prompt_tokens": 132,
+    "completion_tokens": 266,
+    "total_duration_ms": 28862.866166
+  },
+  "timestamp": "2026-03-17T13:51:33.557075",
+  "score": 0,
+  "score_reason": "The answer is incorrect; the meeting time and distance from Station A do not match the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:17:51.213009"
+}

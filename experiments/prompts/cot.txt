@@ -1,0 +1,15 @@
+Think step by step. Show your reasoning as a clear, numbered sequence of logical steps.
+
+For each step:
+1. State what you are doing and why
+2. Show the result of that step
+3. Explain how it connects to the next step
+
+Task: {task_text}
+
+FORMAT YOUR RESPONSE AS:
+STEP 1: [description]
+STEP 2: [description]
+...
+FINAL ANSWER: [Your conclusion in one sentence]
+CONFIDENCE: [HIGH/MEDIUM/LOW]

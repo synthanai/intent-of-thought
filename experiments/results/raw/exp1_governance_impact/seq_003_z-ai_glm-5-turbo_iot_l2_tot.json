@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "SELECTED APPROACH: CoT because converting a decimal number to binary requires a strict sequence of division-by-two steps, leaving no room for alternative methods or branching logic.\nPURPOSE CHECK: Follow a single, unbroken sequence of mathematical divisions to reach the final binary representation.\nANTI-PURPOSE CHECK: I will avoid suggesting alternative conversion methods (such as subtraction by descending powers of two) or exploring different branches of calculation.\n\nStep 1: Divide 1247 by 2.\n1247 \u00f7",
+  "response_length": 506,
+  "elapsed_seconds": 10.39,
+  "tokens": {
+    "prompt_tokens": 284,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10385.71
+  },
+  "timestamp": "2026-03-17T13:57:54.668080",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model begins the correct process but does not complete it, missing key steps and remainders needed for full evaluation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:51:40.647719"
+}

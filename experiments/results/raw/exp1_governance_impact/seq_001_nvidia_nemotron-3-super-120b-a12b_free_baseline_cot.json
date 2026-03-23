@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_001_nvidia_nemotron-3-super-120b-a12b_free_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "STEP 1: Assume, for contradiction, that \u221a2 is rational.  \nResult: Then \u221a2 can be expressed as a fraction a/b where a and b are integers with no common factors (the fraction is in lowest terms) and b \u2260 0.  \nConnection: This assumption lets us work with integers a and b and later derive a property about their divisibility.\n\nSTEP 2: Square both sides of the equation \u221a2 = a/b.  \nResult: 2 = a\u00b2 / b\u00b2, which implies a\u00b2 = 2b\u00b2.  Connection: The equation a\u00b2 = 2b\u00b2 relates the squares of a and b and will allow us to infer parity (evenness) of a and b.\n\nSTEP 3: Deduce that a\u00b2 is even, hence a is even.  \nResult: Since a\u00b2 = 2b\u00b2 is clearly divisible by 2, a\u00b2 is even; therefore a must be even (if a were odd, a\u00b2 would be odd). Write a = 2k for some integer k.  \nConnection: Substituting a = 2k back into the squared equation will reveal a similar condition on b.\n\nSTEP 4: Substitute a = 2k into a\u00b2 = 2b\u00b2 and simplify to find that b\u00b2 is even, so b is even.  \nResult: (2k)\u00b2 = 2b\u00b2 \u2192 4k\u00b2 = 2b\u00b2 \u2192 2k\u00b2 = b\u00b2. Thus b\u00b2 is even, implying b is even. Write b = 2m for some integer m.  \nConnection: We have now shown that both a and b are even, meaning they share a common factor of 2.\n\nSTEP 5: Observe the contradiction with the initial assumption that a/b is in lowest terms.  Result: If both a and b are even, they have a common factor of 2, contradicting the requirement that the fraction a/b be reduced (no common factors > 1). Therefore our assumption that \u221a2 is rational must be false.  Connection: This contradiction completes the proof by contradiction.\n\nFINAL ANSWER: The square root of 2 is irrational.  \nCONFIDENCE: HIGH",
+  "response_length": 1611,
+  "elapsed_seconds": 12.17,
+  "tokens": {
+    "prompt_tokens": 134,
+    "completion_tokens": 583,
+    "total_duration_ms": 12171.11
+  },
+  "timestamp": "2026-03-17T13:49:42.613624",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction, covering all necessary steps to demonstrate that \u221a2 is irrational.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T10:03:02.740623"
+}

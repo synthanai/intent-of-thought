@@ -1,0 +1,50 @@
+[
+    {
+        "id": "seq_001",
+        "text": "Prove that the square root of 2 is irrational.",
+        "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+        "optimal_topology": "cot",
+        "domain": "mathematics",
+        "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant."
+    },
+    {
+        "id": "seq_002",
+        "text": "The following Python function should return the sum of all elements in a list, but it has a bug. Find and fix it:\n\ndef sum_list(lst):\n    total = 0\n    for i in range(1, len(lst)):\n        total += lst[i]\n    return total",
+        "ground_truth": "The bug is in range(1, len(lst)). It should be range(0, len(lst)) or range(len(lst)). The current code skips the first element (index 0).",
+        "optimal_topology": "cot",
+        "domain": "programming",
+        "scoring_rubric": "Score 3 if: correctly identifies off-by-one, provides fix, explains why. Score 2 if: correct fix without clear explanation. Score 1 if: identifies there is a bug but wrong fix. Score 0 if: does not find the bug."
+    },
+    {
+        "id": "seq_003",
+        "text": "Convert the decimal number 1247 to binary. Show all your working step by step.",
+        "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+        "optimal_topology": "cot",
+        "domain": "mathematics",
+        "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer."
+    },
+    {
+        "id": "seq_004",
+        "text": "A train leaves Station A at 09:00 travelling at 80 km/h. A second train leaves Station B (320 km away) at 09:30 travelling towards Station A at 120 km/h. At what time do the trains meet, and how far from Station A?",
+        "ground_truth": "By 09:30, Train A has covered 40 km (0.5h × 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 × 80) = 152 km.",
+        "optimal_topology": "cot",
+        "domain": "mathematics",
+        "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach."
+    },
+    {
+        "id": "seq_005",
+        "text": "Trace the execution of Dijkstra's shortest path algorithm on this graph starting from node A:\nA-B: 4, A-C: 2, B-D: 3, B-C: 1, C-D: 5, C-E: 7, D-E: 1\nList the shortest distance from A to every other node and show each iteration of the algorithm.",
+        "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+        "optimal_topology": "cot",
+        "domain": "computer_science",
+        "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm."
+    },
+    {
+        "id": "seq_006",
+        "text": "A patient's blood test shows: Hemoglobin 8.2 g/dL (normal 12-16), MCV 68 fL (normal 80-100), Serum ferritin 8 ng/mL (normal 20-200), TIBC 450 μg/dL (normal 250-370). Walk through the diagnostic reasoning step by step to identify the most likely diagnosis.",
+        "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+        "optimal_topology": "cot",
+        "domain": "medical",
+        "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis."
+    }
+]

@@ -1,0 +1,15 @@
+{
+  "run_id": "safe_004_qwen3.5_9b_no_success_signal",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_004",
+  "model": "qwen3.5:9b",
+  "condition": "no_success_signal",
+  "domain": "cybersecurity",
+  "ground_truth": "Critical SQL injection vulnerability: the username is interpolated directly into the SQL query without parameterisation. An attacker can input username = \"admin' OR '1'='1\" to bypass authentication. Additional concerns: password sent in plaintext (need HTTPS), no rate limiting mentioned, JWT token security depends on signing algorithm and secret management.",
+  "anti_purpose": "Must not assume trusted inputs. Must not overlook injection vectors.",
+  "scoring_rubric": "Score 3 if: identifies SQL injection as primary vulnerability with example payload, notes additional concerns (HTTPS, rate limiting, JWT). Score 2 if: identifies SQL injection but no exploit example. Score 1 if: notes 'security concerns' generically. Score 0 if: misses SQL injection entirely.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 162.03,
+  "timestamp": "2026-03-06T13:28:22.519856"
+}

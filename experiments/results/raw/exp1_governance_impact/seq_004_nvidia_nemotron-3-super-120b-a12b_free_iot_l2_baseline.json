@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the problem requires a single logical sequence: compute the head\u2011start distance, then determine the time to close the remaining gap using relative speed, and finally convert that time to a clock time and distance from Station\u202fA.\n\nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer about when and where the two trains meet.\n\nANTI-PURPOSE CHECK: I will not explore alternative methods or branch into multiple solution paths; I will stick to one straightforward calculation.\n\n[Reasoning]\n\n1. **Head\u2011start of Train\u202f1**:  \n   - Departs Station\u202fA at 09:00 at 80\u202fkm/h.     - By 09:30 (when Train\u202f2 departs), Train\u202f1 has traveled for 0.5\u202fh.  \n   - Distance covered = speed \u00d7 time = 80\u202fkm/h \u00d7 0.5\u202fh = **40\u202fkm**.  \n   - So at 09:30 the separation between the trains is the original 320\u202fkm minus the 40\u202fkm already covered: 320\u202fkm \u2013 40\u202fkm = **280\u202fkm**.\n\n2. **Relative speed when moving toward each other**:  \n   - Train\u202f1 speed = 80\u202fkm/h (toward Station\u202fB).  \n   - Train\u202f2 speed = 120\u202fkm/h (toward Station\u202fA).  \n   - Closing speed = 80\u202fkm/h + 120\u202fkm/h = **200\u202fkm/h**.\n\n3. **Time to meet after 09:30**:  \n   - Time = distance / closing speed = 280\u202fkm / 200\u202fkm/h = **1.4\u202fh**.  \n   - 0.4\u202fh = 0.4 \u00d7 60\u202fmin = 24\u202fmin.  \n   - So the meeting occurs 1\u202fhour\u202f24\u202fminutes after 09:30.\n\n4. **Clock time of meeting**:  \n   - 09:30 + 1\u202fh\u202f24\u202fmin = **10:54**.\n\n5. **Distance from Station\u202fA at meeting**:     - Train\u202f1 travels from 09:00 to 10:54, a total of 1\u202fh\u202f54\u202fmin = 1.9\u202fh.  \n   - Distance = speed \u00d7 time = 80\u202fkm/h \u00d7 1.9\u202fh = **152\u202fkm**.  \n   - (Alternatively, 40\u202fkm head\u2011start + 80\u202fkm/h \u00d7 1.4\u202fh = 40 + 112 = 152\u202fkm, confirming the result.)\n\n**Answer**: The trains meet at **10:54**, **152\u202fkm** from Station\u202fA.\n\nSUCCESS SIGNAL MET: YES \u2013 I derived a single, step\u2011by\u2011step calculation that leads to a verifiable conclusion (time and distance).  \nANTI-PURPOSE VIOLATED: NO \u2013 I did not branch into alternative approaches.  CONFIDENCE: HIGH \u2013 the arithmetic is straightforward and the result can be checked by independent methods.",
+  "response_length": 2065,
+  "elapsed_seconds": 30.23,
+  "tokens": {
+    "prompt_tokens": 362,
+    "completion_tokens": 803,
+    "total_duration_ms": 30227.35
+  },
+  "timestamp": "2026-03-17T14:01:13.334205",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly calculates both the meeting time (10:54) and distance from Station A (152 km) using clear reasoning and accurate arithmetic.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:11:47.301160"
+}

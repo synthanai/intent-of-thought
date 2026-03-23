@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_z-ai_glm-5-turbo_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the task requires sequential logical steps to calculate distances and times without needing to explore multiple alternatives or map complex interconnected networks.\nPURPOSE CHECK: The goal is to follow a single, unbroken chain of logical steps to determine the exact meeting time and distance from Station A for the two trains.\nANTI-PURPOSE CHECK: I will avoid branching into alternative methods (such as setting up simultaneous equations or formulating the relative motion differently) before finishing the primary step-by-step calculation.\n\nStep 1: Calculate the head start distance of Train 1.\nTrain 1 leaves Station A at 09:00 and Train 2 leaves Station B at",
+  "response_length": 693,
+  "elapsed_seconds": 11.97,
+  "tokens": {
+    "prompt_tokens": 324,
+    "completion_tokens": 1024,
+    "total_duration_ms": 11966.49
+  },
+  "timestamp": "2026-03-17T13:59:52.642303",
+  "backend": "openrouter",
+  "score": 0,
+  "score_reason": "The response is incomplete as it does not provide the final meeting time or distance from Station A.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:27:26.426883"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "par_001_qwen3.5_9b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket monolith, event-driven microservices, serverless with pub/sub). Must compare on: scalability, development speed, cost. MVP recommendation should favour simplicity.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures, clear trade-off comparison, justified MVP recommendation. Score 2 if: 3 architectures but weak comparison. Score 1 if: fewer than 3 or no comparison. Score 0 if: single architecture or irrelevant.",
+  "response": "**Reasoning Approach Selected:** Tree-of-Thought (ToT)\n\n**Why this approach:**\nThe task explicitly requires exploring multiple alternative architectures, describing their components/protocols/trade-offs, and then evaluating them against specific constraints (",
+  "response_length": 259,
+  "elapsed_seconds": 161.31,
+  "tokens": {
+    "prompt_tokens": 209,
+    "completion_tokens": 1024,
+    "total_duration_ms": 161299.23475
+  },
+  "timestamp": "2026-03-06T04:32:32.602433",
+  "score": 0,
+  "score_reason": "The model's output does not address the task requirements of comparing at least three distinct architectures on scalability, development speed, and cost.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T03:43:23.019405"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "We need to produce three approaches to solving the train problem. Provide description, strengths, weaknesses, suitability rating. Then compare side by side and recommend best.\n\nWe need to be careful about format: each approach heading with \"APPROACH 1: [name]\" etc. Provide description, strengths list, weaknesses list, suitability.\n\nAfter all approaches, a \"COMPARISON:\" line with side-by-side trade-off analysis. Then \"RECOMMENDATION:\" line with which approach and why. Then \"CONFIDENCE:\" line.\n\nMake sure to include at least 2 strengths and 2 weaknesses each.\n\nLet's think of approaches: algebraic equation solving, relative speed method, graphical/diagrammatic method, using time-distance table or iterative approximation, using formulas for meeting time.\n\nWe'll produce three distinct approaches:\n\nApproach 1: Algebraic equation using distance = speed * time.\n\nApproach 2: Relative speed method: treat one train stationary, compute closing speed.\n\nApproach 3: Tabular/iterative approach: compute distances at each half hour or using a table.\n\nOr approach 3: Graphical method: plot distance-time lines and find intersection.\n\nWe'll need to compute answer: Train A leaves at 09:00 from Station A heading towards B at 80 km/h. Train B leaves at 09:30 from Station B heading towards A at 120 km/h. Distance between stations: 320 km.\n\nLet t be time after 09:00 (in hours) when they meet. Train A travels distance = 80 * t. Train B starts at 09:30, i.e., 0.5 h later, so its travel time = max(0, t - 0.5). Since meeting occurs after 09:30 presumably. So distance traveled by B = 120 * (t - 0.5). Sum distances = 320.\n\nEquation: 80t + 120(t - 0.5) = 320 => 80t + 120t - 60 = 320 => 200t = 380 => t = 1.9 hours after 09:00 => 09:00 + 1.9h = 09:00 + 1h + 0.9h = 10:00 + 0.9*60 = 10:00 + 54 min = 10:54. So meeting time = 10:54.\n\nDistance from Station A = speed of A * t = 80 * 1.9 = 152 km.\n\nCheck: distance from B = 120 * (t-0.5) = 120 * 1.4 = 168 km. Sum = 152+168=320.\n\nThus answer: 10:54, 152 km from Station A.\n\nNow produce approaches.\n\nApproach 1: Algebraic equation (direct solving). Strengths: precise, easy to generalize, minimal steps. Weaknesses: requires setting up equation correctly, may be error-prone for novices, assumes linear motion.\n\nSuitability: HIGH.\n\nApproach 2: Relative speed method (consider one train stationary after adjusting for head start). Steps: compute distance covered by first train in 0.5 h = 40 km, remaining distance = 280 km, relative speed = 80+120=200 km/h, time to meet after 09:30 = 280/200 = 1.4 h = 1h24m, add to 09:30 => 10:54. Distance from A = distance traveled by first train = 40 + 80*1.4 = 40+112=152 km. Strengths: intuitive, uses concept of closing speed, reduces to single unknown. Weaknesses: need to account for head start separately, may confuse if direction reversed, still requires arithmetic.\n\nSuitability: MEDIUM/HIGH? Probably HIGH as well but we can differentiate: maybe MEDIUM because requires extra step of head start.\n\nApproach 3: Tabular / iterative (distance-time table) or graphical. Strengths: visual, good for checking, no algebra needed. Weaknesses: time-consuming, less precise unless fine intervals, relies on approximation.\n\nSuitability: MEDIUM or LOW depending. We'll say MEDIUM for educational value but LOW for efficiency.\n\nNow produce comparison side-by-side: maybe a table with criteria: Accuracy, Complexity, Speed, Intuitiveness, Generaliz",
+  "response_length": 3418,
+  "elapsed_seconds": 10.54,
+  "tokens": {
+    "prompt_tokens": 287,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10541.78
+  },
+  "timestamp": "2026-03-17T14:02:50.381506",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model correctly identifies the meeting time and distance but fails to provide clear working for each approach as required by the task.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:11:17.874286"
+}

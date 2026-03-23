@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen3.5_9b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "### Reasoning Approach Selection\n\n**Selected Approach:** **Graph-of-Thought**\n\n**Reasoning:**\nThe governance specification states: *\"If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges).\"* This task explicitly asks to analyze whether symptoms share a common condition and what",
+  "response_length": 332,
+  "elapsed_seconds": 161.44,
+  "tokens": {
+    "prompt_tokens": 221,
+    "completion_tokens": 1024,
+    "total_duration_ms": 161425.539333
+  },
+  "timestamp": "2026-03-06T08:12:49.718687",
+  "score": 0,
+  "score_reason": "The model output does not address the task of identifying and explaining the connection between the symptoms through SLE, instead it discusses the reasoning approach selection.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:16:56.271750"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_qwen2.5_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "When comparing sorting algorithms like Insertion Sort, Merge Sort, and Quicksort for a nearly-sorted array of 10,000 integers where only 5% of the elements are out of place, it's important to consider both the time complexity and the practical performance of each algorithm. Here's an analysis for each:\n\n### 1. Insertion Sort\n- **Best Case Time Complexity:** O(n) (where n is the number of elements)\n- **Worst Case Time Complexity:** O(n\u00b2)\n- **Average Case Time Complexity:** O(n\u00b2)\n- **Space Complexity:** O(1) additional space\n\n**Analysis:**\n- Insertion Sort performs well with nearly-sorted arrays because it has a best-case time complexity of O(n), where the array is already sorted. For a nearly-sorted array, where only 5% of the elements are out of place, the array is already very close to being sorted.\n- In practice, Insertion Sort will be very efficient for this scenario, as it will only need to perform a few comparisons and swaps.\n\n### 2. Merge Sort\n- **Time Complexity:**\n  - Best Case: O(n log n)\n  - Average Case: O(n log n)\n  - Worst Case: O(n log n)\n- **Space Complexity:** O(n) additional space\n\n**Analysis:**\n- Merge Sort has a consistent O(n log n) time complexity, which is not dependent on the initial order of the array.\n- While Merge Sort is efficient and stable, it uses additional space, which might be a concern for large datasets or environments with limited memory.\n\n### 3. Quicksort\n- **Time Complexity:**\n  - Best Case: O(n log n)\n  - Average Case: O(n log n)\n  - Worst Case: O(n\u00b2)\n- **Space Complexity:** O(log n) additional space (due to recursion)\n\n**Analysis:**\n- Quicksort has a good average-case performance, but its worst-case time complexity can degrade to O(n\u00b2) if the pivot selection is poor. However, with a good pivot selection strategy, Quicksort can perform nearly as well as Merge Sort in practice.\n- Quicksort is not stable, but for nearly-sorted arrays, it can perform well because the array is already close to being sorted.\n\n### Recommendation\nGiven the specific case of a nearly-sorted array of 10,000 integers where only 5% of the elements are out of place, **Insertion Sort** is the best choice for the following reasons:\n\n- **Efficiency for Nearly-Sorted Arrays:** Insertion Sort can take advantage of the initial order of the array, making it very efficient in this scenario.\n- **Simplicity and Low Overhead:** It requires minimal additional memory and is straightforward to implement.\n- **Practical Performance:** In practice, Insertion Sort will perform very well for arrays that are nearly sorted, even if the array size is large.\n\nHowever, if memory usage is a concern or if you need a more robust algorithm that works well in a variety of scenarios, **Merge Sort** would also be a good choice, despite its higher space complexity. Quicksort is a good middle ground but might not be as efficient as Insertion Sort for nearly-sorted arrays unless a good pivot selection strategy is implemented.\n\nIn summary, for the given scenario, **Insertion Sort** is the most suitable algorithm.",
+  "response_length": 3042,
+  "elapsed_seconds": 61.44,
+  "tokens": {
+    "prompt_tokens": 86,
+    "completion_tokens": 707,
+    "total_duration_ms": 61425.190667
+  },
+  "timestamp": "2026-03-06T04:45:30.666669",
+  "score": 3,
+  "score_reason": "The response correctly analyzes all three algorithms, provides the correct time complexities for nearly-sorted data, and thoroughly explains why Insertion Sort is optimal in this scenario.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:47:09.394475"
+}

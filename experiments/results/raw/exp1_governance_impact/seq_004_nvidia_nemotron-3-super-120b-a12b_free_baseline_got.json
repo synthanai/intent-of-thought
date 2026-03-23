@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "We need to produce analysis with factors, edges, feedback loops, central factors, synthesis, answer, confidence. The task: two trains meeting problem. Identify key factors: departure times, speeds, distance between stations, time variable, meeting time, distance from A. At least 4 factors.\n\nWe need to list edges with relationship types: causes, enables, blocks, amplifies, depends_on, contradicts.\n\nWe need to identify feedback loops (likely none). Determine central factors (most connections). Synthesize.\n\nThen answer: compute meeting time and distance.\n\nLet's compute: Train1 leaves A at 09:00 speed 80 km/h. Train2 leaves B at 09:30 speed 120 km/h towards A. Distance between stations = 320 km.\n\nLet t be time after 09:00 (in hours) when they meet. Train1 travels distance d1 = 80 * t. Train2 starts at 09:30, i.e., 0.5 h later, so its travel time = t - 0.5 (if t >=0.5). Distance d2 = 120 * (t - 0.5). They meet when d1 + d2 = 320.\n\nEquation: 80t + 120(t - 0.5) = 320 => 80t + 120t - 60 = 320 => 200t = 380 => t = 1.9 hours = 1 hour + 0.9*60 = 1 hour 54 minutes. So meeting time = 09:00 + 1h54m = 10:54.\n\nDistance from A = d1 = 80 * 1.9 = 152 km.\n\nCheck: Train2 distance = 120*(1.9-0.5)=120*1.4=168 km. Sum=152+168=320 correct.\n\nThus answer: meet at 10:54, 152 km from Station A.\n\nNow produce graph.\n\nFactors list: maybe: Departure time of Train1 (T1_dep), Speed of Train1 (v1), Departure time of Train2 (T2_dep), Speed of Train2 (v2), Distance between stations (D), Meeting time (t_meet), Distance from A (d_A). Need at least 4; we have many.\n\nDefine edges: e.g., v1 --causes--> distance traveled by Train1 (but we might not have that factor). Let's define factors: v1, v2, D, T1_dep, T2_dep, t_meet, d_A.\n\nRelationships:\n\n- v1 and T1_dep together determine distance traveled by Train1 (but we don't have that factor). Could have factor \"distance traveled by Train1\" (d1). Similarly \"distance traveled by Train2\" (d2). Might be too many.\n\nSimplify: Use factors: Speed of Train1 (v1), Speed of Train2 (v2), Departure delay of Train2 (\u0394t = 0.5h), Distance between stations (D), Meeting time from T1_dep (t), Distance from A (d_A). That's 6.\n\nEdges:\n\n- v1 --(depends_on)--> d_A? Actually d_A depends on v1 and t: d_A = v1 * t. So d_A depends_on v1 and depends_on t.\n\n- v2 --(depends_on)--> d_A? Not directly; d_A depends on v2 indirectly via t because t influences meeting point.\n\n- \u0394t --(affects)--> t (the later departure delays meeting). Relationship: \u0394t --(blocks)--> earlier meeting? Or \u0394t --(causes)--> increase in t? Use \"amplifies\"? Actually a later departure of Train2 makes them meet later (increase t). So \u0394t --(amplifies)--> t (makes t larger). Or \"causes\" increase.\n\n- D --(depends_on)--> t? Actually given D fixed, t solves equation; D influences t: larger D leads to later meeting (increase t). So D --(amplifies)--> t.\n\n- v1 and v2 --(affect)--> t: higher speeds reduce meeting time (earlier). So v1 --(blocks)--> t? Or v1 --(reduces)--> t. Relationship type list: causes, enables, blocks, amplifies, depends_on, contradicts. \"Blocks\" could be interpreted as hinders/inhibits. So higher speed blocks (delays less",
+  "response_length": 3133,
+  "elapsed_seconds": 85.66,
+  "tokens": {
+    "prompt_tokens": 337,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85662.37
+  },
+  "timestamp": "2026-03-17T14:05:11.915715",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly computes the meeting time and distance but includes unnecessary complexity in its explanation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:09:32.102218"
+}

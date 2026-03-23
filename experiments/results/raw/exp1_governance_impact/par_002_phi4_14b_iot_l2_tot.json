@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_phi4_14b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "For this task, the most appropriate reasoning approach is the tree-of-thought. This task involves exploring multiple alternatives (the three sorting algorithms) and systematically comparing them to determine the best choice for a specific scenario (sorting a nearly-sorted array with only 5% of elements out of place). The tree-of-thought approach will allow me to generate and compare options effectively, considering the trade-offs between each algorithm in the context of the given conditions.\n\n### Approach 1: Insertion Sort\n\n**Time Complexity:**\n- **Best Case:** O(n) - When the array is nearly sorted, insertion sort performs very efficiently as it only requires a few comparisons and shifts.\n- **Worst Case:** O(n^2) - This occurs when the array is in reverse order, but this scenario is not applicable here.\n\n**Advantages:**\n- Efficient for small or nearly sorted datasets.\n- Simple implementation.\n- In-place sorting with O(1) additional space.\n\n**Disadvantages:**\n- Generally slower for large datasets that are not nearly sorted.\n- Time complexity can degrade to O(n^2) in the worst case, though this is not relevant for our scenario.\n\n### Approach 2: Merge Sort\n\n**Time Complexity:**\n- **Best, Average, and Worst Case:** O(n log n) - Merge sort consistently performs at O(n log n) regardless of the initial order of the array.\n\n**Advantages:**\n- Stable sort, maintaining the relative order of equal elements.\n- Consistent performance with O(n log n) time complexity.\n\n**Disadvantages:**\n- Requires O(n) additional space for merging, which can be inefficient for large datasets.\n- Overhead of recursive calls and merging can be unnecessary for nearly sorted arrays.\n\n### Approach 3: Quicksort\n\n**Time Complexity:**\n- **Best and Average Case:** O(n log n) - Typically performs well with average-case complexity.\n- **Worst Case:** O(n^2) - Occurs when the pivot selection is poor (e.g., always picking the smallest or largest element).\n\n**Advantages:**\n- In-place sorting with O(log n) additional space.\n- Often faster in practice than merge sort due to smaller constant factors and cache efficiency.\n\n**Disadvantages:**\n- Performance can degrade to O(n^2) in the worst case, though this can be mitigated with good pivot selection strategies (e.g., using the median-of-three method).\n\n### Trade-off Comparison\n\n1. **Insertion Sort** is highly efficient for nearly sorted arrays due to its linear time complexity in the best case. Given that only 5% of elements are out of place, insertion sort is likely to perform very well with minimal overhead.\n\n2. **Merge Sort** offers consistent O(n log n) performance but incurs additional space overhead, which is not ideal for this specific scenario where insertion sort can already handle the task efficiently.\n\n3. **Quicksort** provides good average-case performance and in-place sorting. However, its worst-case performance is a concern, and while it can be optimized with better pivot strategies, the nearly-sorted nature of the array makes insertion sort a simpler and more efficient choice.\n\n### Recommendation\n\nFor sorting a nearly-sorted array of 10,000 integers where only 5% of elements are out of place, **Insertion Sort** is the best choice. It leverages the existing order of the array to minimize operations, resulting in optimal performance with minimal overhead. Its simplicity and efficiency in handling nearly sorted data make it superior to the other algorithms in this specific context.",
+  "response_length": 3456,
+  "elapsed_seconds": 122.36,
+  "tokens": {
+    "prompt_tokens": 214,
+    "completion_tokens": 731,
+    "total_duration_ms": 122337.015916
+  },
+  "timestamp": "2026-03-06T05:49:30.742153",
+  "score": 3,
+  "score_reason": "The response correctly analyzes all three algorithms, provides their complexities for nearly-sorted data, and justifies why insertion sort is optimal in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:44:18.789862"
+}

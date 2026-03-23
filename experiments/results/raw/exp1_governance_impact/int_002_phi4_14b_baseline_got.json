@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_phi4_14b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "### Step 1: Identify Key Factors\n\n- **Factory A**: Supplies components to Factories B and C.\n- **Factory B**: Receives components from Factory A, supplies sub-assemblies to Factory D.\n- **Factory C**: Receives components from Factory A, supplies sub-assemblies to Factory D.\n- **Factory D**: Receives sub-assemblies from Factories B and C, sells finished products to Factory A's parent company.\n- **Factory A's Parent Company**: Receives finished products from Factory D.\n\n### Step 2: Determine Relationships\n\n1. **Factory A --(provides components to)--> Factory B**\n2. **Factory A --(provides components to)--> Factory C**\n3. **Factory B --(supplies sub-assemblies to)--> Factory D**\n4. **Factory C --(supplies sub-assemblies to)--> Factory D**\n5. **Factory D --(sells finished products to)--> Factory A's Parent Company**\n6. **Factory A's Parent Company --(receives products from)--> Factory D**\n\n### Step 3: Draw Relationships as a List of Edges\n\n- Factory A --(provides components to)--> Factory B\n- Factory A --(provides components to)--> Factory C\n- Factory B --(supplies sub-assemblies to)--> Factory D\n- Factory C --(supplies sub-assemblies to)--> Factory D\n- Factory D --(sells finished products to)--> Factory A's Parent Company\n- Factory A's Parent Company --(receives products from)--> Factory D\n\n### Step 4: Identify Feedback Loops or Circular Dependencies\n\n- **Potential Feedback Loop**: \n  - Factory A's shutdown affects Factory B and C's ability to produce sub-assemblies, impacting Factory D's production.\n  - Reduced finished product supply from Factory D affects Factory A's Parent Company, potentially leading to strategic decisions affecting Factory A.\n\n### Step 5: Determine Most Central Factors\n\n- **Factory A**: Central as it supplies components to both B and C.\n- **Factory D**: Central as it receives sub-assemblies from both B and C and sells to the parent company.\n- **Factory A's Parent Company**: Central as it receives finished products from Factory D.\n\n### Step 6: Synthesize Analysis\n\n- **Factory A's Shutdown Impact**:\n  - **Immediate Effect**: Factories B and C cannot receive components, halting their production of sub-assemblies.\n  - **Downstream Effect**: Factory D experiences a shortage of sub-assemblies, reducing its ability to produce finished products.\n  - **Further Impact**: Factory A's Parent Company receives fewer finished products, potentially affecting sales and strategic decisions.\n  - **Feedback Loop**: The parent company's response to reduced product availability might influence decisions regarding Factory A, such as investing in backup suppliers or adjusting production schedules.\n\n- **Interconnections**:\n  - Factory A is a critical node due to its role in supplying components to both B and C.\n  - Factory D is pivotal as it integrates inputs from B and C and delivers outputs to the parent company.\n  - The parent company's reliance on Factory D for finished products ties back to Factory A's performance, highlighting the interconnected nature of the supply chain.\n\nIn conclusion, the shutdown of Factory A creates a ripple effect throughout the supply chain, impacting production at multiple levels and potentially leading to strategic adjustments by the parent company. The central role of Factories A and D underscores the importance of maintaining operational stability to prevent cascading disruptions.",
+  "response_length": 3371,
+  "elapsed_seconds": 128.41,
+  "tokens": {
+    "prompt_tokens": 207,
+    "completion_tokens": 726,
+    "total_duration_ms": 128386.82875
+  },
+  "timestamp": "2026-03-06T10:26:14.669371",
+  "score": 3,
+  "score_reason": "The response traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company, satisfying all criteria for a score of 3.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:21:51.757880"
+}

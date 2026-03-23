@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_005_z-ai_glm-5-turbo_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "response": "SELECTED APPROACH: CoT because Dijkstra's algorithm is an inherently sequential process that requires evaluating nodes step-by-step without needing to explore alternative branching paths or map complex interconnected conceptual factors.\nPURPOSE CHECK: The goal is to follow a single, unbroken sequence of logical steps to trace the algorithm's execution and determine the final shortest distances.\nANTI-P",
+  "response_length": 404,
+  "elapsed_seconds": 12.04,
+  "tokens": {
+    "prompt_tokens": 344,
+    "completion_tokens": 1024,
+    "total_duration_ms": 12043.72
+  },
+  "timestamp": "2026-03-17T14:05:48.583274",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly identifies Dijkstra's algorithm and its sequential nature but does not provide the specific shortest distances or iteration trace required by the task.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:48:08.040642"
+}

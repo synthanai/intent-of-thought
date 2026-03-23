@@ -1,0 +1,20 @@
+{
+  "run_id": "int_001_deepseek-r1:7b_iot_control",
+  "experiment": "exp4_matched_control",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_control",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes the butterfly rash (malar rash), joint pain (lupus arthritis), and fatigue (chronic inflammation + possible anaemia). Treating them independently would miss the underlying autoimmune process.",
+  "scoring_rubric": "Score 3 if: identifies SLE and maps causal connections between all 3 symptoms. Score 2 if: correct diagnosis but missing some connections. Score 1 if: identifies autoimmune but not SLE specifically. Score 0 if: treats symptoms independently.",
+  "response": "The patient presents with chronic fatigue, joint pain, and a butterfly-shaped rash. After careful consideration of each symptom and potential causes, the most likely unifying diagnosis is psoriatic keratosis (PK), which is part of the broader condition of psoriasis.\n\n**Analysis:**\n\n1. **Chronic Fatigue:** Likely linked to impaired skin healing from PK, causing ongoing tiredness.\n2. **Joint Pain:** Potentially due to systemic inflammation or an underlying immune response affecting joints.\n3. **Butterfly-shaped Rash:** Consistent with PK, which often presents as thickened skin and rashes around the face or mouth.\n\n**Conclusion",
+  "response_length": 632,
+  "elapsed_seconds": 94.04,
+  "tokens": {
+    "prompt_tokens": 297,
+    "completion_tokens": 1024,
+    "total_duration_ms": 94007.974333
+  },
+  "timestamp": "2026-03-19T14:32:14.615741"
+}

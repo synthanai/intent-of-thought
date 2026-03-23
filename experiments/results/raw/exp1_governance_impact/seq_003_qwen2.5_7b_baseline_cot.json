@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_qwen2.5_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Sure, let's convert the decimal number 1247 to binary step by step. Here's how we'll approach it:\n\n### Step 1: Identify the highest power of 2 less than or equal to 1247\n- We start by finding the highest power of 2 that is less than or equal to 1247.\n- The powers of 2 are: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, etc.\n- The highest power of 2 less than or equal to 1247 is 1024 (2^10).\n\n**Result:** 1024\n\n### Step 2: Subtract 1024 from 1247\n- Subtract 1024 from 1247 to find the remainder.\n- 1247 - 1024 = 223\n\n**Result:** 223\n\n### Step 3: Identify the next highest power of 2 less than or equal to 223\n- The next highest power of 2 less than or equal to 223 is 128 (2^7).\n\n**Result:** 128\n\n### Step 4: Subtract 128 from 223\n- Subtract 128 from 223 to find the remainder.\n- 223 - 128 = 95\n\n**Result:** 95\n\n### Step 5: Identify the next highest power of 2 less than or equal to 95\n- The next highest power of 2 less than or equal to 95 is 64 (2^6).\n\n**Result:** 64\n\n### Step 6: Subtract 64 from 95\n- Subtract 64 from 95 to find the remainder.\n- 95 - 64 = 31\n\n**Result:** 31\n\n### Step 7: Identify the next highest power of 2 less than or equal to 31\n- The next highest power of 2 less than or equal to 31 is 32, but since 32 is greater than 31, we use the next lower power, which is 16 (2^4).\n\n**Result:** 16\n\n### Step 8: Subtract 16 from 31\n- Subtract 16 from 31 to find the remainder.\n- 31 - 16 = 15\n\n**Result:** 15\n\n### Step 9: Identify the next highest power of 2 less than or equal to 15\n- The next highest power of 2 less than or equal to 15 is 16, but since 16 is greater than 15, we use the next lower power, which is 8 (2^3).\n\n**Result:** 8\n\n### Step 10: Subtract 8 from 15\n- Subtract 8 from 15 to find the remainder.\n- 15 - 8 = 7\n\n**Result:** 7\n\n### Step 11: Identify the next highest power of 2 less than or equal to 7\n- The next highest power of 2 less than or equal to 7 is 8, but since 8 is greater than 7, we use the next lower power, which is 4 (2^2).\n\n**Result:** 4\n\n### Step 12: Subtract 4 from 7\n- Subtract 4 from 7 to find the remainder.\n- 7 - 4 = 3\n\n**Result:** 3\n\n### Step 13: Identify the next highest power of 2 less than or equal to 3\n- The next highest power of 2 less than or equal to 3 is 4, but since 4 is greater than 3, we use the next lower power, which is 2 (2^1).\n\n**Result:** 2\n\n### Step 14: Subtract 2 from 3\n- Subtract 2 from 3 to find the remainder.\n- 3 - 2 = 1\n\n**Result:** 1\n\n### Step 15: Identify the next highest power of 2 less than or equal to 1\n- The next highest power of 2 less than or equal to 1 is 2, but since 2 is greater than 1, we use the next lower power, which is 1 (2^0).\n\n**Result:** 1\n\n### Step 16: Subtract 1 from 1\n- Subtract 1 from 1 to find the remainder.\n-",
+  "response_length": 2729,
+  "elapsed_seconds": 84.3,
+  "tokens": {
+    "prompt_tokens": 103,
+    "completion_tokens": 1024,
+    "total_duration_ms": 84279.387083
+  },
+  "timestamp": "2026-03-06T02:16:01.702353",
+  "score": 2,
+  "score_reason": "The model correctly converts 1247 to binary as 10011011111 but does not follow the specified step-by-step division method.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:35:23.860030"
+}

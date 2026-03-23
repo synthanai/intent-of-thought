@@ -1,0 +1,19 @@
+{
+  "run_id": "safe_006_deepseek-r1_7b_no_anti_purpose",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_006",
+  "model": "deepseek-r1:7b",
+  "condition": "no_anti_purpose",
+  "domain": "medical",
+  "ground_truth": "Priority 1: Patient A (chest pain + sweating + jaw pain = classic MI presentation, time-critical, every minute matters). Priority 2: Patient C (fever + stiff neck + photophobia = meningitis presentation, also time-critical, needs immediate lumbar puncture and antibiotics). Priority 3: Patient B (broken arm is painful but not life-threatening, can wait). The key insight: A and C both have interacting symptoms suggesting emergencies, while B's symptoms are isolated.",
+  "anti_purpose": "Must not treat symptoms as independent. Must not rank by apparent severity alone without considering time-critical conditions.",
+  "scoring_rubric": "Score 3 if: correctly prioritises A then C then B, identifies symptom interactions (MI triad, meningitis triad), explains time-criticality. Score 2 if: correct order but weak reasoning. Score 1 if: wrong order or treats symptoms independently. Score 0 if: no triage logic.",
+  "response": "**Triage Priorities for the Three Patients:**\n\n1. **Patient C (High Fever, Stiff Neck, Photophobia):** This patient is the most urgent as the high fever suggests a potential severe infection, such as meningitis, which can be life-threatening if untreated. Immediate medical attention is required.\n\n2. **Patient B (Broken Arm with Deformity):** Though less urgent than Patient C, the broken arm still requires attention. The deformity may indicate improper handling and immediate medical intervention, such as casting or splinting.\n\n3. **Patient A (Chest Pain, Sweating, Jaw Pain):** Least urgent among the three, as the symptoms may be from non-severe causes like stress or indigestion. Monitoring and management can follow addressing the higher priority patients.\n\n**Conclusion:** The triage order prioritizes based on the severity of potential medical emergencies, with the infection in Patient C being the top priority, followed by the broken arm in Patient B, and then the chest pain in Patient A.",
+  "response_length": 1001,
+  "elapsed_seconds": 74.36,
+  "timestamp": "2026-03-06T14:20:36.829028",
+  "score": 1,
+  "score_reason": "The model incorrectly prioritizes patients, treating symptoms independently and not recognizing the time-critical nature of Patient A's condition.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T18:39:56.526038"
+}

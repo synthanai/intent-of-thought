@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "**Final Recommendation and Analysis**\n\nTo determine whether the symptoms of chronic fatigue, joint pain, and a butterfly-shaped rash in a 42-year-old patient could be caused by a common underlying condition, three approaches were evaluated:\n\n1. **Clinical Case Review**\n   - **Strengths**: Provides a comprehensive understanding of the patient's medical history and potential connections between symptoms.\n   - **Weaknesses**: May overlook hidden connections if symptoms appear unrelated initially.\n   - **Suitability**: Medium.\n\n2. **Multivariate Data Analysis**\n   - **Strengths**: Discovers hidden relationships through data patterns.\n   - **Weaknesses**: Requires significant data and may lack reliability with small samples.\n   - **Suitability**: Low.\n\n3. **Mechanistic Analysis**\n   - **Strengths**: Explores underlying biological processes, offering deeper insights.\n   - **Weaknesses**: Time-consuming and requires expert knowledge.\n   - **Suitability**: High.\n\n**Conclusion**: The Mechanistic Analysis is recommended as the best approach. It delves into the biological mechanisms that could explain the symptoms, such as autoimmune conditions or nervous system issues, providing deeper insights despite its resource intensity.",
+  "response_length": 1235,
+  "elapsed_seconds": 69.27,
+  "tokens": {
+    "prompt_tokens": 137,
+    "completion_tokens": 783,
+    "total_duration_ms": 69244.769333
+  },
+  "timestamp": "2026-03-06T08:26:45.472928",
+  "score": 1,
+  "score_reason": "The model lists potential approaches to analyze symptoms but fails to connect them mechanistically through autoimmune inflammation or identify SLE as the unifying condition.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T19:45:41.096450"
+}

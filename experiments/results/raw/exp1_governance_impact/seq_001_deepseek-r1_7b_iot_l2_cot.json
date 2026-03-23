@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "To prove that the square root of 2 is irrational, we use a proof by contradiction.\n\n**Step-by-Step Explanation:**\n\n1. **Assumption:** Assume, for the sake of contradiction, that \u221a2 is rational. This means it can be expressed as a fraction a/b, where a and b are integers with no common factors other than 1 (the fraction is in its simplest form).\n\n2. **Equation Setup:** Start with the equation:\n   \\[\n   \\sqrt{2} = \\frac{a}{b}\n   \\]\n   Squaring both sides gives:\n   \\[\n   2 = \\frac{a^2}{b^2} \\implies a^2 = 2b^2\n   \\]\n\n3. **Evenness of a:** The equation \\( a^2 = 2b^2 \\) implies that \\( a^2 \\) is even (since it's equal to 2 times another integer). Therefore, \\( a \\) must also be even because the square of an odd number is odd. Let \\( a = 2c \\) where \\( c \\) is an integer.\n\n4. **Substitution:** Substitute \\( a = 2c \\) into the equation:\n   \\[\n   (2c)^2 = 2b^2 \\implies 4c^2 = 2b^2 \\implies 2c^2 = b^2\n   \\]\n   This shows that \\( b^2 \\) is even, and hence \\( b \\) is also even.\n\n5. **Contradiction:** Both \\( a \\) and \\( b \\) are even, meaning they have a common factor of 2. This contradicts the initial assumption that \\( a \\) and \\( b \\) have no common factors other than 1.\n\n6. **Conclusion:** Since our assumption leads to a contradiction, the assumption that \u221a2 is rational must be false. Therefore, \u221a2 is irrational.\n\n**Final Answer:**\nThe square root of 2 is irrational because assuming it is rational leads to a contradiction where both the numerator and denominator would have a common factor of 2, which contradicts the initial assumption of the fraction being in its simplest form.",
+  "response_length": 1597,
+  "elapsed_seconds": 75.15,
+  "tokens": {
+    "prompt_tokens": 166,
+    "completion_tokens": 885,
+    "total_duration_ms": 75124.080292
+  },
+  "timestamp": "2026-03-05T23:59:03.732675",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction, including all necessary steps and reasoning to demonstrate that the square root of 2 is irrational.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:53:02.120515"
+}

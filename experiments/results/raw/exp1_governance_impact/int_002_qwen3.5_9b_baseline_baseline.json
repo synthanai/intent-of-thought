@@ -1,0 +1,21 @@
+{
+  "run_id": "int_002_qwen3.5_9b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "qwen3.5:9b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 167.57,
+  "tokens": {
+    "prompt_tokens": 78,
+    "completion_tokens": 1024,
+    "total_duration_ms": 167554.950334
+  },
+  "timestamp": "2026-03-06T09:14:08.418051"
+}

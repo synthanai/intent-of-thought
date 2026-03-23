@@ -1,0 +1,25 @@
+{
+  "run_id": "par_003_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_003",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Must produce 3 genuinely different strategies (e.g., direct sales to hospital IT, partnership with EHR vendors, compliance-first freemium). Must address HIPAA compliance as a constraint. Strategies must be distinct, not variations of the same approach.",
+  "scoring_rubric": "Score 3 if: 3 distinct strategies, each with risks/timeline, HIPAA addressed, clear recommendation with justification. Score 2 if: 3 strategies but overlapping or weak evaluation. Score 1 if: fewer than 3 or no evaluation. Score 0 if: single strategy or no healthcare consideration.",
+  "response": "To address the expansion of a B2B SaaS company into the healthcare sector, the following structured approach is recommended:\n\n### Approach: Tree-of-Thought\n\n#### 1. **Strategies to Explore**\n   - **Go all-in immediately**: Launch a healthcare-specific product with tailored features such as task management and compliance tools.\n   - **Gradual entry**: Start in a specific niche (e.g., orthopedics) to test the market and gather feedback before expanding.\n   - **Focus on a niche**: Concentrate on a specific area within healthcare, such as mental health, to build expertise and market presence.\n\n#### 2. **Evaluation of Each Strategy**\n\n- **Go all-in**\n  - **Pros**: High potential for rapid growth and market leadership due to direct product adaptation to healthcare needs.\n  - **Cons**: High risk due to the complexity of healthcare regulations (HIPAA, GDPR) and potential delays in product development and market approval. Requires substantial resources and expertise.\n\n- **Gradual entry**\n  - **Pros**: Lower initial risk with manageable timeline (2-3 years), allowing for market testing and feedback.\n  - **Cons**: Slower growth and potential delays due to regulatory compliance and competition.\n\n- **Focus on a niche**\n  - **Pros**: Balanced risk with a high likelihood of success, manageable timeline (3-4 years), and potential for",
+  "response_length": 1339,
+  "elapsed_seconds": 84.83,
+  "tokens": {
+    "prompt_tokens": 192,
+    "completion_tokens": 1024,
+    "total_duration_ms": 84808.238
+  },
+  "timestamp": "2026-03-06T06:40:39.369165",
+  "score": 1,
+  "score_reason": "The response provides three strategies but they are overlapping variations of the same approach and do not address HIPAA compliance as required.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T06:22:31.569936"
+}

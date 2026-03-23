@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_qwen2.5_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "Let's break down the task of proving that the square root of 2 is irrational by building a relationship graph as per the specified steps.\n\n### Step 1: Identify Key Factors, Entities, or Variables\n- **Factor A:** The number 2 (the number whose square root we are examining)\n- **Factor B:** The concept of rational numbers (numbers that can be expressed as the ratio of two integers)\n- **Factor C:** The concept of irrational numbers (numbers that cannot be expressed as the ratio of two integers)\n- **Factor D:** Proof by contradiction (the method used to prove the square root of 2 is irrational)\n- **Factor E:** The assumption that the square root of 2 is rational\n- **Factor F:** The assumption that the square root of 2 is irrational\n- **Factor G:** The property of integers (that if an integer is divisible by 2, it is even, and if it is not divisible by 2, it is odd)\n- **Factor H:** The property of square numbers (the square of an even number is even, and the square of an odd number is odd)\n\n### Step 2: Determine Relationships\n- **E --(causes)--> D:** To prove the irrationality of \u221a2, we use proof by contradiction, starting with the assumption that \u221a2 is rational.\n- **D --(causes)--> E:** Proof by contradiction depends on the initial assumption that \u221a2 is rational.\n- **E --(contradicts)--> F:** If \u221a2 is rational, it cannot be irrational.\n- **E --(leads to)--> A, B:** From the assumption that \u221a2 is rational, we can derive that \u221a2 = p/q where p and q are integers with no common factors other than 1.\n- **A --(leads to)--> E:** The assumption that \u221a2 is rational is based on the property of 2.\n- **B --(blocks)--> A:** If 2 were a perfect square, \u221a2 would be rational.\n- **C --(amplifies)--> F:** The proof that \u221a2 is irrational amplifies the concept of irrational numbers.\n- **G --(applies to)--> E:** The properties of integers (odd and even) apply to the proof that \u221a2 is irrational.\n- **H --(applies to)--> E:** The properties of square numbers are used to show that if p and q are integers with no common factors, p^2 and q^2 must also have no common factors.\n\n### Step 3: Draw Relationships as Edges\n- E --(causes)--> D\n- D --(causes)--> E\n- E --(contradicts)--> F\n- E --(leads to)--> A, B\n- A --(leads to)--> E\n- B --(blocks)--> A\n- C --(amplifies)--> F\n- G --(applies to)--> E\n- H --(applies to)--> E\n\n### Step 4: Identify Feedback Loops or Circular Dependencies\n- The relationship between E and D forms a feedback loop: E causes D, and D causes E. This is a circular dependency where the proof by contradiction is both a cause and an effect.\n\n### Step 5: Determine Most Central Factors\n- **Factor E** is central as it is both the starting point and a key factor in the proof.\n- **Factor G** and **Factor H** are also central as they provide the necessary properties to complete the proof.\n\n### Step 6: Synthesise Analysis\nThe task of proving that the square root of 2 is irrational involves a complex interplay of factors. The central elements are the initial assumption (Factor E) and the properties of integers (Factor G) and square numbers (Factor H). The proof by contradiction (Factor D) is a method that is both a cause and an effect, creating a circular dependency. This interconnection highlights the necessity of starting with a false assumption to derive a contradiction, ultimately proving the irrationality of \u221a2.",
+  "response_length": 3349,
+  "elapsed_seconds": 78.09,
+  "tokens": {
+    "prompt_tokens": 170,
+    "completion_tokens": 861,
+    "total_duration_ms": 78017.726583
+  },
+  "timestamp": "2026-03-06T00:37:14.030172",
+  "score": 1,
+  "score_reason": "Extracted from: ```json\n{\n  \"score\": 1,\n  \"reason\": \"The model's response is in the correct direction but incomplete",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T11:01:28.491275"
+}

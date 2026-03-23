@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_005_gpt-4o-mini_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "gpt-4o-mini",
+  "model_id": "openai/gpt-4o-mini",
+  "condition": "iot_l2",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the computer_science reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: Trace the execution of Dijkstra's shortest path algorithm on this graph starting from node A:\nA-B: 4, A-C: 2, B-D: 3, B-C: 1, C-D: 5, C-E: 7, D-E: 1\nList the shortest distance from A to every other node and show each iteration of the algorithm.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: CoT because the task requires sequential logical steps to trace the execution of Dijkstra's algorithm through a series of iterations.\n\nPURPOSE CHECK: The purpose is to accurately trace Dijkstra's shortest path algorithm from node A and list the shortest distances from A to every other node.\n\nANTI-PURPOSE CHECK: I will avoid guessing, hallucinating facts, or skipping any reasoning steps throughout the execution trace.\n\n**Step-by-Step Execution of Dijkstra's Algorithm:**\n\n1. **Initialize Distances and Set:**\n   - Start by setting the distance from A to A as 0, and all other nodes (B, C, D, E) as infinity.\n   - Distances: A(0), B(\u221e), C(\u221e), D(\u221e), E(\u221e)\n   - Unvisited nodes: {A, B, C, D, E}\n\n2. **Current Node: A**\n   - From A, we can go to B and C:\n     - Distance to B = 0 + 4 = 4 (Update B's distance)\n     - Distance to C = 0 + 2 = 2 (Update C's distance)\n   - Updated Distances: A(0), B(4), C(2), D(\u221e), E(\u221e)\n   - Unvisited nodes: {B, C, D, E}\n   - Current node A is now visited.\n\n3. **Current Node: C** (next unvisited node with smallest distance)\n   - From C, we can go to B, D, and E:\n     - Distance to B = 2 + 1 = 3 (Update B's distance, better than previous 4)\n     - Distance to D = 2 + 5 = 7 (Update D's distance)\n     - Distance to E = 2 + 7 = 9 (Update E's distance)\n   - Updated Distances: A(0), B(3), C(2), D(7), E(9)\n   - Unvisited nodes: {B, D, E}\n   - Current node C is now visited.\n\n4. **Current Node: B** (next unvisited node with smallest distance)\n   - From B, we can go to D:\n     - Distance to D = 3 + 3 = 6 (Update D's distance, better than previous 7)\n   - Updated Distances: A(0), B(3), C(2), D(6), E(9)\n   - Unvisited nodes: {D, E}\n   - Current node B is now visited.\n\n5. **Current Node: D** (next unvisited node with smallest distance)\n   - From D, we can go to E:\n     - Distance to E = 6 + 1 = 7 (Update E's distance, better than previous 9)\n   - Updated Distances: A(0), B(3), C(2), D(6), E(7)\n   - Unvisited nodes: {E}\n   - Current node D is now visited.\n\n6. **Current Node: E** (last unvisited node)\n   - No further connections to explore.\n   - Unvisited nodes are now empty, and the algorithm terminates.\n\n**Final Distances:**\n- A to A: 0\n- A to B: 3\n- A to C: 2\n- A to D: 6\n- A to E: 7\n\nANSWER: \n- A to B: 3\n- A to C: 2\n- A to D: 6\n- A to E: 7\n\nSUCCESS SIGNAL MET: YES, the output provides the correct shortest distances and the reasoning steps are clear and logical.\nANTI-PURPOSE VIOLATED: NO\nCONFIDENCE: HIGH",
+  "response_length": 2469,
+  "elapsed_seconds": 15.96,
+  "tokens": {
+    "prompt_tokens": 346,
+    "completion_tokens": 791,
+    "total_tokens": 1137
+  },
+  "timestamp": "2026-03-19T15:57:42.367647",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

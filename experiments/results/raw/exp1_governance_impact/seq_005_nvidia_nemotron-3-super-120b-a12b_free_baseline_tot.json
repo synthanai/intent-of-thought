@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_005_nvidia_nemotron-3-super-120b-a12b_free_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "response": "**APPROACH 1: Manual Step\u2011by\u2011Step Table (Paper/Pencil)**  \n  Description: Create a table that tracks, for each iteration, the set of visited (settled) nodes, the tentative distance label for every unvisited node, and the node selected as the next minimum. Update distances by relaxing edges from the newly settled node, repeating until all nodes are settled.    Strengths:  \n  - No external tools required; can be done anywhere with just pen and paper.  \n  - Forces the learner to internalise each relaxation step, reinforcing understanding of the algorithm\u2019s mechanics.  \n  Weaknesses:  \n  - Prone to arithmetic or transcription errors, especially as the graph grows.  \n  - Time\u2011consuming for larger graphs; rewriting the table each iteration can be tedious.    Suitability: MEDIUM  \n\n**APPROACH 2: Programmatic Simulation (Priority\u2011Queue Implementation)**  \n  Description: Write a short script (e.g., in Python, Java, or C++) that implements Dijkstra\u2019s algorithm using a min\u2011heap priority queue. The program prints the distance table after each extraction of the minimum node, showing the current settled set and tentative distances.  \n  Strengths:    - Eliminates manual calculation errors; the computer guarantees correct relaxations.  \n  - Easily scalable \u2013 the same code works for any graph size, and the output can be logged or visualized.  \n  Weaknesses:    - Requires programming knowledge and a development environment; not accessible to all learners.  \n  - Debugging the code itself can add overhead if the implementation is flawed.  \n  Suitability: HIGH  \n\n**APPROACH 3: Interactive Spreadsheet / Visual Diagram**  \n  Description: Build a spreadsheet (e.g., Excel or Google Sheets) where each column represents a node and each row an iteration. Use formulas to compute tentative distances (MIN of current value + edge weight) and conditional formatting to highlight the selected node. Alternatively, draw a step\u2011by\u2011step diagram with nodes and edges, updating labels manually on a whiteboard or digital canvas.  \n  Strengths:  \n  - Provides a visual, audit\u2011friendly trail that can be reviewed instantly; good for presentations or teaching.  \n  - Leverages familiar UI (spreadsheet) that many users already know, reducing the learning curve.  \n  Weaknesses:  \n  - Setting up correct formulas for edge relaxation can be error\u2011prone and tedious for irregular graphs.  \n  - Limited to relatively small graphs; large graphs make the sheet unwieldy and hard to read.  \n  Suitability: MEDIUM  \n\n**COMPARISON:**  \n| Aspect | Approach 1 (Manual Table) | Approach 2 (Code) | Approach 3 (Spreadsheet/Diagram) |\n|--------|---------------------------|",
+  "response_length": 2649,
+  "elapsed_seconds": 20.9,
+  "tokens": {
+    "prompt_tokens": 298,
+    "completion_tokens": 1024,
+    "total_duration_ms": 20898.85
+  },
+  "timestamp": "2026-03-17T14:07:57.971381",
+  "backend": "openrouter",
+  "score": 0,
+  "score_reason": "The model's response does not address the task of evaluating the correctness and clarity of the shortest distances and iteration trace.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:36:04.095285"
+}

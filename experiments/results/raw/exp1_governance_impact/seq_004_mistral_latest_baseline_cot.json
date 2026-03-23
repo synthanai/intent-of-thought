@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_mistral_latest_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "STEP 1: Determine the time taken for the first train to travel from Station A to a point that is 320 km away (distance between Station A and Station B).\nSTEP 2: Time = Distance / Speed. In this case, Time = 320 km / 80 km/h = 4 hours.\nSTEP 3: The first train has already traveled for one hour before the second train starts its journey. So, the total time taken from when the first train started until they meet is 4 hours + 1 hour = 5 hours.\n\nSTEP 2 (continued): Since the second train starts at 09:30 and they meet after 5 hours, the meeting time would be 09:30 + 5 hours = 14:30.\n\nSTEP 3: The trains are traveling towards each other, so when they meet, they will have traveled a combined distance equal to the distance between Station A and Station B (320 km).\n\nSTEP 4: To find out how far from Station A they meet, we need to know the distance that the second train travels before meeting. As both trains are traveling towards each other at a combined speed of 80 + 120 = 200 km/h, we can calculate this as follows: Distance = Speed * Time = 200 km/h * (5 hours - 1 hour) = 800 km.\n\nSTEP 5: Since the total distance between Station A and Station B is 320 km, the remaining distance from Station A where they meet would be 320 km - 800 km = -480 km. However, since the distance cannot be negative, this means that they have passed Station A before meeting. So, they meet approximately 480 km west of Station A.\n\nFINAL ANSWER: The trains meet at 14:30 and are about 480 km west of Station A.\nCONFIDENCE: HIGH",
+  "response_length": 1510,
+  "elapsed_seconds": 40.72,
+  "tokens": {
+    "prompt_tokens": 192,
+    "completion_tokens": 448,
+    "total_duration_ms": 40706.357583
+  },
+  "timestamp": "2026-03-17T14:09:19.817827",
+  "score": 0,
+  "score_reason": "The model's approach and calculations are incorrect; it fails to address the task of determining when and where the trains meet based on their speeds and starting times.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:00:35.520868"
+}

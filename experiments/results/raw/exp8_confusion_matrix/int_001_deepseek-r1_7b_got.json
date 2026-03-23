@@ -1,0 +1,19 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "optimal_topology": "got",
+  "forced_topology": "got",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "**Relationship Analysis of Symptoms and Underlying Conditions**\n\n**Key Factors Identified:**\n1. **Chronic Fatigue**\n2. **Joint Pain**\n3. **Butterfly-Shaped Rash**\n4. **Mitochondrial Myopathy**\n5. **Systemic Autoimmune Disease (e.g., Rheumatoid Arthritis)**\n6. **HIV Infection**\n7. **Inflammatory Bowel Disease (IBD)**\n8. **Other Systemic Conditions**\n\n**Relationships Between Factors:**\n\n1. **Mitochondrial Myopathy --> Chronic Fatigue:** Mitochondrial dysfunction can cause chronic fatigue as a primary symptom.\n2. **Mitochondrial Myopathy --> Joint Pain:** Degeneration in multiple systems due to mitochondrial issues can lead to joint pain.\n3. **Mitochondrial Myopathy --> Butterfly-Shaped Rash:** Possible secondary effect through systemic inflammation or autoimmune response.",
+  "response_length": 780,
+  "elapsed_seconds": 95.88,
+  "timestamp": "2026-03-06T18:54:05.855663",
+  "score": 1,
+  "score_reason": "The model lists conditions independently without connecting them through an underlying mechanism like autoimmune inflammation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T17:31:57.059482"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "par_003_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_003",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Must produce 3 genuinely different strategies (e.g., direct sales to hospital IT, partnership with EHR vendors, compliance-first freemium). Must address HIPAA compliance as a constraint. Strategies must be distinct, not variations of the same approach.",
+  "scoring_rubric": "Score 3 if: 3 distinct strategies, each with risks/timeline, HIPAA addressed, clear recommendation with justification. Score 2 if: 3 strategies but overlapping or weak evaluation. Score 1 if: fewer than 3 or no evaluation. Score 0 if: single strategy or no healthcare consideration.",
+  "response": "**Go-to-Market Strategies for Expanding into Healthcare Sector**\n\n1. **Hybrid Model Expansion**\n   - **Description**: Offer a blend of in-house and cloud-based solutions tailored to healthcare providers, allowing them to choose based on their specific needs.\n   - **Risks**: Compliance challenges, integration complexities, and provider onboarding.\n   - **Timeline**: 18-24 months.\n\n2. **Custom Solutions for Healthcare Providers**\n   - **Description**: Develop highly customized tools addressing healthcare-specific needs like patient tracking and EHR integration.\n   - **Risks**: High development and implementation costs, potential overcustomization.\n   - **Timeline**: 24-36 months.\n\n3. **Subscription-Based Pricing Model**\n   - **Description**: Introduce a tiered pricing structure with subscription-based access, potentially offering additional features for subscribers.",
+  "response_length": 876,
+  "elapsed_seconds": 87.99,
+  "tokens": {
+    "prompt_tokens": 42,
+    "completion_tokens": 1024,
+    "total_duration_ms": 87969.2695
+  },
+  "timestamp": "2026-03-06T06:17:20.783177",
+  "score": 2,
+  "score_reason": "The response provides three distinct strategies but lacks clear HIPAA compliance consideration and does not offer a recommendation with justification.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T06:10:58.423757"
+}

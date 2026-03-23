@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_mistral_latest_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "1. Key Factors: Sorting Algorithms (Insertion Sort, Merge Sort, QuickSort), Time Complexity, Array Size (10,000 integers), Percentage of Out-of-Place Elements (5%)\n\n2. Relationships:\n   - The Sorting Algorithms cause a rearrangement of the array to sort it.\n   - The Array Size depends on the number of elements to be sorted.\n   - The Percentage of Out-of-Place Elements determines the complexity of the sorting process.\n\n3. Relationships as edges:\n   - Sorting Algorithms --> Time Complexity (depends on the complexity of the algorithm)\n   - Time Complexity --> Array Size (larger arrays take more time to sort)\n   - Time Complexity --> Percentage of Out-of-Place Elements (more out-of-place elements increase the complexity)\n   - Array Size --> Percentage of Out-of-Place Elements (larger arrays with more out-of-place elements require more complex sorting)\n\n4. Feedback loops or circular dependencies: None in this case.\n\n5. Central Factors: Sorting Algorithms, Time Complexity, Array Size\n\n6. Synthesis:\n   - In this specific case, an almost sorted array (only 5% of elements out of place) would be best suited for QuickSort due to its average time complexity of O(n log n) which is less than the O(n^2) time complexity of Insertion Sort for an unsorted array. However, QuickSort's average time complexity is derived from the assumption that the array is random and not nearly sorted. In this case, QuickSort may perform worse due to its repeated partitioning based on the pivot.\n   - Merge Sort has a time complexity of O(n log n) in all cases, making it a good choice for large and nearly sorted arrays. However, it requires additional memory for temporary arrays during the sorting process, which might not be ideal for very large arrays.\n   - Insertion Sort's time complexity is O(n^2) for an unsorted array but improves to O(n) for a nearly sorted array. It is in-place and does not require additional memory, making it a good choice for small and nearly sorted arrays.\n   - In this particular case, QuickSort might not be the best choice due to the nearly sorted nature of the array. Merge Sort, with its time complexity of O(n log n) and in-place nature for nearly sorted arrays, would likely perform well. However, for smaller arrays, Insertion Sort, with its improved time complexity for nearly sorted arrays, could also be a viable option due to its lower memory requirements.",
+  "response_length": 2390,
+  "elapsed_seconds": 53.5,
+  "tokens": {
+    "prompt_tokens": 210,
+    "completion_tokens": 604,
+    "total_duration_ms": 53487.527125
+  },
+  "timestamp": "2026-03-06T05:50:24.244982",
+  "score": 2,
+  "score_reason": "The response correctly recommends insertion sort for nearly-sorted data and provides an explanation, but the analysis is somewhat weak as it does not fully emphasize why insertion sort's O(n) complexity makes it superior in this specific case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:05:54.286255"
+}

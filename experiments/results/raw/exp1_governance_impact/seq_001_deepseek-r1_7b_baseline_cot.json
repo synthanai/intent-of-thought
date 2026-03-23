@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "To prove that \u221a2 is irrational, we'll use proof by contradiction.\n\n**Step 1: Assume the Opposite**\nAssume, for contradiction, that \u221a2 is rational. Then, it can be expressed as a fraction a/b where a and b are coprime integers (i.e., their greatest common divisor is 1).\n\n**Step 2: Square Both Sides**\n\u221a2 = a/b  \nSquaring both sides:  \n2 = a\u00b2 / b\u00b2  \nMultiplying both sides by b\u00b2:  \n2b\u00b2 = a\u00b2\n\n**Step 3: Analyze Parity of a**\nSince 2b\u00b2 = a\u00b2, a\u00b2 is even. If the square of a number is even, the number itself must be even. Therefore, a is even.\n\n**Step 4: Express a as 2k**\nLet a = 2k where k is an integer. Substitute back:  \n2b\u00b2 = (2k)\u00b2  \n2b\u00b2 = 4k\u00b2  \nDivide both sides by 2:  \nb\u00b2 = 2k\u00b2\n\n**Step 5: Analyze Parity of b**\nFrom b\u00b2 = 2k\u00b2, b\u00b2 is even, implying b is even.\n\n**Step 6: Contradiction Arises**\nBoth a and b are even, meaning they share a common factor of 2. This contradicts the initial assumption that a and b are coprime.\n\n**Conclusion:**\nSince assuming \u221a2 is rational leads to a contradiction, the assumption is false. Therefore, \u221a2 is irrational.\n\nAnswer: \u221a2 is irrational.",
+  "response_length": 1080,
+  "elapsed_seconds": 88.41,
+  "tokens": {
+    "prompt_tokens": 69,
+    "completion_tokens": 1007,
+    "total_duration_ms": 88396.827
+  },
+  "timestamp": "2026-03-05T23:57:48.584964",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction for the irrationality of \u221a2, including all necessary steps and reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:44:15.483147"
+}

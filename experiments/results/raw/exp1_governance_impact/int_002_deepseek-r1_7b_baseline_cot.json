@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "The downstream effects of a 2-week shutdown at Factory A are as follows:\n\n1. **Impact on Factory B and Factory C:**\n   - **What:** Factory A supplies components to Factory B and Factory C.\n   - **Why:** Without components, Factory B and Factory C cannot produce sub-assemblies.\n   - **Result:** Factory B and Factory C halt production.\n\n2. **Impact on Factory D:**\n   - **What:** Factory B and Factory C supply sub-assemblies to Factory D.\n   - **Why:** Sub-assemblies are essential for Factory D's production.\n   - **Result:** Factory D stops receiving sub-assemblies, halting production.\n\n3. **Impact on Factory A's Parent Company:**\n   - **What:** Factory D sells finished products to Factory A's parent company.\n   - **Why:** Without sub-assemblies, Factory D cannot produce finished products.\n   - **Result:** The parent company faces lost sales and potential revenue loss.\n\n4. **Feedback Loop Consideration:**\n   - **What:** The shutdown creates a dependency on Factory A's components.\n   - **Why:** If Factory A's parent company can't source components elsewhere, demand might decrease.\n   - **Result:** The parent company might see reduced demand, necessitating adjustments.\n\n**Conclusion:** The shutdown at Factory A halts production at B and C, which in turn stops D's production. This leads to the parent company experiencing lost sales. If the parent company can manage demand, it may reduce the impact.",
+  "response_length": 1415,
+  "elapsed_seconds": 61.95,
+  "tokens": {
+    "prompt_tokens": 125,
+    "completion_tokens": 696,
+    "total_duration_ms": 61939.603833
+  },
+  "timestamp": "2026-03-06T09:29:40.752542",
+  "score": 2,
+  "score_reason": "The model traces all forward paths (A->B->D, A->C->D) and identifies D's double-hit, but it does not clearly articulate the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:18:30.340693"
+}

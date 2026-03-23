@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_gpt-4o-mini_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "gpt-4o-mini",
+  "model_id": "openai/gpt-4o-mini",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "prompt": "Task: A train leaves Station A at 09:00 travelling at 80 km/h. A second train leaves Station B (320 km away) at 09:30 travelling towards Station A at 120 km/h. At what time do the trains meet, and how far from Station A?\n\nProvide your answer with clear reasoning.",
+  "response": "To find out when and where the two trains meet, we can start by determining how long each train travels until they meet.\n\n1. **Initial Setup:**\n   - Train 1 leaves Station A at 09:00 and travels at 80 km/h.\n   - Train 2 leaves Station B at 09:30 and travels at 120 km/h.\n   - The distance between Station A and Station B is 320 km.\n\n2. **Time Calculation:**\n   - Train 1 starts at 09:00.\n   - Train 2 starts at 09:30, which is 30 minutes later than Train 1.\n\n3. **Distance Covered by Train 1 Before Train 2 Starts:**\n   - From 09:00 to 09:30, Train 1 travels for 30 minutes (0.5 hours):\n     \\[\n     \\text{Distance} = \\text{Speed} \\times \\text{Time} = 80 \\text{ km/h} \\times 0.5 \\text{ h} = 40 \\text{ km}\n     \\]\n   - So by 09:30, Train 1 is 40 km away from Station A.\n\n4. **Remaining Distance:**\n   - The remaining distance between the two trains at 09:30 is:\n     \\[\n     320 \\text{ km} - 40 \\text{ km} = 280 \\text{ km}\n     \\]\n\n5. **Relative Speed:**\n   - After 09:30, both trains are moving towards each other. The relative speed of Train 1 and Train 2 is:\n     \\[\n     80 \\text{ km/h} + 120 \\text{ km/h} = 200 \\text{ km/h}\n     \\]\n\n6. **Time to Meet:**\n   - To find the time it takes for them to meet after 09:30, we can use the formula:\n     \\[\n     \\text{Time} = \\frac{\\text{Distance}}{\\text{Relative Speed}} = \\frac{280 \\text{ km}}{200 \\text{ km/h}} = 1.4 \\text{ hours}\n     \\]\n   - Converting 1.4 hours to hours and minutes:\n     - 0.4 hours = 0.4 \u00d7 60 minutes = 24 minutes.\n     - Therefore, 1.4 hours = 1 hour and 24 minutes.\n\n7. **Meeting Time:**\n   - Adding 1 hour and 24 minutes to 09:30 gives:\n     - 09:30 + 1 hour = 10:30\n     - 10:30 + 24 minutes = 10:54\n\n8. **Distance from Station A:**\n   - Now we calculate how far Train 1 travels from Station A until they meet.\n   - Train 1 travels for a total time of 1.4 hours after 09:00:\n     \\[\n     \\text{Total Time for Train 1} = 0.5 \\text{ hours (before 09:30)} + 1.4 \\text{ hours} = 1.9 \\text{ hours}\n     \\]\n   - The distance traveled by Train 1 from Station A:\n     \\[\n     \\text{Distance} = \\text{Speed} \\times \\text{Time} = 80 \\text{ km/h} \\times 1.9 \\text{ h} = 152 \\text{ km}\n     \\]\n\n9. **Final Answer:**\n   - The trains meet at **10:54**, and the meeting point is **152 km from Station A**. \n\nThus, the final result is:\n- **Time of meeting:** 10:54\n- **Distance from Station A:** 152 km",
+  "response_length": 2359,
+  "elapsed_seconds": 12.83,
+  "tokens": {
+    "prompt_tokens": 74,
+    "completion_tokens": 793,
+    "total_tokens": 867
+  },
+  "timestamp": "2026-03-19T15:57:01.285238",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

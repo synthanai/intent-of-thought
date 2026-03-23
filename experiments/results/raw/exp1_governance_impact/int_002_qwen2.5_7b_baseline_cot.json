@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_qwen2.5_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "Sure, let's trace the downstream effects step by step when Factory A experiences a 2-week shutdown.\n\n### Step 1: Identify Immediate Downstream Effects\n1. **What you are doing and why:** Identify the direct suppliers and consumers affected by Factory A's shutdown.\n2. **Result:** Factory B and Factory C will be affected as they are the immediate suppliers of components to Factory A.\n3. **Explanation:** Since Factory A is a supplier to both Factory B and Factory C, a shutdown will impact their production schedules and inventory levels, leading to reduced supply to them.\n\n### Step 2: Impact on Factory B and Factory C\n1. **What you are doing and why:** Analyze the effect on Factory B and Factory C.\n2. **Result:** Both Factory B and Factory C will have a reduced supply of components from Factory A.\n3. **Explanation:** This reduced supply will likely lead to a decrease in production efficiency and potential stock shortages, as both factories rely on the components from Factory A.\n\n### Step 3: Impact on Factory D\n1. **What you are doing and why:** Examine how the reduced supply from Factory B and Factory C affects Factory D.\n2. **Result:** Factory D will receive fewer sub-assemblies from both Factory B and Factory C.\n3. **Explanation:** Since Factory D relies on sub-assemblies from both Factory B and Factory C, a reduction in supply will impact their ability to produce finished products.\n\n### Step 4: Impact on Factory A's Parent Company\n1. **What you are doing and why:** Determine the effect on Factory A's parent company.\n2. **Result:** Factory A's parent company will receive fewer finished products from Factory D.\n3. **Explanation:** Factory D, which sells finished products back to Factory A's parent company, will have a reduced supply of finished products due to the shutdown of Factory A.\n\n### Step 5: Feedback Loops\n1. **What you are doing and why:** Identify any feedback loops that might occur in the supply chain.\n2. **Result:** There may be a feedback loop between Factory A and Factory D, as Factory D might have to adjust its production and sales strategies to compensate for the reduced supply from Factory A.\n3. **Explanation:** If Factory D reduces its production due to lack of sub-assemblies, it might need to communicate this back to Factory A's parent company, potentially leading to further adjustments in supply chain management.\n\n### Summary of Downstream Effects\n1. **Factory A shutdown \u2192 Reduced supply to Factory B and Factory C.**\n2. **Factory B and Factory C reduced supply \u2192 Reduced production efficiency and potential stock shortages.**\n3. **Reduced supply from Factory B and Factory C \u2192 Reduced sub-assemblies to Factory D.**\n4. **Reduced sub-assemblies to Factory D \u2192 Reduced production of finished products.**\n5. **Reduced finished products to Factory A's parent company \u2192 Potential adjustments in supply chain management and sales strategies.**\n\nBy tracing these steps, we can understand the complete impact of Factory A's shutdown on the supply chain and the potential feedback loops that might arise.",
+  "response_length": 3055,
+  "elapsed_seconds": 56.5,
+  "tokens": {
+    "prompt_tokens": 151,
+    "completion_tokens": 639,
+    "total_duration_ms": 56483.267459
+  },
+  "timestamp": "2026-03-06T09:27:36.549406",
+  "score": 2,
+  "score_reason": "The model traces the forward paths A->B->D and A->C->D, identifies D's double-hit, but misses the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:29:30.025587"
+}

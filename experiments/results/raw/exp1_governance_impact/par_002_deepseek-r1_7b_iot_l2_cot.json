@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "**Recommended Algorithm: Insertion Sort**\n\n**Step-by-Step Explanation:**\n\n1. **Understanding the Problem:**\n   - We are given an array of 10,000 integers where 5% (500 elements) are out of place, making it nearly sorted.\n   - We need to compare three sorting algorithms: Insertion Sort, Merge Sort, and Quicksort.\n\n2. **Analyzing Each Algorithm:**\n   - **Insertion Sort:** \n     - Best case time complexity: O(n) when the array is already sorted.\n     - Average case: O(n\u00b2), but very efficient for nearly sorted arrays as it minimizes comparisons and swaps.\n     - Ideal for small or nearly sorted arrays.\n   - **Merge Sort:**\n     - Time complexity: O(n log n) in all cases, making it efficient for larger datasets.\n     - Not in-place and requires additional space, which might be a consideration.\n     - Performs well on average but does not benefit from the array being nearly sorted.\n   - **Quicksort:**\n     - Average and best-case time complexity: O(n log n), making it efficient for large datasets.\n     - Worst-case time complexity: O(n\u00b2) if the pivot selection is poor, which can happen with nearly sorted arrays if not careful.\n     - Generally fast in practice with good pivot selection, but less reliable than Insertion Sort for nearly sorted arrays.\n\n3. **Comparison in Context:**\n   - **Insertion Sort** is the most efficient choice because it takes advantage of the array being nearly sorted, resulting in fewer comparisons and swaps.\n   - **Merge Sort** is a reliable choice but less efficient for nearly sorted arrays due to its fixed O(n log n) complexity without leveraging the initial order.\n   - **Quicksort** could be effective if a good pivot is selected, but the risk of poor pivot selection leading to O(n\u00b2) time exists, making it less certain for this specific case.\n\n4. **Conclusion:**\n   - Given the nearly sorted nature of the array, **Insertion Sort** is recommended for its optimal performance in such scenarios, offering the best trade-off between time complexity and efficiency for the given task.",
+  "response_length": 2031,
+  "elapsed_seconds": 85.15,
+  "tokens": {
+    "prompt_tokens": 210,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85129.529458
+  },
+  "timestamp": "2026-03-06T05:11:18.389542",
+  "score": 3,
+  "score_reason": "The response correctly analyzes all three algorithms, provides the correct complexity for nearly-sorted data, and thoroughly explains why Insertion Sort is optimal in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:17:03.165150"
+}

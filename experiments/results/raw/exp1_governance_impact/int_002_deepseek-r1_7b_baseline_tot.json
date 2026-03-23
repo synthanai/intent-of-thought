@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "**Best Approach: Feedback Loop Analysis**\n\n**Description:**\nFeedback Loop Analysis is a systematic method to understand how disruptions propagate through a supply chain. It examines the cyclic dependencies between supply chain elements, allowing us to trace the effects of a shutdown from one point to another, including any feedback mechanisms that might amplify or mitigate the impact.\n\n**Strengths:**\n1. **Comprehensive Cyclic Dependencies:** It captures the interconnected nature of the supply chain, showing how a shutdown at Factory A can cause ripples through B, C, D, and back to A's parent company.\n2. **Feedback Mechanisms:** Identifies loops that can either amplify or dampen the effects of the shutdown, providing insights",
+  "response_length": 734,
+  "elapsed_seconds": 89.11,
+  "tokens": {
+    "prompt_tokens": 145,
+    "completion_tokens": 1024,
+    "total_duration_ms": 89087.285083
+  },
+  "timestamp": "2026-03-06T09:50:57.313459",
+  "score": 3,
+  "score_reason": "The model output correctly identifies all paths (A->B->D, A->C->D), notes D's double-hit, and describes the feedback loop affecting A's parent company, fulfilling all specified criteria for a score of 3.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:19:43.447670"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_deepseek-r1_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "The binary representation of the decimal number 1247 is determined by repeatedly dividing by 2 and noting the remainders. The process involves the following steps:\n\n1. **1247 \u00f7 2 = 623** with a remainder of 1.\n2. **623 \u00f7 2 = 311** with a remainder of 1.\n3. **311 \u00f7 2 = 155** with a remainder of 1.\n4. **155 \u00f7 2 = 77** with a remainder of 1.\n5. **77 \u00f7 2 = 38** with a remainder of 1.\n6. **38 \u00f7 2 = 19** with a remainder of 0.\n7. **19 \u00f7 2 = 9** with a remainder of 1.\n8. **9 \u00f7 2 = 4** with a remainder of 1.\n9. **4 \u00f7 2 = 2** with a remainder of 0.\n10. **2 \u00f7 2 = 1** with a remainder of 0.\n11. **1 \u00f7 2 = 0** with a remainder of 1.\n\nThe remainders, read in reverse order, give the binary number: **10011011111**.\n\n**Answer:**  \nThe binary representation of 1247 is 10011011111.",
+  "response_length": 773,
+  "elapsed_seconds": 89.93,
+  "tokens": {
+    "prompt_tokens": 152,
+    "completion_tokens": 919,
+    "total_duration_ms": 89917.956667
+  },
+  "timestamp": "2026-03-06T02:57:31.390612",
+  "score": 3,
+  "score_reason": "The response correctly provides the binary representation of 1247 as 10011011111 and includes valid step-by-step division with remainders.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T14:53:29.688586"
+}

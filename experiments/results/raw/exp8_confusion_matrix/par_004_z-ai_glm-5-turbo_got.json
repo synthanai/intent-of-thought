@@ -1,0 +1,16 @@
+{
+  "run_id": "par_004_z-ai_glm-5-turbo_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "par_004",
+  "task_category": "parallel",
+  "optimal_topology": "tot",
+  "forced_topology": "got",
+  "model": "z-ai/glm-5-turbo",
+  "ground_truth": "Must include 3 distinct strategies (e.g., congestion pricing, rapid transit expansion, remote work incentive program). Must address second-order effects (e.g., congestion pricing may displace traffic to other areas, transit expansion may gentrify neighbourhoods).",
+  "scoring_rubric": "Score 3 if: 3 genuinely different approaches with multi-dimensional analysis and second-order effects. Score 2 if: 3 approaches but missing second-order analysis. Score 1 if: only 1-2 real approaches or surface-level analysis. Score 0 if: no structured comparison.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.12,
+  "timestamp": "2026-03-17T14:23:54.733490",
+  "backend": "openrouter"
+}

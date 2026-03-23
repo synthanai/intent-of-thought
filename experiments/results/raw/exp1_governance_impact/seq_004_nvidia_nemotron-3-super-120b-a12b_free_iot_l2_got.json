@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the problem requires a single, sequential calculation of time and distance to find the meeting point, without needing to explore multiple alternatives or map inter\u2011related factors.  \nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer.  \nANTI-PURPOSE CHECK: I will avoid branching into alternative methods or considering unrelated scenarios before completing the primary step\u2011by\u2011step derivation.  \n\n**Reasoning (Chain\u2011of\u2011Thought):**  \n1. Let\u202f\\(t\\)\u202fbe the elapsed time in hours after 09:00 when the trains meet.  \n2. Train\u202fA (from Station\u202fA) travels at 80\u202fkm/h, so its distance covered is \\(d_A = 80t\\).  \n3. Train\u202fB departs 0.5\u202fh later (at 09:30) and travels toward Station\u202fA at 120\u202fkm/h. Its travel time when they meet is \\(t - 0.5\\)\u202fh (valid for \\(t \\ge 0.5\\)), giving distance \\(d_B = 120(t - 0.5)\\).  \n4. The stations are 320\u202fkm apart, so at meeting: \\(d_A + d_B = 320\\).  \n5. Substitute: \\(80t + 120(t - 0.5) = 320\\).  \n6. Simplify: \\(80t + 120t - 60 = 320\\) \u2192 \\(200t - 60 = 320\\).  \n7. Solve for\u202f\\(t\\): \\(200t = 380\\) \u2192 \\(t = 380/200 = 1.9\\)\u202fh.  \n8. Convert 1.9\u202fh to hours\u2011minutes: 1\u202fh\u202f+\u202f0.9\u202f\u00d7\u202f60\u202fmin = 1\u202fh\u202f54\u202fmin.  \n9. Add to departure time 09:00 \u2192 meeting time = **10",
+  "response_length": 1241,
+  "elapsed_seconds": 10.72,
+  "tokens": {
+    "prompt_tokens": 362,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10718.3
+  },
+  "timestamp": "2026-03-17T14:05:23.659678",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model correctly identifies the method but makes an arithmetic error in calculating the meeting time.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:13:27.535938"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_gemma3_12b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "I will use a chain-of-thought approach. This task requires a sequential process of repeated division and tracking remainders to convert the decimal number to binary. Each step directly builds upon the previous one, making a chain-of-thought the most appropriate method.\n\nHere's the step-by-step conversion of 1247 to binary:\n\n1. **Divide by 2 and record the remainder:**\n   1247 / 2 = 623 remainder 1\n\n2. **Divide the quotient by 2 and record the remainder:**\n   623 / 2 = 311 remainder 1\n\n3. **Divide the quotient by 2 and record the remainder:**\n   311 / 2 = 155 remainder 1\n\n4. **Divide the quotient by 2 and record the remainder:**\n   155 / 2 = 77 remainder 1\n\n5. **Divide the quotient by 2 and record the remainder:**\n   77 / 2 = 38 remainder 1\n\n6. **Divide the quotient by 2 and record the remainder:**\n   38 / 2 = 19 remainder 0\n\n7. **Divide the quotient by 2 and record the remainder:**\n   19 / 2 = 9 remainder 1\n\n8. **Divide the quotient by 2 and record the remainder:**\n   9 / 2 = 4 remainder 1\n\n9. **Divide the quotient by 2 and record the remainder:**\n   4 / 2 = 2 remainder 0\n\n10. **Divide the quotient by 2 and record the remainder:**\n    2 / 2 = 1 remainder 0\n\n11. **Divide the quotient by 2 and record the remainder:**\n    1 / 2 = 0 remainder 1\n\n12. **Read the remainders in reverse order:** The remainders, read from bottom to top, give us the binary representation.\n\nTherefore, 1247 in decimal is 100110111111 in binary.",
+  "response_length": 1438,
+  "elapsed_seconds": 68.73,
+  "tokens": {
+    "prompt_tokens": 191,
+    "completion_tokens": 449,
+    "total_duration_ms": 68610.4885
+  },
+  "timestamp": "2026-03-06T02:28:29.142230",
+  "score": 2,
+  "score_reason": "The model provided the correct method and steps but produced an incorrect final binary result (100110111111 instead of 10011011111).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T15:28:23.863952"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_phi4_14b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "To convert the decimal number 1247 to binary, I will use the chain-of-thought reasoning approach. This task requires a sequential logical process, where each step builds upon the previous one until the final binary representation is obtained.\n\n### Step-by-Step Conversion:\n\n1. **Divide the number by 2 and record the remainder:**\n   - 1247 \u00f7 2 = 623, remainder = 1\n\n2. **Divide the quotient by 2 and record the remainder:**\n   - 623 \u00f7 2 = 311, remainder = 1\n\n3. **Continue dividing the quotient by 2 and recording the remainders:**\n   - 311 \u00f7 2 = 155, remainder = 1\n   - 155 \u00f7 2 = 77, remainder = 1\n   - 77 \u00f7 2 = 38, remainder = 1\n   - 38 \u00f7 2 = 19, remainder = 0\n   - 19 \u00f7 2 = 9, remainder = 1\n   - 9 \u00f7 2 = 4, remainder = 1\n   - 4 \u00f7 2 = 2, remainder = 0\n   - 2 \u00f7 2 = 1, remainder = 0\n   - 1 \u00f7 2 = 0, remainder = 1\n\n4. **Compile the remainders from the last to the first to form the binary number:**\n   - Reading the remainders from bottom to top, we get: 10011011111\n\nThus, the binary representation of the decimal number 1247 is **10011011111**.",
+  "response_length": 1046,
+  "elapsed_seconds": 60.11,
+  "tokens": {
+    "prompt_tokens": 179,
+    "completion_tokens": 351,
+    "total_duration_ms": 60067.025459
+  },
+  "timestamp": "2026-03-06T02:32:30.085634",
+  "score": 3,
+  "score_reason": "The model provided the correct binary representation (10011011111) with clear and valid step-by-step division.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:31:04.507133"
+}

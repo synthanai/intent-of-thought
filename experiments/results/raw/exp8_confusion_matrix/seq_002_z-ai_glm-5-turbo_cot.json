@@ -1,0 +1,16 @@
+{
+  "run_id": "seq_002_z-ai_glm-5-turbo_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_002",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "cot",
+  "model": "z-ai/glm-5-turbo",
+  "ground_truth": "The bug is in range(1, len(lst)). It should be range(0, len(lst)) or range(len(lst)). The current code skips the first element (index 0).",
+  "scoring_rubric": "Score 3 if: correctly identifies off-by-one, provides fix, explains why. Score 2 if: correct fix without clear explanation. Score 1 if: identifies there is a bug but wrong fix. Score 0 if: does not find the bug.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.1,
+  "timestamp": "2026-03-17T14:19:52.367031",
+  "backend": "openrouter"
+}

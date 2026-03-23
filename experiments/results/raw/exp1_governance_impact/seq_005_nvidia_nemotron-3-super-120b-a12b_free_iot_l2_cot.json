@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_005_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "response": "SELECTED APPROACH: CoT because the task requires tracing a single, sequential execution of Dijkstra's algorithm, which naturally proceeds step\u2011by\u2011step without needing to explore alternative branches.\n\nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer about the shortest distances from node A to all other nodes and show each iteration of Dijkstra's algorithm.\n\nANTI-PURPOSE CHECK: I will avoid generating multiple alternative solution paths or comparing different algorithmic variants; I will stay strictly on the linear execution of Dijkstra's from the start node.\n\n**Step\u2011by\u2011step execution (Chain\u2011of\u2011Thought)**  \n\n| Iteration | Visited node (chosen) | Tentative distances before relaxation | Updates (node\u202f\u2190\u202fnew distance, predecessor) | Distances after relaxation | Visited set |\n|-----------|----------------------|----------------------------------------|--------------------------------------------|----------------------------|-------------|\n|",
+  "response_length": 986,
+  "elapsed_seconds": 27.54,
+  "tokens": {
+    "prompt_tokens": 373,
+    "completion_tokens": 1024,
+    "total_duration_ms": 27543.16
+  },
+  "timestamp": "2026-03-17T14:07:15.490813",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model outlines the approach and purpose but fails to provide any specific iteration details or distance updates as required by the task.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:38:11.584058"
+}

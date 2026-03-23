@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_mistral_latest_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: Chain-of-Thought (CoT) because this task requires a sequential logical step calculation to determine the meeting time and location of the trains.\n\nPURPOSE CHECK: The purpose is to find out at what time and how far from Station A the two trains meet.\n\nANTI-PURPOSE CHECK: I will avoid exploring multiple alternatives as there is only one scenario with given conditions.\n\n[Full reasoning using the selected approach]\n1. Train A travels for 3 hours (from 09:00 to 12:00) covering a distance of 80 km/h * 3 = 240 km.\n2. After 30 minutes, train B starts its journey from Station B. In 3 hours and 30 minutes, it would have traveled for another 3 hours (from 12:00 to 15:00) covering a distance of 120 km/h * 3 = 360 km.\n3. The total distance between the two stations is 320 km. So, if we subtract the distance traveled by train A (240 km), the remaining distance when train B starts its journey would be 320 - 240 = 80 km.\n4. After 3 hours of travel, train A has covered 240 km and train B has covered 360 km. The difference in their distances is 360 - 240 = 120 km. Since they are traveling towards each other at a combined speed of 80 + 120 = 200 km/h, it takes half an hour (50 km / 200 km/h) for them to meet.\n\nANSWER: The trains meet at 12:30 and they are 70 km away from Station A (since train A has traveled 240 + (1/2 * 120) = 260 km by that time).\n\nSUCCESS SIGNAL MET: My output provides a step-by-step derivation reaching a verifiable conclusion.\nANTI-PURPOSE VIOLATED: No, I did not explore multiple alternatives as per the anti-purpose.\nCONFIDENCE: HIGH",
+  "response_length": 1579,
+  "elapsed_seconds": 44.32,
+  "tokens": {
+    "prompt_tokens": 392,
+    "completion_tokens": 505,
+    "total_duration_ms": 44308.474792
+  },
+  "timestamp": "2026-03-17T13:51:04.674636",
+  "score": 0,
+  "score_reason": "The model's approach and calculations are incorrect; it misinterprets the time frame and distance covered by each train.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:03:40.256109"
+}

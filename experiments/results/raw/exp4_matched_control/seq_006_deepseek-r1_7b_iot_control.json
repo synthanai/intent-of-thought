@@ -1,0 +1,20 @@
+{
+  "run_id": "seq_006_deepseek-r1:7b_iot_control",
+  "experiment": "exp4_matched_control",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_control",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "The patient presents with low hemoglobin and serum ferritin indicative of iron deficiency anemia. TIBC elevation suggests impaired iron binding capacity.\n\n**Step-by-step Reasoning:**\n\n1. **Hemoglobin Level:** Low at 8.2 g/dL, below the normal range (12-16).\n   \n2. **MCV:** Normal at 68 fL, within the typical range (80-100).\n\n3. **Serum Ferritin:** Low at 8 ng/mL, indicating insufficient stored iron.\n\n4. **TIBC:** Elevated at 450 \u03bcg/dL, suggesting impaired hemoglobin formation and iron utilization.\n\n**Conclusion:**\nIron-deficiency anemia is the most likely diagnosis due to low hemoglobin and ferritin levels combined with elevated TIBC, which supports impaired iron utilization despite normal MCV.",
+  "response_length": 703,
+  "elapsed_seconds": 47.47,
+  "tokens": {
+    "prompt_tokens": 331,
+    "completion_tokens": 485,
+    "total_duration_ms": 47444.250459
+  },
+  "timestamp": "2026-03-19T14:05:45.238030"
+}

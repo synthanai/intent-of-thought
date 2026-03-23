@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="720" height="440" fill="white"/>
+
+  <!-- Title -->
+  <text x="360" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Figure 2: The Topology-Governance Gap</text>
+  <text x="360" y="46" text-anchor="middle" font-size="11" fill="#777">Six levels of intent in reasoning, and where IoT fits</text>
+
+  <!-- Column headers -->
+  <text x="42" y="78" font-size="11" font-weight="bold" fill="#555">Level</text>
+  <text x="180" y="78" font-size="11" font-weight="bold" fill="#555">Work</text>
+  <text x="360" y="78" font-size="11" font-weight="bold" fill="#555">What It Governs</text>
+  <text x="590" y="78" font-size="11" font-weight="bold" fill="#555">Scope</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="86" x2="700" y2="86" stroke="#DDD" stroke-width="1"/>
+
+  <!-- Row 1: Step -->
+  <rect x="20" y="92" width="680" height="44" rx="6" fill="#F5F5F5"/>
+  <rect x="26" y="98" width="6" height="32" rx="3" fill="#4CAF50"/>
+  <text x="42" y="118" font-size="12" font-weight="bold" fill="#333">1. Step</text>
+  <text x="180" y="118" font-size="11" fill="#555">SWI</text>
+  <text x="360" y="118" font-size="11" fill="#555">Individual step quality</text>
+  <rect x="570" y="102" width="80" height="24" rx="12" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1"/>
+  <text x="610" y="119" text-anchor="middle" font-size="10" fill="#2E7D32">Within step</text>
+
+  <!-- Row 2: Domain -->
+  <rect x="20" y="142" width="680" height="44" rx="6" fill="white"/>
+  <rect x="26" y="148" width="6" height="32" rx="3" fill="#2196F3"/>
+  <text x="42" y="168" font-size="12" font-weight="bold" fill="#333">2. Domain</text>
+  <text x="180" y="168" font-size="11" fill="#555">ICoT</text>
+  <text x="360" y="168" font-size="11" fill="#555">Code generation strategy</text>
+  <rect x="570" y="152" width="80" height="24" rx="12" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+  <text x="610" y="169" text-anchor="middle" font-size="10" fill="#1565C0">One domain</text>
+
+  <!-- Row 3: Retrieval -->
+  <rect x="20" y="192" width="680" height="44" rx="6" fill="#F5F5F5"/>
+  <rect x="26" y="198" width="6" height="32" rx="3" fill="#9C27B0"/>
+  <text x="42" y="218" font-size="12" font-weight="bold" fill="#333">3. Retrieval</text>
+  <text x="180" y="218" font-size="11" fill="#555">ARR</text>
+  <text x="360" y="218" font-size="11" fill="#555">Pre-retrieval question analysis</text>
+  <rect x="570" y="202" width="80" height="24" rx="12" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1"/>
+  <text x="610" y="219" text-anchor="middle" font-size="10" fill="#7B1FA2">Retrieval</text>
+
+  <!-- Row 4: Agent -->
+  <rect x="20" y="242" width="680" height="44" rx="6" fill="white"/>
+  <rect x="26" y="248" width="6" height="32" rx="3" fill="#FF9800"/>
+  <text x="42" y="268" font-size="12" font-weight="bold" fill="#333">4. Agent</text>
+  <text x="180" y="268" font-size="11" fill="#555">BDI</text>
+  <text x="360" y="268" font-size="11" fill="#555">External actions, commitments</text>
+  <rect x="570" y="252" width="80" height="24" rx="12" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+  <text x="610" y="269" text-anchor="middle" font-size="10" fill="#E65100">Actions</text>
+
+  <!-- Row 5: Training -->
+  <rect x="20" y="292" width="680" height="44" rx="6" fill="#F5F5F5"/>
+  <rect x="26" y="298" width="6" height="32" rx="3" fill="#607D8B"/>
+  <text x="42" y="318" font-size="12" font-weight="bold" fill="#333">5. Training</text>
+  <text x="180" y="318" font-size="11" fill="#555">RLHF / DPO</text>
+  <text x="360" y="318" font-size="11" fill="#555">Model behavioural alignment</text>
+  <rect x="570" y="302" width="80" height="24" rx="12" fill="#ECEFF1" stroke="#607D8B" stroke-width="1"/>
+  <text x="610" y="319" text-anchor="middle" font-size="10" fill="#37474F">Training</text>
+
+  <!-- Row 6: TOPOLOGY (THE GAP) - highlighted -->
+  <rect x="16" y="346" width="748" height="52" rx="8" fill="#E8EAF6" stroke="#3F51B5" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <rect x="26" y="354" width="6" height="36" rx="3" fill="#3F51B5"/>
+  <text x="42" y="378" font-size="13" font-weight="bold" fill="#283593">6. Topology</text>
+  <text x="180" y="378" font-size="12" font-weight="bold" fill="#283593">IoT (this paper)</text>
+  <text x="360" y="378" font-size="12" font-weight="bold" fill="#283593">Which reasoning structure to deploy</text>
+  <rect x="625" y="360" width="90" height="28" rx="14" fill="#C5CAE9" stroke="#3F51B5" stroke-width="1.5"/>
+  <text x="670" y="379" text-anchor="middle" font-size="10" font-weight="bold" fill="#1A237E">THE GAP</text>
+
+  <!-- Arrow pointing to gap -->
+  <text x="390" y="425" text-anchor="middle" font-size="11" fill="#3F51B5" font-style="italic">← No prior work governs topology selection based on purpose →</text>
+</svg>

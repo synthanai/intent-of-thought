@@ -1,0 +1,25 @@
+{
+  "run_id": "int_005_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_005",
+  "task_category": "interconnected",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Wolf removal -> deer population explosion -> overgrazing of grass -> grass decline -> rabbit population declines (less food) -> fox population declines (less prey). Oak seedlings also overgrazed by deer -> forest regeneration fails -> regime shift from mixed ecosystem to degraded grassland. This mirrors the actual Yellowstone trophic cascade.",
+  "scoring_rubric": "Score 3 if: traces full trophic cascade through multiple levels with temporal dynamics and regime shift. Score 2 if: gets direct effects (deer explosion) but misses downstream cascades. Score 1 if: only identifies wolf-deer relationship. Score 0 if: treats species independently.",
+  "prompt": "Task: An ecosystem consists of: wolves (apex predator), deer (herbivore, wolf prey), rabbits (herbivore), foxes (predator of rabbits), grass (primary producer), and oak trees (primary producer). Wolves are removed from the ecosystem by hunting. Trace all direct and indirect ecological effects over a 5-year period, identifying any trophic cascades, competitive dynamics, and potential regime shifts.\n\nProvide your answer with clear reasoning.",
+  "response": "Let's analyze the ecological effects step by step:\n\nYear 1-2: Immediate Wolf Removal Consequences\n- Deer population will rapidly increase without wolf predation\n- Increased deer browsing pressure on grass and oak tree seedlings\n- Potential significant vegetation damage and reduced regeneration\n\nYear 3-4: Vegetation and Herbivore Dynamics\n- Oak tree and grass populations decline due to intense deer grazing\n- Reduced plant cover affects habitat and food resources\n- Rabbit population potentially decreases due to habitat degradation\n- Fox population might initially stabilize or slightly decline due to reduced prey diversity\n\nYear 5: Ecosystem Transformation\n- Potential regime shift from diverse forest/grassland to overgrazed landscape\n- Dramatic reduction in plant biodiversity\n- Potential soil erosion and ecosystem simplification\n- Fox population likely declines due to reduced rabbit populations\n- Overall ecosystem becomes less complex and resilient\n\nTrophic Cascade Effects:\n- Top-down control disrupted\n- Herbivore population explosion\n- Significant vegetation structural changes\n- Reduced ecosystem complexity and biodiversity\n\nThis scenario demonstrates how removing a top predator can trigger complex, cascading ecological transformations.",
+  "response_length": 1254,
+  "elapsed_seconds": 6.41,
+  "tokens": {
+    "prompt_tokens": 108,
+    "completion_tokens": 265,
+    "total_tokens": 373
+  },
+  "timestamp": "2026-03-19T16:08:54.270797",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

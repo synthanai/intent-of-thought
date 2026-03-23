@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_gpt-4o-mini_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "gpt-4o-mini",
+  "model_id": "openai/gpt-4o-mini",
+  "condition": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes the butterfly rash (malar rash), joint pain (lupus arthritis), and fatigue (chronic inflammation + possible anaemia). Treating them independently would miss the underlying autoimmune process.",
+  "scoring_rubric": "Score 3 if: identifies SLE and maps causal connections between all 3 symptoms. Score 2 if: correct diagnosis but missing some connections. Score 1 if: identifies autoimmune but not SLE specifically. Score 0 if: treats symptoms independently.",
+  "prompt": "Task: A 42-year-old patient presents with chronic fatigue, joint pain, and a butterfly-shaped facial rash. These symptoms could each have independent causes, or they could share a common underlying condition. Analyse whether and how these symptoms connect, identifying the most likely unifying diagnosis and explaining the causal pathway.\n\nProvide your answer with clear reasoning.",
+  "response": "The symptoms presented by the 42-year-old patient\u2014chronic fatigue, joint pain, and a butterfly-shaped facial rash\u2014are suggestive of a common underlying condition, specifically systemic lupus erythematosus (SLE).\n\n### Analysis of Symptoms\n\n1. **Chronic Fatigue**: Fatigue is a common symptom in autoimmune diseases, including SLE. It is often multifactorial, arising from chronic inflammation, sleep disturbance, and the body's energy being diverted to mount an immune response.\n\n2. **Joint Pain**: Joint pain, or arthralgia, is also a hallmark of SLE. This disease can cause inflammation in the joints, leading to pain and stiffness. Joint involvement is common and can mimic other forms of arthritis.\n\n3. **Butterfly-Shaped Facial Rash**: The classic \"butterfly rash\" (malar rash) is a distinctive feature of SLE. It appears across the cheeks and bridge of the nose and is often triggered or exacerbated by sun exposure (photosensitivity), which is another common characteristic of lupus.\n\n### Unifying Diagnosis: Systemic Lupus Erythematosus (SLE)\n\nSLE is a systemic autoimmune disease where the immune system mistakenly attacks healthy tissues, leading to widespread inflammation and damage. The symptoms presented can be explained through the following causal pathway:\n\n- **Immune Dysregulation**: In SLE, there is a dysregulation of the immune response, leading to the production of autoantibodies that target the body\u2019s own tissues.\n\n- **Inflammation**: The immune system's attack on various tissues results in inflammation, which can manifest as joint pain (due to synovitis in the joints) and systemic fatigue (due to the body's sustained inflammatory response).\n\n- **Skin Manifestations**: The butterfly rash occurs due to skin inflammation and sensitivity to ultraviolet light, which can provoke an immune response in genetically predisposed individuals.\n\n### Conclusion\n\nGiven the combination of chronic fatigue, joint pain, and a butterfly-shaped facial rash, the most likely unifying diagnosis is systemic lupus erythematosus. The symptoms connect through the underlying mechanism of autoimmune dysregulation, leading to systemic inflammation affecting various organ systems, including musculoskeletal and dermatological manifestations. \n\nFor definitive diagnosis, further evaluation would typically include clinical criteria (such as the American College of Rheumatology criteria), serological tests for autoantibodies (like anti-nuclear antibodies and anti-dsDNA), and possibly imaging studies or other laboratory tests to assess organ involvement.",
+  "response_length": 2563,
+  "elapsed_seconds": 12.27,
+  "tokens": {
+    "prompt_tokens": 75,
+    "completion_tokens": 511,
+    "total_tokens": 586
+  },
+  "timestamp": "2026-03-19T16:01:10.234329",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

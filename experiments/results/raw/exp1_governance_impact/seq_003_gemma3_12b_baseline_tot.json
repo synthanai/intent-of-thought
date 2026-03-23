@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_gemma3_12b_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Okay, let's explore different approaches to converting the decimal number 1247 to binary, along with their strengths, weaknesses, suitability, and a final recommendation.\n\n**Approach 1: Repeated Division by 2 (Standard Algorithm)**\n\n1. **Description:** This is the most common and straightforward algorithm. You repeatedly divide the decimal number by 2, recording the remainder at each step. The remainders, read in reverse order, form the binary representation.\n\n   * Step 1: 1247 / 2 = 623, Remainder = 1\n   * Step 2: 623 / 2 = 311, Remainder = 1\n   * Step 3: 311 / 2 = 155, Remainder = 1\n   * Step 4: 155 / 2 = 77, Remainder = 1\n   * Step 5: 77 / 2 = 38, Remainder = 1\n   * Step 6: 38 / 2 = 19, Remainder = 0\n   * Step 7: 19 / 2 = 9, Remainder = 1\n   * Step 8: 9 / 2 = 4, Remainder = 1\n   * Step 9: 4 / 2 = 2, Remainder = 0\n   * Step 10: 2 / 2 = 1, Remainder = 0\n   * Step 11: 1 / 2 = 0, Remainder = 1\n\n   Reading the remainders in reverse order: 10011011111\n\n   Therefore, 1247 in decimal is 10011011111 in binary.\n\n2. **Strengths:**\n   * **Simple to understand and implement:** The logic is very clear and easy to grasp.\n   * **Widely used:**  It's a standard algorithm and readily available in tutorials and documentation.\n   * **Guaranteed to work:** It's mathematically sound and will always produce the correct binary representation.\n\n3. **Weaknesses/Risks:**\n   * **Can be tedious for large numbers:**  The repeated division can become time-consuming for very large decimal numbers.\n   * **Potential for arithmetic errors:**  Care must be taken to accurately perform the division and record the remainders.\n\n4. **Suitability:** **High** \u2013 This is the most appropriate and generally preferred method for this specific task. It's clear, understandable, and easy to execute.\n\n**Approach 2: Subtraction of Powers of 2**\n\n1. **Description:**  This method involves finding the largest power of 2 that is less than or equal to the decimal number, subtracting it, and marking that power of 2 as being present in the binary representation.  Then, repeat this process with the remaining value, using the next smaller power of 2.\n\n   * Largest power of 2 <= 1247: 1024 (2^10)  => 1247 - 1024 = 223, Binary: 1\n   * Largest power of 2 <= 223: 128 (2^7) => 223 - 128 = 95, Binary: 11\n   * Largest power of 2 <= 95: 64 (2^6) => 95 - 64 = 31, Binary: 111\n   * Largest power of 2 <= 31: 32 (2^5) - too big, so 16 (2^4) => 31 - 16 = 15, Binary: 1110\n   * Largest power of 2 <= 15: 8 (2^3) => 15 - 8 = 7, Binary: 11101\n   * Largest power of 2 <= 7: 4 (2^2) => 7 - 4 = 3, Binary: 111011\n   * Largest power of 2 <= 3: 2 (2^1) => 3 - 2 = 1, Binary: 1110111\n   * Largest power of 2 <= 1: 1 (2^0) => 1 - 1 = 0, Binary: 11101111\n\n   Therefore, 1247 in decimal is 10011011111 in binary.\n\n2. **Stre",
+  "response_length": 2782,
+  "elapsed_seconds": 167.36,
+  "tokens": {
+    "prompt_tokens": 106,
+    "completion_tokens": 1024,
+    "total_duration_ms": 167232.948625
+  },
+  "timestamp": "2026-03-06T02:46:50.429077",
+  "score": 3,
+  "score_reason": "The model's response correctly identifies the binary representation of 1247 as 10011011111 and provides valid step-by-step division, meeting all specified criteria for a score of 3.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T15:20:08.391904"
+}

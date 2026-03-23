@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_phi4_14b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "To determine when and where the two trains meet, we need to calculate the time it takes for their combined travel distances to equal the distance between Station A and Station B.\n\n1. **Calculate the head start of Train 1**:  \n   - Train 1 leaves at 09:00 and travels at 80 km/h.\n   - By 09:30, Train 1 has been traveling for 0.5 hours.\n   - Distance covered by Train 1 in that time = 80 km/h \u00d7 0.5 h = 40 km.\n\n2. **Remaining distance between the trains at 09:30**:  \n   - Original distance between Station A and B = 320 km.\n   - Remaining distance after Train 1's head start = 320 km - 40 km = 280 km.\n\n3. **Relative speed of the two trains**:  \n   - Train 1 travels towards Station B at 80 km/h.\n   - Train 2 travels towards Station A at 120 km/h.\n   - Combined relative speed = 80 km/h + 120 km/h = 200 km/h.\n\n4. **Time taken for the trains to meet after 09:30**:  \n   - Time = Distance / Relative Speed = 280 km / 200 km/h = 1.4 hours.\n\n5. **Convert time into hours and minutes**:  \n   - 0.4 hours is equivalent to 0.4 \u00d7 60 minutes = 24 minutes.\n   - Therefore, 1.4 hours = 1 hour and 24 minutes.\n\n6. **Calculate the meeting time**:  \n   - Train 2 leaves at 09:30.\n   - Adding 1 hour and 24 minutes to 09:30 gives us 10:54.\n\n7. **Distance from Station A when they meet**:  \n   - Distance covered by Train 1 in 1.4 hours = 80 km/h \u00d7 1.4 h = 112 km.\n   - Total distance from Station A = Head start + Distance covered after 09:30 = 40 km + 112 km = 152 km.\n\nANSWER: The trains meet at 10:54, 152 km away from Station A.\n\nREASONING: Calculated the head start of Train 1, determined the remaining distance between the trains when Train 2 started, calculated their relative speed and time to meet, converted that time into hours and minutes, and finally computed the meeting point's distance from Station A.\n\nCONFIDENCE: HIGH",
+  "response_length": 1822,
+  "elapsed_seconds": 101.42,
+  "tokens": {
+    "prompt_tokens": 104,
+    "completion_tokens": 520,
+    "total_duration_ms": 101375.374375
+  },
+  "timestamp": "2026-03-17T14:06:33.886703",
+  "score": 3,
+  "score_reason": "The response correctly calculates the meeting time and distance from Station A with clear working and reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:15:10.135002"
+}

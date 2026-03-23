@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_z-ai_glm-5-turbo_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the task requires sequential, dependent mathematical steps to reach a single definitive answer, with no need to explore alternative methods or map complex interconnected factors.\nPURPOSE CHECK: Follow a strict, unbroken sequence of logical mathematical steps to calculate the exact meeting time and distance from Station A.\nANTI-PURPOSE CHECK: I will avoid exploring alternative solving methods (such as using simultaneous equations) or branching into different calculation paths before completing the primary sequence.\n\nStep 1: Calculate the head start distance of the first train. The first train leaves at 09:00 and the second leaves at 09:30, giving the first train a 30-minute (0.5 hour) head start. Distance = Speed \u00d7 Time = 80 km/h \u00d7 0.5 h = 40 km.\nStep 2: Determine the remaining distance between the trains at 09:30. Total distance = 320 km. Remaining distance = 320 km - 40 km = 280 km.\nStep 3: Calculate the combined (relative) speed of both trains as they travel towards each other. Relative speed = 80 km/h +",
+  "response_length": 1052,
+  "elapsed_seconds": 9.81,
+  "tokens": {
+    "prompt_tokens": 324,
+    "completion_tokens": 1024,
+    "total_duration_ms": 9809.35
+  },
+  "timestamp": "2026-03-17T14:01:36.579302",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The response correctly follows the sequential steps and arrives at the correct time (10:54) and distance (152 km), but it lacks completion in Step 3 where the relative speed calculation is not fully shown.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:28:34.333125"
+}

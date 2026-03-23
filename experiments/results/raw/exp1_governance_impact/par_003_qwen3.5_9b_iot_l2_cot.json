@@ -1,0 +1,25 @@
+{
+  "run_id": "par_003_qwen3.5_9b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_003",
+  "task_category": "parallel",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Must produce 3 genuinely different strategies (e.g., direct sales to hospital IT, partnership with EHR vendors, compliance-first freemium). Must address HIPAA compliance as a constraint. Strategies must be distinct, not variations of the same approach.",
+  "scoring_rubric": "Score 3 if: 3 distinct strategies, each with risks/timeline, HIPAA addressed, clear recommendation with justification. Score 2 if: 3 strategies but overlapping or weak evaluation. Score 1 if: fewer than 3 or no evaluation. Score 0 if: single strategy or no healthcare consideration.",
+  "response": "### Reasoning Approach Selection\n**Selected Approach:** Tree-of-Thought (To",
+  "response_length": 75,
+  "elapsed_seconds": 160.95,
+  "tokens": {
+    "prompt_tokens": 205,
+    "completion_tokens": 1024,
+    "total_duration_ms": 160872.203583
+  },
+  "timestamp": "2026-03-06T06:46:06.974421",
+  "score": 0,
+  "score_reason": "The model's output does not address the task of producing three distinct strategies for selling healthcare software to hospitals and clinics.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:38:08.669117"
+}

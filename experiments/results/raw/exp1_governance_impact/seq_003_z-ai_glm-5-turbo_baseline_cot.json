@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "The user wants to convert the decimal number 1247 to binary.\nI need to follow a specific format:\n- Think step by step.\n- Show reasoning as a clear, numbered sequence of logical steps.\n- For each step: State what I am doing and why, show the result, explain how it connects to the next step.\n- Final answer must be in one sentence.\n- Confidence level at the end.\n\nLet's do the conversion first.\nDecimal: 1247\nDivide by 2 and track remainders.\n\n1247 / 2 = 623, remainder 1\n623 / 2 = 311, remainder 1\n311 / 2 = 155, remainder 1\n155 / 2 = 77, remainder 1\n77 / 2 = 38, remainder 1\n38 / 2 = 19, remainder 0\n19 / 2 = 9, remainder 1\n9 / 2 = 4, remainder 1\n4 / 2 = 2, remainder 0\n2 / 2 = 1, remainder 0\n1 / 2 = 0, remainder 1\n\nRead remainders from bottom to top: 10011100000\n\nLet's verify:\n1*1024 + 0*512 + 0*256 + 1*128 + 1*64 + 1*32 + 0*16 + 0*8 + 0*4 + 0*2 + 1*1\n= 1024 + 128 + 64 + 32 + 1\n= 1152 + 64 + 32 + 1\n= 1216 + 32 + 1\n= 1248 + 1 = 1249? Wait.\nLet me recalculate.\n1247 / 2 = 623 R 1\n623 / 2 = 311 R 1\n311 / 2 = 155 R 1\n155 / 2 = 77 R 1\n77 / 2 = 38 R 1\n38 / 2 = 19 R 0\n19 / 2 = 9 R 1\n9 / 2 = 4 R 1\n4 / 2 = 2 R 0\n2 / 2 = 1 R 0\n1 / 2 = 0 R 1\nBinary: 10011100000\nCheck: 1024 + 128 + 64 + 32 + 1 = 1249. Wait, 1247?\nAh.\n155 / 2 = 77 R 1\n77 / 2 = 38 R 1\n38 / 2 = 19 R 0\n19 / 2 = 9 R 1\n9 / 2 = 4 R 1\n4 / 2 = 2 R 0\n2 / 2 = 1 R 0\n1 / 2 = 0 R 1\nLet's re-divide carefully.\n1247 = 1024 + 223\n223 = 128 + 95\n95 = 64 + 31\n31 = 16 + 15\n15 = 8 + 4 + 2 + 1\nSo 1024 + 128 + 64 + 16 + 8 + 4 + 2 + 1\nBinary: 1 0 0 1 1 1 0 1 1 1 1\nLet's check the division.\n1247 / 2 = 623 R 1\n623 / 2 = 311 R 1\n311 / 2 = 155 R 1\n155 / 2 = 77 R 1\n77 / 2 = 38 R 1\n38 / 2 = 19 R 0\n19 / 2 = 9 R 1\n9 / 2 = 4 R 1\n4 / 2 = 2 R 0\n2 / 2 = 1 R 0\n1 / 2 = 0 R 1\nWait, 19 / 2 = 9 R 1. 9 / 2 = 4 R 1.\nAh! 19 / 2 = 9 R 1. 9 / 2 = 4 R 1.\nWhere did I make a mistake?\nLet's re-divide:\n1247 / 2 = 623 R 1\n623 / 2 = 311 R 1\n311 / 2 = 155 R 1\n155 / 2 = 77 R 1\n77 / 2 = 38 R 1\n38 / 2 = 19 R 0\n19 / 2 = 9 R 1\n9 / 2 = 4 R",
+  "response_length": 1960,
+  "elapsed_seconds": 10.9,
+  "tokens": {
+    "prompt_tokens": 119,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10899.9
+  },
+  "timestamp": "2026-03-17T13:56:36.598738",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly identifies the need to convert decimal 1247 to binary and provides a step-by-step division process, but initially arrives at an incorrect binary result (10011100000) before correcting it to the correct answer (10011011111).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:43:48.082224"
+}

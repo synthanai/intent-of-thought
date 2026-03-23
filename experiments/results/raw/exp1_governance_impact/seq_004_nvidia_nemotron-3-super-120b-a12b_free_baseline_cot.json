@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "STEP 1: Define the unknown time.  \nLet\u202ft\u202fbe the number of hours after 09:00 when the two trains meet.  \nResult:\u202ft\u202fis unknown, to be solved.  \nConnection: This lets us express each train\u2019s travel distance in terms of\u202ft.\n\nSTEP 2: Write the distance each train has traveled by time\u202ft.  \n- Train\u202f1 (from A) travels at 80\u202fkm/h for the full\u202ft\u202fhours:\u202fd\u2081\u202f=\u202f80t.  \n- Train\u202f2 (from B) starts at 09:30, i.e., 0.5\u202fh after 09:00, so it travels for\u202f(t\u202f\u2212\u202f0.5)\u202fhours at 120\u202fkm/h:\u202fd\u2082\u202f=\u202f120(t\u202f\u2212\u202f0.5).  Result: Expressions for\u202fd\u2081\u202fand\u202fd\u2082.  \nConnection: The sum of these distances must equal the total separation between the stations.\n\nSTEP 3: Set up the meeting condition.  \nWhen the trains meet, the distances they have covered add up to the 320\u202fkm between A and B:  \n80t\u202f+\u202f120(t\u202f\u2212\u202f0.5)\u202f=\u202f320.  \nResult: Equation to solve for\u202ft.  \nConnection: Solving this equation yields the meeting time.\n\nSTEP 4: Solve the equation for\u202ft.  \n80t\u202f+\u202f120t\u202f\u2212\u202f60\u202f=\u202f320 \u2192 200t\u202f=\u202f380 \u2192 t\u202f=\u202f380/200\u202f=\u202f1.9\u202fhours.  \nResult:\u202ft\u202f=\u202f1.9\u202fh after 09:00.  \nConnection: Convert this elapsed time to a clock time and compute the distance from Station A.\n\nSTEP 5: Convert\u202ft\u202fto a clock time and compute the distance from A.  - Time: 09:00\u202f+\u202f1.9\u202fh = 09:00\u202f+\u202f1\u202fh\u202f+\u202f0.9\u00b760\u202fmin = 09:00\u202f+\u202f1\u202fh\u202f+\u202f54\u202fmin = **10:54**.  \n- Distance from A: d\u2081\u202f=\u202f80\u202f\u00d7\u202f1.9\u202f=\u202f**152\u202fkm**.  Result: Meeting occurs at 10:54, 152\u202fkm from Station A.  \nConnection: This provides the final answer.\n\nFINAL ANSWER: The trains meet at 10:54, 152\u202fkm from Station A.  CONFIDENCE: HIGH",
+  "response_length": 1487,
+  "elapsed_seconds": 10.6,
+  "tokens": {
+    "prompt_tokens": 190,
+    "completion_tokens": 1019,
+    "total_duration_ms": 10603.42
+  },
+  "timestamp": "2026-03-17T14:01:48.184534",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The model's response correctly calculates the meeting time (10:54) and distance from Station A (152 km), with clear and logical reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:08:06.215747"
+}

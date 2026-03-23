@@ -1,0 +1,18 @@
+{
+  "run_id": "int_003_nvidia_nemotron-3-super-120b-a12b_free_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_003",
+  "task_category": "interconnected",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "There is a circular constraint: Q requires government action that references the very activity it governs. A first-time citizen can get a permit (no prior Y), so no contradiction for newcomers. But after conducting Y once, they cannot get a new permit for 12 months. The system is internally consistent but creates a de facto annual licensing regime not explicitly stated.",
+  "scoring_rubric": "Score 3 if: identifies the circular structure, resolves it for first-timers, and notes the implicit licensing regime. Score 2 if: identifies circularity but incomplete resolution. Score 1 if: feels something is wrong but can't articulate the structure. Score 0 if: treats laws independently.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.1,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:18:04.891188",
+  "backend": "openrouter"
+}

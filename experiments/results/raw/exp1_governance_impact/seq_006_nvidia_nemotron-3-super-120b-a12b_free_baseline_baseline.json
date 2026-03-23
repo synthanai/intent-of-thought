@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_nvidia_nemotron-3-super-120b-a12b_free_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "ANSWER: Iron deficiency anemia.  \nREASONING: The patient has anemia (Hb 8.2\u202fg/dL) with a low MCV (68\u202ffL), indicating microcytic anemia. Serum ferritin is markedly low (8\u202fng/mL), reflecting depleted iron stores, and TIBC is elevated (450\u202f\u03bcg/dL), which together are classic laboratory findings of iron deficiency.  \nCONFIDENCE: HIGH",
+  "response_length": 330,
+  "elapsed_seconds": 2.51,
+  "tokens": {
+    "prompt_tokens": 157,
+    "completion_tokens": 264,
+    "total_duration_ms": 2514.68
+  },
+  "timestamp": "2026-03-17T14:10:12.845991",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The response correctly diagnoses iron deficiency anemia with thorough reasoning through all four lab values.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:53:07.299371"
+}

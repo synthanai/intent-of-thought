@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes the butterfly rash (malar rash), joint pain (lupus arthritis), and fatigue (chronic inflammation + possible anaemia). Treating them independently would miss the underlying autoimmune process.",
+  "scoring_rubric": "Score 3 if: identifies SLE and maps causal connections between all 3 symptoms. Score 2 if: correct diagnosis but missing some connections. Score 1 if: identifies autoimmune but not SLE specifically. Score 0 if: treats symptoms independently.",
+  "prompt": "Task: A 42-year-old patient presents with chronic fatigue, joint pain, and a butterfly-shaped facial rash. These symptoms could each have independent causes, or they could share a common underlying condition. Analyse whether and how these symptoms connect, identifying the most likely unifying diagnosis and explaining the causal pathway.\n\nProvide your answer with clear reasoning.",
+  "response": "Analysis of Symptoms and Potential Diagnosis:\n\nSymptom Constellation:\n1. Chronic fatigue\n2. Joint pain\n3. Butterfly-shaped facial rash\n\nMost Likely Diagnosis: Systemic Lupus Erythematosus (SLE)\n\nReasoning:\n\nClinical Evidence:\n- The butterfly-shaped facial rash (malar rash) is highly characteristic of SLE\n- Joint pain is a common systemic manifestation of lupus\n- Chronic fatigue is a hallmark of autoimmune conditions, especially lupus\n\nPathophysiological Mechanism:\n- SLE is an autoimmune disorder where the immune system attacks healthy tissue\n- Autoantibodies cause widespread inflammation\n- Inflammatory processes lead to:\n  * Joint inflammation (causing pain)\n  * Systemic tissue damage\n  * Metabolic disruption causing fatigue\n\nDiagnostic Confirmation Would Require:\n- Comprehensive blood tests\n- Anti-nuclear antibody (ANA) screening\n- Specific lupus-related antibody panels\n- Clinical assessment of additional diagnostic criteria\n\nAdditional Considerations:\n- Patient's age (42) is within typical lupus onset range\n- Symptoms suggest systemic, multi-organ inflammatory process\n- Requires comprehensive rheumatological evaluation\n\nRecommended Next Steps:\n1. Detailed medical history\n2. Comprehensive blood work\n3. Referral to rheumatology specialist",
+  "response_length": 1258,
+  "elapsed_seconds": 7.41,
+  "tokens": {
+    "prompt_tokens": 84,
+    "completion_tokens": 320,
+    "total_tokens": 404
+  },
+  "timestamp": "2026-03-19T16:07:48.255679",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

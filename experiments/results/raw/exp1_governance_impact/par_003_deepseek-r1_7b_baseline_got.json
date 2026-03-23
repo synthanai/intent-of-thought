@@ -1,0 +1,25 @@
+{
+  "run_id": "par_003_deepseek-r1_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_003",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Must produce 3 genuinely different strategies (e.g., direct sales to hospital IT, partnership with EHR vendors, compliance-first freemium). Must address HIPAA compliance as a constraint. Strategies must be distinct, not variations of the same approach.",
+  "scoring_rubric": "Score 3 if: 3 distinct strategies, each with risks/timeline, HIPAA addressed, clear recommendation with justification. Score 2 if: 3 strategies but overlapping or weak evaluation. Score 1 if: fewer than 3 or no evaluation. Score 0 if: single strategy or no healthcare consideration.",
+  "response": "To address the task of a B2B SaaS company",
+  "response_length": 41,
+  "elapsed_seconds": 92.25,
+  "tokens": {
+    "prompt_tokens": 171,
+    "completion_tokens": 1024,
+    "total_duration_ms": 92232.711125
+  },
+  "timestamp": "2026-03-06T07:23:58.103971",
+  "score": 2,
+  "score_reason": "The response provides three distinct strategies but lacks detailed evaluation of risks/timelines and only briefly addresses HIPAA compliance.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T06:15:59.814103"
+}

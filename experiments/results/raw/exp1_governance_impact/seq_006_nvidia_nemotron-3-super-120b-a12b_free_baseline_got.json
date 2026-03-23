@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_nvidia_nemotron-3-super-120b-a12b_free_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "FACTORS:\n1. Hemoglobin concentration (Hb)\n2. Mean corpuscular volume (MCV)\n3. Serum ferritin level4. Total iron\u2011binding capacity (TIBC)\n5. Iron availability for erythropoiesis\n6. Bone marrow erythropoietic response\n\nEDGES:\n- Serum ferritin level --(causes)--> Iron availability for erythropoiesis\n- Iron availability for erythropoiesis --(causes)--> Hemoglobin concentration- Iron availability for erythropoiesis --(causes)--> Mean corpuscular volume (MCV)\n- Serum ferritin level --(contradicts)--> Total iron\u2011binding capacity (TIBC)   (low ferritin \u2192 high TIBC)\n- Total iron\u2011binding capacity (TIBC) --(depends_on)--> Iron availability for erythropoiesis   (high TIBC reflects low iron)\n- Hemoglobin concentration --(enables)--> Tissue oxygen delivery\n- Tissue oxygen delivery --(causes)--> Erythropoietin production (not listed as a factor but implied)\n- Erythropoietin production --(enables)--> Bone marrow erythropoietic response\n- Bone marrow erythropoietic response --(depends_on)--> Iron availability for erythropoiesis\n- Iron availability for erythropoiesis --(blocks)--> Effective hemoglobin synthesis when deficient\n- Mean corpuscular volume (MCV) --(reflects)--> Iron availability for erythropoiesis   (low MCV indicates iron\u2011restricted erythropoiesis)\n\nFEEDBACK LOOPS:\n- Low hemoglobin \u2192 tissue hypoxia \u2192 \u2191 erythropoietin \u2192 \u2191 bone marrow erythropoietic response \u2192 attempts to increase Hb production, but if iron availability remains low, the response is ineffective, perpetuating low Hb and low MCV (a reinforcing loop).\n- Low serum ferritin \u2192 high TIBC \u2192 signals increased iron\u2011binding capacity \u2192 further emphasizes iron deficiency state, maintaining low iron availability.\n\nCENTRAL FACTORS:\n- **Iron availability for erythropoiesis** \u2013 connects to Hb, MCV, ferritin, TIBC, and bone marrow response (5 connections). It is the pivotal variable linking laboratory abnormalities to the clinical phenotype.\n- **Serum ferritin level** \u2013 connects to iron availability, TIBC, and indirectly to Hb and MCV (4 connections). It is a key marker of iron stores.\n- **Hemoglobin concentration** \u2013 connects to iron availability, tissue oxygenation, and erythropoietin drive (3 connections).\n\nSYNTHESIS:\nThe constellation of low hemoglobin, low MCV, low serum ferritin, and elevated TIBC points to a state of depleted iron stores. Low ferritin directly reduces iron available for heme synthesis, which limits hemoglobin production and results in the formation of smaller, hypochromic red cells (low MCV). The body compensates for low iron by increasing TIBC, reflecting upregulated transferrin synthesis to capture scarce iron. The resulting iron\u2011restricted erythropoiesis triggers a hypoxic stimulus that raises erythropoietin and marrow activity, but without sufficient iron this response is ineffective, creating a reinforcing loop that sustains the anemia. All laboratory findings converge on iron deficiency as the primary driver.\n\nANSWER: Iron deficiency anemia (microcytic, hypochromic anemia secondary to depleted iron stores).\n\nCONFIDENCE: HIGH",
+  "response_length": 3049,
+  "elapsed_seconds": 6.55,
+  "tokens": {
+    "prompt_tokens": 366,
+    "completion_tokens": 985,
+    "total_duration_ms": 6549.39
+  },
+  "timestamp": "2026-03-17T14:13:22.944506",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly diagnoses iron deficiency anemia with thorough reasoning through all four lab values, aligning with the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:54:18.331762"
+}

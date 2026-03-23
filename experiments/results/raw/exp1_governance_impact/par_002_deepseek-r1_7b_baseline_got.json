@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "**Final Answer:**\n\nAfter considering the performance of insertion sort, merge sort, and quicksort on nearly-sorted arrays, insertion sort is the best choice. While its worst-case time complexity is O(n\u00b2), it efficiently handles nearly sorted data with a time complexity closer to O(n). Merge sort and quicksort, despite their better average performance, may not be as efficient in this specific scenario due to their higher worst-case complexities or memory usage considerations. Therefore, insertion sort is recommended for this task.",
+  "response_length": 535,
+  "elapsed_seconds": 58.25,
+  "tokens": {
+    "prompt_tokens": 189,
+    "completion_tokens": 647,
+    "total_duration_ms": 58236.459542
+  },
+  "timestamp": "2026-03-06T05:55:05.461583",
+  "score": 2,
+  "score_reason": "The response correctly recommends insertion sort and mentions its efficiency on nearly-sorted data but lacks detailed explanation of why it outperforms merge/quick sorts in this specific case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:07:08.373327"
+}

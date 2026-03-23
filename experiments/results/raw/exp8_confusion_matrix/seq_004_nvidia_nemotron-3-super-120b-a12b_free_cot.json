@@ -1,0 +1,16 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "cot",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.1,
+  "timestamp": "2026-03-17T14:20:06.743680",
+  "backend": "openrouter"
+}

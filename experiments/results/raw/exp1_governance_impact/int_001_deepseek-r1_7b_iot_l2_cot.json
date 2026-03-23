@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "To determine if the symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash in a 42-year-old patient could share a common underlying condition, we analyze each symptom and consider potential causes, then evaluate interconnected factors.\n\n1. **Symptom Analysis**:\n   - **Chronic Fatigue**: Could be due to conditions like chronic fatigue syndrome, heart issues, or ME/CSS.\n   - **Joint Pain**: May relate to arthritis (e.g., rheumatoid arthritis), gout, or localized inflammation.\n   - **Butterfly-shaped Rash**: Often linked to autoimmune skin conditions like pityriasis rubra or reactions to medications.\n\n2. **Potential Underlying Conditions**:\n   - **Systemic Conditions**: SLE is a strong candidate, causing fatigue, joint pain, and rashes. AHNA could cause fatigue and joint involvement, with skin rash as a secondary effect.\n   - **Autoimmune Skin Conditions**: pityriasis rubra could explain the rash, but its link to fatigue and joint pain is less direct.\n\n3. **Interconnected Factors**:\n   - **SLE and AHNA**: Both could explain multiple symptoms through systemic inflammation, affecting joints and skin.",
+  "response_length": 1133,
+  "elapsed_seconds": 85.11,
+  "tokens": {
+    "prompt_tokens": 209,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85089.990458
+  },
+  "timestamp": "2026-03-06T08:07:20.664782",
+  "score": 2,
+  "score_reason": "The model identifies SLE as a potential unifying condition but does not fully explain the mechanistic link of autoimmune inflammation connecting all symptoms or emphasize the risk of treating them independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T19:49:09.123139"
+}

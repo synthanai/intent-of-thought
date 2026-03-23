@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "Approach 1: Comprehensive Medical History and Physical Examination\n1. Description: This approach involves a thorough examination of the patient's medical history, including a detailed account of the symptoms, their onset, duration, and any aggravating or alleviating factors. A physical examination would be conducted to check for any signs that may support the diagnosis.\n2. Strengths: This method is essential for diagnosing any medical condition, as it provides valuable information about the patient's health status. It is a standard procedure in medicine and is widely accepted.\n3. Weaknesses/Risks: The method's effectiveness depends on the patient's accuracy and honesty in reporting symptoms. It may also not reveal underlying conditions if they are not evident during the examination.\n4. Suitability: High, as it is the first step in diagnosing any medical condition.\n\nApproach 2: Laboratory Tests and Imaging\n1. Description: Blood tests can be conducted to check for inflammatory markers, autoantibodies, and other indicators of systemic autoimmune diseases. Imaging techniques like X-rays or MRI may be used to examine the joints for signs of inflammation or damage.\n2. Strengths: These tests can provide objective evidence of inflammation or autoimmune activity, which can support a diagnosis.\n3. Weaknesses/Risks: These tests may not always provide definitive results and may require repeat tests for confirmation. They can also be invasive and expensive.\n4. Suitability: Medium, as they are necessary for confirming a diagnosis but should be used in conjunction with other diagnostic methods.\n\nApproach 3: Consultation with a Specialist (Rheumatologist)\n1. Description: A referral to a rheumatologist, a specialist in diseases of the joints and muscles, would be beneficial for a detailed evaluation and potential diagnosis.\n2. Strengths: A rheumatologist has extensive knowledge and experience in diagnosing and treating autoimmune diseases, which can lead to an accurate diagnosis.\n3. Weaknesses/Risks: The patient may need to wait for an appointment, and the specialist's opinion may not always align with the primary care physician's.\n4. Suitability: High, as a specialist's input is crucial for diagnosing complex conditions like autoimmune diseases.\n\nComparison:\n1. Approach 1 is essential for diagnosing any medical condition, but it relies on the patient's accuracy in reporting symptoms.\n2. Approach 2 provides objective evidence of inflammation or autoimmune activity but can be invasive, expensive, and may not always provide definitive results.\n3. Approach 3 involves a specialist who can provide a detailed evaluation and potential diagnosis but may require a wait for an appointment.\n\nRecommendation: The best approach would be a combination of all three, starting with a comprehensive medical history and physical examination (Approach 1), followed by laboratory tests and imaging (Approach 2), and if necessary, a consultation with a specialist (Approach 3). This comprehensive approach ensures a thorough and accurate diagnosis.",
+  "response_length": 3059,
+  "elapsed_seconds": 60.83,
+  "tokens": {
+    "prompt_tokens": 154,
+    "completion_tokens": 698,
+    "total_duration_ms": 60821.37425
+  },
+  "timestamp": "2026-03-06T08:23:04.988050",
+  "score": 1,
+  "score_reason": "The model lists diagnostic approaches without connecting the symptoms to Systemic Lupus Erythematosus (SLE) or explaining their mechanistic link through autoimmune inflammation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:31:04.247915"
+}

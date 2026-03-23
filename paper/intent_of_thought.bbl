@@ -1,0 +1,174 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Besta et~al.(2024)Besta, Blach, Kubicek, Gerstenberger, Podstawski,
+  Gianinazzi, Gajda, Lehmann, Niewiadomski, Nyczyk, and
+  Hoefler]{besta2024graph}
+Maciej Besta, Nils Blach, Ales Kubicek, Robert Gerstenberger, Michal
+  Podstawski, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann, Hubert
+  Niewiadomski, Piotr Nyczyk, and Torsten Hoefler.
+\newblock Graph of thoughts: Solving elaborate problems with large language
+  models.
+\newblock \emph{Proceedings of the AAAI Conference on Artificial Intelligence},
+  38\penalty0 (16):\penalty0 17682--17690, 2024.
+
+\bibitem[Besta et~al.(2025)Besta, Kubicek, Gerstenberger, Blach, Gianinazzi,
+  and Hoefler]{besta2025topologies}
+Maciej Besta, Ales Kubicek, Robert Gerstenberger, Nils Blach, Lukas Gianinazzi,
+  and Torsten Hoefler.
+\newblock Topologies of reasoning: Demystifying chains, trees, and graphs of
+  thoughts.
+\newblock \emph{arXiv preprint arXiv:2401.14295}, 2025.
+
+\bibitem[Bratman(1987)]{bratman1987intention}
+Michael~E. Bratman.
+\newblock \emph{Intention, Plans, and Practical Reason}.
+\newblock Harvard University Press, 1987.
+
+\bibitem[Chen et~al.(2023)Chen, Ma, Wang, and Cohen]{chen2023program}
+Wenhu Chen, Xueguang Ma, Xinyi Wang, and William~W. Cohen.
+\newblock Program of thoughts prompting: Disentangling computation from
+  reasoning for numerical reasoning tasks.
+\newblock \emph{Transactions on Machine Learning Research (TMLR)}, 2023.
+
+\bibitem[Cohen and Levesque(1990)]{cohen1990intention}
+Philip~R. Cohen and Hector~J. Levesque.
+\newblock Intention is choice with commitment.
+\newblock \emph{Artificial Intelligence}, 42\penalty0 (2-3):\penalty0 213--261,
+  1990.
+
+\bibitem[Ding et~al.(2024)]{ding2024fot}
+Zetong Ding et~al.
+\newblock Framework of thought: A general-purpose foundational framework for
+  building and optimizing dynamic reasoning schemes.
+\newblock \emph{arXiv preprint arXiv:2409.08532}, 2024.
+
+\bibitem[Hong et~al.(2024)Hong, Zhang, Lu, Pan, Dong, Wang, and
+  Yu]{hong2024abstraction}
+Ruixin Hong, Hongming Zhang, Xinyu Lu, Disheng Pan, Haoang Dong, Yuzhang Wang,
+  and Dong Yu.
+\newblock Abstraction-of-thought makes language models better reasoners.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in
+  Natural Language Processing}, 2024.
+
+\bibitem[Jiang(2024)]{jiang2024latent}
+Yanlin Jiang.
+\newblock Latent intent behind chain-of-thought reasoning.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Kojima et~al.(2022)Kojima, Gu, Reid, Matsuo, and
+  Iwasawa]{kojima2022zero}
+Takeshi Kojima, Shixiang~Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke
+  Iwasawa.
+\newblock Large language models are zero-shot reasoners.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  35:\penalty0 22199--22213, 2022.
+
+\bibitem[Li et~al.(2026)Li, Huang, Zhan, Sun, Yin, Liu, and Yan]{li2025icot}
+Shen Li, Li~Huang, Shaoxiong Zhan, Weifeng Sun, Tao Yin, Zhongxin Liu, and Meng
+  Yan.
+\newblock Intention chain-of-thought prompting with dynamic routing for code
+  generation.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence (AAAI)}, 2026.
+\newblock arXiv:2512.14048.
+
+\bibitem[Ouyang et~al.(2022)Ouyang, Wu, Jiang, Almeida, Wainwright, Mishkin,
+  Zhang, Agarwal, Slama, Ray, et~al.]{ouyang2022instructgpt}
+Long Ouyang, Jeffrey Wu, Xu~Jiang, Diogo Almeida, Carroll Wainwright, Pamela
+  Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et~al.
+\newblock Training language models to follow instructions with human feedback.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  35:\penalty0 27730--27744, 2022.
+
+\bibitem[Radha et~al.(2024)]{radha2024iteration}
+Santosh~Kumar Radha et~al.
+\newblock Iteration of thought: Leveraging inner dialogue for autonomous large
+  language model reasoning.
+\newblock \emph{arXiv preprint arXiv:2409.12618}, 2024.
+
+\bibitem[Rafailov et~al.(2023)Rafailov, Sharma, Mitchell, Ermon, Manning, and
+  Finn]{rafailov2023dpo}
+Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher~D.
+  Manning, and Chelsea Finn.
+\newblock Direct preference optimization: Your language model is secretly a
+  reward model.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Rao and Georgeff(1995)]{rao1995bdi}
+Anand~S. Rao and Michael~P. Georgeff.
+\newblock Bdi agents: From theory to practice.
+\newblock In \emph{Proceedings of the First International Conference on
+  Multi-Agent Systems (ICMAS)}, pages 312--319, 1995.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu
+  Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[{STELAR-VISION Authors}(2025)]{stelar2025vision}
+{STELAR-VISION Authors}.
+\newblock Stelar-vision: Self-topology-aware efficient learning for aligned
+  reasoning in vision.
+\newblock \emph{arXiv preprint}, 2025.
+\newblock Investigates test-time topology selection across Chain, Tree, and
+  Graph structures for VLMs.
+
+\bibitem[Tutunov et~al.(2024)]{tutunov2024latent}
+Rasul Tutunov et~al.
+\newblock Latent intentions and contexts behind chain-of-thought.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou]{wang2023self}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed~Chi, Sharan Narang,
+  Aakanksha Chowdhery, and Denny Zhou.
+\newblock Self-consistency improves chain of thought reasoning in language
+  models.
+\newblock \emph{Proceedings of the International Conference on Learning
+  Representations (ICLR)}, 2023.
+
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  and Zhou]{wei2022chain}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia,
+  Ed~Chi, Quoc Le, and Denny Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  35:\penalty0 24824--24837, 2022.
+
+\bibitem[Yao et~al.(2023)Yao, Yu, Zhao, Shafran, Griffiths, Cao, and
+  Narasimhan]{yao2023tree}
+Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas~L. Griffiths, Yuan
+  Cao, and Karthik Narasimhan.
+\newblock Tree of thoughts: Deliberate problem solving with large language
+  models.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Yin and Carenini(2025)]{yin2025arr}
+Yuwei Yin and Giuseppe Carenini.
+\newblock Arr: Question answering with large language models via analyzing,
+  retrieving, and reasoning.
+\newblock \emph{arXiv preprint arXiv:2502.04689}, 2025.
+
+\bibitem[Yin et~al.(2025)Yin, Hwang, and Carenini]{yin2025swi}
+Yuwei Yin, Eun-Jong Hwang, and Giuseppe Carenini.
+\newblock Swi: Speaking with intent in large language models.
+\newblock In \emph{Proceedings of the 18th International Natural Language
+  Generation Conference (INLG)}, 2025.
+\newblock arXiv:2503.21544.
+
+\bibitem[Zhou et~al.(2023)Zhou, Yan, Shlapentokh-Rothman, Wang, and
+  Wang]{zhou2023lats}
+Andy Zhou, Kai Yan, Michal Shlapentokh-Rothman, Haohan Wang, and Yu-Xiong Wang.
+\newblock Language agent tree search unifies reasoning, acting, and planning in
+  language models.
+\newblock \emph{arXiv preprint arXiv:2310.04406}, 2023.
+
+\end{thebibliography}

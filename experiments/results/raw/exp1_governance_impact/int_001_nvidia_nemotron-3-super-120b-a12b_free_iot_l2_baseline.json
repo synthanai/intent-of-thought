@@ -1,0 +1,18 @@
+{
+  "run_id": "int_001_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes the butterfly rash (malar rash), joint pain (lupus arthritis), and fatigue (chronic inflammation + possible anaemia). Treating them independently would miss the underlying autoimmune process.",
+  "scoring_rubric": "Score 3 if: identifies SLE and maps causal connections between all 3 symptoms. Score 2 if: correct diagnosis but missing some connections. Score 1 if: identifies autoimmune but not SLE specifically. Score 0 if: treats symptoms independently.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.11,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:17:20.982212",
+  "backend": "openrouter"
+}

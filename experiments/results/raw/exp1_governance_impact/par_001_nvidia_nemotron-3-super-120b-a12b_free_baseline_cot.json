@@ -1,0 +1,26 @@
+{
+  "run_id": "par_001_nvidia_nemotron-3-super-120b-a12b_free_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket+Redis, SSE+database polling, Firebase/managed). Must include explicit trade-off comparison and justified recommendation.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures with component lists, pros/cons, and explicit comparison. Score 2 if: 3 approaches but shallow comparison. Score 1 if: only 1-2 approaches. Score 0 if: no structured comparison.",
+  "response": "STEP 1: I am defining evaluation criteria (latency, operational complexity, cost, development speed, and scalability ceiling) to objectively compare chat\u2011app architectures. This yields a clear set of metrics against which each design will be judged, and it connects to the next step by providing the framework for describing the first architecture.  \nSTEP 2: I am describing Architecture\u202fA",
+  "response_length": 389,
+  "elapsed_seconds": 26.27,
+  "tokens": {
+    "prompt_tokens": 172,
+    "completion_tokens": 1024,
+    "total_duration_ms": 26274.35
+  },
+  "timestamp": "2026-03-17T14:15:35.644875",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model output includes only one architecture description and evaluation criteria without providing the required three distinct approaches or their trade-off comparison.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T02:42:04.672894"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "The user wants to convert the decimal number 1247 to binary and show all working step by step.\nI need to select a reasoning approach based on the provided governance specification.\n- The task requires sequential logical steps (repeated division by 2).\n- Therefore, I must choose Chain-of-Thought (CoT).\n\nLet's follow the steps to convert 1247 to binary:\n1. Divide 1247 by 2. Quotient = 623, Remainder = 1\n2. Divide 623 by 2. Quotient = 311, Remainder = 1\n3. Divide 311 by 2. Quotient = 155, Remainder = 1\n4. Divide 155 by 2. Quotient = 77, Remainder = 1\n5. Divide 77 by 2. Quotient = 38, Remainder = 1\n6. Divide 38 by 2. Quotient = 19, Remainder = 0\n7. Divide 19 by 2. Quotient = 9, Remainder = 1\n8. Divide 9 by 2. Quotient = 4, Remainder = 1\n9. Divide 4 by 2. Quotient = 2, Remainder = 0\n10. Divide 2 by 2. Quotient = 1, Remainder = 0\n11. Divide 1 by 2. Quotient = 0, Remainder = 1\n\nReading the remainders from bottom to top: 10011100000.\nLet's verify:\n1*2^10 = 1024\n0*2^9 = 0\n0*2^8 = 0\n1*2^7 = 128\n1*2^6 = 64\n1*2^5 = 32\n0*2^4 = 0\n0*2^3 = 0\n0*2^2 = 0\n0*2^1 = 0\n0*2^0 = 0\n1024 + 128 + 64 + 32 = 1248? Wait.\nLet's recheck:\n1247 / 2 = 623 R 1\n623 / 2 = 311 R 1\n311 / 2 = 155 R 1\n155 / 2 = 77 R 1\n77 / 2 = 38 R 1\n38 / 2 = 19 R 0\n19 / 2 = 9 R 1\n9 / 2 = 4 R 1\n4 / 2 = 2 R 0\n2 / 2 = 1 R 0\n1 / 2 = 0 R 1\nRemainders bottom to top: 10011101111\nLet's check the calculation:\n1024 + 0 + 0 + 128 + 64 + 32 + 0 + 8 + 4 + 2 + 1\n1024 + 128 = 1152\n1152 + 64 = 1216\n1216 + 32 = 1248\nWait, 1248? But the number is 1247.\nLet me recalculate the divisions.\n1247 / 2 = 623 R 1 (623*2 + 1 = 1247) - Correct\n623 / 2 = 311 R 1 (311*2 + 1 = 623) - Correct\n311 / 2 = 155 R 1 (155*2 + 1 = 311) - Correct\n155 / 2 = 77 R 1 (77*2 + 1 = 155) - Correct\n77 / 2 = 38 R 1 (38*2 + 1 = 77) - Correct\n38 / 2 = 19 R 0 (19*2 + 0 = 38) - Correct\n19 / 2 = 9 R 1 (9*2 + 1 = 19) - Correct\n9 / 2 = 4 R 1 (4*2 + 1 = 9) - Correct\n4 / 2 = 2 R 0 (2*2 + 0 = 4) - Correct\n2 / 2 = 1 R 0 (1*2 + 0 = 2) - Correct\n1 / 2 = 0 R 1 (0*2 + 1 = 1) - Correct\n\nRemainders from bottom to top: 10011101111\nLet's re-verify the sum:\n1 * 1024 = 1024\n0 * 512 = 0\n0 * 256 = 0\n1 * 128 =",
+  "response_length": 2113,
+  "elapsed_seconds": 9.57,
+  "tokens": {
+    "prompt_tokens": 284,
+    "completion_tokens": 1024,
+    "total_duration_ms": 9571.29
+  },
+  "timestamp": "2026-03-17T13:58:58.474014",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly identifies the binary conversion process but initially produces an incorrect result (10011100000) before correcting it to 10011011111.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:50:55.705058"
+}

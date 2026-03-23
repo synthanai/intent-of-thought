@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_gemma3_12b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Okay, let's analyze the task \"Convert the decimal number 1247 to binary\" using a relationship graph approach.\n\n**1. IDENTIFY Key Factors/Entities/Variables**\n\n* **Decimal Number (1247):** The input number we need to convert.\n* **Binary Number:** The output we want to achieve.\n* **Division:** The core mathematical operation used in the conversion process.\n* **Remainder:** The result of each division (either 0 or 1).\n* **Quotient:** The result of each division, used in the next iteration.\n* **Conversion Algorithm:** The specific process of repeated division by 2 and collecting remainders.\n* **Base-2 Number System:** The underlying mathematical system we're working within.\n* **Step-by-Step Working:**  The process of documenting each division and remainder.  This isn't a 'factor' in the same way as the others, but it's crucial to *performing* the task and understanding it.\n* **Understanding of Binary Representation:**  The conceptual knowledge of how binary numbers represent values.\n\n**2. Relationships Between Factors (Causes, Enables, Blocks, Amplifies, Depends On, Contradicts)**\n\nHere's a breakdown of the relationships.  I'll use abbreviations for clarity:\n\n* **DN (Decimal Number)**\n* **BN (Binary Number)**\n* **Div (Division)**\n* **Rem (Remainder)**\n* **Quot (Quotient)**\n* **Alg (Conversion Algorithm)**\n* **B2 (Base-2 Number System)**\n* **SW (Step-by-Step Working)**\n* **UR (Understanding of Binary Representation)**\n\n* DN --(Enables)--> Div:  We *need* a decimal number to perform division.\n* Div --(Produces)--> Rem: Division *results in* a remainder.\n* Div --(Produces)--> Quot: Division *results in* a quotient.\n* Quot --(Enables)--> Div: The quotient from a division *is used as the input* for the next division.\n* Rem --(Contributes to)--> BN: Remainders *build* the binary number.\n* Alg --(Requires)--> Div: The algorithm *requires* the operation of division.\n* Alg --(Requires)--> Rem: The algorithm *requires* the extraction of remainders.\n* Alg --(Requires)--> Quot: The algorithm *requires* the calculation of quotients.\n* B2 --(Provides Framework)--> Alg: The algorithm operates *within* the framework of the base-2 number system.\n* UR --(Enables)--> Alg:  Understanding binary representation *allows* one to apply the conversion algorithm.\n* SW --(Requires)--> Div: Step-by-step working *involves* division.\n* SW --(Requires)--> Rem: Step-by-step working *involves* recording remainders.\n* SW --(Requires)--> Quot: Step-by-step working *involves* recording quotients.\n* DN --(Determines)--> SW: The decimal number *determines* the number of steps in the step-by-step working.\n\n**3. Relationship Graph (List of Edges)**\n\n1. DN --(Enables)--> Div\n2. Div --(Produces)--> Rem\n3. Div --(Produces)--> Quot\n4. Quot --(Enables)--> Div\n5. Rem --(Contributes to)--> BN\n6. Alg --(Requires)--> Div\n7. Alg --(Requires)--> Rem\n8. Alg --(Requires)--> Quot\n9. B2 --(Provides Framework)--> Alg\n10. UR --(Enables)--> Alg\n11. SW --(Requires)--> Div\n12. SW --(Requires)--> Rem\n13. SW --(Requires)--> Quot\n14. DN --(Determines)--> SW\n\n**4. Feedback Loops/Circular Dependencies**\n\nThere is a clear circular dependency: `Quot --(Enables)--> Div`.  The quotient from one division becomes the input for the next, driving the iterative nature of the algorithm. This circularity is essential to the conversion.\n\n**5. Central Factors**\n\nThe most central factors (highest connectivity) are:\n\n* **Division (Div):**  Appears in multiple relationships (input, output, requires). It's the core operation.\n* **Algorithm (Alg):**  Requires and uses several factors, and drives the entire process.\n* **Decimal Number (DN):**  Initiates the process and determines its scope.\n\n**6. Synthesis & Analysis**\n\nThe task of converting a decimal number to binary isn't simply a mathematical calculation; it's a procedural process deeply",
+  "response_length": 3824,
+  "elapsed_seconds": 169.81,
+  "tokens": {
+    "prompt_tokens": 161,
+    "completion_tokens": 1024,
+    "total_duration_ms": 169768.98475
+  },
+  "timestamp": "2026-03-06T03:07:10.692246",
+  "score": 1,
+  "score_reason": "The model provides an analysis of the conversion process but does not include the specific step-by-step division required to reach the correct binary representation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T15:15:22.194760"
+}

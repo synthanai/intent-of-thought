@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "SELECTED APPROACH: CoT because the task requires a sequential logical chain\u2014interpret each lab abnormality, link them together, and arrive at a single definitive diagnosis without exploring alternative pathways.\n\nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer about the patient\u2019s most likely diagnosis based on the provided lab values.\n\nANTI-PURPOSE CHECK: I will avoid branching into alternative diagnoses or considering multiple hypotheses before completing the primary chain that leads to iron deficiency anemia.\n\n**Step\u2011by\u2011step reasoning**\n\n1. **Hemoglobin**: 8.2\u202fg/dL is below the normal range (12\u201116\u202fg/dL), indicating anemia.  \n2. **MCV**: 68\u202ffL is below the normal range (80\u2011100\u202ffL), showing the anemia is microcytic (small red blood cells).  \n3. **Serum ferritin**: 8\u202fng/mL is well below the normal range (20\u2011200\u202fng/mL), reflecting depleted iron stores.  \n4. **TIBC**: 450\u202f\u03bcg/dL is above the normal range (250\u2011370\u202f\u03bcg/dL), which typically rises when the body attempts to capture more iron from circulation in states of iron deficiency.  \n5. **Integration**: Microcytic anemia with low ferritin and elevated TIBC is the classic laboratory pattern of iron deficiency anemia. No other common causes of microcytic anemia (e.g., anemia of chronic disease, thalassemia) present with low ferritin and high TIBC together.  \n6. **Conclusion**: The most likely diagnosis is iron deficiency anemia.\n\nANSWER: Iron deficiency anemia  \nSUCCESS SIGNAL MET: YES \u2013 I provided a clear, sequential chain of reasoning that directly links each abnormal lab to the final diagnosis without deviation.  \nANTI-PURPOSE VIOLATED: NO \u2013 I remained within the single logical chain and did not explore alternative diagnoses before concluding.  \nCONFIDENCE: HIGH \u2013 The lab pattern is highly specific for iron deficiency anemia, leaving little ambiguity.",
+  "response_length": 1868,
+  "elapsed_seconds": 11.26,
+  "tokens": {
+    "prompt_tokens": 391,
+    "completion_tokens": 603,
+    "total_duration_ms": 11255.22
+  },
+  "timestamp": "2026-03-17T14:13:35.203833",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly identifies iron deficiency anemia through step-by-step reasoning of all four lab values and integrates them to reach the diagnosis.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:56:50.961360"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_mistral_latest_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Approach chosen: Chain-of-thought (step by step)\n\nReasoning: This task requires a sequential logical process of dividing the decimal number by 2 and recording the remainders until the quotient becomes 0. As a result, I will use the chain-of-thought approach to provide a step-by-step derivation reaching a verifiable conclusion.\n\nStep 1: Start with the decimal number 1247\nStep 2: Divide 1247 by 2\n1247 \u00f7 2 = 623 remainder 1\nStep 3: Continue dividing the quotient by 2 and recording the remainders\n623 \u00f7 2 = 311 remainder 1\n311 \u00f7 2 = 155 remainder 1\n155 \u00f7 2 = 77 remainder 1\n77 \u00f7 2 = 38 remainder 1\n38 \u00f7 2 = 19 remainder 0\n19 \u00f7 2 = 9 remainder 1\n9 \u00f7 2 = 4 remainder 1\n4 \u00f7 2 = 2 remainder 0\n2 \u00f7 2 = 1 remainder 0\n1 \u00f7 2 = 0 remainder 1\n\nStep 4: The binary representation of the decimal number is obtained by reversing the order of the remainders.\n\nBinary representation: 10011101100\n\nThe final binary number is 10011101100.",
+  "response_length": 921,
+  "elapsed_seconds": 28.27,
+  "tokens": {
+    "prompt_tokens": 205,
+    "completion_tokens": 348,
+    "total_duration_ms": 28264.7125
+  },
+  "timestamp": "2026-03-06T02:14:37.395114",
+  "score": 1,
+  "score_reason": "The method used was valid but the final binary answer (10011101100) is incorrect; it should be 10011011111.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:02:58.783361"
+}

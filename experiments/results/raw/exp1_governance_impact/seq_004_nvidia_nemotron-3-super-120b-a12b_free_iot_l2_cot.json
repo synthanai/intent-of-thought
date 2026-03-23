@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the problem requires a single logical sequence of steps (compute head\u2011start distance, then relative motion) without branching into alternative methods.  PURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer about when and where the trains meet.  \nANTI-PURPOSE CHECK: Avoid exploring alternative approaches or multiple solution paths before completing the primary chain.  **Reasoning (Chain\u2011of\u2011Thought):**  \n1. Train\u202f1 departs Station\u202fA at 09:00 at 80\u202fkm/h.  2. In the first 30\u202fminutes (0.5\u202fh) before Train\u202f2 starts, Train\u202f1 travels \\(80 \\times 0.5 = 40\\)\u202fkm toward Station\u202fB.  \n3. At 09:30 the remaining separation between the trains is \\(320 - 40 = 280\\)\u202fkm.  \n4. From 09:30 onward both trains move toward each other; their relative speed is \\(80 + 120 = 200\\)\u202fkm/h.  \n5. Time to meet after 09:30 = \\(\\frac{280}{200} = 1.4\\)\u202fh = 1\u202fh\u202f24\u202fmin.  \n6. Meeting clock time = 09:30 + 1\u202fh\u202f24\u202fmin = **10:54**.  \n7. Distance Train\u202f1 has traveled from Station\u202fA by meeting time:  \n   - Head\u2011start: 40\u202fkm (09:00\u201109:30)  \n   - During the 1.4\u202fh interval: \\(80 \\times 1.4 = 112\\)\u202fkm  \n   - Total = \\(40 + 112 = 152\\)\u202fkm.",
+  "response_length": 1168,
+  "elapsed_seconds": 24.0,
+  "tokens": {
+    "prompt_tokens": 362,
+    "completion_tokens": 1024,
+    "total_duration_ms": 23998.97
+  },
+  "timestamp": "2026-03-17T14:02:13.192474",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly calculates the meeting time and distance from Station A using clear reasoning and accurate arithmetic.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:12:10.684660"
+}

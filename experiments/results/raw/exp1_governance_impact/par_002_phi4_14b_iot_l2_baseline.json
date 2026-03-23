@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_phi4_14b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "For this task, I will use the tree-of-thought approach. This is because the task involves exploring and comparing multiple sorting algorithms, each with its unique characteristics and performance metrics. The task requires a systematic comparison of these algorithms to determine which is best suited for sorting a nearly-sorted array of 10,000 integers where only 5% of the elements are out of place. This approach allows for generating and evaluating different options, which aligns with the governance specification's requirement to explore multiple alternatives systematically.\n\n### Approach Comparison\n\n#### 1. Insertion Sort\n\n- **Time Complexity**: \n  - **Average Case**: \\(O(n^2)\\)\n  - **Best Case (Nearly Sorted)**: \\(O(n)\\)\n- **Characteristics**:\n  - Insertion sort is efficient for small or nearly sorted datasets because it performs minimal operations when elements are already in order.\n  - It only requires a constant amount of additional memory, making it an in-place sort.\n- **Trade-offs**:\n  - **Pros**: Very efficient for nearly sorted data due to linear time complexity in the best case.\n  - **Cons**: Inefficient for large datasets if they are not nearly sorted due to quadratic time complexity.\n\n#### 2. Merge Sort\n\n- **Time Complexity**: \n  - **Average and Worst Case**: \\(O(n \\log n)\\)\n- **Characteristics**:\n  - Merge sort is a stable, divide-and-conquer algorithm that consistently performs at \\(O(n \\log n)\\) time complexity.\n  - It requires additional memory for the temporary arrays used during the merge process.\n- **Trade-offs**:\n  - **Pros**: Guarantees \\(O(n \\log n)\\) time complexity regardless of the initial order of the array.\n  - **Cons**: Requires additional memory, which may not be ideal for memory-constrained environments.\n\n#### 3. Quicksort\n\n- **Time Complexity**:\n  - **Average Case**: \\(O(n \\log n)\\)\n  - **Worst Case**: \\(O(n^2)\\) (occurs when the pivot selection is poor)\n- **Characteristics**:\n  - Quicksort is an in-place sort with a good average-case performance.\n  - Its performance can degrade to quadratic time complexity if the pivot elements are not chosen well.\n- **Trade-offs**:\n  - **Pros**: Generally fast in practice with good average-case performance and in-place sorting.\n  - **Cons**: Can perform poorly on nearly sorted data if not implemented with a good pivot strategy (e.g., random or median-of-three).\n\n### Recommendation\n\nFor sorting a nearly-sorted array of 10,000 integers where only 5% of the elements are out of place, the most suitable algorithm is **Insertion Sort**. Here\u2019s why:\n\n- **Efficiency on Nearly Sorted Data**: Insertion sort excels in scenarios where the data is nearly sorted, achieving \\(O(n)\\) time complexity. Given that only 5% of the elements are out of place, insertion sort will perform very few swaps and comparisons, making it extremely efficient.\n- **Memory Usage**: It is an in-place sort, requiring minimal additional memory, which is advantageous when memory usage is a concern.\n- **Overhead**: Merge sort, while stable and consistently fast, incurs additional memory overhead, which is unnecessary given the nearly sorted nature of the data. Quicksort, although generally fast, does not have the same advantage as insertion sort in this specific scenario without additional pivot optimization.\n\nIn conclusion, insertion sort is recommended for this task due to its optimal performance on nearly sorted data, minimal memory usage, and simplicity. However, if memory usage is not a concern and stability is required, merge sort could be considered as an alternative.",
+  "response_length": 3564,
+  "elapsed_seconds": 128.6,
+  "tokens": {
+    "prompt_tokens": 214,
+    "completion_tokens": 769,
+    "total_duration_ms": 128575.675208
+  },
+  "timestamp": "2026-03-06T05:04:28.491787",
+  "score": 3,
+  "score_reason": "The model correctly analyzes all three algorithms, provides the correct time complexities for nearly-sorted data, and thoroughly explains why insertion sort is optimal in this scenario.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:35:18.568196"
+}

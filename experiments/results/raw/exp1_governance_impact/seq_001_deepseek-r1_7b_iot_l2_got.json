@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "The square root of 2 is irrational because assuming the opposite leads to a contradiction. Here's the step-by-step proof:\n\n1. **Assumption**: Suppose \u221a2 is rational. Then it can be expressed as a fraction a/b, where a and b are coprime integers (having no common factors other than 1).\n\n2. **Equation**: \u221a2 = a/b. Squaring both sides gives 2 = a\u00b2 / b\u00b2, which simplifies to 2b\u00b2 = a\u00b2.\n\n3. **Evenness of a**: Since 2b\u00b2 is even, a\u00b2 must be even. Therefore, a is even (because the square of an odd number is odd).\n\n4. **Express a as 2k**: Let a = 2k for some integer k. Substituting back, we get (2k)\u00b2 = 4k\u00b2 = 2b\u00b2.\n\n5. **Evenness of b**: Simplifying, 2b\u00b2 = 4k\u00b2 leads to b\u00b2 = 2k\u00b2, making b\u00b2 even. Hence, b is even.\n\n6. **Contradiction**: Both a and b are even, meaning they share a common factor of 2, which contradicts the initial assumption that a and b are coprime.\n\n7. **Conclusion**: The contradiction implies that our initial assumption is false. Therefore, \u221a2 cannot be rational and is thus irrational.\n\nThis proof by contradiction successfully demonstrates that \u221a2 is irrational.",
+  "response_length": 1081,
+  "elapsed_seconds": 65.79,
+  "tokens": {
+    "prompt_tokens": 166,
+    "completion_tokens": 780,
+    "total_duration_ms": 65773.51125
+  },
+  "timestamp": "2026-03-06T00:40:42.494860",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction for the irrationality of sqrt(2) with all necessary steps clearly outlined.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:56:40.087338"
+}

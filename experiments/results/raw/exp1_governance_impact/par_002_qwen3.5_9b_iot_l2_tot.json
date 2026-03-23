@@ -1,0 +1,21 @@
+{
+  "run_id": "par_002_qwen3.5_9b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 161.79,
+  "tokens": {
+    "prompt_tokens": 222,
+    "completion_tokens": 1024,
+    "total_duration_ms": 161771.022625
+  },
+  "timestamp": "2026-03-06T05:39:57.246054"
+}

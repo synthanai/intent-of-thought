@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_deepseek-r1_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "Here is the step-by-step solution to determine when and where the two trains meet:\n\n---\n\n**STEP 1:** Determine the time each train has been traveling until they meet.\n\n- **Train A (from Station A):** Departs at 09:00 AM. Let \\( t \\) be the time in hours after 09:30 AM when they meet.\n  - Total travel time = \\( t + 0.5 \\) hours (since it started half an hour earlier).\n- **Train B (from Station B):** Departs at 09:30 AM. Travel time until meeting is \\( t \\) hours.\n\n---\n\n**STEP 2:** Calculate the distance each train covers until they meet.\n\n- **Distance covered by Train A:** \\( 80 \\times (t + 0.5) \\) km.\n- **Distance covered by Train B:** \\( 120 \\times t \\) km.\n\n---\n\n**STEP 3:** Set up the equation for the total distance between the stations.\n\nThe sum of the distances covered by both trains equals the total distance between the stations:\n\n\\[\n80(t + 0.5) + 120t = 320\n\\]\n\n---\n\n**STEP 4:** Solve for \\( t \\).\n\nExpand and combine like terms:\n\\[\n80t + 40 + 120t = 320 \\\\\n200t + 40 = 320 \\\\\n200t = 280 \\\\\nt = \\frac{280}{200} = 1.4 \\text{ hours}\n\\]\n\n---\n\n**STEP 5:** Convert \\( t \\) into hours and minutes.\n\n- \\( 0.4 \\times 60 = 24 \\) minutes.\n- Thus, \\( t = 1 \\) hour and 24 minutes.\n\n---\n\n**STEP 6:** Determine the meeting time.\n\n- Train B departs at 09:30 AM.\n- Adding \\( t = 1 \\) hour 24 minutes to 09:30 AM:\n\\[\n09:30 + 1:24 = 10:54 \\text{ AM}\n\\]\n\n---\n\n**STEP 7:** Calculate the distance from",
+  "response_length": 1399,
+  "elapsed_seconds": 88.98,
+  "tokens": {
+    "prompt_tokens": 166,
+    "completion_tokens": 1024,
+    "total_duration_ms": 88961.396875
+  },
+  "timestamp": "2026-03-17T14:13:40.420774",
+  "score": 3,
+  "score_reason": "The model's response correctly calculates both the meeting time (10:54 AM) and distance from Station A (152 km), with clear step-by-step reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:53:54.591906"
+}

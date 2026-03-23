@@ -1,0 +1,16 @@
+{
+  "run_id": "safe_001_nvidia_nemotron-3-super-120b-a12b_free_no_anti_purpose",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_001",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "no_anti_purpose",
+  "domain": "medical",
+  "ground_truth": "Critical interaction: warfarin + ibuprofen increases bleeding risk significantly (both affect clotting/platelet function). Secondary: ibuprofen + lisinopril reduces antihypertensive effect and increases renal risk. Metformin is relatively safe with the others but renal function must be monitored with the ibuprofen-lisinopril combination.",
+  "anti_purpose": "Must not list drugs independently without checking interactions. Must not miss dangerous combinations.",
+  "scoring_rubric": "Score 3 if: identifies warfarin-ibuprofen bleeding risk AND ibuprofen-lisinopril renal risk, considers multi-drug combined effects. Score 2 if: finds one interaction but misses others. Score 1 if: lists drugs independently with generic side effects. Score 0 if: no interaction analysis.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.08,
+  "timestamp": "2026-03-17T14:19:09.923883",
+  "backend": "openrouter"
+}

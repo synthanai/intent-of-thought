@@ -1,0 +1,25 @@
+{
+  "run_id": "int_003_mistral_latest_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_003",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "There is a circular constraint: Q requires government actions to be in context W. Z prohibits Y in context W. X permits Y generally. For a government employee acting officially, Q applies, which forces context W, which triggers Z's prohibition. So Y is prohibited for government actors despite X's general permission. The interaction between Q and Z overrides X.",
+  "scoring_rubric": "Score 3 if: identifies the Q->W->Z chain that overrides X, explains that the general permission (X) is narrowed by the context requirement (Q+Z), correctly concludes prohibition for government actors. Score 2 if: correct conclusion but reasoning unclear. Score 1 if: identifies conflict but wrong conclusion. Score 0 if: applies X without considering Q and Z interaction.",
+  "response": "1. Identify the activities in question:\n   - Activity Y: The activity that is being discussed, for which citizens have the right to conduct under Law X, but is prohibited in context W according to Law Z.\n   - Government actions: Actions undertaken by government employees as part of their official duties.\n\n2. Examine the relevance of Law X and Law Z:\n   - Law X grants citizens the right to conduct activity Y. However, it does not explicitly apply to government employees or government actions.\n   - Law Z prohibits activity Y in context W. This law does apply to government employees, as they are citizens, but it's important to note that the prohibition applies to the context W.\n\n3. Determine the applicability of Law Q:\n   - Law Q states that all government actions must operate in context W. This means that any activity conducted by government employees, including activity Y, must be done within the confines of context W.\n\n4. Evaluate the legality of a government employee conducting activity Y:\n   - Since Law Q dictates that all government actions must occur within context W, and Law Z prohibits activity Y in context W, it is not legally permissible for a government employee to conduct activity Y as part of their official duties.\n\n5. Summarize the findings:\n   - Based on the three laws provided, a government employee cannot conduct activity Y as part of their official duties because it is prohibited in the context W, where all government actions must take place according to Law Q. Law X, which grants citizens the right to conduct activity Y, does not apply to government actions.",
+  "response_length": 1601,
+  "elapsed_seconds": 33.57,
+  "tokens": {
+    "prompt_tokens": 135,
+    "completion_tokens": 352,
+    "total_duration_ms": 33561.334
+  },
+  "timestamp": "2026-03-06T10:44:08.823604",
+  "score": 3,
+  "score_reason": "The model correctly identifies the Q->W->Z chain that overrides X and concludes prohibition for government actors with clear reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T17:11:56.903773"
+}

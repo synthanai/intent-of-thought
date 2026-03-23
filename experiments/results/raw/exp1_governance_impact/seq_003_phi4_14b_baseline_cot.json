@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_phi4_14b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "To convert the decimal number 1247 to binary, we'll use the method of successive division by 2. This involves dividing the number by 2, recording the remainder, and then using the quotient for the next division. We continue this process until the quotient is zero. The binary equivalent is then formed by reading the remainders from bottom to top. Let's go through the steps:\n\n### Step 1: Divide the number by 2 and record the remainder.\n1. **Action:** Divide 1247 by 2.\n2. **Calculation:** \n   \\[\n   1247 \\div 2 = 623 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** We record the remainder (1) and use the quotient (623) for the next division. This step helps us determine the least significant bit (rightmost bit) of the binary number.\n\n### Step 2: Repeat the division with the new quotient.\n1. **Action:** Divide 623 by 2.\n2. **Calculation:** \n   \\[\n   623 \\div 2 = 311 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1) and use the quotient (311) for the next division. This step continues building the binary number from right to left.\n\n### Step 3: Continue dividing and recording remainders.\n1. **Action:** Divide 311 by 2.\n2. **Calculation:** \n   \\[\n   311 \\div 2 = 155 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1) and use the quotient (155) for the next division.\n\n### Step 4: Repeat the process.\n1. **Action:** Divide 155 by 2.\n2. **Calculation:** \n   \\[\n   155 \\div 2 = 77 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1) and use the quotient (77) for the next division.\n\n### Step 5: Continue dividing and recording.\n1. **Action:** Divide 77 by 2.\n2. **Calculation:** \n   \\[\n   77 \\div 2 = 38 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1) and use the quotient (38) for the next division.\n\n### Step 6: Repeat the process.\n1. **Action:** Divide 38 by 2.\n2. **Calculation:** \n   \\[\n   38 \\div 2 = 19 \\quad \\text{remainder: } 0\n   \\]\n3. **Explanation:** Record the remainder (0) and use the quotient (19) for the next division.\n\n### Step 7: Continue dividing and recording.\n1. **Action:** Divide 19 by 2.\n2. **Calculation:** \n   \\[\n   19 \\div 2 = 9 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1) and use the quotient (9) for the next division.\n\n### Step 8: Repeat the process.\n1. **Action:** Divide 9 by 2.\n2. **Calculation:** \n   \\[\n   9 \\div 2 = 4 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1) and use the quotient (4) for the next division.\n\n### Step 9: Continue dividing and recording.\n1. **Action:** Divide 4 by 2.\n2. **Calculation:** \n   \\[\n   4 \\div 2 = 2 \\quad \\text{remainder: } 0\n   \\]\n3. **Explanation:** Record the remainder (0) and use the quotient (2) for the next division.\n\n### Step 10: Repeat the process.\n1. **Action:** Divide 2 by 2.\n2. **Calculation:** \n   \\[\n   2 \\div 2 = 1 \\quad \\text{remainder: } 0\n   \\]\n3. **Explanation:** Record the remainder (0) and use the quotient (1) for the next division.\n\n### Step 11: Final division.\n1. **Action:** Divide 1 by 2.\n2. **Calculation:** \n   \\[\n   1 \\div 2 = 0 \\quad \\text{remainder: } 1\n   \\]\n3. **Explanation:** Record the remainder (1). Since the quotient is now 0, we stop here.\n\n### Step 12: Compile the binary number.\n1. **Action:** Read the remainders from bottom to top.\n2. **Result:** The binary number is \\(100110110",
+  "response_length": 3385,
+  "elapsed_seconds": 180.82,
+  "tokens": {
+    "prompt_tokens": 82,
+    "completion_tokens": 1024,
+    "total_duration_ms": 180779.14475
+  },
+  "timestamp": "2026-03-06T02:31:29.968892",
+  "score": 3,
+  "score_reason": "The model correctly converts 1247 to binary as 10011011111, providing clear and accurate step-by-step division.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:26:24.386734"
+}

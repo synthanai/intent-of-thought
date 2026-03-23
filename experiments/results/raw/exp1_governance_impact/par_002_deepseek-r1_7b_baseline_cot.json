@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "**Step-by-Step Explanation and Analysis:**\n\n1. **Understanding the Problem:**\n   - We need to compare three sorting algorithms: Insertion Sort, Merge Sort, and QuickSort.\n   - The task is to evaluate their performance on a nearly-sorted array of 10,000 integers where only 5% are out of place.\n\n2. **Insertion Sort Analysis:**\n   - **Time Complexity:** Typically O(n\u00b2) in the worst case, but for nearly sorted arrays, it performs efficiently with O(n) or O(n log n).\n   - **",
+  "response_length": 474,
+  "elapsed_seconds": 88.76,
+  "tokens": {
+    "prompt_tokens": 114,
+    "completion_tokens": 1024,
+    "total_duration_ms": 88663.509541
+  },
+  "timestamp": "2026-03-06T05:09:53.236591",
+  "score": 2,
+  "score_reason": "The model correctly recommends Insertion Sort for nearly-sorted data and provides some analysis, but lacks detailed comparison of all three algorithms' complexities in this specific case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:04:04.586610"
+}

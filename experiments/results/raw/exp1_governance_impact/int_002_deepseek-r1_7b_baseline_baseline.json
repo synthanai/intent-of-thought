@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "The shutdown at Factory A has a cascading effect on the supply chain, leading to several downstream consequences:\n\n1. **Immediate Impact on B and C:**\n   - **Component Demand Reduction:** Factory B and Factory C experience decreased demand for components supplied by Factory A. This could result in reduced production or a halt in manufacturing activities at these factories.\n\n2. **Supply Chain Disruption:**\n   - **Component Sourcing Delays:** Since B and C cannot directly source components from Factory D (as D is downstream), they may face delays or disruptions in obtaining necessary parts. This could lead to production halts or reduced output at B and C.\n\n3. **Downstream Effect on D:**\n   - **Sub-assembly Delays:** Factory D, reliant on components from both B and C, may encounter production delays due to the reduced supply from these factories. This could slow down the production of sub-assemblies and finished products.\n\n4. **Impact on Factory A's Parent Company:**\n   - **Reduced Demand:** The slower production at Factory D results in fewer finished products reaching Factory A's parent company, potentially leading to decreased demand and inventory issues.\n\n5. **Feedback Loop and Supply Chain Resilience:**\n   - **Demand Decrease:** Reduced demand at the parent company may cause Factory A to adjust production, possibly reducing output further, exacerbating the shutdown effect.\n   - **Supply Chain Bottlenecks:** The shutdown could highlight vulnerabilities in the supply chain, leading to increased costs and potential shortages as factories struggle to source components.\n\n6. **Potential for Supply Chain Wide Implications:**\n   - **Increased Lead Times:** Delays in component supply could ripple through the supply chain, increasing lead times and potentially causing further disruptions downstream.\n\nIn conclusion, the shutdown at Factory A disrupts the supply chain, leading to production halts, delays, and reduced demand, with potential long-term impacts on the entire supply chain structure.",
+  "response_length": 2018,
+  "elapsed_seconds": 81.38,
+  "tokens": {
+    "prompt_tokens": 71,
+    "completion_tokens": 938,
+    "total_duration_ms": 81354.851125
+  },
+  "timestamp": "2026-03-06T09:10:01.170763",
+  "score": 2,
+  "score_reason": "The output traces the forward paths A->B->D and A->C->D, identifies D as double-hit, but misses the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:17:24.927121"
+}

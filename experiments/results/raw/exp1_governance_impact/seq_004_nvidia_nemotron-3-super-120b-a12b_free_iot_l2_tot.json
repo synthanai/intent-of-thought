@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the problem requires sequential logical steps to set up and solve a linear equation for the meeting time and distance.  \nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer.  \nANTI-PURPOSE CHECK: Avoid branching into alternative approaches before completing the primary chain.  \n\n**Reasoning (Chain\u2011of\u2011Thought):**  \n1. Let \\(t\\) be the elapsed time in hours after 09:00 when the trains meet.  \n2. Train\u202f1 departs Station\u202fA at 09:00 and travels at 80\u202fkm/h, so its distance from A is \\(d_1 = 80t\\).  \n3. Train\u202f2 departs Station\u202fB at 09:30, which is 0.5\u202fh after 09:00. Its travel time when the meeting occurs is \\(t - 0.5\\) hours (valid for \\(t \\ge 0.5\\)). It travels at 120\u202fkm/h towards A, so its distance from B is \\(d_2 = 120(t - 0.",
+  "response_length": 798,
+  "elapsed_seconds": 32.58,
+  "tokens": {
+    "prompt_tokens": 362,
+    "completion_tokens": 1024,
+    "total_duration_ms": 32577.21
+  },
+  "timestamp": "2026-03-17T14:03:23.964686",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "Extracted from: ```json\n{\n  \"score\": 2,\n  \"reason\": \"The model correctly identifies the approach and sets up equatio",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:14:47.168905"
+}

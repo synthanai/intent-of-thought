@@ -1,0 +1,19 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "optimal_topology": "got",
+  "forced_topology": "cot",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "The symptoms of chronic fatigue, joint pain, and a butterfly-shaped rash can potentially be linked to psoriasis, especially if considered in the context of psoriatic arthritis. Here's the organized analysis:\n\n1. **Butterfly-shaped Rash**: This is a hallmark of psoriasis and suggests an autoimmune condition. Psoriasis often presents with this rash, which is a key indicator of the underlying condition.\n\n2. **Chronic Fatigue**: While psoriasis itself may not directly cause fatigue, chronic inflammation and skin irritation can lead to physical exhaustion. Additionally, conditions like psoriatic arthritis, often associated with psoriasis, can cause fatigue.\n\n3. **Joint Pain**: Psoriasis can be associated with psoriatic arthritis, which directly affects joints. This condition is characterized by joint inflammation and pain, aligning with the symptoms presented.\n\n**Conclusion**: The symptoms could all stem from psoriasis, with possible complications such as psoriatic arthritis explaining the joint pain. This systemic condition links all three symptoms together, highlighting the importance of considering autoimmune or inflammatory processes in their evaluation.",
+  "response_length": 1171,
+  "elapsed_seconds": 89.31,
+  "timestamp": "2026-03-06T18:30:39.664086",
+  "score": 1,
+  "score_reason": "The model lists conditions for each symptom independently without connecting them to Systemic Lupus Erythematosus (SLE) as the unifying autoimmune mechanism.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T17:29:29.260054"
+}

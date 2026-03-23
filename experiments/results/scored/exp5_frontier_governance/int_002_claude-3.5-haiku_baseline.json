@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Indirect: C can't supply B (B doubly hit). B can't produce final products. D loses supply from both B and C. A's shutdown creates a cascade that affects all nodes, with B hit worst (loses both direct and indirect supply).",
+  "scoring_rubric": "Score 3 if: traces all direct AND indirect effects, identifies B as worst-hit, maps the full cascade. Score 2 if: gets direct effects but misses some indirect cascades. Score 1 if: only identifies direct effects. Score 0 if: misses the interconnected nature.",
+  "prompt": "Task: In a supply chain: Factory A supplies components to Factory B and Factory C. Factory B assembles products using components from A and C. Factory C produces sub-assemblies using components from A only. All three sell to Distributor D. Factory A announces a 2-week shutdown for maintenance. Trace all direct and indirect effects through the network.\n\nProvide your answer with clear reasoning.",
+  "response": "Let's analyze the cascading effects of Factory A's 2-week shutdown systematically:\n\nDirect Impacts:\n1. Factory A\n- Cannot supply components to Factory B\n- Cannot supply components to Factory C\n- Completely halts production for 2 weeks\n\nIndirect Impacts:\n\n2. Factory C\n- Loses component supply from Factory A\n- Cannot produce sub-assemblies\n- Will have zero production during shutdown\n- Cannot supply to Distributor D\n\n3. Factory B\n- Loses component supply from Factory A\n- Still has components from Factory C\n- Production likely severely constrained or stopped\n- Cannot fully assemble products\n- Cannot supply to Distributor D\n\n4. Distributor D\n- No incoming supplies from any factory\n- Zero inventory replenishment\n- Potential stock-out situation\n- May need to source alternative suppliers\n- Potential revenue/service disruption\n\nPotential Mitigation Strategies:\n- Advance stockpiling before shutdown\n- Alternative supplier identification\n- Flexible manufacturing scheduling\n- Buffer inventory management\n\nComprehensive impact: Complete supply chain disruption requiring proactive management and contingency planning.\n\nWould you like me to elaborate on any specific aspect of this analysis?",
+  "response_length": 1191,
+  "elapsed_seconds": 6.69,
+  "tokens": {
+    "prompt_tokens": 91,
+    "completion_tokens": 267,
+    "total_tokens": 358
+  },
+  "timestamp": "2026-03-19T16:08:05.466031",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3\n\nThe model response effectively traces both direct and indirect effects of Factory A's"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_phi4_14b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "When Factory A experiences a 2-week shutdown, it will create a ripple effect throughout the entire supply chain. Here's a detailed breakdown of the downstream effects and feedback loops:\n\n### Immediate Effects:\n\n1. **Factory B and Factory C:**\n   - **Supply Disruption:** Both Factory B and Factory C will face a shortage of components from Factory A. This will likely lead to a slowdown or halt in their production processes.\n   - **Inventory Depletion:** If either factory has inventory, they might use it to temporarily mitigate the disruption. However, this is a short-term solution.\n\n2. **Factory D:**\n   - **Sub-assembly Shortage:** Factory D relies on sub-assemblies from both Factory B and Factory C. With these factories slowing down, Factory D will experience a shortage of sub-assemblies.\n   - **Production Slowdown:** This shortage will directly impact Factory D's ability to produce finished products, leading to a slowdown or halt in production.\n\n### Secondary Effects:\n\n3. **Factory A's Parent Company:**\n   - **Finished Product Shortage:** Since Factory D sells finished products back to Factory A's parent company, there will be a shortage of finished products available for sale or further use.\n   - **Sales and Revenue Impact:** The parent company may experience a decline in sales and revenue due to the unavailability of finished products.\n\n### Feedback Loops:\n\n4. **Feedback to Factory A:**\n   - **Demand Pressure:** The parent company might pressure Factory A to resolve the shutdown quickly to restore the supply of finished products.\n   - **Production Adjustments:** Once Factory A resumes operations, there may be a need to increase production to catch up on the backlog created during the shutdown.\n\n5. **Inventory and Supply Chain Adjustments:**\n   - **Re-evaluation of Inventory Levels:** All factories involved may need to re-evaluate their inventory management strategies to prevent future disruptions.\n   - **Supplier Diversification:** Factory B and Factory C might seek alternative suppliers to reduce dependency on Factory A.\n\n6. **Long-term Strategic Changes:**\n   - **Risk Management:** The entire supply chain may implement more robust risk management and contingency planning to handle similar disruptions in the future.\n   - **Technological Investments:** Factories might invest in technology to improve supply chain visibility and resilience.\n\n### Conclusion:\n\nThe 2-week shutdown of Factory A initiates a cascade of disruptions throughout the supply chain, affecting production, inventory, and sales. Feedback loops may prompt strategic changes to enhance resilience and mitigate future risks. Each factory must adapt to the changing dynamics to maintain operational efficiency and meet customer demands.",
+  "response_length": 2746,
+  "elapsed_seconds": 94.54,
+  "tokens": {
+    "prompt_tokens": 78,
+    "completion_tokens": 529,
+    "total_duration_ms": 94522.429792
+  },
+  "timestamp": "2026-03-06T09:23:48.362958",
+  "score": 3,
+  "score_reason": "The response accurately traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company, meeting all criteria for a score of 3.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:20:02.915790"
+}

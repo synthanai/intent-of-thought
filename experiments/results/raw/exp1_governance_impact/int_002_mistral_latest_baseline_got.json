@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_mistral_latest_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "In this analysis, we will identify key factors, determine their relationships, identify feedback loops, and synthesize the downstream effects of a 2-week shutdown at Factory A.\n\n1. Key factors:\n   - Factory A: Produces components\n   - Factory B: Assembles components into sub-assemblies\n   - Factory C: Assembles components into sub-assemblies\n   - Factory D: Assembles sub-assemblies into finished products and sells them\n   - Factory A's parent company: Buys finished products from Factory D\n\n2. Relationships:\n   - Factory A --> Factory B (enables, as components are needed for sub-assemblies)\n   - Factory A --> Factory C (enables, as components are needed for sub-assemblies)\n   - Factory B --> Factory D (enables, as sub-assemblies are needed for finished products)\n   - Factory C --> Factory D (enables, as sub-assemblies are needed for finished products)\n   - Factory D --> Factory A's parent company (depends on, as they sell finished products)\n\n3. Edges:\n   - Factory A --> Factory B\n   - Factory A --> Factory C\n   - Factory B --> Factory D\n   - Factory C --> Factory D\n   - Factory D --> Factory A's parent company\n\n4. Feedback loops:\n   - Feedback loop: Factory D --> Factory A's parent company --> Factory A --> Factory D (sales revenue from Factory D goes back to Factory A's parent company, which can affect Factory A's operations)\n\n5. Central factors:\n   - Factory A, Factory B, Factory C, and Factory D are all central as they are connected to other factors. However, Factory D has a unique position in the supply chain as it connects the production and sales aspects.\n\n6. Synthesizing the analysis:\n   - A 2-week shutdown at Factory A will lead to a shortage of components for both Factory B and Factory C. This will halt the production of sub-assemblies at these factories, which in turn will cause Factory D to stop producing finished products.\n   - The halt in production at Factory D will result in no new finished products being sold to Factory A's parent company, potentially affecting their revenue.\n   - The reduced revenue at Factory A's parent company could lead to financial constraints, which might impact Factory A's operations and eventual reopening after the 2-week shutdown. This creates a feedback loop between Factory A's parent company's revenue and Factory A's operations.\n   - To mitigate the effects of the shutdown, factories B and C might need to source components from alternative suppliers, or Factory A could expedite its reopening to minimize the component shortage. Alternatively, Factory D might need to find temporary solutions or stockpile components to maintain production during the shutdown.",
+  "response_length": 2645,
+  "elapsed_seconds": 57.33,
+  "tokens": {
+    "prompt_tokens": 224,
+    "completion_tokens": 647,
+    "total_duration_ms": 57315.620833
+  },
+  "timestamp": "2026-03-06T10:07:41.440974",
+  "score": 3,
+  "score_reason": "The response correctly traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:08:40.010767"
+}

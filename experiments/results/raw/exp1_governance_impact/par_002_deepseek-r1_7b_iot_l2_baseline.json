@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "To determine the best sorting algorithm for a nearly-sorted array of 10,000 integers where only 5% are out of place, we need to evaluate three algorithms: insertion sort, merge sort, and quicksort.\n\n1. **Insertion Sort**: This algorithm is highly efficient for nearly sorted arrays. It performs well because it only needs to shift elements slightly, making it ideal for small or nearly sorted datasets. Its time complexity is O(n) in the best case, which is very efficient for this scenario.\n\n2. **Merge Sort**: Despite its O(n log n) time complexity, merge sort has a higher overhead due to the creation of temporary arrays. This makes it less efficient than insertion sort for nearly sorted data, even though it is reliable in other scenarios.\n\n3. **Quicksort**: While quicksort generally performs well with an average time complexity of O(n log n), its worst-case time complexity is O(n\u00b2). However, with a good pivot selection strategy, it can be efficient. For a nearly sorted array, quicksort might be competitive, but it is generally less optimized for such cases compared to insertion sort.\n\n**Recommendation**: Given the nearly sorted nature of the array and the size of 10,000 elements, **insertion sort** is the most efficient choice. It has a low constant factor and is optimized for scenarios where the data is already",
+  "response_length": 1330,
+  "elapsed_seconds": 85.14,
+  "tokens": {
+    "prompt_tokens": 210,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85120.2785
+  },
+  "timestamp": "2026-03-06T04:49:39.080357",
+  "score": 2,
+  "score_reason": "The response correctly compares insertion sort, merge sort, and quicksort for nearly-sorted data, providing valid complexity analysis and explaining why insertion sort is optimal in this scenario.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:13:56.063628"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "par_003_deepseek-r1_7b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_003",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "tot",
+  "ground_truth": "Must produce 3 genuinely different strategies (e.g., direct sales to hospital IT, partnership with EHR vendors, compliance-first freemium). Must address HIPAA compliance as a constraint. Strategies must be distinct, not variations of the same approach.",
+  "scoring_rubric": "Score 3 if: 3 distinct strategies, each with risks/timeline, HIPAA addressed, clear recommendation with justification. Score 2 if: 3 strategies but overlapping or weak evaluation. Score 1 if: fewer than 3 or no evaluation. Score 0 if: single strategy or no healthcare consideration.",
+  "response": "To address the expansion of a B2B SaaS company into the healthcare sector, I propose three distinct go-to-market strategies, each evaluated for their risks and timelines, followed by a recommendation.\n\n### Strategies\n\n1. **Localized Customization**\n   - **Description**: Adapt the existing project management tools to meet healthcare-specific needs by adding features and training support teams.\n   - **Risks**: High initial investment in customization and training. Potential failure if customization doesn't meet healthcare demands.\n   - **Timeline**: Longer due to development and training needs, but quicker than market-pull once validated.\n\n2. **Market-Pull**\n   - **Description**: Directly target healthcare providers through personalized outreach and establish themselves as a trusted partner.\n   - **Risks**: High upfront effort; competition is intense, risking failure to stand out.\n   - **Timeline**: Longer with potential high returns if successful.\n\n3. **Niche Focus**\n   - **Description**: Concentrate on specific healthcare areas like surgical workflow or compliance, building a strong customer base.\n   - **Risks**: High differentiation",
+  "response_length": 1151,
+  "elapsed_seconds": 85.02,
+  "tokens": {
+    "prompt_tokens": 192,
+    "completion_tokens": 1024,
+    "total_duration_ms": 84993.893959
+  },
+  "timestamp": "2026-03-06T07:02:06.545239",
+  "score": 1,
+  "score_reason": "The strategies are distinct but lack clear consideration of HIPAA compliance, and the evaluation is not thorough.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T06:30:34.616114"
+}

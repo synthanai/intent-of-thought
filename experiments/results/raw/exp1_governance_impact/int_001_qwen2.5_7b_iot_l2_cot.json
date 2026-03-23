@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen2.5_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, I will use the graph-of-thought approach. This is because the task involves interconnected factors (chronic fatigue, joint pain, and a butterfly-shaped facial rash) that may or may not share a common underlying condition. By using a graph-of-thought, we can map out the relationships between these symptoms and explore potential interconnections.\n\n### Graph of Thought: Interconnections Between Symptoms\n\n1. **Symptom Nodes:**\n   - **Chronic Fatigue (CF):** A persistent feeling of tiredness that is not relieved by rest.\n   - **Joint Pain (JP):** Pain or discomfort in the joints.\n   - **Butterfly-shaped Facial Rash (BFR):** A rash that appears on both cheeks and across the nose, resembling a butterfly.\n\n2. **Potential Conditions:**\n   - **Systemic Lupus Erythematosus (SLE):** An autoimmune disorder that can cause inflammation in various parts of the body, including the joints and skin.\n   - **Chronic Fatigue Syndrome (CFS):** A condition characterized by extreme fatigue that doesn't improve with rest.\n   - **Rheumatoid Arthritis (RA):** An autoimmune disorder that primarily affects the joints.\n   - **Discoid Lupus Erythematosus (DLE):** A type of lupus that primarily affects the skin.\n   - **Other Conditions:** Various other conditions could potentially cause these symptoms, but they are less likely given the specific combination.\n\n3. **Relationship Edges:**\n   - **CF and SLE:** Chronic fatigue is a common symptom in SLE patients due to systemic inflammation.\n   - **JP and SLE:** Joint pain is a common symptom in SLE due to inflammation of the joint lining.\n   - **BFR and SLE:** The butterfly-shaped facial rash is a classic symptom of SLE, appearing as a rash on both cheeks and the bridge of the nose.\n   - **CF and CFS:** Chronic fatigue is the primary symptom of CFS.\n   - **JP and RA:** Joint pain is a hallmark of RA.\n   - **BFR and DLE:** The butterfly-shaped facial rash is a characteristic of DLE.\n\n4. **Feedback Loops:**\n   - **SLE Feedback Loop:** Chronic fatigue, joint pain, and the butterfly-shaped facial rash all contribute to the overall systemic inflammation in SLE, which in turn exacerbates these symptoms.\n   - **CFS Feedback Loop:** Chronic fatigue can lead to reduced physical activity, which can worsen joint pain, and the fatigue itself may be perpetuated by the body\u2019s inflammatory response.\n\n### Analysis:\n- **Common Underlying Condition:** SLE appears to be the most likely common underlying condition given the presence of all three symptoms: chronic fatigue, joint pain, and a butterfly-shaped facial rash.\n- **Interconnections:** The symptoms are interconnected through a common inflammatory process in SLE. Chronic fatigue, joint pain, and the facial rash all result from the immune system's overactivity and subsequent inflammation.\n\n### Conclusion:\nThe interconnections between chronic fatigue, joint pain, and a butterfly-shaped facial rash strongly suggest that these symptoms may share a common underlying condition, specifically Systemic Lupus Erythematosus (SLE). The presence of all three symptoms together is a red flag for SLE, and further diagnostic tests should be conducted to confirm the diagnosis.",
+  "response_length": 3181,
+  "elapsed_seconds": 57.96,
+  "tokens": {
+    "prompt_tokens": 235,
+    "completion_tokens": 692,
+    "total_duration_ms": 57941.842041
+  },
+  "timestamp": "2026-03-06T08:04:26.582549",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition, explains the mechanistic link through autoimmune inflammation, and warns against treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:12:20.307827"
+}

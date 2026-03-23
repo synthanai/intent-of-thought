@@ -1,0 +1,22 @@
+{
+  "run_id": "seq_004_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the mathematics reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: A train leaves Station A at 09:00 travelling at 80 km/h. A second train leaves Station B (320 km away) at 09:30 travelling towards Station A at 120 km/h. At what time do the trains meet, and how far from Station A?\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Chain-of-Thought (CoT) because this task requires solving a problem through sequential logical steps involving time, distance, and speed calculations\n\nPURPOSE CHECK: Solve the train meeting point problem through precise mathematical reasoning\n\nANTI-PURPOSE CHECK: Avoid making unsupported assumptions or skipping calculation steps\n\nReasoning Steps:\n1. First train details:\n- Starts at 09:00\n- Speed: 80 km/h\n- Starting location: Station A\n\n2. Second train details:\n- Starts at 09:30 (30 minutes later)\n- Speed: 120 km/h\n- Starting location: Station B (320 km from Station A)\n- Traveling towards Station A\n\n3. Time difference calculation:\n- Trains start 30 minutes apart\n- Need to find when their distances traveled converge\n\n4. Distance calculation method:\n- First train travels: 80 km/h \u00d7 time\n- Second train travels: 120 km/h \u00d7 (time - 0.5 hours)\n- Total distance traveled must equal 320 km\n\n5. Algebraic solution:\nLet x = hours traveled after 09:00\n80x + 120(x - 0.5) = 320\n80x + 120x - 60 = 320\n200x = 380\nx = 1.9 hours (1 hour 54 minutes)\n\n6. Meeting time:\n09:00 + 1.9 hours = 10:54\n\n7. Distance from Station A:\n80 km/h \u00d7 1.9 hours = 152 km\n\nANSWER: Trains meet at 10:54, 152 km from Station A\n\nSUCCESS SIGNAL MET: YES - Solution shows complete step-by-step reasoning with verified mathematical calculations\n\nANTI-PURPOSE VIOLATED: NO - No guessing or unsupported claims used\n\nCONFIDENCE: HIGH",
+  "response_length": 1417,
+  "elapsed_seconds": 8.68,
+  "tokens": {
+    "prompt_tokens": 355,
+    "completion_tokens": 436,
+    "total_tokens": 791
+  },
+  "timestamp": "2026-03-19T16:04:33.341853"
+}

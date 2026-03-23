@@ -1,0 +1,25 @@
+{
+  "run_id": "par_001_gemma3_12b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket monolith, event-driven microservices, serverless with pub/sub). Must compare on: scalability, development speed, cost. MVP recommendation should favour simplicity.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures, clear trade-off comparison, justified MVP recommendation. Score 2 if: 3 architectures but weak comparison. Score 1 if: fewer than 3 or no comparison. Score 0 if: single architecture or irrelevant.",
+  "response": "Okay, let's break down this task and build a relationship graph.\n\n**1. Identify Key Factors/Entities/Variables:**\n\nHere's a list of factors involved in proposing and evaluating architectures for a real-time chat application, specifically for a small team building an MVP:\n\n* **A: Real-Time Chat Application (Core Goal)** - The ultimate deliverable.\n* **B: Core Components (Architecture)** - The building blocks of the chat app (e.g., message queue, web server, database, client libraries).\n* **C: Communication Protocol** - The method used for message exchange (e.g., WebSockets, Server-Sent Events, Long Polling).\n* **D: Trade-offs** - The compromises inherent in each architectural choice (e.g., scalability vs. complexity, latency vs. reliability).\n* **E: Team Size (2 Developers)** - A significant constraint on complexity and development time.\n* **F: MVP (Minimum Viable Product)** - Defines the scope of features and functionality for the initial release.\n* **G: Scalability** - Ability to handle increasing users and message volume.\n* **H: Reliability** - Ability to maintain service with failures (e.g. server outages).\n* **I: Latency** - The delay in message delivery.  Low latency is crucial for a chat app.\n* **J: Complexity** - The difficulty in understanding, developing, and maintaining the architecture.\n* **K: Development Time** - The time required to build the application.\n* **L: Cost (Infrastructure & Maintenance)** - The financial resources required.\n* **M: Database** - Storage for messages, user data, etc. (e.g., relational, NoSQL).\n* **N: Message Queue** -  Handles asynchronous message processing and distribution (e.g., RabbitMQ, Kafka, Redis).\n* **O: Web Server** -  Handles HTTP requests and serves static content. (e.g., Node.js, Python/Flask, Go).\n* **P: Client Libraries** - Code that enables client applications (web, mobile) to connect.\n* **Q: Architecture 1** -  First proposed architecture.\n* **R: Architecture 2** -  Second proposed architecture.\n* **S: Architecture 3** -  Third proposed architecture.\n* **T: Evaluation Criteria** - The metrics used to determine the \"best\" architecture.\n\n**2. Relationship Determination (Causes, Enables, Blocks, Amplifies, Depends On, Contradicts):**\n\nHere's a breakdown of relationships between these factors.  I'll keep it concise, but exhaustive.\n\n* A --(requires)--> B\n* A --(requires)--> C\n* A --(affected by)--> D\n* A --(constrained by)--> E\n* A --(defined by)--> F\n* B --(affects)--> D\n* B --(affects)--> K\n* C --(affects)--> I\n* C --(affects)--> G\n* D --(limits)--> G\n* D --(limits)--> K\n* E --(limits)--> B\n* E --(limits)--> J\n* F --(limits)--> G\n* F --(limits)--> H\n* G --(depends on)--> C\n* H --(depends on)--> C\n* I --(depends on)--> C\n* J --(amplifies)--> K\n* K --(affects)--> F\n* L --(depends on)--> B\n* M --(affects)--> G\n* N --(affects)--> G\n* O --(affects)--> I\n* P --(depends on)--> C\n* Q --(is a)--> B\n* Q --(uses)--> C\n* R --(is a)--> B\n* R --(uses)--> C\n* S --(is a)--> B\n* S --(uses)--> C\n* D --(influences)--> T\n* E --(influences)--> T\n* F --(influences)--> T\n* G --(influences)--> T\n* H --(influences)--> T\n* I --(influences)--> T\n* J --(influences)--> T\n* K --(influences)--> T\n* L --(influences)--> T\n\n\n\n**3. Relationship Graph (List of Edges - shortened for brevity):**\n\n(As listed above - I've chosen to represent the relationships within the text rather than visually due to the limitations of this format).\n\n**4. Feedback Loops & Circular Dependencies:**\n\n* **Complexity & Development Time:** High complexity (J) leads to longer development",
+  "response_length": 3543,
+  "elapsed_seconds": 168.12,
+  "tokens": {
+    "prompt_tokens": 186,
+    "completion_tokens": 1024,
+    "total_duration_ms": 168100.9505
+  },
+  "timestamp": "2026-03-06T04:35:20.728218",
+  "score": 1,
+  "score_reason": "The model identifies key factors and relationships but does not propose or compare three distinct architectures as required.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T01:47:26.840761"
+}

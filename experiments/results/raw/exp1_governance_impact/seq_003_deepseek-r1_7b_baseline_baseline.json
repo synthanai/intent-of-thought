@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "To convert the decimal number **1247** to its binary equivalent, follow these steps:\n\n### Step 1: Determine the Largest Power of Two Less Than or Equal to 1247\nWe start by identifying the largest power of two that is less than or equal to 1247.\n\n\\[\n\\begin{align*}\n2^{10} &= 1024 \\quad (\\text{since } 2^{10} = 1024 \\leq 1247) \\\\\n2^{11} &= 2048 \\quad (\\text{which is } > 1247)\n\\end{align*}\n\\]\n\n**Largest power of two:** \\(2^{10} = 1024\\)\n\n### Step 2: Subtract the Largest Power of Two from 1247\n\\[\n1247 - 1024 = 223\n\\]\nSo, the first bit (from the left) is **1**.\n\n### Step 3: Repeat the Process for the Remaining Number (223)\nFind the largest power of two less than or equal to 223.\n\n\\[\n\\begin{align*}\n2^7 &= 128 \\quad (\\text{since } 2^7 = 128 \\leq 223) \\\\\n2^8 &= 256 \\quad (\\text{which is } > 223)\n\\end{align*}\n\\]\n\n**Largest power of two:** \\(2^7 = 128\\)\n\nSubtract:\n\\[\n223 - 128 = 95\n\\]\nSo, the next bit is **1**.\n\n### Step 4: Continue the Process for 95\nFind the largest power of two less than or equal to 95.\n\n\\[\n\\begin{align*}\n2^6 &= 64 \\quad (\\text{since } 2^6 = 64 \\leq 95) \\\\\n2^7 &= 128 \\quad (\\text{which is } > 95)\n\\end{align*}\n\\]\n\n**Largest power of two:** \\(2^6 = 64\\)\n\nSubtract:\n\\[\n95 - 64 = 31\n\\]\nSo, the next bit is **1**.\n\n### Step 5: Continue for 31\nFind the largest power of two less than or equal to 31.\n\n\\[\n\\begin{align*}\n2^4 &= 16 \\quad (\\text{since } 2^4 = 16 \\leq 31) \\\\\n2^5 &= 32 \\quad (\\text{which is } > 31)\n\\end{align*}\n\\]\n\n**Largest power of two:** \\(2^4 = 16\\)\n\nSubtract:\n\\[\n31 - 16 = 15\n\\]\nSo, the next bit is **",
+  "response_length": 1539,
+  "elapsed_seconds": 87.68,
+  "tokens": {
+    "prompt_tokens": 23,
+    "completion_tokens": 1024,
+    "total_duration_ms": 87665.395667
+  },
+  "timestamp": "2026-03-06T02:01:20.190523",
+  "score": 2,
+  "score_reason": "The model's answer is correct (10011011111) but the steps provided do not match the specified ground truth method of repeated division by 2.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T14:45:55.184683"
+}

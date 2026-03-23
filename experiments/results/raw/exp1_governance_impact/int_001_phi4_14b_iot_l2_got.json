@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_phi4_14b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, I have chosen the **graph-of-thought** approach. This is because the task involves analyzing interconnected factors\u2014chronic fatigue, joint pain, and a butterfly-shaped facial rash\u2014and determining whether they share a common underlying condition. The purpose of the task aligns with identifying relationships and interactions between these symptoms, which fits the criteria for using a graph-of-thought approach that maps factors and their connections.\n\n### Analysis:\n\n1. **Chronic Fatigue:**\n   - **Potential Causes:** Chronic fatigue syndrome, anemia, thyroid disorders, depression, infections, and autoimmune diseases.\n   - **Connection to Other Symptoms:** Chronic fatigue is common in autoimmune conditions.\n\n2. **Joint Pain:**\n   - **Potential Causes:** Arthritis, autoimmune disorders, physical injury, infections, and metabolic conditions.\n   - **Connection to Other Symptoms:** Joint pain is a frequent symptom in autoimmune diseases, which can also cause fatigue.\n\n3. **Butterfly-Shaped Facial Rash:**\n   - **Potential Causes:** Most notably associated with systemic lupus erythematosus (SLE), but can also occur in other conditions like rosacea.\n   - **Connection to Other Symptoms:** This rash is a classic sign of SLE, which often includes joint pain and fatigue as symptoms.\n\n### Common Underlying Condition:\n\n- **Systemic Lupus Erythematosus (SLE):**\n  - **Interconnections:**\n    - **Chronic Fatigue:** SLE can cause fatigue due to inflammation and other systemic effects.\n    - **Joint Pain:** SLE often leads to arthritis, causing joint pain.\n    - **Butterfly-Shaped Facial Rash:** This is a hallmark sign of SLE.\n\n### Relationship Map:\n\n- **Nodes (Factors):**\n  - Chronic Fatigue\n  - Joint Pain\n  - Butterfly-Shaped Facial Rash\n\n- **Edges (Connections):**\n  - Chronic Fatigue \u2194 SLE (Cause-Effect)\n  - Joint Pain \u2194 SLE (Cause-Effect)\n  - Butterfly-Shaped Facial Rash \u2194 SLE (Cause-Effect)\n\n- **Feedback Loops:**\n  - SLE can exacerbate fatigue, which in turn can worsen joint pain due to decreased activity and increased stress on the body.\n  - Inflammation from SLE can cause both joint pain and fatigue, creating a cycle of worsening symptoms.\n\n### Conclusion:\n\nThe symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash are interconnected and likely share a common underlying condition, such as systemic lupus erythematosus (SLE). This relationship map highlights how these symptoms are not independent but are interrelated through a systemic autoimmune process.",
+  "response_length": 2517,
+  "elapsed_seconds": 91.93,
+  "tokens": {
+    "prompt_tokens": 215,
+    "completion_tokens": 544,
+    "total_duration_ms": 91907.9885
+  },
+  "timestamp": "2026-03-06T09:05:05.465463",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition, explains how all three symptoms are linked through autoimmune inflammation, and warns against treating them independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T14:44:36.432218"
+}

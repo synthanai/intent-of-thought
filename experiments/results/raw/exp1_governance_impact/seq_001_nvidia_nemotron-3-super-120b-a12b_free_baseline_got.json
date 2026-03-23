@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_001_nvidia_nemotron-3-super-120b-a12b_free_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "FACTORS:\n1. Assumption\u202fA: \u221a2 is rational (\u2203\u202fintegers\u202fa,\u202fb with b\u202f\u2260\u202f0 such that \u221a2 = a/b).  \n2. Reduced fraction\u202fR: a/b is in lowest terms (gcd(a,b)=1).  \n3. Parity condition\u202fP: From a\u00b2 = 2b\u00b2 we deduce that a is even, and consequently b is even.  \n4. Infinite\u2011descent/contradiction\u202fC: If both a and b are even, the fraction a/b was not in lowest terms, contradicting R.  \n5. Square property\u202fS: The square of an even integer is divisible by 4; the square of an odd integer is odd. (Used to derive P.)\n\nEDGES:\n- Assumption\u202fA --(enables)--> Reduced fraction\u202fR   (we can write \u221a2 as a/b and then reduce it)\n- Reduced fraction\u202fR --(depends_on)--> Parity condition\u202fP   (to test lowest\u2011terms we examine parity)\n- Parity condition\u202fP --(causes)--> Square property\u202fS   (deducing evenness uses the fact that if a\u00b2 is even then a is even)\n- Square property\u202fS --(enables)--> Parity condition\u202fP   (S gives the logical step that a\u00b2 even \u21d2 a even)\n- Parity condition\u202fP --(leads_to)--> Infinite\u2011descent/contradiction\u202fC   (both a and b even shows fraction not reduced)\n- Infinite\u2011descent/contradiction\u202fC --(contradicts)--> Reduced fraction\u202fR   (C violates the requirement that a/b be reduced)\n- Infinite\u2011descent/contradiction\u202fC --(contradicts)--> Assumption\u202fA   (the contradiction shows the original assumption false)\n\nFEEDBACK LOOPS:\n- Parity condition\u202fP \u2194 Square property\u202fS forms a mutual reinforcement loop: S enables the inference that a is even (P), and knowing a is even lets us apply S to a\u00b2 to continue the argument. This is not a true circular dependency but a bidirectional enablement that strengthens the deduction.\n\nCENTRAL FACTORS:\n- **Parity condition\u202fP** is most central: it connects to four other factors (R, S, C, and indirectly A via C). It is the pivot where the algebraic manipulation (a\u00b2 = 2b\u00b2) translates into number\u2011theoretic information about evenness, which then drives the contradiction.\n- **Reduced fraction\u202fR** and **Infinite\u2011descent/contradiction\u202fC** each have three connections, but they depend on P for their logical force.\n\nSYNTHESIS:\nThe proof begins by assuming \u221a2 is rational and expressing it as a reduced fraction (A \u2192 R). The reduced\u2011form requirement forces us to examine the numerator and denominator\u2019s divisibility properties. Squaring both sides yields a\u00b2 = 2b\u00b2, invoking the square property (S) to infer that a\u00b2 is even, and therefore a is even (P). Applying the same reasoning to b shows b must also be even, which means the original fraction could be simplified further, violating the reduced\u2011form condition (R). This violation creates a contradiction (C) that directly negates the initial assumption (A). The parity condition P acts as the linchpin, linking the algebraic equation to the number\u2011theoretic property of evenness, and its bidirectional relationship with the square property S ensures the deduction is robust. No genuine circular dependency exists; rather, the enablement links form a chain that terminates in a clear contradiction.\n\nANSWER:\nThe square root of 2 is irrational.\n\nCONFIDENCE:\nHIGH",
+  "response_length": 3033,
+  "elapsed_seconds": 8.77,
+  "tokens": {
+    "prompt_tokens": 281,
+    "completion_tokens": 916,
+    "total_duration_ms": 8771.68
+  },
+  "timestamp": "2026-03-17T13:51:01.076134",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The model's response provides a valid proof by contradiction, detailing all necessary steps and maintaining logical coherence throughout.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T10:06:58.901154"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_mistral_latest_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "1. Define the concept of a rational number: A rational number is any number that can be expressed as the quotient or fraction p/q, where p and q are integers and q \u2260 0.\n\n2. Assume, for the sake of contradiction, that the square root of 2 is rational. This means it can be expressed as a fraction a/b, where a and b are integers and b \u2260 0.\n\n3. Square both sides of the equation: (a/b)^2 = 2\n\n4. Multiply both sides by b^2: a^2 = 2 * b^2\n\n5. Since a^2 is a perfect square, it can be written as the product of two integers: a^2 = (c * c) for some integer c.\n\n6. Substitute a^2 = (c * c) into the equation from step 4: (c * c) = 2 * b^2\n\n7. Factor out c^2 from the left side: c^2 = 2 * b^2\n\n8. Now, c^2 is a multiple of 2, so c must also be even (since every multiple of 2 is even). Let's write c = 2d, where d is an integer.\n\n9. Substitute c = 2d into the equation from step 7: (2d)^2 = 2 * b^2\n\n10. Simplify the left side: 4d^2 = 2 * b^2\n\n11. Divide both sides by 2: 2d^2 = b^2\n\n12. Since b^2 is a perfect square (because it is the square of an integer), it can be written as the product of two squares: b^2 = e^2 * f^2 for some integers e and f.\n\n13. Substitute b^2 = e^2 * f^2 into the equation from step 11: 2d^2 = e^2 * f^2\n\n14. Comparing the powers of 2 on both sides, we see that if d^2 is a perfect square, then e^2 * f^2 must also be a multiple of 4. However, since e^2 and f^2 are both squares of integers, they cannot both be even, meaning e and f must have opposite parity.\n\n15. This leads to a contradiction, as we assumed that the square root of 2 is rational and now find that it can't be written as a simple product of two integers.\n\n16. Since we've reached a contradiction, our initial assumption that the square root of 2 is rational must be false. Therefore, the square root of 2 is irrational.\n\nIn summary, we started with the assumption that the square root of 2 is rational, derived a series of logical steps, and found a contradiction, which proves that the square root of 2 is irrational.",
+  "response_length": 2009,
+  "elapsed_seconds": 54.61,
+  "tokens": {
+    "prompt_tokens": 79,
+    "completion_tokens": 671,
+    "total_duration_ms": 54592.708
+  },
+  "timestamp": "2026-03-05T23:53:47.726911",
+  "score": 2,
+  "score_reason": "The response correctly concludes that sqrt(2) is irrational using proof by contradiction, but it contains unnecessary steps and minor gaps in logic.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:34:39.586877"
+}

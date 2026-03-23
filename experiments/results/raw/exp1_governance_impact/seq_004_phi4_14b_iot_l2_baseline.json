@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_phi4_14b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: Chain-of-thought (CoT) because the task requires sequential logical steps to determine when and where two trains meet.\n\nPURPOSE CHECK: I will follow a single, linear chain of reasoning to reach a definitive answer regarding the time and place where the two trains meet.\n\nANTI-PURPOSE CHECK: I will avoid branching into alternative approaches or exploring multiple possibilities before completing the primary logical sequence.\n\n---\n\n**Reasoning Using Chain-of-Thought Approach:**\n\n1. **Determine the Head Start of Train A:**\n   - Train A departs Station A at 09:00 traveling at 80 km/h.\n   - By 09:30, when Train B starts from Station B, Train A has been traveling for 0.5 hours (30 minutes).\n   - Distance covered by Train A in 0.5 hours = Speed \u00d7 Time = 80 km/h \u00d7 0.5 h = 40 km.\n\n2. **Calculate Remaining Distance Between Trains at 09:30:**\n   - Initial distance between Station A and Station B is 320 km.\n   - By 09:30, Train A has covered 40 km towards Station B.\n   - Remaining distance between the two trains at 09:30 = 320 km - 40 km = 280 km.\n\n3. **Determine Relative Speed of Trains:**\n   - Train A continues to travel at 80 km/h.\n   - Train B travels towards Station A at 120 km/h.\n   - Combined speed (relative speed) when moving towards each other = 80 km/h + 120 km/h = 200 km/h.\n\n4. **Calculate Time Taken for Trains to Meet:**\n   - Use the formula: Time = Distance / Relative Speed.\n   - Time taken to cover the remaining distance of 280 km at a relative speed of 200 km/h = 280 km / 200 km/h = 1.4 hours.\n\n5. **Determine Meeting Time:**\n   - Train B starts at 09:30, and it takes 1.4 hours for the trains to meet.\n   - Convert 0.4 hours to minutes: 0.4 \u00d7 60 = 24 minutes.\n   - Therefore, they meet at 09:30 + 1 hour 24 minutes = 10:54.\n\n6. **Calculate Distance from Station A Where They Meet:**\n   - Train A travels for an additional 1.4 hours after 09:30.\n   - Total travel time for Train A from 09:00 to meeting time (10:54) = 1.9 hours (since it started at 09:00).\n   - Distance covered by Train A = Speed \u00d7 Time = 80 km/h \u00d7 1.9 h = 152 km.\n\nANSWER: The trains meet at 10:54, and they are 152 km from Station A.\n\nSUCCESS SIGNAL MET: YES, because the answer was derived through a step-by-step logical process leading to a verifiable conclusion about the meeting time and location of the trains.\n\nANTI-PURPOSE VIOLATED: NO, as I adhered strictly to one logical sequence without exploring alternative approaches before completing it.\n\nCONFIDENCE: HIGH, given that each step follows logically from the previous ones, with calculations based on standard mathematical principles.",
+  "response_length": 2610,
+  "elapsed_seconds": 125.2,
+  "tokens": {
+    "prompt_tokens": 329,
+    "completion_tokens": 686,
+    "total_duration_ms": 125137.745916
+  },
+  "timestamp": "2026-03-17T14:08:39.096031",
+  "score": 3,
+  "score_reason": "The response correctly calculates the meeting time and distance from Station A using clear and logical steps that align with the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:16:09.691789"
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "optimal_topology": "tot",
+  "forced_topology": "cot",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "To determine the best sorting algorithm for a nearly-sorted array of 10,000 integers with 5% disorder, we compare insertion sort, merge sort, and quicksort based on their performance characteristics and the specific scenario.\n\n### 1. Insertion Sort\n- **Mechanism**: Builds the sorted array incrementally by inserting each element into its correct position.\n- **Time Complexity**: \n  - Best case: O(n) (already sorted)\n  -",
+  "response_length": 421,
+  "elapsed_seconds": 88.52,
+  "timestamp": "2026-03-06T17:13:57.895522",
+  "score": 1,
+  "score_reason": "The model identifies insertion sort as optimal for nearly-sorted data but fails to fully explain why it outperforms merge and quicksort in this scenario.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T21:33:43.171304"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_z-ai_glm-5-turbo_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "ANSWER: The trains meet at 10:54, 152 km from Station A.\nREASONING: Let t be hours after 09:00. Train A travels 80t km. Train B starts at 09:30, so travels 120(t-0.5) km from B, thus its distance from A is 320 - 120(t-0.5). Setting equal: 80t = 320 - 120(t-0.5) \u2192 80t = 380 - 120t \u2192 200t = 380 \u2192 t = 1.9 hours = 1h54m \u2192 meeting time 10:54. Distance from A = 80 \u00d7 1.9 = 152 km.\nCONFIDENCE: HIGH",
+  "response_length": 393,
+  "elapsed_seconds": 7.22,
+  "tokens": {
+    "prompt_tokens": 99,
+    "completion_tokens": 684,
+    "total_duration_ms": 7222.81
+  },
+  "timestamp": "2026-03-17T13:59:39.674392",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The model's answer is correct and includes clear reasoning that matches the ground truth for both time (10:54) and distance (152 km).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:22:26.788538"
+}

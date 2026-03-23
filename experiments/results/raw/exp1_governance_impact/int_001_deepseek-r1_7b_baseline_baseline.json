@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "The symptoms presented by the 42-year-old patient\u2014chronic fatigue, joint pain, and a butterfly-shaped rash\u2014can be analyzed for a potential common underlying condition. Here's the structured conclusion:\n\n1. **Chronic Fatigue**: This symptom can arise from various conditions, including chronic fatigue syndrome, anemia, or systemic inflammatory diseases.\n\n2. **Joint Pain**: This could be due to conditions like rheumatoid arthritis, osteoarthritis, or gout, among others.\n\n3. **Butterfly-Shaped Rash**: This is often associated with systemic inflammatory conditions.\n\n**Potential Underlying Condition: Sarcoidosis**\n\nSarcoidosis is a chronic inflammatory disorder that",
+  "response_length": 668,
+  "elapsed_seconds": 88.02,
+  "tokens": {
+    "prompt_tokens": 63,
+    "completion_tokens": 1024,
+    "total_duration_ms": 87998.614375
+  },
+  "timestamp": "2026-03-06T07:45:46.519916",
+  "score": 1,
+  "score_reason": "The model identifies symptoms and suggests sarcoidosis but fails to connect them through autoimmune inflammation as required for SLE.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T14:42:17.437077"
+}

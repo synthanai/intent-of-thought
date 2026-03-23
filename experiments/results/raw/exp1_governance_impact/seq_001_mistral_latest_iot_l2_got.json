@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_mistral_latest_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "Approach chosen: Chain-of-thought (step by step)\n\nExplanation: The task involves a single logical chain of reasoning to reach a definitive conclusion, making the chain-of-thought approach appropriate.\n\nNow, let's prove that the square root of 2 is irrational:\n\n1. Assume, for the sake of contradiction, that \u221a2 is rational. This means it can be expressed as a fraction in the form of a/b, where a and b are integers that have no common factors other than 1 (i.e., a and b are coprime), and b is not equal to zero.\n\n2. Since \u221a2 is rational, squaring both sides gives (\u221a2)\u00b2 = (a/b)\u00b2 = a\u00b2/b\u00b2. Simplifying, we get 2 = a\u00b2/b\u00b2.\n\n3. Rearrange the equation to isolate a\u00b2: a\u00b2 = 2b\u00b2. This equation shows that a\u00b2 is an even number because it is twice some number (b\u00b2). However, since a and b have no common factors other than 1, a must be an even number.\n\n4. If a is even, then it can be written as 2k, where k is an integer. Substitute this expression into the equation from step 3: (2k)\u00b2 = 2b\u00b2. Simplifying, we get 4k\u00b2 = 2b\u00b2 and b\u00b2 = 2k\u00b2. This shows that b\u00b2 is also even, which means that b is also even.\n\n5. Since both a and b are even, they share a common factor of 2. However, we assumed that a and b have no common factors other than 1, which leads to a contradiction.\n\n6. Therefore, our initial assumption that \u221a2 is rational must be false. Consequently, the square root of 2 is irrational.",
+  "response_length": 1385,
+  "elapsed_seconds": 36.5,
+  "tokens": {
+    "prompt_tokens": 198,
+    "completion_tokens": 419,
+    "total_duration_ms": 36489.813792
+  },
+  "timestamp": "2026-03-06T00:35:55.938581",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction with all necessary steps clearly explained.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:52:39.185888"
+}

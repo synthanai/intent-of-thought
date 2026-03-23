@@ -1,0 +1,18 @@
+{
+  "run_id": "par_006_z-ai_glm-5-turbo_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_006",
+  "task_category": "parallel",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "PostgreSQL: strong consistency, proven at this scale, read replicas for read throughput, but write bottleneck on single primary. MongoDB: flexible schema, native sharding, but eventual consistency requires application-level handling. CockroachDB: distributed SQL with strong consistency, automatic sharding, but higher latency per query and more expensive. For 50K orders/day, PostgreSQL with read replicas is likely sufficient and lowest risk.",
+  "scoring_rubric": "Score 3 if: accurate multi-dimensional comparison with scale-appropriate recommendation. Score 2 if: correct comparison but weak justification. Score 1 if: only 1-2 approaches covered. Score 0 if: no structured comparison or factually wrong.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.1,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:16:59.827171",
+  "backend": "openrouter"
+}

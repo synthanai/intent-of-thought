@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_phi4_14b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, the most appropriate reasoning approach is the graph-of-thought. This is because the task involves analyzing interconnected factors (chronic fatigue, joint pain, and a butterfly-shaped facial rash) to determine if they share a common underlying condition and to map out the relationships and interactions between them. This approach aligns well with the governance specification, which emphasizes identifying relationships and interactions between multiple factors.\n\n### Graph-of-Thought Analysis:\n\n1. **Symptom Overview:**\n   - **Chronic Fatigue:** Persistent tiredness not relieved by rest, can be caused by various conditions.\n   - **Joint Pain:** Discomfort or pain in joints, which can result from inflammatory, autoimmune, or degenerative processes.\n   - **Butterfly-Shaped Facial Rash:** A distinctive rash that appears across the cheeks and nose, often associated with specific autoimmune conditions.\n\n2. **Potential Common Underlying Condition:**\n   - The combination of these symptoms strongly suggests **Systemic Lupus Erythematosus (SLE)**, an autoimmune disease. SLE can manifest with all three symptoms:\n     - **Chronic Fatigue:** Common in SLE due to systemic inflammation and immune system dysregulation.\n     - **Joint Pain:** Arthritis is a frequent symptom of SLE, resulting from inflammation in the joints.\n     - **Butterfly-Shaped Facial Rash:** Known as a malar rash, it is a classic sign of SLE.\n\n3. **Interconnections and Systemic Effects:**\n   - **Immune System Dysfunction:** In SLE, the immune system mistakenly attacks healthy tissue, leading to systemic inflammation that affects multiple organs and systems, causing fatigue and joint pain.\n   - **Feedback Loops:**\n     - **Inflammation and Fatigue:** Chronic inflammation can lead to increased fatigue, and fatigue can exacerbate the perception of pain.\n     - **Rash and Immune Response:** The presence of the rash can indicate active disease and immune response, which may correlate with periods of increased joint pain and fatigue.\n   - **Systemic Effects:**\n     - **Organ Involvement:** SLE can affect the kidneys, heart, lungs, and brain, contributing to the overall symptom burden and complexity.\n     - **Flare-Ups:** Symptoms can worsen during flare-ups, where the immune system is more active, leading to increased fatigue, joint pain, and rash visibility.\n\n4. **Conclusion:**\n   - The interconnected nature of these symptoms, along with their association with SLE, suggests a common underlying condition. The systemic effects and feedback loops highlight the importance of considering these symptoms as part of a complex, interacting system rather than as independent occurrences.\n\nThis graph-of-thought approach effectively maps out the relationships and systemic interactions between the symptoms, aligning with the governance specification's success signal.",
+  "response_length": 2869,
+  "elapsed_seconds": 96.5,
+  "tokens": {
+    "prompt_tokens": 215,
+    "completion_tokens": 572,
+    "total_duration_ms": 96409.494125
+  },
+  "timestamp": "2026-03-06T08:22:04.150258",
+  "score": 0,
+  "score_reason": "The response correctly identifies SLE as the unifying condition and explains how symptoms are linked through autoimmune inflammation but lacks explicit warning against treating symptoms independently.",
+  "score_consistent": false,
+  "scored_at": "2026-03-16T21:33:15.260974"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_phi4_14b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "To prove that the square root of 2 is irrational, we will use a proof by contradiction. The strategy is to assume the opposite of what we want to prove, derive a contradiction, and thereby conclude that the original assumption must be false. Here's the step-by-step reasoning:\n\n1. **State the assumption**: Assume that \\(\\sqrt{2}\\) is rational.\n   - **Reason**: We are starting with the opposite of what we want to prove (i.e., \\(\\sqrt{2}\\) is irrational).\n   - **Result**: If \\(\\sqrt{2}\\) is rational, it can be expressed as a fraction \\(\\frac{a}{b}\\), where \\(a\\) and \\(b\\) are integers with no common factors other than 1 (i.e., the fraction is in its simplest form), and \\(b \\neq 0\\).\n\n2. **Express the assumption mathematically**: \\(\\sqrt{2} = \\frac{a}{b}\\).\n   - **Reason**: This is the definition of a rational number.\n   - **Result**: Squaring both sides gives \\(2 = \\frac{a^2}{b^2}\\).\n\n3. **Manipulate the equation**: Multiply both sides by \\(b^2\\) to clear the fraction.\n   - **Reason**: This step helps to eliminate the denominator, making it easier to work with integers.\n   - **Result**: \\(2b^2 = a^2\\).\n\n4. **Analyze the equation**: Conclude that \\(a^2\\) is even.\n   - **Reason**: Since \\(2b^2\\) is clearly even (as it is 2 times an integer), \\(a^2\\) must also be even (because an odd number squared is odd).\n   - **Result**: If \\(a^2\\) is even, then \\(a\\) must be even (since the square of an odd number is odd).\n\n5. **Express \\(a\\) as an even number**: Let \\(a = 2k\\) for some integer \\(k\\).\n   - **Reason**: This follows from the conclusion that \\(a\\) is even.\n   - **Result**: Substitute \\(a = 2k\\) into the equation \\(2b^2 = a^2\\).\n\n6. **Substitute and simplify**: Replace \\(a\\) in the equation \\(2b^2 = a^2\\) with \\(2k\\).\n   - **Reason**: This substitution allows us to further analyze the relationship between \\(a\\) and \\(b\\).\n   - **Result**: \\(2b^2 = (2k)^2 = 4k^2\\).\n\n7. **Simplify the equation**: Divide both sides by 2.\n   - **Reason**: This simplifies the equation to make it easier to analyze.\n   - **Result**: \\(b^2 = 2k^2\\).\n\n8. **Analyze the new equation**: Conclude that \\(b^2\\) is even.\n   - **Reason**: Since \\(b^2 = 2k^2\\), and \\(2k^2\\) is clearly even, \\(b^2\\) must also be even.\n   - **Result**: If \\(b^2\\) is even, then \\(b\\) must be even.\n\n9. **Reach a contradiction**: Conclude that both \\(a\\) and \\(b\\) are even.\n   - **Reason**: From steps 4 and 8, we have shown that both \\(a\\) and \\(b\\) must be even.\n   - **Result**: This contradicts the assumption that \\(\\frac{a}{b}\\) is in its simplest form, as both \\(a\\) and \\(b\\) having a common factor of 2 means the fraction was not in simplest form.\n\n10. **Conclude the proof**: Since assuming \\(\\sqrt{2}\\) is rational leads to a contradiction, \\(\\sqrt{2}\\) must be irrational.\n    - **Reason**: The contradiction implies that the initial assumption is false.\n    - **Result**: Therefore, \\(\\sqrt{2}\\) is irrational.\n\nThis completes the proof that the square root of 2 is irrational.",
+  "response_length": 2970,
+  "elapsed_seconds": 150.9,
+  "tokens": {
+    "prompt_tokens": 76,
+    "completion_tokens": 858,
+    "total_duration_ms": 150848.054042
+  },
+  "timestamp": "2026-03-06T00:11:21.220028",
+  "score": 3,
+  "score_reason": "Extracted from: ```json\n{\n  \"score\": 3,\n  \"reason\": \"The response provides a valid proof by contradiction for the ir",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T10:28:55.713347"
+}

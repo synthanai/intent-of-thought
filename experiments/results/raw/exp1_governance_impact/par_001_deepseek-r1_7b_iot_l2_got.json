@@ -1,0 +1,25 @@
+{
+  "run_id": "par_001_deepseek-r1_7b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket monolith, event-driven microservices, serverless with pub/sub). Must compare on: scalability, development speed, cost. MVP recommendation should favour simplicity.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures, clear trade-off comparison, justified MVP recommendation. Score 2 if: 3 architectures but weak comparison. Score 1 if: fewer than 3 or no comparison. Score 0 if: single architecture or irrelevant.",
+  "response": "The best architecture for the MVP is the Echo architecture. Here's the evaluation:\n\n1. **Echo Architecture**:\n   - **Core Components**: Client applications, server, middleware (WebSocket or messaging library).\n   - **Communication Protocol**: HTTP with WebSocket or a library like Kafka/RabbitMQ.\n   - **Trade-offs**: Simple and easy to implement, low overhead. However, scalability is limited as each client connects individually.\n\n2. **Publish-Subscribe Model**:\n   - **Core Components**: Server, clients, publication/subscription mechanism.\n   - **Communication Protocol**: MQTT or message broker.\n   - **Trade-offs**: Scalable but requires more server management, higher overhead.\n\n3. **Event-Driven Architecture**:\n   - **Core Components**: Event loop, event sourcing, clients.\n   - **Communication Protocol**: Event sourcing with database/message queue.\n   - **Trade-offs**: Efficient event handling, higher complexity.\n\n**Conclusion**: For two developers building an MVP, the Echo architecture is the most suitable due to its simplicity and ease of implementation, despite its scalability limitations.",
+  "response_length": 1108,
+  "elapsed_seconds": 57.6,
+  "tokens": {
+    "prompt_tokens": 196,
+    "completion_tokens": 684,
+    "total_duration_ms": 57584.730375
+  },
+  "timestamp": "2026-03-06T04:27:04.932270",
+  "score": 2,
+  "score_reason": "The response includes three distinct architectures and compares them on trade-offs but lacks detailed comparison on scalability, development speed, and cost.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T01:33:09.334204"
+}

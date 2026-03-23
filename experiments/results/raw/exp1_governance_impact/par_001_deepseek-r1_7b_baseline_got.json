@@ -1,0 +1,21 @@
+{
+  "run_id": "par_001_deepseek-r1_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket monolith, event-driven microservices, serverless with pub/sub). Must compare on: scalability, development speed, cost. MVP recommendation should favour simplicity.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures, clear trade-off comparison, justified MVP recommendation. Score 2 if: 3 architectures but weak comparison. Score 1 if: fewer than 3 or no comparison. Score 0 if: single architecture or irrelevant.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 89.91,
+  "tokens": {
+    "prompt_tokens": 175,
+    "completion_tokens": 1024,
+    "total_duration_ms": 89889.014416
+  },
+  "timestamp": "2026-03-06T04:26:07.331729"
+}

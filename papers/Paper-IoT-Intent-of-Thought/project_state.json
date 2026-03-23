@@ -1,0 +1,89 @@
+{
+    "paper": "Paper-IoT-Intent-of-Thought",
+    "title": "Intent of Thought: Intent-Governed Topology Selection in LLM Reasoning",
+    "topic": "Intent of Thought",
+    "slug": "IoT",
+    "venue": "Arxiv (CS.AI + CL cross-list)",
+    "created": "2026-03-02",
+    "last_updated": "2026-03-02",
+    "stealth_mode": true,
+    "author": {
+        "name": "Naveen Riaz Mohamed Kani",
+        "orcid": "0009-0003-9173-2425",
+        "orcid_url": "https://orcid.org/0009-0003-9173-2425"
+    },
+    "phases": {
+        "0_capture": "complete",
+        "1_research": "not_started",
+        "2_scaffold": "partial",
+        "3_write": "not_started",
+        "4_audit": "not_started",
+        "5_submit": "not_started"
+    },
+    "capture": {
+        "steal_status": "complete",
+        "external_reports": [
+            "perplexity-1-xot-survey.md",
+            "perplexity-2-xot-survey-expanded.md",
+            "perplexity-3-intent-prior-art.md",
+            "perplexity-4-reasoning-benchmarks.md",
+            "chatgpt-deep-research-report-1.md",
+            "chatgpt-deep-research-report-2.md"
+        ],
+        "spar_verdicts": {
+            "naming": "Intent (not Intention), 92% confidence",
+            "go_no_go": "WRITE with pivoted thesis, 88% confidence"
+        },
+        "research_md": "2-research/concepts/intention-of-thought/research.md",
+        "signals_md": "2-research/concepts/intention-of-thought/signals.md",
+        "emergence_score": "10/25 (External)"
+    },
+    "thesis": {
+        "original": "Intent is missing in X-of-Thought frameworks (FALSIFIED by SWI/ICoT/ARR)",
+        "pivoted": "Intent has been applied at step-level (SWI), domain-level (ICoT), and retrieval-stage (ARR), but never formalised as a topology-governance layer that selects and governs which reasoning structure to deploy."
+    },
+    "scaffold": {
+        "nool": "complete_v0.2",
+        "outline": "complete"
+    },
+    "sections": {
+        "1_introduction": {
+            "brief": "complete",
+            "draft": "not_started",
+            "audit": "not_started"
+        },
+        "2_background": {
+            "brief": "complete",
+            "draft": "not_started",
+            "audit": "not_started"
+        },
+        "3_framework": {
+            "brief": "complete",
+            "draft": "not_started",
+            "audit": "not_started"
+        },
+        "4_evaluation": {
+            "brief": "complete",
+            "draft": "not_started",
+            "audit": "not_started"
+        },
+        "5_discussion": {
+            "brief": "complete",
+            "draft": "not_started",
+            "audit": "not_started"
+        },
+        "6_conclusion": {
+            "brief": "complete",
+            "draft": "not_started",
+            "audit": "not_started"
+        }
+    },
+    "prior_art_threats": [
+        "SWI (Yin et al. 2025): step-level intent",
+        "ICoT (Zhang et al. 2024): intention abstraction for code",
+        "ARR (Qi et al. 2024): retrieval-stage intent analysis",
+        "BDI (Cohen & Levesque 1990): agent-action intention",
+        "Iteration of Thought (Radha et al. 2024): abbreviation collision"
+    ],
+    "notes": "SYNTHAI is in stealth mode: paper must use neutral framing, no SYNTHAI branding. NOOL v0.1 needs rewrite with pivoted thesis."
+}

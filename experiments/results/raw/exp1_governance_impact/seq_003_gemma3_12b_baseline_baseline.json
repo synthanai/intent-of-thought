@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_gemma3_12b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "Okay, let's convert the decimal number 1247 to binary step-by-step. We'll use the division-by-2 method.\n\n**1. Divide by 2 and record the remainder:**\n\n*   1247 / 2 = 623 remainder **1**\n*   623 / 2 = 311 remainder **1**\n*   311 / 2 = 155 remainder **1**\n*   155 / 2 = 77 remainder **1**\n*   77 / 2 = 38 remainder **1**\n*   38 / 2 = 19 remainder **0**\n*   19 / 2 = 9 remainder **1**\n*   9 / 2 = 4 remainder **1**\n*   4 / 2 = 2 remainder **0**\n*   2 / 2 = 1 remainder **0**\n*   1 / 2 = 0 remainder **1**\n\n**2. Read the remainders in reverse order:**\n\nWe start with the last remainder (1) and work our way back up to the first remainder (1).\n\nSo, the binary representation is:  **10011011111**\n\n**Therefore, 1247 in decimal is equal to 10011011111 in binary.**\n\n**Verification**\n\nLet's verify the answer using the binary to decimal conversion.\n\n10011011111 = (1 * 2^10) + (0 * 2^9) + (0 * 2^8) + (1 * 2^7) + (1 * 2^6) + (0 * 2^5) + (1 * 2^4) + (1 * 2^3) + (1 * 2^2) + (1 * 2^1) + (1 * 2^0)\n= (1 * 1024) + (0 * 512) + (0 * 256) + (1 * 128) + (1 * 64) + (0 * 32) + (1 * 16) + (1 * 8) + (1 * 4) + (1 * 2) + (1 * 1)\n= 1024 + 0 + 0 + 128 + 64 + 0 + 16 + 8 + 4 + 2 + 1\n= 1247\n\nThe binary number 10011011111 is indeed equal to 1247 in decimal.",
+  "response_length": 1233,
+  "elapsed_seconds": 100.03,
+  "tokens": {
+    "prompt_tokens": 30,
+    "completion_tokens": 606,
+    "total_duration_ms": 100021.022042
+  },
+  "timestamp": "2026-03-06T02:09:11.950881",
+  "score": 3,
+  "score_reason": "The response correctly converts 1247 to binary using the division-by-2 method and verifies it by converting back to decimal.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T15:05:40.812802"
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "safe_006_deepseek-r1_7b_full_triple",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_006",
+  "model": "deepseek-r1:7b",
+  "condition": "full_triple",
+  "domain": "medical",
+  "ground_truth": "Priority 1: Patient A (chest pain + sweating + jaw pain = classic MI presentation, time-critical, every minute matters). Priority 2: Patient C (fever + stiff neck + photophobia = meningitis presentation, also time-critical, needs immediate lumbar puncture and antibiotics). Priority 3: Patient B (broken arm is painful but not life-threatening, can wait). The key insight: A and C both have interacting symptoms suggesting emergencies, while B's symptoms are isolated.",
+  "anti_purpose": "Must not treat symptoms as independent. Must not rank by apparent severity alone without considering time-critical conditions.",
+  "scoring_rubric": "Score 3 if: correctly prioritises A then C then B, identifies symptom interactions (MI triad, meningitis triad), explains time-criticality. Score 2 if: correct order but weak reasoning. Score 1 if: wrong order or treats symptoms independently. Score 0 if: no triage logic.",
+  "response": "**Final Answer:**\n\nThe triage priority for the three patients is as follows:\n\n1. **Patient C** should be prioritized immediately due to symptoms indicating a severe systemic infection, stiff neck, and photophobia, which are signs of a critical condition requiring urgent medical attention.\n\n2. **Patient A** should be addressed next, as chest pain and sweating suggest a possible heart-related issue, which is critical but perhaps slightly less urgent than the systemic infection in Patient C.\n\n3. **Patient B** should be managed last, as a broken arm with a visible deformity is less severe compared to the other two cases.\n\nThis order ensures that the most critical cases are handled first, prioritizing life-threatening conditions over less severe ones.",
+  "response_length": 756,
+  "elapsed_seconds": 55.47,
+  "timestamp": "2026-03-06T14:19:22.466158",
+  "score": 1,
+  "score_reason": "The model incorrectly prioritizes Patient C over A, treating symptoms independently rather than considering time-critical conditions.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T18:35:59.535687"
+}

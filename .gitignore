@@ -1,0 +1,8 @@
+__pycache__/
+*.aux
+*.blg
+*.log
+*.out
+*.bbl
+.env
+.DS_Store

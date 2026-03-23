@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_mistral_latest_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "1. Define the given problem and the task at hand:\n   - We have a nearly-sorted array of 10,000 integers where only 5% of elements are out of place.\n   - Our goal is to compare three sorting algorithms (Insertion Sort, Merge Sort, QuickSort) and analyze their time complexity for this specific case, as well as recommend the best choice.\n\n2. Describe Insertion Sort and its time complexity:\n   - Insertion Sort is a simple sorting algorithm that builds a sorted array one item at a time.\n   - In the best case (already sorted array), its time complexity is O(n), while in the worst case (reverse-sorted array), it is O(n^2).\n   - For a nearly-sorted array, the time complexity is O(n^2) but with a small constant factor because the array is nearly sorted.\n\n3. Describe Merge Sort and its time complexity:\n   - Merge Sort is a divide-and-conquer algorithm that recursively divides the input array into two halves, sorts each half, and then merges the sorted halves.\n   - Its time complexity is O(n log n) in all cases, making it more efficient than Insertion Sort for large arrays.\n\n4. Describe QuickSort and its time complexity:\n   - Quicksort is another divide-and-conquer algorithm that selects a pivot element and partitions the array around this pivot.\n   - In the best case (when the pivot is always a perfect median), its time complexity is O(n log n). In the average case, its time complexity is also O(n log n).\n   - In the worst case (when the array is already sorted or reversed sorted), its time complexity is O(n^2).\n\n5. Analyze time complexity for this specific case (nearly-sorted array):\n   - For a nearly-sorted array, QuickSort will perform well because the pivot will likely be a good choice, leading to an average-case time complexity of O(n log n).\n   - Merge Sort will also perform well with O(n log n) time complexity, but it requires more memory for temporary arrays during the merge process.\n   - Insertion Sort has the worst performance in this case with O(n^2) time complexity due to the large number of swaps needed to place out-of-place elements.\n\n6. Recommend the best choice:\n   - Considering the given scenario, QuickSort would be the best choice due to its average-case time complexity of O(n log n) and the fact that it can handle nearly-sorted arrays efficiently. However, be aware that QuickSort may require more memory compared to Merge Sort.",
+  "response_length": 2377,
+  "elapsed_seconds": 53.48,
+  "tokens": {
+    "prompt_tokens": 129,
+    "completion_tokens": 609,
+    "total_duration_ms": 53476.30325
+  },
+  "timestamp": "2026-03-06T05:05:21.978183",
+  "score": 1,
+  "score_reason": "The model incorrectly recommends QuickSort over Insertion Sort for nearly-sorted data; it fails to explain why Insertion Sort is optimal in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:02:22.579454"
+}

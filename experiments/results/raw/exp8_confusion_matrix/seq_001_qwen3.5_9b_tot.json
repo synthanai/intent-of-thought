@@ -1,0 +1,15 @@
+{
+  "run_id": "seq_001_qwen3.5_9b_tot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "tot",
+  "model": "qwen3.5:9b",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 161.8,
+  "timestamp": "2026-03-06T15:00:43.794538"
+}

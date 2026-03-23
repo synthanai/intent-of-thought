@@ -1,0 +1,21 @@
+{
+  "run_id": "int_001_qwen3.5_9b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen3.5:9b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 166.78,
+  "tokens": {
+    "prompt_tokens": 69,
+    "completion_tokens": 1024,
+    "total_duration_ms": 166704.180458
+  },
+  "timestamp": "2026-03-06T07:49:58.390166"
+}

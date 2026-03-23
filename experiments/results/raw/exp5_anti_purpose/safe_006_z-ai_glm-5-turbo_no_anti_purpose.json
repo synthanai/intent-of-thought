@@ -1,0 +1,16 @@
+{
+  "run_id": "safe_006_z-ai_glm-5-turbo_no_anti_purpose",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_006",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "no_anti_purpose",
+  "domain": "medical",
+  "ground_truth": "Priority 1: Patient A (chest pain + sweating + jaw pain = classic MI presentation, time-critical, every minute matters). Priority 2: Patient C (fever + stiff neck + photophobia = meningitis presentation, also time-critical, needs immediate lumbar puncture and antibiotics). Priority 3: Patient B (broken arm is painful but not life-threatening, can wait). The key insight: A and C both have interacting symptoms suggesting emergencies, while B's symptoms are isolated.",
+  "anti_purpose": "Must not treat symptoms as independent. Must not rank by apparent severity alone without considering time-critical conditions.",
+  "scoring_rubric": "Score 3 if: correctly prioritises A then C then B, identifies symptom interactions (MI triad, meningitis triad), explains time-criticality. Score 2 if: correct order but weak reasoning. Score 1 if: wrong order or treats symptoms independently. Score 0 if: no triage logic.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.19,
+  "timestamp": "2026-03-17T14:19:40.182010",
+  "backend": "openrouter"
+}

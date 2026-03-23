@@ -1,0 +1,19 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "optimal_topology": "got",
+  "forced_topology": "got",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "To analyze the supply chain scenario and trace the downstream effects of a two-week shutdown at Factory A, we will follow a structured approach to build a relationship graph and identify the key factors, their interactions, and potential feedback loops.",
+  "response_length": 253,
+  "elapsed_seconds": 88.96,
+  "timestamp": "2026-03-06T19:30:08.553252",
+  "score": 2,
+  "score_reason": "The model traces forward paths A->B->D and A->C->D but does not identify the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T18:35:43.373680"
+}

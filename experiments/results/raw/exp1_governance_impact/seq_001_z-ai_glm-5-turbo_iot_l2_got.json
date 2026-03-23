@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_001_z-ai_glm-5-turbo_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "1.  **Analyze the Request:**\n    *   **Governance Specification:**\n        *   PURPOSE: Follow a single logical chain of reasoning to reach a definitive answer.\n        *   ANTI-PURPOSE: Must not branch into alternative approaches before completing the primary chain.\n        *   SUCCESS SIGNAL: A step-by-step derivation reaching a verifiable conclusion.\n    *   **Task:** Prove that the square root of 2 is irrational.\n    *   **Required Format:**\n        *   SELECTED APPROACH: [CoT/ToT/GoT] because [reason]\n        *   PURPOSE CHECK: [restate the purpose in your own words]\n        *   ANTI-PURPOSE CHECK: [state what you will avoid]\n        *   [Your full reasoning using the selected approach]\n        *   ANSWER: [your final answer]\n        *   SUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\n        *   ANTI-PURPOSE VIOLATED: [YES/NO]\n        *   CONFIDENCE: [HIGH/MEDIUM/LOW]\n\n2.  **Select Approach:**\n    *   The task requires sequential logical steps (proof by contradiction).\n    *   Therefore, Chain-of-Thought (CoT) is the correct choice.\n\n3.  **Draft the Sections:**\n    *   *SELECTED APPROACH:* CoT because the proof requires a strict sequence of logical deductions (proof by contradiction) without needing to explore multiple alternative proofs or map complex interconnected factors.\n    *   *PURPOSE CHECK:* I must construct a single, unbroken chain of logical deductions starting from an initial assumption and ending with a definitive, verifiable conclusion.\n    *   *ANTI-PURPOSE CHECK:* I will avoid presenting alternative proof methods (like using unique prime factorization or infinite descent) or branching off into \"what if\" scenarios before finishing the primary proof.\n\n4.  **Draft the Reasoning (CoT):**\n    *   Step 1: Assume the opposite of what we want to prove, i.e., assume $\\sqrt{2}$ is rational.\n    *   Step 2: By definition of rational numbers, $\\sqrt{2}$ can be expressed as a fraction $\\frac{a}{b}$ where $a$ and $b$ are integers with no common factors (the fraction is in simplest form), and $b \\neq 0$.\n    *   Step 3: Square both sides of the equation $\\sqrt{2} = \\frac{a}{b}$ to get $2 = \\frac{a^2}{b^2}$.\n    *   Step 4: Multiply both sides by $b^2$ to get $2b^2 = a^2$.\n    *   Step 5: Analyze the equation $2b^2 = a^2$. Since $a^2$ is equal to 2 times an integer ($b^2$), $a^2$ must be an even number.\n    *   Step 6: If the square of an integer ($a^2$) is even, the integer itself ($a$) must also be even. (Because the square of an odd integer is always odd).\n    *   Step 7: Since $a$ is even, it can be written as $2k$ for some integer $k$.\n    *   Step 8: Substitute $2k$ for $a$ in the equation from Step 4: $2b^2 = (2k)^2$.\n    *   Step 9: Simplify the right side: $2b^2 = 4k^2$.\n    *   Step 10: Divide both sides by 2: $b^2 = 2k^2$.\n    *   Step 11: Analyze the equation $b^2 = 2k^2$. Since $b^2$ is equal to 2 times an integer ($k^2$), $b^2$ must be an even number.\n    *   Step 12: By the same logic as Step 6, if $b^2$ is even, then $b$ must also be even.\n    *   Step 13: We have established that both $a$ and $b$ are even. This means they are both divisible by 2.\n    *   Step 14: This directly contradicts the initial condition in Step 2 that $a$ and $b$ have no common factors.\n    *   Step 15: Since the assumption leads to a contradiction, the assumption must be false. Therefore, $\\sqrt{2}$ is irrational.\n\n5.  **Draft the Final Sections:**\n    *   *ANSWER:* The square root of 2 is irrational.\n    *   *SUCCESS SIGNAL MET:* YES, the output provides a step-by-step derivation (Steps 1-15) that",
+  "response_length": 3595,
+  "elapsed_seconds": 8.84,
+  "tokens": {
+    "prompt_tokens": 278,
+    "completion_tokens": 1024,
+    "total_duration_ms": 8844.0
+  },
+  "timestamp": "2026-03-17T13:50:51.300285",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "Extracted from: ```json\n{\n  \"score\": 3,\n  \"reason\": \"The response provides a complete and correct proof by contradic",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T12:16:52.244525"
+}

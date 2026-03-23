@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_gemma3_12b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "I will use a **chain-of-thought** approach. This task requires a precise, sequential logical argument to prove a mathematical statement. A chain-of-thought allows me to lay out each step of the proof clearly and demonstrably.\n\nHere's the proof by contradiction:\n\n**1. Assumption (for contradiction):** Assume, for the sake of contradiction, that \u221a2 is rational.\n\n**2. Definition of Rational Number:** If \u221a2 is rational, then it can be expressed as a fraction p/q, where p and q are integers, and q \u2260 0. Furthermore, we can assume that p/q is in its simplest form, meaning that p and q have no common factors other than 1 (i.e., the fraction is reduced).  So, \u221a2 = p/q.\n\n**3. Squaring both sides:** Squaring both sides of the equation \u221a2 = p/q, we get: 2 = p\u00b2/q\u00b2.\n\n**4. Rearranging the equation:** Multiplying both sides by q\u00b2, we get: 2q\u00b2 = p\u00b2.\n\n**5. Deduction about p\u00b2:**  Since 2q\u00b2 = p\u00b2, p\u00b2 is an even number.\n\n**6. Deduction about p:** If p\u00b2 is even, then p must also be even. (This is because the square of an odd number is always odd.  If p were odd, p\u00b2 would be odd, contradicting our finding that p\u00b2 is even).\n\n**7. Expressing p as an even number:**  Since p is even, we can write p = 2k, where k is an integer.\n\n**8. Substituting p = 2k into the equation 2q\u00b2 = p\u00b2:** Substituting p = 2k into 2q\u00b2 = p\u00b2, we get: 2q\u00b2 = (2k)\u00b2.\n\n**9. Simplifying the equation:** This simplifies to: 2q\u00b2 = 4k\u00b2.\n\n**10. Dividing both sides by 2:** Dividing both sides by 2, we get: q\u00b2 = 2k\u00b2.\n\n**11. Deduction about q\u00b2:** Since q\u00b2 = 2k\u00b2, q\u00b2 is an even number.\n\n**12. Deduction about q:** If q\u00b2 is even, then q must also be even. (For the same reason as in step 6).\n\n**13. Contradiction:** We have now shown that both p and q are even. This means that p and q have a common factor of 2. This contradicts our initial assumption that p/q was in its simplest form (i.e., that p and q have no common factors other than 1).\n\n**14. Conclusion:** Because our initial assumption leads to a contradiction, the assumption must be false. Therefore, \u221a2 is irrational.",
+  "response_length": 2036,
+  "elapsed_seconds": 88.64,
+  "tokens": {
+    "prompt_tokens": 182,
+    "completion_tokens": 597,
+    "total_duration_ms": 88618.717875
+  },
+  "timestamp": "2026-03-06T00:50:17.387605",
+  "score": 3,
+  "score_reason": "The response provides a complete and correct proof by contradiction, addressing all necessary steps and reaching the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:24:27.965384"
+}

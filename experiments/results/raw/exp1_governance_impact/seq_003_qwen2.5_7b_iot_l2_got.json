@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_qwen2.5_7b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "I will use the chain-of-thought approach to solve this task, as it requires sequential logical steps to convert a decimal number to binary.\n\nStep-by-step derivation:\n\n1. **Divide the decimal number by 2 and record the remainder.**\n   - 1247 \u00f7 2 = 623 with a remainder of 1.\n   \n2. **Divide the quotient (623) by 2 and record the remainder.**\n   - 623 \u00f7 2 = 311 with a remainder of 1.\n   \n3. **Continue dividing the quotient by 2 until the quotient is 0, recording each remainder.**\n   - 311 \u00f7 2 = 155 with a remainder of 1.\n   - 155 \u00f7 2 = 77 with a remainder of 1.\n   - 77 \u00f7 2 = 38 with a remainder of 1.\n   - 38 \u00f7 2 = 19 with a remainder of 0.\n   - 19 \u00f7 2 = 9 with a remainder of 1.\n   - 9 \u00f7 2 = 4 with a remainder of 1.\n   - 4 \u00f7 2 = 2 with a remainder of 0.\n   - 2 \u00f7 2 = 1 with a remainder of 0.\n   - 1 \u00f7 2 = 0 with a remainder of 1.\n\n4. **The binary number is constructed by reading the remainders from the last division to the first.**\n   - Reading the remainders from bottom to top, the binary representation of 1247 is 10011011111.\n\nTherefore, the binary representation of the decimal number 1247 is 10011011111.",
+  "response_length": 1118,
+  "elapsed_seconds": 34.19,
+  "tokens": {
+    "prompt_tokens": 200,
+    "completion_tokens": 399,
+    "total_duration_ms": 34174.745
+  },
+  "timestamp": "2026-03-06T02:56:01.456025",
+  "score": 3,
+  "score_reason": "The model provided the correct binary representation (10011011111) and included a clear, step-by-step division process that matches the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:40:20.878036"
+}

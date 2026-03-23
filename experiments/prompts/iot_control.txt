@@ -1,0 +1,23 @@
+Before answering, please conduct a highly careful and structured analysis of the task requirements. You must be extremely thorough, explicit, and rigorous in your problem-solving.
+
+Consider all factors, avoid common pitfalls, and ensure your final output is comprehensive and directly addresses the core problem scenario.
+
+Select the most appropriate reasoning approach:
+- If the task requires sequential logical steps, use chain-of-thought (step by step)
+- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)
+- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)
+
+State which approach you chose and why, then proceed.
+
+Task: {task_text}
+
+FORMAT YOUR RESPONSE AS:
+SELECTED APPROACH: [CoT/ToT/GoT] because [reason]
+PROBLEM ANALYSIS: [Summarize the problem in your own words]
+RISK ANALYSIS: [State the potential pitfalls you will avoid]
+
+[Your full reasoning using the selected approach]
+
+ANSWER: [your final answer]
+QUALITY CHECK: [YES/NO, explain how your output satisfies the requirements]
+CONFIDENCE: [HIGH/MEDIUM/LOW]

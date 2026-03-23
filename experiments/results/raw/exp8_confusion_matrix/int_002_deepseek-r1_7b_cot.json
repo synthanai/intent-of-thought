@@ -1,0 +1,19 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_cot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "optimal_topology": "got",
+  "forced_topology": "cot",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "The shutdown at Factory A triggers a series of downstream effects across the supply chain, creating a ripple effect that impacts multiple components and stakeholders. Here's a structured summary of the downstream effects and feedback loops:\n\n1. **Impact on Factories B and C:**\n   - **Immediate Cause:** Factory A's shutdown halts the supply of components to Factories B and C.\n   - **Duration and Impact:** Factories B and C must locate alternative suppliers. If successful, they resume operations; if not, production may halt or slow significantly.\n\n2. **Effect on Factory D:**\n   - **Dependency on B and C:** Factory D relies on both Factories B and C for sub-assemblies.\n   - **Immediate Cause:** If Factories B and C are disrupted, Factory D's production of sub-assemblies is affected.\n   - **Long-term Impact:** Reduced or halted production at Factory D leads to decreased sales to the parent company.\n\n3. **Feedback Loop with Factory D's Parent Company:**\n   - **Monitoring and Adjustment:** The parent company may notice Factory D's output decline and adjust purchasing strategies, such as sourcing more from Factory A.\n   - **Cascading Effect:** Increased demand from the parent company might push Factory A to seek new component sources or resume operations, creating a feedback loop.\n\n4. **Impact on Factory A's Parent Company:**\n   - **Sourcing and Demand:** The parent company's reduced purchasing from Factory D could affect Factory A's component supply and demand.\n   - **Adjustments:** The parent company might influence Factory A to increase production or find alternative suppliers, affecting Factory A's operational capacity.\n\n5. **Consideration of Transportation and Alternative Suppliers:**\n   - **Assumption:** If transportation and alternative suppliers are reliable, the shutdown's effects are exacerbated, leading to a comprehensive supply chain disruption.\n\nIn conclusion, the shutdown at Factory A leads to a cascading effect, impacting Factories B, C, D, and the parent company, creating feedback loops that interrelate these components of the supply chain.",
+  "response_length": 2085,
+  "elapsed_seconds": 84.6,
+  "timestamp": "2026-03-06T19:06:52.374318",
+  "score": 2,
+  "score_reason": "The model traces forward paths A->B->D and A->C->D, identifies D's double-hit, but does not explicitly mention the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T18:31:19.851253"
+}

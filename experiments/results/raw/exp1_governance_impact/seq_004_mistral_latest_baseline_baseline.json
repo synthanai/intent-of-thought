@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_mistral_latest_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "ANSWER: The trains meet at 10:30 and are 88 km away from Station A.\nREASONING: Let T be the time (in hours) it takes for both trains to meet after they start moving. In that time, the first train travels a distance of 80*T km, while the second train travels 120*(T-0.5) km since it started an hour later. Since they are traveling towards each other, we can set their total traveled distances equal: 80*T = 120*(T-0.5). Solving for T gives T=1.5 hours. The first train was moving for this entire time, while the second train moved for (1.5-0.5)=1 hour. So the second train traveled 120*1=120 km before meeting. Since both trains started 320 km apart, their meeting point is 320-120=200 km from Station A.\nCONFIDENCE: HIGH",
+  "response_length": 720,
+  "elapsed_seconds": 22.62,
+  "tokens": {
+    "prompt_tokens": 121,
+    "completion_tokens": 227,
+    "total_duration_ms": 22605.015291
+  },
+  "timestamp": "2026-03-17T13:50:20.348679",
+  "score": 0,
+  "score_reason": "The model's answer is incorrect; it provides the wrong meeting time and distance from Station A.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:59:01.651799"
+}

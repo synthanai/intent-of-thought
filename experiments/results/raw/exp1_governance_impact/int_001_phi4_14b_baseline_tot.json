@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_phi4_14b_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "### Approach 1: Differential Diagnosis through Medical Literature Review\n\n**Description:**\nConduct a comprehensive review of medical literature to identify conditions that commonly present with chronic fatigue, joint pain, and a butterfly-shaped facial rash. Focus on the interconnections between these symptoms to determine if they share a common underlying condition.\n\n**Strengths:**\n- Utilizes a vast array of existing medical knowledge and research.\n- Can provide a well-rounded understanding of potential conditions.\n- Highlights established connections between symptoms.\n\n**Weaknesses/Risks:**\n- Time-consuming and may require access to specialized databases.\n- May not capture the latest or less common conditions.\n- Relies on the quality and relevance of existing literature.\n\n**Suitability:**\n- **High** for scenarios where detailed and evidence-based analysis is needed.\n\n### Approach 2: Clinical Consultation and Multidisciplinary Evaluation\n\n**Description:**\nConsult with specialists in rheumatology, dermatology, and internal medicine to evaluate the patient. Each specialist can provide insights into their respective fields, potentially identifying a common condition like systemic lupus erythematosus (SLE).\n\n**Strengths:**\n- Leverages expert opinions and clinical experience.\n- Provides a holistic view of the patient's condition.\n- Can lead to a more accurate and comprehensive diagnosis.\n\n**Weaknesses/Risks:**\n- May be resource-intensive and time-consuming.\n- Coordination between specialists can be challenging.\n- Potential for conflicting opinions among specialists.\n\n**Suitability:**\n- **High** for complex cases requiring expert input.\n\n### Approach 3: Diagnostic Testing and Biomarker Analysis\n\n**Description:**\nOrder a series of diagnostic tests, including blood tests (e.g., ANA, ESR, CRP), imaging studies, and possibly a skin biopsy. Analyze biomarkers that could indicate a common underlying condition like SLE.\n\n**Strengths:**\n- Provides objective data to support or refute potential diagnoses.\n- Can identify specific biomarkers associated with certain conditions.\n- Helps in monitoring disease progression and response to treatment.\n\n**Weaknesses/Risks:**\n- Can be expensive and invasive.\n- May not provide definitive answers if biomarkers are non-specific.\n- Requires careful interpretation of results.\n\n**Suitability:**\n- **Medium** for cases where objective data is needed but may not be sufficient alone.\n\n### Comparison and Recommendation\n\n| Approach | Strengths | Weaknesses/Risks | Suitability |\n|----------|-----------|------------------|-------------|\n| Literature Review | Comprehensive, evidence-based | Time-consuming, may miss new insights | High |\n| Clinical Consultation | Expert insights, holistic view | Resource-intensive, potential conflicts | High |\n| Diagnostic Testing | Objective data, specific biomarkers | Expensive, invasive, non-specific results | Medium |\n\n**Recommendation:**\nThe best approach for this scenario is **Clinical Consultation and Multidisciplinary Evaluation**. This approach provides a balanced combination of expert insights and a holistic view of the patient's condition, which is crucial for diagnosing complex cases with overlapping symptoms. While it may be resource-intensive, the potential for accurate diagnosis and comprehensive treatment planning outweighs the drawbacks. The literature review can complement this approach by providing background knowledge, and diagnostic testing can be used to confirm the specialists' assessments.",
+  "response_length": 3519,
+  "elapsed_seconds": 116.99,
+  "tokens": {
+    "prompt_tokens": 143,
+    "completion_tokens": 662,
+    "total_duration_ms": 116977.635625
+  },
+  "timestamp": "2026-03-06T08:40:59.029554",
+  "score": 1,
+  "score_reason": "The model lists approaches for diagnosing symptoms but does not connect them through systemic lupus erythematosus (SLE) as the unifying condition.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T21:09:13.823040"
+}

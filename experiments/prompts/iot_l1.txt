@@ -1,0 +1,5 @@
+Context: You are working in the domain of {domain}.
+
+Task: {task_text}
+
+Consider the context carefully and provide a thorough response.

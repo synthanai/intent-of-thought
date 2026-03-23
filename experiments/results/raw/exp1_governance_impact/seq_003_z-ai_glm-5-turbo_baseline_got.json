@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "1.  **Analyze the Request:**\n    *   **Task:** Convert the decimal number 1247 to binary. Show all working step by step.\n    *   **Method:** Build a relationship graph analyzing the task.\n    *   **Steps required:**\n        1. Identify key factors (at least 4).\n        2. Define edges using specific relationship types (causes, enables, blocks, amplifies, depends_on, contradicts).\n        3. Identify feedback loops.\n        4. Determine central factors.\n        5. Synthesize analysis.\n    *   **Format:** Specific sections (FACTORS, EDGES, FEEDBACK LOOPS, CENTRAL FACTORS, SYNTHESIS, ANSWER, CONFIDENCE).\n\n2.  **Step 1: Identify Factors (at least 4)**\n    *   What goes into converting 1247 to binary?\n    *   *Factor 1:* Initial Decimal Number (1247)\n    *   *Factor 2:* Division by 2 (The core algorithmic operation)\n    *   *Factor 3:* Remainder Extraction (Getting the 0 or 1 at each step)\n    *   *Factor 4:* Quotient Update (The new number to divide in the next step)\n    *   *Factor 5:* Binary Digit Sequence (The final collected remainders)\n    *   *Factor 6:* Reversal of Remainders (Ordering step to get the final answer)\n\n3.  **Step 2: Define Edges (using allowed relationship types)**\n    *   Initial Decimal Number --(enables)--> Division by 2\n    *   Division by 2 --(causes)--> Remainder Extraction\n    *   Division by 2 --(causes)--> Quotient Update\n    *   Quotient Update --(enables)--> Division by 2 (Loop)\n    *   Remainder Extraction --(enables)--> Binary Digit Sequence\n    *   Binary Digit Sequence --(depends_on)--> Reversal of Remainders\n    *   Quotient Update (when it reaches 0) --(blocks)--> Division by 2\n\n4.  **Step 3: Identify Feedback Loops**\n    *   Loop: Division by 2 -> Quotient Update -> Division by 2. This continues until the quotient is 0.\n\n5.  **Step 4: Determine Central Factors**\n    *   Division by 2 and Quotient Update are highly connected. Division by 2 is the engine of the process.\n\n6.  **Step 5: Synthesize Analysis**\n    *   The process is iterative. You can't just look at 1247 and instantly know the binary; it requires the systematic breakdown through division and remainder extraction, managed by the quotient update loop, culminating in the reversal of the collected bits.\n\n7.  **Step 6: Perform the actual math (for the ANSWER section)**\n    *   1247 / 2 = 623, Remainder 1\n    *   623 / 2 = 311, Remainder 1\n    *   311 / 2 = 155, Remainder 1\n    *   155 / 2 = 77, Remainder 1\n    *   77 / 2 = 38, Remainder 1\n    *   38 / 2 = 19, Remainder 0\n    *   19 / 2 = 9, Remainder 1\n    *   9 / 2 = 4, Remainder 1\n    *   4 / 2 = 2, Remainder 0\n    *   2 / 2 = 1, Remainder 0\n    *   1 / 2 = 0, Remainder 1\n    *   Read bottom to top: 100111000001... wait, let me double check.\n    *   1247 = 1024 + 223\n    *   223 = 128 + 95\n    *   95 = 64 + 31\n    *   31 = 16 + 15\n    *   15 = 8 + 4 + 2 + 1\n    *   Powers of 2: 1024 (2^10), 128 (2^7), 64 (2^6), 16 (2^4), 8 (2^3), 4 (2^2), 2 (2^1), 1 (2^0)\n    *   Let's map to 11 bits (2^0 to 2^10):\n        *   2^10 (1024): 1\n        *   2^9 (512): 0\n        *   2^8 (",
+  "response_length": 3064,
+  "elapsed_seconds": 11.57,
+  "tokens": {
+    "prompt_tokens": 259,
+    "completion_tokens": 1024,
+    "total_duration_ms": 11570.01
+  },
+  "timestamp": "2026-03-17T13:58:47.894326",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model provides the correct binary conversion steps but introduces an incorrect final result and unnecessary complexity.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:45:17.263509"
+}

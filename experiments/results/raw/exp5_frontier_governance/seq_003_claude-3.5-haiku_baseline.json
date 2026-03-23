@@ -1,0 +1,22 @@
+{
+  "run_id": "seq_003_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "prompt": "Task: Convert the decimal number 1247 to binary. Show all your working step by step.\n\nProvide your answer with clear reasoning.",
+  "response": "I'll solve this step by step using the repeated division by 2 method:\n\n1) First, we'll repeatedly divide 1247 by 2 and track the remainders:\n\n   1247 \u00f7 2 = 623 remainder 1\n   623 \u00f7 2 = 311 remainder 1\n   311 \u00f7 2 = 155 remainder 1\n   155 \u00f7 2 = 77 remainder 1\n   77 \u00f7 2 = 38 remainder 1\n   38 \u00f7 2 = 19 remainder 0\n   19 \u00f7 2 = 9 remainder 1\n   9 \u00f7 2 = 4 remainder 1\n   4 \u00f7 2 = 2 remainder 0\n   2 \u00f7 2 = 1 remainder 0\n   1 \u00f7 2 = 0 remainder 1\n\n2) Now read the remainders from bottom to top:\n   10011011111\n\n3) Verification:\n   1\u00d72^10 + 0\u00d72^9 + 0\u00d72^8 + 1\u00d72^7 + 1\u00d72^6 + 0\u00d72^5 + 1\u00d72^4 + 1\u00d72^3 + 1\u00d72^2 + 1\u00d72^1 + 1\u00d72^0\n   = 1024 + 0 + 0 + 128 + 64 + 0 + 16 + 8 + 4 + 2 + 1\n   = 1247 \u2713\n\nTherefore, 1247 in binary is 10011011111.",
+  "response_length": 717,
+  "elapsed_seconds": 6.5,
+  "tokens": {
+    "prompt_tokens": 37,
+    "completion_tokens": 426,
+    "total_tokens": 463
+  },
+  "timestamp": "2026-03-19T16:04:10.221414"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_nvidia_nemotron-3-super-120b-a12b_free_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "ANSWER: The trains meet at 10:54, 152\u202fkm from Station A.  \nREASONING: Let t be the hours after 09:00 when they meet; the first train travels 80t km, the second (starting at 09:30) travels 120(t\u20110.5) km. Setting 80t\u202f+\u202f120(t\u20110.5)\u202f=\u202f320 gives t\u202f=\u202f1.9\u202fh\u202f=\u202f1\u202fh\u202f54\u202fmin, so the meeting time is 09:00\u202f+\u202f1\u202fh\u202f54\u202fmin\u202f=\u202f10:54, and the distance from Station A is 80\u202f\u00d7\u202f1.9\u202f=\u202f152\u202fkm.  \nCONFIDENCE: HIGH",
+  "response_length": 387,
+  "elapsed_seconds": 48.46,
+  "tokens": {
+    "prompt_tokens": 128,
+    "completion_tokens": 726,
+    "total_duration_ms": 48455.11
+  },
+  "timestamp": "2026-03-17T14:00:42.104787",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model provides the correct meeting time and distance but uses an incorrect equation for calculating the total distance covered by both trains.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:07:36.113578"
+}

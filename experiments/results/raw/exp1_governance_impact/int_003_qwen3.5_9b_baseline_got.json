@@ -1,0 +1,21 @@
+{
+  "run_id": "int_003_qwen3.5_9b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_003",
+  "task_category": "interconnected",
+  "model": "qwen3.5:9b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "There is a circular constraint: Q requires government actions to be in context W. Z prohibits Y in context W. X permits Y generally. For a government employee acting officially, Q applies, which forces context W, which triggers Z's prohibition. So Y is prohibited for government actors despite X's general permission. The interaction between Q and Z overrides X.",
+  "scoring_rubric": "Score 3 if: identifies the Q->W->Z chain that overrides X, explains that the general permission (X) is narrowed by the context requirement (Q+Z), correctly concludes prohibition for government actors. Score 2 if: correct conclusion but reasoning unclear. Score 1 if: identifies conflict but wrong conclusion. Score 0 if: applies X without considering Q and Z interaction.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 168.48,
+  "tokens": {
+    "prompt_tokens": 207,
+    "completion_tokens": 1024,
+    "total_duration_ms": 168461.546916
+  },
+  "timestamp": "2026-03-06T11:28:57.592282"
+}

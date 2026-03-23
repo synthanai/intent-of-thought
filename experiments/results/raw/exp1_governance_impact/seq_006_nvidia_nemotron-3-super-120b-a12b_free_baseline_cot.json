@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_nvidia_nemotron-3-super-120b-a12b_free_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "STEP 1: Assess hemoglobin level to determine if anemia is present.  \nResult: Hemoglobin 8.2\u202fg/dL is below the normal range (12\u201116\u202fg/dL), confirming anemia.  \nConnection: Establishes that we need to characterize the anemia.\n\nSTEP 2: Use MCV to classify the anemia by red cell size.  \nResult: MCV 68\u202ffL is below the normal range (80\u2011100\u202ffL), indicating microcytic anemia.  \nConnection: Narrows differential to microcytic causes (iron deficiency, anemia of chronic disease, thalassemia, sideroblastic).\n\nSTEP 3: Examine iron\u2011status labs to differentiate among microcytic etiologies.  \nResult: Serum ferritin 8\u202fng/mL is low (normal 20\u2011200\u202fng/mL), reflecting depleted iron stores. TIBC 450\u202f\u00b5g/dL is high (normal 250\u2011370\u202f\u00b5g/dL), consistent with increased transferrin production in iron deficiency.  \nConnection: Low ferritin + high TIBC is classic for iron deficiency anemia; anemia of chronic disease would show normal/high ferritin and low/normal TIBC, while thalassemia typically shows normal ferritin and normal TIBC.\n\nSTEP 4: Rule out alternative microcytic causes using the iron\u2011study pattern.  \nResult: The pattern (low ferritin, high TIBC) does not fit anemia of chronic disease or thalassemia, making iron deficiency the most likely.  \nConnection: Confirms the diagnosis based on the laboratory profile.\n\nFINAL ANSWER: The patient has iron deficiency anemia.  \nCONFIDENCE: HIGH",
+  "response_length": 1380,
+  "elapsed_seconds": 27.96,
+  "tokens": {
+    "prompt_tokens": 219,
+    "completion_tokens": 628,
+    "total_duration_ms": 27956.08
+  },
+  "timestamp": "2026-03-17T14:11:33.287985",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly identifies iron deficiency anemia through detailed reasoning for each lab value as specified in the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:53:28.104734"
+}

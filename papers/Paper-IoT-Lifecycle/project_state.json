@@ -1,0 +1,117 @@
+{
+    "paper": "Paper-IoT-Lifecycle",
+    "paper_id": "B6b",
+    "title": "The IoT Lifecycle: From Intent Capture to Retrospective Judgement",
+    "topic": "IoT Lifecycle",
+    "slug": "IoT-Lifecycle",
+    "venue": "Arxiv (CS.AI + CL cross-list)",
+    "companion_to": "Paper-IoT-Intent-of-Thought (DOI: 10.5281/zenodo.18836659)",
+    "created": "2026-03-03",
+    "last_updated": "2026-03-15",
+    "stealth_mode": true,
+    "author": {
+        "name": "Naveen Riaz Mohamed Kani",
+        "orcid": "0009-0003-9173-2425",
+        "orcid_url": "https://orcid.org/0009-0003-9173-2425"
+    },
+    "phases": {
+        "0_capture": "complete",
+        "1_research": "complete",
+        "2_scaffold": "complete",
+        "3_write": "complete",
+        "4_audit": "complete",
+        "5_submit": "not_started"
+    },
+    "capture": {
+        "steal_status": "not_started",
+        "external_reports": [],
+        "spar_verdicts": {
+            "scope": "SPAR #31: Option D (Capture + Judgement lifecycle), 88% confidence"
+        },
+        "research_md": "2-research/concepts/iot-lifecycle/research.md",
+        "signals_md": "2-research/concepts/iot-lifecycle/signals.md"
+    },
+    "thesis": {
+        "statement": "IoT Paper 1 formalised forward intent governance (specify, select, monitor), but the operational lifecycle is incomplete. Intent capture is treated as prompt engineering rather than architectural governance input, and reasoning failure diagnosis lacks intent-awareness. We present the IoT Lifecycle: a closed-loop system from capture through retrospective judgement, with governance-proportional correction."
+    },
+    "scaffold": {
+        "nool": "complete_v0.1",
+        "outline": "complete"
+    },
+    "sections": {
+        "1_introduction": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "29/30"
+        },
+        "2_background": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "27/30"
+        },
+        "3_capture_spectrum": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "29/30"
+        },
+        "4_retrospective_judgement": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "30/30"
+        },
+        "5_case_studies": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "28/30"
+        },
+        "6_discussion": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "28/30"
+        },
+        "7_conclusion": {
+            "brief": "complete",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "29/30"
+        },
+        "appendices": {
+            "brief": "n/a",
+            "draft": "complete",
+            "audit": "complete",
+            "audit_score": "28/30"
+        }
+    },
+    "audit_summary": {
+        "total_score": "228/240",
+        "average_score": "28.5/30",
+        "date": "2026-03-16",
+        "verdict": "ALL PASS",
+        "critical_issues": 0,
+        "medium_issues": 3,
+        "low_issues": 7
+    },
+    "word_count_estimate": 15800,
+    "target_pages": "10-12 + appendices",
+    "prior_art_threats": [
+        "Prompt engineering conflation (reviewers may not see architectural difference)",
+        "BDI intention revision (Bratman 1987: covers abandonment, not topology diagnosis)",
+        "Process reward models (Lightman 2023: step-correctness, not intent-correctness)",
+        "Reflexion (Shinn 2023: self-evaluation, not topology-level diagnosis)"
+    ],
+    "notes": "All 8 sections audited 2026-03-16. Average 28.5/30. All PASS. 3 medium issues to fix before submission (arXiv ID citations, L4 citations, DMS stealth leak). Full draft assembled. SVG figures complete. Next: fix medium issues, compile references.bib, run experiments (EXPERIMENTAL_PLAN.md), submit.",
+    "next_actions": [
+        "Fix 3 medium-severity audit issues",
+        "Compile references.bib",
+        "Run experiments per EXPERIMENTAL_PLAN.md (E1-E6)",
+        "Integrate experimental results into paper (new Sections 5-6)",
+        "Re-audit expanded paper",
+        "Submit to Arxiv + SSRN + Zenodo"
+    ]
+}

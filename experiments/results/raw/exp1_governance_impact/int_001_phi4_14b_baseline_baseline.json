@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_phi4_14b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "The symptoms presented by the 42-year-old patient\u2014chronic fatigue, joint pain, and a butterfly-shaped facial rash\u2014are indeed suggestive of a common underlying condition: systemic lupus erythematosus (SLE), commonly known as lupus. Lupus is an autoimmune disease where the immune system mistakenly attacks healthy tissues in the body. Here's how these symptoms interconnect in the context of lupus:\n\n1. **Butterfly-shaped Facial Rash**: \n   - One of the hallmark signs of lupus is a malar rash, which appears as a butterfly-shaped rash across the cheeks and the bridge of the nose. This rash is due to inflammation and is triggered by sunlight exposure (photosensitivity), which is common in lupus patients.\n\n2. **Joint Pain**:\n   - Lupus often affects the joints, leading to arthritis characterized by pain, swelling, and stiffness. This joint involvement is due to the immune system's attack on joint tissues, causing inflammation.\n\n3. **Chronic Fatigue**:\n   - Fatigue is a common and often debilitating symptom of lupus. It results from chronic inflammation, the body's response to the autoimmune activity, and possibly the side effects of medications used to treat lupus. Additionally, the disease itself can lead to fatigue due to the systemic nature of the condition, affecting multiple organ systems.\n\n**Interconnections**:\n- **Immune System Dysfunction**: In lupus, the immune system produces antibodies that target the body's own cells, leading to widespread inflammation. This inflammation affects various organs and tissues, explaining the diverse symptoms.\n  \n- **Inflammatory Processes**: The inflammation caused by the immune response in lupus can manifest in multiple ways, such as the skin rash and joint pain. The systemic inflammation also contributes to fatigue.\n\n- **Photosensitivity**: The butterfly rash is a direct result of photosensitivity, a common feature in lupus, where the skin reacts to sunlight, exacerbating the rash and potentially leading to further systemic inflammation.\n\nIn conclusion, while chronic fatigue, joint pain, and a butterfly-shaped facial rash can occur independently due to various conditions, their co-occurrence strongly suggests lupus as a common underlying cause. A thorough clinical evaluation, including laboratory tests (such as antinuclear antibody test, anti-dsDNA, and other specific autoantibodies), would be necessary to confirm the diagnosis and assess the extent of the disease.",
+  "response_length": 2443,
+  "elapsed_seconds": 86.99,
+  "tokens": {
+    "prompt_tokens": 69,
+    "completion_tokens": 485,
+    "total_duration_ms": 86972.982917
+  },
+  "timestamp": "2026-03-06T07:59:31.204162",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition and thoroughly explains how autoimmune inflammation links all three symptoms while warning against treating them independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:53:45.605072"
+}

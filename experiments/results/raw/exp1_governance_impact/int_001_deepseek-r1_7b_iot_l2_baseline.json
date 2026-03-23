@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "To analyze whether the symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash in a 42-year-old patient could share a common underlying condition, we can approach the task by considering potential interconnected factors and possible conditions. Here's a structured summary of the thought process:\n\n1. **Individual Symptom Analysis:**\n   - **Chronic Fatigue:** Can arise from stress, lack of sleep, underlying health issues like diabetes or heart problems, or nutritional deficiencies.\n   - **Joint Pain:** Often linked to arthritis, muscle imbalances, overexertion, or vitamin deficiencies.\n   - **Butterfly-shaped Rash:** Typically associated with shingles (Herpes zoster virus), which can be triggered by stress, fatigue, or close contact.\n\n2. **Common Causes Consideration:**\n   - **Shingles:** Can cause fatigue and joint pain as side effects, and the rash itself might result from stress or fatigue.\n   - **Overlapping Conditions:** Consider if any other conditions, such as metabolic disorders, could cause fatigue and joint issues but not typically a rash.\n\n3. **Interaction Possibilities:**\n   - **Stress or Fatigue:** A primary cause that could lead to secondary issues like joint pain and immune responses causing a rash.\n   - **Autoimmune Disorders:** Such as lupus or rheumatoid arthritis, which might cause fatigue and joint pain, with possible systemic immune dysregulation leading to a rash.\n   - **Systemic Conditions:** Like autoimmune disorders affecting multiple systems, potentially causing fatigue, joint pain, and skin issues.\n\n4. **Lifestyle and History Consideration:**\n   - Evaluate the patient's history of stress, sleep patterns, diet, and recent exposures that might interconnect these symptoms.\n\n5. **Diagnostic Approaches:**\n   - **History and Physical Exam:** To assess stressors, medical history, and physical symptoms.\n   - **Laboratory Tests:** For autoimmune markers, metabolic checks, and nutritional deficiencies.\n   - **Imaging:** To check for joint issues or skin lesions.\n\n**Conclusion:** The symptoms could share",
+  "response_length": 2073,
+  "elapsed_seconds": 85.08,
+  "tokens": {
+    "prompt_tokens": 209,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85060.627125
+  },
+  "timestamp": "2026-03-06T07:47:11.606446",
+  "score": 1,
+  "score_reason": "The model lists conditions for each symptom independently without effectively connecting them through a unifying autoimmune mechanism like lupus/SLE.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T19:47:24.560032"
+}

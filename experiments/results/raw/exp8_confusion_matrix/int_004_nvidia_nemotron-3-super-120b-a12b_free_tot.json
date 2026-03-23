@@ -1,0 +1,16 @@
+{
+  "run_id": "int_004_nvidia_nemotron-3-super-120b-a12b_free_tot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "int_004",
+  "task_category": "interconnected",
+  "optimal_topology": "got",
+  "forced_topology": "tot",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "ground_truth": "Circular dependency: Fundraising needs product -> Product needs engineers -> Hiring needs funding -> Funding needs product. Resolution options: (1) Bridge loan or convertible note to break the cycle, (2) Alice raises on vision/traction, not demo, (3) Bob scopes a minimal demo achievable with current team, (4) Carol offers equity-only contracts to initial hires.",
+  "scoring_rubric": "Score 3 if: maps the full circular dependency AND proposes at least 2 viable resolution strategies. Score 2 if: identifies the cycle but weak resolution. Score 1 if: sees individual blockers but misses the cycle. Score 0 if: treats each issue independently.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.09,
+  "timestamp": "2026-03-17T14:24:33.531032",
+  "backend": "openrouter"
+}

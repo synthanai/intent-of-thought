@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "1.  **Analyze the Request:**\n    *   **Governance Specification:** Follow a single logical chain, no branching, step-by-step derivation to a verifiable conclusion.\n    *   **Task:** Convert decimal 1247 to binary, showing all working.\n    *   **Format:** Specific header structure required (SELECTED APPROACH, PURPOSE CHECK, ANTI-PURPOSE CHECK, reasoning, ANSWER, SUCCESS SIGNAL MET, ANTI-PURPOSE VIOLATED, CONFIDENCE).\n    *   **Approach Selection:** Choose between CoT, ToT, GoT based on task requirements.\n\n2.  **Select Approach:**\n    *   Task: Decimal to binary conversion. This strictly requires sequential division by 2 and recording remainders.\n    *   Choice: Chain-of-thought (CoT).\n    *   Reason: The task requires sequential logical steps (division by 2 repeatedly) and explicitly forbids branching (anti-purpose).\n\n3.  **Draft the Headers:**\n    *   SELECTED APPROACH: CoT because converting a decimal number to binary requires a strict sequence of division steps without any need to explore alternative methods or map interconnected factors.\n    *   PURPOSE CHECK: I must follow a single, unbroken sequence of mathematical divisions to derive the final binary representation of 1247.\n    *   ANTI-PURPOSE CHECK: I will avoid exploring alternative conversion methods (like subtraction by powers of two) or branching into different calculation paths before finishing the division-by-two sequence.\n\n4.  **Perform the Task (CoT):**\n    *   Start with 1247.\n    *   1247 / 2 = 623, remainder 1\n    *   623 / 2 = 311, remainder 1\n    *   311 / 2 = 155, remainder 1\n    *   155 / 2 = 77, remainder 1\n    *   77 / 2 = 38, remainder 1\n    *   38 / 2 = 19, remainder 0\n    *   19 / 2 = 9, remainder 1\n    *   9 / 2 = 4, remainder 1\n    *   4 / 2 = 2, remainder 0\n    *   2 / 2 = 1, remainder 0\n    *   1 / 2 = 0, remainder 1\n    *   Read remainders from bottom to top: 10011101111.\n\n5.  **Verify the Result:**\n    *   1 * 1024 = 1024\n    *   0 * 512 = 0\n    *   0 * 256 = 0\n    *   1 * 128 = 128\n    *   1 * 64 = 64\n    *   1 * 32 = 32\n    *   0 * 16 = 0\n    *   1 * 8 = 8\n    *   1 * 4 = 4\n    *   1 * 2 = 2\n    *   1 * 1 = 1\n    *   Sum: 1024 + 128 + 64 + 32 + 8 + 4 + 2 + 1 = 1152 + 32 + 8 + 4 + 2 + 1 = 1184 + 8 + 4 + 2 + 1 = 1192 + 4 + 2 + 1 = 1196 + 2 + 1 = 1198 + 1 = 1199... wait, let me recalculate.\n    *   1024 + 128 = 1152\n    *   1152 + 64 = 1216\n    *   1216 + 32 = 1248... wait. 1248? But the number is 1247.\n    *   Let me re-check the division.\n    *   1247 / 2 = 623 R 1\n    *   623 / 2 = 311 R 1\n    *   311 / 2 = 155 R 1\n    *   155 / 2 = 77 R 1\n    *   77 / 2 = 38 R 1\n    *   38 / 2 = 19 R 0\n    *   19 / 2 = 9 R 1\n    *   9 / 2 = 4 R 1\n    *   4 / 2 = 2 R 0\n    *   2 / 2 = 1 R 0\n    *   1 / 2 = 0 R 1\n    *   Remainders bottom to top:",
+  "response_length": 2763,
+  "elapsed_seconds": 9.4,
+  "tokens": {
+    "prompt_tokens": 284,
+    "completion_tokens": 1024,
+    "total_duration_ms": 9397.66
+  },
+  "timestamp": "2026-03-17T13:55:36.387472",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model provided the correct binary conversion of 1247 but made an error in reading the remainders as 10011101111 instead of the correct 10011011111.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:48:27.098257"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "1.  **Analyze the Request:**\n    *   Governance specification provided: PURPOSE (single logical chain), ANTI-PURPOSE (no branching), SUCCESS SIGNAL (step-by-step derivation to verifiable conclusion).\n    *   Task: Convert decimal 1247 to binary, showing all working step by step.\n    *   Format requirements: Specific sections (SELECTED APPROACH, PURPOSE CHECK, ANTI-PURPOSE CHECK, [Reasoning], ANSWER, SUCCESS SIGNAL MET, ANTI-PURPOSE VIOLATED, CONFIDENCE).\n    *   Approach selection: Choose between CoT, ToT, GoT based on task nature.\n\n2.  **Select Approach:**\n    *   Task: Decimal to binary conversion.\n    *   Nature: Requires sequential logical steps (division by 2 and recording remainders).\n    *   Selection: Chain-of-Thought (CoT).\n\n3.  **Draft the Sections:**\n    *   *SELECTED APPROACH:* CoT because converting a decimal number to binary requires a strict sequence of division-by-two steps, where each step directly depends on the result of the previous step. There is no need to explore alternatives or map complex relationships.\n    *   *PURPOSE CHECK:* The goal is to strictly follow a single, unbroken sequence of mathematical steps to definitively convert 1247 into its binary representation.\n    *   *ANTI-PURPOSE CHECK:* I will avoid exploring alternative conversion methods (like subtracting powers of two) or branching off into different paths before finishing the division-by-two sequence.\n\n4.  **Perform the Task (Reasoning - CoT):**\n    *   Step 1: 1247 / 2 = 623 with a remainder of 1.\n    *   Step 2: 623 / 2 = 311 with a remainder of 1.\n    *   Step 3: 311 / 2 = 155 with a remainder of 1.\n    *   Step 4: 155 / 2 = 77 with a remainder of 1.\n    *   Step 5: 77 / 2 = 38 with a remainder of 1.\n    *   Step 6: 38 / 2 = 19 with a remainder of 0.\n    *   Step 7: 19 / 2 = 9 with a remainder of 1.\n    *   Step 8: 9 / 2 = 4 with a remainder of 1.\n    *   Step 9: 4 / 2 = 2 with a remainder of 0.\n    *   Step 10: 2 / 2 = 1 with a remainder of 0.\n    *   Step 11: 1 / 2 = 0 with a remainder of 1.\n    *   Step 12: Read the remainders from bottom to top (last to first): 10011111111.\n\n5.  **Verify the Result:**\n    *   10011111111\n    *   1*2^10 + 0*2^9 + 0*2^8 + 1*2^7 + 1*2^6 + 1*2^5 + 1*2^4 + 1*2^3 + 1*2^2 + 1*2^1 + 1*2^0\n    *   = 1024 + 0 + 0 + 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1\n    *   = 1024 + 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1\n    *   1024 + 128 = 1152\n    *   1152 + 64 = 1216\n    *   1216 + 32 = 1248\n    *   Wait, 1248 + 16 = 1264? Let me re-add.\n    *   1024 + 128 = 1152\n    *   1152 + 64 = 1216\n    *   1216 + 32 = 1248 -> Wait, 1248 is greater than 1247.\n    *   Let me recheck the division.\n    *   1247 / 2 = 623 R 1. Correct.\n    *   623 / 2 = 311 R 1. Correct.\n    *   311 / 2 = 155 R 1. Correct.\n    *   155 / 2 = 77 R 1. Correct.\n    *   77 / 2 = 38 R 1. Correct.\n    *   38 / 2 = 19 R 0. Correct.\n    *   19 / 2 = 9 R 1.",
+  "response_length": 2868,
+  "elapsed_seconds": 12.75,
+  "tokens": {
+    "prompt_tokens": 284,
+    "completion_tokens": 1024,
+    "total_duration_ms": 12751.16
+  },
+  "timestamp": "2026-03-17T13:56:50.357177",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model correctly identified the method and followed a valid division-by-two process but made an error in reading the remainders, resulting in the incorrect binary number 10011111111 instead of the correct 10011011111.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:49:20.668406"
+}

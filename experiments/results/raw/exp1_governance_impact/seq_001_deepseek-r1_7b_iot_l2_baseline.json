@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "The approach used is **Proof by Contradiction**. Here's the step-by-step reasoning:\n\n1. **Assumption**: Assume that \u221a2 is rational, meaning it can be expressed as a fraction a/b where a and b are integers with no common factors.\n\n2. **Equation**: \u221a2 = a/b \u21d2 2 = a\u00b2 / b\u00b2 \u21d2 2b\u00b2 = a\u00b2.\n\n3. **Evenness of a**: Since 2b\u00b2 is even, a\u00b2 must be even, implying a is even.\n\n4. **Express a as 2k**: Let a = 2k \u21d2 a\u00b2 = 4k\u00b2.\n\n5. **Substitute back**: 2b\u00b2 = 4k\u00b2 \u21d2 b\u00b2 = 2k\u00b2 \u21d2 b\u00b2 is even, so b is even.\n\n6. **Contradiction**: Both a and b are even, meaning they have a common factor of 2, contradicting the assumption that a and b are coprime.\n\n7. **Conclusion**: The initial assumption is false, proving \u221a2 is irrational.\n\nAnswer: \u221a2 is irrational because assuming it is rational leads to a contradiction where both numerator and denominator must be even, contradicting their coprimality. Thus, \u221a2 is irrational.",
+  "response_length": 893,
+  "elapsed_seconds": 68.02,
+  "tokens": {
+    "prompt_tokens": 166,
+    "completion_tokens": 856,
+    "total_duration_ms": 68006.066542
+  },
+  "timestamp": "2026-03-05T23:41:13.167960",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction with all necessary steps clearly outlined.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:49:36.767829"
+}

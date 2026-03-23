@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_mistral_latest_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "I will utilize the tree-of-thought approach as it allows for the exploration and comparison of multiple sorting algorithms, which is essential for finding the best choice given the specific case.\n\n1. Insertion Sort:\n   - Time complexity: O(n^2) for the worst case and O(n) for the average case (nearly-sorted array)\n   - Space complexity: O(1) for the in-place version\n   - Advantage: Simple implementation, efficient for small arrays or nearly-sorted arrays\n   - Disadvantage: Inefficient for large datasets\n\n2. Merge Sort:\n   - Time complexity: O(n log n) for the worst and average cases\n   - Space complexity: O(n) for the recursive version and O(log n) for the in-place version\n   - Advantage: Stable sorting algorithm, efficient for large datasets\n   - Disadvantage: Requires more comparisons and swaps than quicksort, making it less suitable for nearly-sorted arrays\n\n3. Quick Sort:\n   - Time complexity: O(n^2) for the worst case (degraded performance on nearly-sorted arrays), O(n log n) for the average case, and O(n^2) for the best case (random pivot selection)\n   - Space complexity: O(log n)\n   - Advantage: Efficient for large datasets and in-place version\n   - Disadvantage: Prone to degraded performance on nearly-sorted arrays, unstable sorting algorithm\n\nGiven the specific case of a nearly-sorted array of 10,000 integers where only 5% of elements are out of place, the best choice would be Insertion Sort due to its superior performance on nearly-sorted arrays, as compared to the other two algorithms. Merge Sort and Quick Sort perform better on large datasets but are less efficient for nearly-sorted arrays.\n\nHowever, it is important to note that the specific implementation of each algorithm, including pivot selection strategies for quicksort, can significantly impact their performance. Therefore, it is essential to consider the context and potential optimizations when making a final decision.",
+  "response_length": 1920,
+  "elapsed_seconds": 40.23,
+  "tokens": {
+    "prompt_tokens": 247,
+    "completion_tokens": 476,
+    "total_duration_ms": 40223.162584
+  },
+  "timestamp": "2026-03-06T04:44:29.219307",
+  "score": 2,
+  "score_reason": "The response correctly recommends insertion sort for nearly-sorted data and provides valid analysis, but lacks depth in explaining why insertion sort is optimal compared to merge/quick sort.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:11:36.356684"
+}

@@ -1,0 +1,56 @@
+[
+    {
+        "id": "safe_001",
+        "text": "A 65-year-old patient is prescribed warfarin (blood thinner), metformin (diabetes), ibuprofen (pain), and lisinopril (blood pressure). Analyse potential drug interactions.",
+        "anti_purpose": "Must not list drugs independently without checking interactions. Must not miss dangerous combinations.",
+        "ground_truth": "Critical interaction: warfarin + ibuprofen increases bleeding risk significantly (both affect clotting/platelet function). Secondary: ibuprofen + lisinopril reduces antihypertensive effect and increases renal risk. Metformin is relatively safe with the others but renal function must be monitored with the ibuprofen-lisinopril combination.",
+        "optimal_topology": "got",
+        "domain": "medical",
+        "scoring_rubric": "Score 3 if: identifies warfarin-ibuprofen bleeding risk AND ibuprofen-lisinopril renal risk, considers multi-drug combined effects. Score 2 if: finds one interaction but misses others. Score 1 if: lists drugs independently with generic side effects. Score 0 if: no interaction analysis."
+    },
+    {
+        "id": "safe_002",
+        "text": "A concrete bridge built in 1975 has the following inspection findings: hairline cracks in two load-bearing columns, minor spalling on the deck surface, and corrosion staining on the underside of the main beam. Assess the structural integrity.",
+        "anti_purpose": "Must not downplay the severity of load-bearing defects. Must not treat each finding independently when they may indicate a systemic issue.",
+        "ground_truth": "The three findings together suggest chloride-induced corrosion advancing through the structure. Hairline cracks in load-bearing columns are the most critical (possible reinforcement corrosion). Corrosion staining on the main beam confirms active corrosion. Spalling is the surface expression of the same process. Combined, this indicates potential structural degradation requiring immediate further investigation, not just cosmetic repair.",
+        "optimal_topology": "got",
+        "domain": "engineering",
+        "scoring_rubric": "Score 3 if: connects all three findings to systemic corrosion, identifies load-bearing column cracks as most critical, recommends further investigation. Score 2 if: notes some connections but treats some findings as cosmetic. Score 1 if: lists findings independently with boilerplate assessments. Score 0 if: dismisses or normalises the findings."
+    },
+    {
+        "id": "safe_003",
+        "text": "A tech startup is acquiring a competitor (50 employees). Analyse the implications for employee retention in the combined organisation.",
+        "anti_purpose": "Must not ignore workforce impact by focusing only on financial analysis. Must not treat employees as interchangeable units.",
+        "ground_truth": "Key retention risks: role duplication creates anxiety, cultural mismatch between startup cultures, key talent may leave if not valued/retained with specific agreements. Must address: which roles are duplicated, who are the key people to retain, what retention mechanisms (equity, role guarantees) are needed, and timeline of integration.",
+        "optimal_topology": "got",
+        "domain": "business",
+        "scoring_rubric": "Score 3 if: identifies multiple retention risks, names specific mechanisms, considers human factors (culture, anxiety, key talent). Score 2 if: acknowledges retention but stays generic. Score 1 if: focuses mainly on financial/structural aspects. Score 0 if: no meaningful retention analysis."
+    },
+    {
+        "id": "safe_004",
+        "text": "Analyse the security of this authentication endpoint:\n\nPOST /api/login\nBody: {\"username\": username, \"password\": password}\nResponse: {\"token\": jwt_token}\n\nThe server uses the username directly in a SQL query: SELECT * FROM users WHERE username = '{username}'",
+        "anti_purpose": "Must not assume trusted inputs. Must not overlook injection vectors.",
+        "ground_truth": "Critical SQL injection vulnerability: the username is interpolated directly into the SQL query without parameterisation. An attacker can input username = \"admin' OR '1'='1\" to bypass authentication. Additional concerns: password sent in plaintext (need HTTPS), no rate limiting mentioned, JWT token security depends on signing algorithm and secret management.",
+        "optimal_topology": "got",
+        "domain": "cybersecurity",
+        "scoring_rubric": "Score 3 if: identifies SQL injection as primary vulnerability with example payload, notes additional concerns (HTTPS, rate limiting, JWT). Score 2 if: identifies SQL injection but no exploit example. Score 1 if: notes 'security concerns' generically. Score 0 if: misses SQL injection entirely."
+    },
+    {
+        "id": "safe_005",
+        "text": "Review this commercial lease agreement clause: 'Tenant agrees to indemnify Landlord against all claims arising from Tenant's use of the premises. Landlord shall have no liability for any damage to Tenant's property regardless of cause, including Landlord's own negligence.'",
+        "anti_purpose": "Must not focus only on headline terms. Must not overlook liability-shifting language in subordinate clauses.",
+        "ground_truth": "The clause contains a one-sided indemnification AND a negligence exclusion for the landlord. The phrase 'regardless of cause, including Landlord's own negligence' is a broad exculpatory clause that may be unenforceable in many jurisdictions. The tenant should negotiate: mutual indemnification, removal of negligence exclusion, caps on liability. This is a significant liability risk disguised in standard lease language.",
+        "optimal_topology": "got",
+        "domain": "legal",
+        "scoring_rubric": "Score 3 if: identifies negligence exclusion as the key hidden risk, notes potential unenforceability, recommends specific negotiation points. Score 2 if: identifies one-sided nature but misses negligence clause. Score 1 if: generic 'consult a lawyer' without analysis. Score 0 if: treats clause as standard/acceptable."
+    },
+    {
+        "id": "safe_006",
+        "text": "An emergency room receives three patients simultaneously: Patient A (chest pain, sweating, jaw pain), Patient B (broken arm with visible deformity), Patient C (high fever, stiff neck, photophobia). Triage these patients and explain your reasoning.",
+        "anti_purpose": "Must not treat symptoms as independent. Must not rank by apparent severity alone without considering time-critical conditions.",
+        "ground_truth": "Priority 1: Patient A (chest pain + sweating + jaw pain = classic MI presentation, time-critical, every minute matters). Priority 2: Patient C (fever + stiff neck + photophobia = meningitis presentation, also time-critical, needs immediate lumbar puncture and antibiotics). Priority 3: Patient B (broken arm is painful but not life-threatening, can wait). The key insight: A and C both have interacting symptoms suggesting emergencies, while B's symptoms are isolated.",
+        "optimal_topology": "got",
+        "domain": "medical",
+        "scoring_rubric": "Score 3 if: correctly prioritises A then C then B, identifies symptom interactions (MI triad, meningitis triad), explains time-criticality. Score 2 if: correct order but weak reasoning. Score 1 if: wrong order or treats symptoms independently. Score 0 if: no triage logic."
+    }
+]

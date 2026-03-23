@@ -1,0 +1,50 @@
+[
+    {
+        "id": "par_001",
+        "text": "Propose three different architectures for a real-time chat application. For each, list: components needed, pros, cons, scalability ceiling. Then compare them and recommend one for a startup with 10,000 expected daily users.",
+        "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket+Redis, SSE+database polling, Firebase/managed). Must include explicit trade-off comparison and justified recommendation.",
+        "optimal_topology": "tot",
+        "domain": "software_engineering",
+        "scoring_rubric": "Score 3 if: 3+ distinct architectures with component lists, pros/cons, and explicit comparison. Score 2 if: 3 approaches but shallow comparison. Score 1 if: only 1-2 approaches. Score 0 if: no structured comparison."
+    },
+    {
+        "id": "par_002",
+        "text": "Compare three sorting algorithms (insertion sort, merge sort, quicksort) for sorting a nearly-sorted array of 10,000 integers where only 50 elements are out of place. Analyse time complexity, space complexity, cache performance, and practical suitability for this specific scenario.",
+        "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case, O(1) space, excellent cache locality). Merge sort is O(n log n) always but O(n) extra space. Quicksort has O(n^2) worst case on nearly-sorted if poor pivot selection. For this scenario, insertion sort wins.",
+        "optimal_topology": "tot",
+        "domain": "computer_science",
+        "scoring_rubric": "Score 3 if: correct analysis of all 3, identifies insertion sort as best for this case with reasoning. Score 2 if: correct recommendation but missing some analysis dimensions. Score 1 if: generic comparison without scenario-specific reasoning. Score 0 if: wrong recommendation."
+    },
+    {
+        "id": "par_003",
+        "text": "A B2B SaaS company selling project management tools wants to expand to the healthcare sector. Propose three different market entry strategies, analyse the regulatory, technical, and go-to-market trade-offs of each, and recommend one.",
+        "ground_truth": "Must produce 3 genuinely different strategies (e.g., direct entry with HIPAA compliance, partnership/white-label with existing healthcare vendor, acquisition of healthcare-specific tool). Must address regulatory burden (HIPAA/HITECH), integration requirements (HL7/FHIR), and sales cycle length.",
+        "optimal_topology": "tot",
+        "domain": "business_strategy",
+        "scoring_rubric": "Score 3 if: 3 distinct strategies with regulatory, technical, and GTM analysis plus reasoned recommendation. Score 2 if: 3 strategies but shallow trade-off analysis. Score 1 if: only 1-2 strategies. Score 0 if: generic advice without structured comparison."
+    },
+    {
+        "id": "par_004",
+        "text": "A city of 500,000 people needs to reduce downtown traffic congestion by 30% within 18 months. Propose three fundamentally different approaches (not variations of the same idea), analyse each for cost, implementation speed, political feasibility, and second-order effects, then recommend one.",
+        "ground_truth": "Must include 3 distinct strategies (e.g., congestion pricing, rapid transit expansion, remote work incentive program). Must address second-order effects (e.g., congestion pricing may displace traffic to other areas, transit expansion may gentrify neighbourhoods).",
+        "optimal_topology": "tot",
+        "domain": "urban_planning",
+        "scoring_rubric": "Score 3 if: 3 genuinely different approaches with multi-dimensional analysis and second-order effects. Score 2 if: 3 approaches but missing second-order analysis. Score 1 if: only 1-2 real approaches or surface-level analysis. Score 0 if: no structured comparison."
+    },
+    {
+        "id": "par_005",
+        "text": "A manufacturing company needs to reduce defect rates from 3.2% to below 0.5%. Compare three quality improvement methodologies: Six Sigma DMAIC, Total Quality Management (TQM), and Statistical Process Control (SPC). Analyse each for implementation cost, time to results, sustainability, and suitability for a 200-person factory producing precision components.",
+        "ground_truth": "Six Sigma DMAIC: data-driven, expensive to implement (Black Belt training), produces measurable results in 3-6 months, excellent for precision manufacturing. TQM: cultural transformation, lower direct cost but longer timeline (12-24 months), best for sustained long-term improvement. SPC: operational focus, quickest to implement (1-3 months), best for continuous monitoring but needs Six Sigma or TQM for root cause analysis.",
+        "optimal_topology": "tot",
+        "domain": "manufacturing",
+        "scoring_rubric": "Score 3 if: accurate comparison of all 3 with scenario-specific recommendation. Score 2 if: correct comparison but generic recommendation. Score 1 if: only 1-2 methods analysed. Score 0 if: no structured comparison."
+    },
+    {
+        "id": "par_006",
+        "text": "An e-commerce company processes 50,000 orders daily. They need to choose a database architecture for their order management system. Compare three approaches: (A) PostgreSQL with read replicas, (B) MongoDB with sharding, (C) CockroachDB (distributed SQL). Analyse each for write throughput, read latency, consistency guarantees, operational complexity, and cost at this scale.",
+        "ground_truth": "PostgreSQL: strong consistency, proven at this scale, read replicas for read throughput, but write bottleneck on single primary. MongoDB: flexible schema, native sharding, but eventual consistency requires application-level handling. CockroachDB: distributed SQL with strong consistency, automatic sharding, but higher latency per query and more expensive. For 50K orders/day, PostgreSQL with read replicas is likely sufficient and lowest risk.",
+        "optimal_topology": "tot",
+        "domain": "software_engineering",
+        "scoring_rubric": "Score 3 if: accurate multi-dimensional comparison with scale-appropriate recommendation. Score 2 if: correct comparison but weak justification. Score 1 if: only 1-2 approaches covered. Score 0 if: no structured comparison or factually wrong."
+    }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_capture",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_capture",
+      "diagnosed_mode": "false_capture",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": false
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": false
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "CoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "GoT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "ToT",
+    "topology_correct": false,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_selection",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-01",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-02",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-03",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": false
+    }
+  },
+  {
+    "task_id": "LEG-04",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-05",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-06",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-07",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-08",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-09",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_selection",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_selection",
+      "diagnosis_correct": false
+    }
+  },
+  {
+    "task_id": "LEG-10",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-11",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-12",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-13",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "CoT",
+    "gold_topology": "CoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-14",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "GoT",
+    "gold_topology": "GoT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  },
+  {
+    "task_id": "LEG-15",
+    "domain": "legal",
+    "capture_mode": "PROMPTED",
+    "capture_fidelity": 0.7,
+    "selected_topology": "ToT",
+    "gold_topology": "ToT",
+    "topology_correct": true,
+    "outcome_quality": 0.0,
+    "failure_mode": "false_execution",
+    "correction_applied": false,
+    "correction_success": false,
+    "total_attempts": 1,
+    "elapsed_ms": 0.0,
+    "metadata": {
+      "induced_mode": "false_execution",
+      "diagnosed_mode": "false_execution",
+      "diagnosis_correct": true
+    }
+  }
+]

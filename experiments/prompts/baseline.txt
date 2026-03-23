@@ -1,0 +1,6 @@
+{task_text}
+
+FORMAT YOUR RESPONSE AS:
+ANSWER: [Your final answer in one sentence]
+REASONING: [Your reasoning process]
+CONFIDENCE: [HIGH/MEDIUM/LOW]

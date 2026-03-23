@@ -1,0 +1,25 @@
+{
+  "run_id": "int_003_deepseek-r1_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_003",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "There is a circular constraint: Q requires government actions to be in context W. Z prohibits Y in context W. X permits Y generally. For a government employee acting officially, Q applies, which forces context W, which triggers Z's prohibition. So Y is prohibited for government actors despite X's general permission. The interaction between Q and Z overrides X.",
+  "scoring_rubric": "Score 3 if: identifies the Q->W->Z chain that overrides X, explains that the general permission (X) is narrowed by the context requirement (Q+Z), correctly concludes prohibition for government actors. Score 2 if: correct conclusion but reasoning unclear. Score 1 if: identifies conflict but wrong conclusion. Score 0 if: applies X without considering Q and Z interaction.",
+  "response": "The analysis involves mapping the interactions between the three laws to determine the legal standing of the government employee conducting activity Y.\n\n1. **Law X**: Allows any citizen to conduct activity Y. Since the employee is not a citizen, this law does not directly apply.\n\n2. **Law Z**: Prohibits activity Y in context W. This creates a restriction if the employee's activity is within context W.\n\n3. **Law Q**: Mandates that all government actions must occur within context W. This means the employee's official duties, which are a government action, must comply with this context.\n\n**Conclusion**: The employee's official duties fall under context W, as per Law Q. However, Law Z prohibits activity Y within this context. Therefore, the employee cannot conduct activity Y as part of their official duties.\n\n**Answer**: The government employee cannot legally conduct activity Y due to the prohibition in context W as stated by Law Z, despite being a government action required by Law Q.",
+  "response_length": 995,
+  "elapsed_seconds": 55.05,
+  "tokens": {
+    "prompt_tokens": 214,
+    "completion_tokens": 656,
+    "total_duration_ms": 55037.5335
+  },
+  "timestamp": "2026-03-06T10:48:10.316680",
+  "score": 3,
+  "score_reason": "The output correctly identifies the Q->W->Z chain that overrides X, explains the narrowing of X by Q and Z, and concludes prohibition for government actors.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:39:20.664587"
+}

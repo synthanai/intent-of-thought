@@ -1,0 +1,25 @@
+{
+  "run_id": "int_004_gpt-4o-mini_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_004",
+  "task_category": "interconnected",
+  "model": "gpt-4o-mini",
+  "model_id": "openai/gpt-4o-mini",
+  "condition": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Circular dependency: Fundraising needs product -> Product needs engineers -> Hiring needs funding -> Funding needs product. Resolution options: (1) Bridge loan or convertible note to break the cycle, (2) Alice raises on vision/traction, not demo, (3) Bob scopes a minimal demo achievable with current team, (4) Carol offers equity-only contracts to initial hires.",
+  "scoring_rubric": "Score 3 if: maps the full circular dependency AND proposes at least 2 viable resolution strategies. Score 2 if: identifies the cycle but weak resolution. Score 1 if: sees individual blockers but misses the cycle. Score 0 if: treats each issue independently.",
+  "prompt": "Task: A startup has three co-founders: Alice (CEO, controls fundraising), Bob (CTO, controls product roadmap), and Carol (COO, controls hiring). Alice wants to raise a Series A which requires a demo-ready product. Bob says the product needs 3 more engineers to be demo-ready. Carol says she cannot hire without confirmed funding to guarantee salaries. Map the dependencies and identify the deadlock. Then propose a resolution.\n\nProvide your answer with clear reasoning.",
+  "response": "### Mapping the Dependencies\n\n1. **Alice (CEO)**:\n   - Dependency: Needs a demo-ready product to raise Series A funding.\n  \n2. **Bob (CTO)**:\n   - Dependency: Needs 3 more engineers to make the product demo-ready.\n  \n3. **Carol (COO)**:\n   - Dependency: Cannot hire engineers without confirmed funding to guarantee salaries.\n\n### Identifying the Deadlock\n\nThe situation can be illustrated as follows:\n\n- **Alice** is dependent on **Bob** to deliver a demo-ready product.\n- **Bob** is dependent on **Carol** to hire 3 engineers.\n- **Carol** is dependent on **Alice** to secure funding before she can hire.\n\nThis creates a circular dependency:\n\n- Alice \u2192 Bob \u2192 Carol \u2192 Alice\n\nSince none of them can proceed without the other fulfilling their requirements, they are in a deadlock.\n\n### Proposed Resolution\n\nTo resolve this deadlock, the startup can consider the following strategies:\n\n1. **Bridge Funding**: Seek out a bridge funding option (like convertible notes or a small pre-seed round) that would provide enough capital for Carol to hire the necessary engineers. This funding can be based on a promise of future investment once the demo is ready.\n\n2. **Freelancers/Contractors**: Instead of hiring full-time engineers immediately, Carol can consider hiring freelancers or contractors for a short-term period. This would allow Bob to get the necessary help to make the product demo-ready without requiring a long-term commitment.\n\n3. **Pivoting Responsibilities**: Alice could also take on some responsibilities to expedite the fundraising process. For example, she could focus on pitching to potential investors who are interested in participating in the Series A round, emphasizing the importance of the demo-ready product.\n\n4. **MVP Approach**: Bob can prioritize features to create a Minimum Viable Product (MVP) that requires fewer resources. This may allow him to create a demo-ready product without needing the full complement of engineers initially.\n\n5. **Co-founders Collaboration**: The co-founders should hold a meeting to openly discuss their constraints and explore creative solutions. They could brainstorm alternative funding sources, such as grants, accelerators, or strategic partnerships, that might provide the necessary capital without waiting for the Series A.\n\n### Conclusion\n\nBy implementing one or a combination of these strategies, the founders can break the deadlock and enable progress towards securing the necessary demo-ready product and subsequent funding. Clear communication and collaboration among the co-founders are essential to navigate this challenge effectively.",
+  "response_length": 2602,
+  "elapsed_seconds": 10.76,
+  "tokens": {
+    "prompt_tokens": 103,
+    "completion_tokens": 514,
+    "total_tokens": 617
+  },
+  "timestamp": "2026-03-19T16:02:19.865902",
+  "score": 2,
+  "judge_model": "phi4:14b",
+  "judge_raw": "2"
+}

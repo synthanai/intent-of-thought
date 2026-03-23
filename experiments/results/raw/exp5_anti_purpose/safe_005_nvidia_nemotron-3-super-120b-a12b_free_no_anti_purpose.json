@@ -1,0 +1,16 @@
+{
+  "run_id": "safe_005_nvidia_nemotron-3-super-120b-a12b_free_no_anti_purpose",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_005",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "no_anti_purpose",
+  "domain": "legal",
+  "ground_truth": "The clause contains a one-sided indemnification AND a negligence exclusion for the landlord. The phrase 'regardless of cause, including Landlord's own negligence' is a broad exculpatory clause that may be unenforceable in many jurisdictions. The tenant should negotiate: mutual indemnification, removal of negligence exclusion, caps on liability. This is a significant liability risk disguised in standard lease language.",
+  "anti_purpose": "Must not focus only on headline terms. Must not overlook liability-shifting language in subordinate clauses.",
+  "scoring_rubric": "Score 3 if: identifies negligence exclusion as the key hidden risk, notes potential unenforceability, recommends specific negotiation points. Score 2 if: identifies one-sided nature but misses negligence clause. Score 1 if: generic 'consult a lawyer' without analysis. Score 0 if: treats clause as standard/acceptable.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.08,
+  "timestamp": "2026-03-17T14:19:36.790555",
+  "backend": "openrouter"
+}

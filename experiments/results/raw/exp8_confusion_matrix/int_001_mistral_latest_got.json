@@ -1,0 +1,19 @@
+{
+  "run_id": "int_001_mistral_latest_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "optimal_topology": "got",
+  "forced_topology": "got",
+  "model": "mistral:latest",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "To analyze the potential common underlying condition for the presented symptoms, let's build a relationship graph based on the information provided:\n\n1. Key factors: Chronic Fatigue, Joint Pain, Butterfly-shaped Facial Rash, and Potential Underlying Condition(s)\n\n2. Relationships:\n   - Chronic Fatigue and Potential Underlying Condition(s): The chronic fatigue could be a symptom of multiple underlying conditions, such as autoimmune disorders, infections, or metabolic diseases.\n   - Joint Pain and Potential Underlying Condition(s): Joint pain can be a symptom of various conditions, including infections, inflammatory diseases, and autoimmune disorders.\n   - Butterfly-shaped Facial Rash and Potential Underlying Condition(s): The butterfly-shaped rash on the face is a characteristic symptom of systemic lupus erythematosus (SLE), an autoimmune disease.\n   - Chronic Fatigue, Joint Pain, and Butterfly-shaped Facial Rash: In the context of the symptoms presented, the common underlying condition could be an autoimmune disorder, specifically SLE, as it causes fatigue, joint pain, and a butterfly-shaped facial rash.\n\n3. Relationships graph:\n   - Chronic Fatigue -->(Symptom of) --> Potential Underlying Condition(s)\n   - Joint Pain -->(Symptom of) --> Potential Underlying Condition(s)\n   - Butterfly-shaped Facial Rash -->(Characteristic symptom of) --> Systemic Lupus Erythematosus (SLE)\n   - Systemic Lupus Erythematosus (SLE) --> Causes --> Chronic Fatigue\n   - Systemic Lupus Erythematosus (SLE) --> Causes --> Joint Pain\n   - Systemic Lupus Erythematosus (SLE) --> Causes --> Butterfly-shaped Facial Rash\n\n4. Feedback loops or circular dependencies: There are no direct feedback loops or circular dependencies in this case. However, it's essential to monitor and manage the patient's condition to prevent complications and potential feedback loops that may arise over time.\n\n5. Central factors: In this case, Systemic Lupus Erythematosus (SLE) is the most central factor as it directly causes the three symptoms presented.\n\n6. Synthesis: The chronic fatigue, joint pain, and butterfly-shaped facial rash shared by the patient may indicate an underlying autoimmune disorder, specifically SLE. Proper management and treatment of SLE are crucial to address the symptoms and prevent potential complications. Additionally, it's essential to consider the interconnections between the symptoms and monitor the patient's overall health to adjust treatment plans as needed.",
+  "response_length": 2476,
+  "elapsed_seconds": 61.12,
+  "timestamp": "2026-03-06T18:50:53.696332",
+  "score": 2,
+  "score_reason": "The model correctly identifies SLE as the underlying condition linking all symptoms but lacks detailed explanation of autoimmune inflammation mechanism and warning against treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T17:58:00.592202"
+}

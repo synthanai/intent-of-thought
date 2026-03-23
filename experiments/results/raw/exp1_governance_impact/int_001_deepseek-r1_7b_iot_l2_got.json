@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_deepseek-r1_7b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "To analyze whether the symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash could share a common underlying condition, we can structure our approach using a **graph-of-thought** method. This method involves mapping the symptoms and potential underlying conditions along with their interconnections.\n\n### Step-by-Step Analysis:\n\n1. **Symptom Identification and Individual Causes:**\n   - **Chronic Fatigue:** Can be caused by heart issues, chronic illnesses, stress, lack of sleep, or nutritional deficiencies.\n   - **Joint Pain:** Could result from arthritis, degenerative conditions, injuries, or infections like gout.\n   - **Butterfly-Shaped Rash:** Might",
+  "response_length": 679,
+  "elapsed_seconds": 85.16,
+  "tokens": {
+    "prompt_tokens": 209,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85138.647083
+  },
+  "timestamp": "2026-03-06T08:49:44.789752",
+  "score": 1,
+  "score_reason": "The model lists potential causes for each symptom independently without connecting them through a common underlying condition.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T19:50:03.992371"
+}

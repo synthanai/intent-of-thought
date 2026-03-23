@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "1. Initial Assessment (Identifying the symptoms and their potential causes):\n   - Chronic Fatigue: This could be due to various factors such as mental stress, physical overexertion, nutritional deficiencies, or underlying diseases like Chronic Fatigue Syndrome, Lupus, or Hypothyroidism.\n   - Joint Pain: This could be caused by arthritis, injury, infection, autoimmune diseases like Lupus, or metabolic disorders like Gout.\n   - Butterfly-shaped Facial Rash: This is a characteristic feature of Systemic Lupus Erythematosus (SLE), a systemic autoimmune disease.\n\n2. Results of the Initial Assessment:\n   - The symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash are suggestive of an autoimmune disorder, specifically Systemic Lupus Erythematosus (SLE).\n\n3. Connecting to the next step:\n   - Further investigations are required to confirm the diagnosis of SLE. This includes blood tests to check for the presence of autoantibodies, complete blood count, urinalysis, and imaging studies of the joints.\n\n4. Diagnostic Tests (Confirming or ruling out the suspected condition):\n   - Blood tests for autoantibodies like Anti-double stranded DNA (anti-dsDNA), Anti-nuclear antibodies (ANA), and Anti-Smith (anti-Sm) are positive in SLE.\n   - Elevated erythrocyte sedimentation rate (ESR) and C-reactive protein (CRP) levels indicate inflammation, which is common in SLE.\n\n5. Results of Diagnostic Tests:\n   - Positive results for autoantibodies like anti-dsDNA, ANA, and anti-Sm, and elevated ESR and CRP levels support the diagnosis of SLE.\n\n6. Connecting to the next step:\n   - If SLE is confirmed, treatment options will be discussed with the patient, which may include medications to control inflammation, manage symptoms, and prevent complications.\n\n7. Treatment Options (Discussing treatment options based on the confirmed diagnosis):\n   - Treatment for SLE typically includes nonsteroidal anti-inflammatory drugs (NSAIDs) for joint pain, corticosteroids to reduce inflammation, immunosuppressants to control the overactive immune system, and antimalarial drugs to help with skin rashes and prevent flares.\n\n8. Results of Treatment Options:\n   - The effectiveness of treatment varies for each patient, and the goal is to manage symptoms, prevent complications, and improve the quality of life.\n\n9. Connecting to the next step:\n   - Regular follow-up appointments are essential for monitoring disease activity, managing symptoms, and adjusting treatment plans as needed.\n\n10. Long-term Management (Managing the condition over time):\n   - Long-term management of SLE involves close monitoring of disease activity, lifestyle modifications, regular exercise, stress management, and a balanced diet.\n\nIn conclusion, the symptoms of chronic fatigue, joint pain, and a butterfly-shaped facial rash could share a common underlying condition, Systemic Lupus Erythematosus (SLE). By following a step-by-step approach, we were able to confirm the diagnosis and discuss potential treatment options and long-term management strategies for the patient.",
+  "response_length": 3062,
+  "elapsed_seconds": 67.15,
+  "tokens": {
+    "prompt_tokens": 134,
+    "completion_tokens": 780,
+    "total_duration_ms": 67134.725292
+  },
+  "timestamp": "2026-03-06T08:02:05.938789",
+  "score": 2,
+  "score_reason": "The response correctly identifies SLE as the unifying condition for the symptoms but lacks detailed explanation of how autoimmune inflammation mechanistically links all three symptoms.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:22:14.018737"
+}

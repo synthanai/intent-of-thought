@@ -1,0 +1,18 @@
+{
+  "run_id": "par_001_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket+Redis, SSE+database polling, Firebase/managed). Must include explicit trade-off comparison and justified recommendation.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures with component lists, pros/cons, and explicit comparison. Score 2 if: 3 approaches but shallow comparison. Score 1 if: only 1-2 approaches. Score 0 if: no structured comparison.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.2,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:15:36.845105",
+  "backend": "openrouter"
+}

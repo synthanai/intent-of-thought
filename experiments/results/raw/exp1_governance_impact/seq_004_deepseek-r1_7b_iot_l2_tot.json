@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_deepseek-r1_7b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT (chain-of-thought) because I will follow a single logical sequence to reach the answer by calculating the distance each train covers until they meet.\n\nPURPOSE CHECK: The task is solved using a step-by-step approach, ensuring that all calculations are logically connected without branching into multiple methods.\n\nANTI-PURPOSE CHECK: The solution does not explore alternative approaches; it focuses solely on finding the meeting time and location through sequential reasoning.\n\n---\n\nStep 1: Calculate the distance covered by Train 1 before Train 2 starts.\n- Time difference = 30 minutes (0.5 hours)\n- Distance = Speed \u00d7 Time = 80 km/h \u00d7 0.5 h = 40 km\n\nRemaining distance between the trains at",
+  "response_length": 714,
+  "elapsed_seconds": 85.73,
+  "tokens": {
+    "prompt_tokens": 331,
+    "completion_tokens": 1024,
+    "total_duration_ms": 85710.86875
+  },
+  "timestamp": "2026-03-17T14:35:50.977452",
+  "score": 2,
+  "score_reason": "The response correctly identifies and calculates the initial distance covered by Train A but does not complete the full calculation to reach the ground truth time (10:54) and distance (152 km).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:54:58.935265"
+}

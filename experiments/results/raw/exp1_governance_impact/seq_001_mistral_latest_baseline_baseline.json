@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_mistral_latest_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "The proof that the square root of 2 is irrational is based on contradiction. Here's a simplified version of the proof by Euclid (Book X, Proposition 9):\n\nAssume, for the sake of contradiction, that \u221a2 is rational. Then, we can express \u221a2 as a ratio of two integers in its lowest terms:\n\n\u221a2 = a/b, where a and b are integers with no common factors other than 1 (i.e., they are coprime), and b \u2260 0.\n\nSquaring both sides of the equation, we get:\n\n2 = (a/b) * (a/b)\n\nSimplifying, we have:\n\n2 = a\u00b2/b\u00b2\n\nMultiplying both sides by 2b\u00b2, we get:\n\n2b\u00b2 = a\u00b2\n\nSince a\u00b2 is a multiple of 4 (because it's a square number), it must be of the form 4k for some integer k. However, if a\u00b2 = 4k, then a = 2k or a = -2k (since a and b are coprime). In either case, a\u00b2 is even, but 2b\u00b2 is not (because we assumed b \u2260 0). This contradicts our initial assumption that a\u00b2 = 2b\u00b2, so our assumption that \u221a2 is rational must be false. Therefore, \u221a2 is irrational.",
+  "response_length": 933,
+  "elapsed_seconds": 27.96,
+  "tokens": {
+    "prompt_tokens": 18,
+    "completion_tokens": 322,
+    "total_duration_ms": 27945.634375
+  },
+  "timestamp": "2026-03-05T23:36:25.070084",
+  "score": 2,
+  "score_reason": "Extracted from: ```json\n{\"score\": 2, \"reason\": \"The proof correctly concludes that sqrt(2) is irrational but contain",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:30:36.327029"
+}

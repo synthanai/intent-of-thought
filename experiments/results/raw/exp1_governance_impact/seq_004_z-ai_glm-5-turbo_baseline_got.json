@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_z-ai_glm-5-turbo_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "1.  **Analyze the Request:**\n    *   **Task:** Solve a classic two-train meeting problem (Train A leaves at 09:00 at 80 km/h, Train B leaves 320 km away at 09:30 at 120 km/h towards A. Find meeting time and distance from A).\n    *   **Format:** Specific sections required (FACTORS, EDGES, FEEDBACK LOOPS, CENTRAL FACTORS, SYNTHESIS, ANSWER, CONFIDENCE).\n    *   **Step 1 (FACTORS):** List at least 4 key factors/entities/variables.\n    *   **Step 2 (EDGES):** Use specific relationship types (causes, enables, blocks, amplifies, depends_on, contradicts).\n    *   **Step 3 (FEEDBACK LOOPS):** Identify circular dependencies (if any).\n    *   **Step 4 (CENTRAL FACTORS):** Identify the most connected factor(s).\n    *   **Step 5 (SYNTHESIS):** Integrated analysis.\n    *   **Final Output:** Answer the math problem + Confidence level.\n\n2.  **Execute Step 1: Identify Factors**\n    *   *Factor 1:* Train A's Distance (Distance covered by Train A before meeting)\n    *   *Factor 2:* Train B's Distance (Distance covered by Train B before meeting)\n    *   *Factor 3:* Initial Separation (320 km)\n    *   *Factor 4:* Train A's Speed (80 km/h)\n    *   *Factor 5:* Train B's Speed (120 km/h)\n    *   *Factor 6:* Time Difference (30 minutes / 0.5 hours head start for Train A)\n    *   *Factor 7:* Meeting Time (The total time elapsed since 09:00 until they meet)\n\n3.  **Execute Step 2: Define Edges (using specific relationship types)**\n    *   Train A's Speed --(causes)--> Train A's Distance\n    *   Train B's Speed --(causes)--> Train B's Distance\n    *   Time Difference --(causes)--> Train A's Distance (specifically, the head-start distance)\n    *   Train A's Distance --(depends_on)--> Meeting Time\n    *   Train B's Distance --(depends_on)--> Meeting Time\n    *   Initial Separation --(enables)--> Meeting Time (provides the total distance to be closed)\n    *   Train A's Distance --(blocks)--> Train B's Distance (as A covers more distance, the remaining distance for B shrinks, though \"blocks\" is a bit metaphorical here, maybe \"depends_on\" or \"contradicts\" isn't right. Let's use: Initial Separation --(depends_on)--> Train A's Distance and Train B's Distance? Actually, Initial Separation = Train A's Distance + Train B's Distance. So Train A's Distance --(depends_on)--> Initial Separation? No. Let's refine the relationship types).\n    *   *Refining Edges with exact terms:*\n        *   Train A's Speed --(causes)--> Train A's Distance\n        *   Train B's Speed --(causes)--> Train B's Distance\n        *   Time Difference --(causes)--> Train A's Distance\n        *   Meeting Time --(causes)--> Train A's Distance\n        *   Meeting Time --(causes)--> Train B's Distance\n        *   Initial Separation --(enables)--> Meeting Time\n        *   Train A's Distance --(blocks)--> Train B's Distance (Every km Train A travels reduces the maximum possible distance Train B can travel)\n        *   Train B's Distance --(blocks)--> Train A's Distance\n\n4.  **Execute Step 3: Feedback Loops**\n    *   Are there circular dependencies? In a standard kinematic problem like this, there are no true feedback loops. The system is linear and deterministic. I will state that there are no feedback loops.\n\n5.  **Execute Step 4: Central Factors**\n    *   *Meeting Time* and *Initial Separation* are highly connected.\n    *   Meeting Time connects to Train A's Distance, Train B's Distance, Initial Separation.\n    *   Let's count connections (in-degree + out-degree based on edges):\n        *   Train A's Speed (1 out)\n        *   Train B's Speed (1 out)\n        *   Time Difference (1 out)\n        *   Train A's Distance (3 in: Speed, Time Diff, Meeting Time; 1 out: blocks B) = 4\n        *   Train B's Distance (3 in: Speed, Meeting Time; 1 out: blocks A) = 4\n        *   Initial Separation (1 out: enables",
+  "response_length": 3797,
+  "elapsed_seconds": 10.44,
+  "tokens": {
+    "prompt_tokens": 299,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10440.01
+  },
+  "timestamp": "2026-03-17T14:03:35.413343",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly identifies the problem and factors but fails to provide the specific calculations needed for the ground truth answer.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:25:01.531996"
+}

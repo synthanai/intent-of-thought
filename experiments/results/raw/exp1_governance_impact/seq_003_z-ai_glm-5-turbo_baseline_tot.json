@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_003_z-ai_glm-5-turbo_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "1.  **Analyze the Request:**\n    *   **Task:** Convert the decimal number 1247 to binary. Show all working step by step.\n    *   **Output requirements:** At least 3 different approaches. For each approach: Description, Strengths (>=2), Weaknesses/Risks (>=2), Suitability (HIGH/MEDIUM/LOW).\n    *   **Final section:** Comparison (side-by-side trade-off analysis), Recommendation (which approach and why), Confidence (HIGH/MEDIUM/LOW).\n    *   **Format:** Strict adherence to the provided template.\n\n2.  **Brainstorm Approaches for Decimal to Binary Conversion:**\n    *   *Approach 1: Division by 2 (Repeated Division).* The standard algorithmic method. Divide by 2, keep the remainder, repeat with the quotient until 0. Read remainders bottom-to-top.\n    *   *Approach 2: Subtraction of Powers of 2 (Descending Order).* Find the largest power of 2 less than or equal to the number, subtract it, put a 1. If the next power is too big, put a 0. Repeat until reaching 0.\n    *   *Approach 3: Halving and Tracking Parity (Top-Down).* Similar to division, but writing the bits from top to bottom. Check if odd (1) or even (0), subtract the bit, divide by 2, repeat. (Alternative: Double Dabble / Shift-and-Add, but that's more for binary to decimal. Let's stick to the top-down parity method for variety, or maybe the \"Successive Doubling\" method in reverse? No, let's use the \"Positional Value Expansion / Sum of Powers of 2\" approach where we build it from highest to lowest, which is essentially Approach 2. Let's find a genuinely distinct third approach).\n    *   *Alternative Approach 3: Binary Coded Decimal (BCD) conversion or Splitting the number (e.g., convert 1200 and 47 separately).* Let's split 1247 into 1000 + 200 + 40 + 7, convert each to binary, and add them using binary addition. This is a very distinct, math-heavy approach.\n\n3.  **Drafting the Content for Each Approach:**\n\n    *   **APPROACH 1: Repeated Division by 2**\n        *   *Description:* Divide 1247 by 2. Record the remainder (0 or 1). Take the quotient and divide by 2 again. Repeat until the quotient is 0. The binary number is the remainders read from bottom to top.\n        *   *Working:*\n            *   1247 / 2 = 623 R 1\n            *   623 / 2 = 311 R 1\n            *   311 / 2 = 155 R 1\n            *   155 / 2 = 77 R 1\n            *   77 / 2 = 38 R 1\n            *   38 / 2 = 19 R 0\n            *   19 / 2 = 9 R 1\n            *   9 / 2 = 4 R 1\n            *   4 / 2 = 2 R 0\n            *   2 / 2 = 1 R 0\n            *   1 / 2 = 0 R 1\n            *   Result: 10011111111\n        *   *Strengths:* Systematic, easy to program, works for any size number, minimal memorization required.\n        *   *Weaknesses:* Requires writing down the whole table before knowing the answer (bottom-up reading), prone to transcription errors if the column isn't aligned.\n        *   *Suitability:* HIGH\n\n    *   **APPROACH 2: Subtraction of Powers of 2**\n        *   *Description:* List powers of 2 from largest to smallest ($2^{10}=1024$ down to $2^0=1$). For each power, check if it can be subtracted from the remaining number. If yes, write '1' and subtract; if no, write '0'.\n        *   *Working:*\n            *   1247 - 1024 ($2^{10}$) = 223 -> 1\n            *   223 - 512 ($2^9$) = negative -> 0\n            *   223 - 256 ($2^8$) = negative -> 0\n            *   223 - 128 ($2^7$) = 95 -> 1\n            *   95 - 64 ($2^6$) = 31 -> 1\n            *   31 - 32 ($2^5$) =",
+  "response_length": 3440,
+  "elapsed_seconds": 13.07,
+  "tokens": {
+    "prompt_tokens": 212,
+    "completion_tokens": 1024,
+    "total_duration_ms": 13069.8
+  },
+  "timestamp": "2026-03-17T13:57:43.277319",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model provided the correct binary conversion method (Approach 1) but made an error in the final result, producing 10011111111 instead of 10011011111.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:46:58.986068"
+}

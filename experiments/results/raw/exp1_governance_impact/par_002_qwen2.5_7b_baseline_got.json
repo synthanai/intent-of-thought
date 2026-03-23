@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_qwen2.5_7b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "### Step 1: Identify Key Factors, Entities, or Variables Involved\n\n1. **Sorting Algorithms**: Insertion Sort, Merge Sort, Quicksort\n2. **Array Characteristics**: Nearly-sorted array of 10,000 integers\n3. **Out-of-Place Elements**: 5% of the elements are out of place\n4. **Time Complexity**: Measure of computational complexity\n5. **Performance Metrics**: Number of comparisons, number of swaps, overall runtime\n\n### Step 2: Determine Relationships\n\n1. **Insertion Sort --(amplifies)--> Number of Comparisons**\n2. **Insertion Sort --(amplifies)--> Number of Swaps**\n3. **Merge Sort --(amplifies)--> Number of Comparisons**\n4. **Merge Sort --(amplifies)--> Number of Swaps**\n5. **Quicksort --(amplifies)--> Number of Comparisons**\n6. **Quicksort --(amplifies)--> Number of Swaps**\n7. **Insertion Sort --(blocks)--> Merge Sort**\n8. **Insertion Sort --(blocks)--> Quicksort**\n9. **Merge Sort --(blocks)--> Insertion Sort**\n10. **Quicksort --(blocks)--> Insertion Sort**\n11. **Merge Sort --(blocks)--> Quicksort**\n12. **Insertion Sort --(depends on)--> Array Size**\n13. **Merge Sort --(depends on)--> Array Size**\n14. **Quicksort --(depends on)--> Array Size**\n15. **Insertion Sort --(causes)--> Best Case Performance**\n16. **Merge Sort --(causes)--> Best Case Performance**\n17. **Quicksort --(causes)--> Best Case Performance**\n18. **Insertion Sort --(depends on)--> Out-of-Place Elements**\n19. **Merge Sort --(depends on)--> Out-of-Place Elements**\n20. **Quicksort --(depends on)--> Out-of-Place Elements**\n\n### Step 3: Draw the Relationships\n\n1. Insertion Sort --(amplifies)--> Number of Comparisons\n2. Insertion Sort --(amplifies)--> Number of Swaps\n3. Merge Sort --(amplifies)--> Number of Comparisons\n4. Merge Sort --(amplifies)--> Number of Swaps\n5. Quicksort --(amplifies)--> Number of Comparisons\n6. Quicksort --(amplifies)--> Number of Swaps\n7. Insertion Sort --(blocks)--> Merge Sort\n8. Insertion Sort --(blocks)--> Quicksort\n9. Merge Sort --(blocks)--> Insertion Sort\n10. Quicksort --(blocks)--> Insertion Sort\n11. Merge Sort --(blocks)--> Quicksort\n12. Insertion Sort --(depends on)--> Array Size\n13. Merge Sort --(depends on)--> Array Size\n14. Quicksort --(depends on)--> Array Size\n15. Insertion Sort --(causes)--> Best Case Performance\n16. Merge Sort --(causes)--> Best Case Performance\n17. Quicksort --(causes)--> Best Case Performance\n18. Insertion Sort --(depends on)--> Out-of-Place Elements\n19. Merge Sort --(depends on)--> Out-of-Place Elements\n20. Quicksort --(depends on)--> Out-of-Place Elements\n\n### Step 4: Identify Feedback Loops or Circular Dependencies\n\n- There are no feedback loops or circular dependencies in the relationships defined.\n\n### Step 5: Determine Central Factors\n\n- **Array Size** and **Out-of-Place Elements** are most central as they affect multiple factors.\n- **Sorting Algorithms** are central as they are the primary entities being compared.\n\n### Step 6: Synthesise Analysis\n\n- **Array Size** and **Out-of-Place Elements** play a crucial role in determining the performance of the sorting algorithms.\n- **Insertion Sort** is likely to perform well due to its best-case time complexity (O(n)) when the array is nearly sorted. Given that only 5% of elements are out of place, it would perform nearly as well as in the best case.\n- **Merge Sort** and **Quicksort** have higher time complexities (O(n log n) and O(n log n) average, respectively) and do not benefit as much from the nearly-sorted nature of the array. They would have to perform more operations even though the array is nearly sorted.\n- **Best Case Performance** is a key factor in favoring **Insertion Sort** for this specific case.\n\n### Recommendation\n\nFor sorting a nearly-sorted array of",
+  "response_length": 3697,
+  "elapsed_seconds": 88.43,
+  "tokens": {
+    "prompt_tokens": 215,
+    "completion_tokens": 1024,
+    "total_duration_ms": 88411.740417
+  },
+  "timestamp": "2026-03-06T05:52:41.988018",
+  "score": 1,
+  "score_reason": "The model correctly identifies insertion sort as optimal for nearly-sorted data but lacks a thorough explanation of why it wins in this case, missing key elements like the minimal number of shifts needed.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:53:22.759111"
+}

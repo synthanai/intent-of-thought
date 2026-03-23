@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_deepseek-r1_7b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "The shutdown at Factory A will have several downstream effects:\n\n1. **Component Shortages**: Factory B and Factory C will face a supply shortage of components from Factory A, leading to potential production halts or delays at these facilities.\n\n2. **Sub-Assembly Shortages**: Both Factory B and Factory C supply sub-assemblies to Factory D. The lack of components from B and C will result in sub-assembly shortages at Factory D, affecting its production processes.\n\n3. **Factory D Production Stagnation**: With sub-assemblies unavailable, Factory D's production will halt, leading to a disruption in the manufacturing process of the finished products.\n\n4. **Impact on Factory A's Parent Company**: Factory D sells finished products to Factory A's parent company. The production halt at Factory D will result in delayed delivery of products to the parent company, potentially causing supply chain disruptions.\n\n5. **Feedback Loop**: Factory A's parent company may respond by reducing orders or altering production processes, which could prompt Factory A to adjust its supply chain strategies, such as seeking alternative suppliers or production methods.\n\n6. **Inventory Considerations**: The effect of the shutdown may be mitigated or exacerbated based on the inventory levels at each factory. If Factory A has sufficient stock, it might fulfill some of the demand, whereas if inventory is depleted, the impact would be more significant.\n\n7. **Lead Time Effects**: The duration of the shutdown could influence the propagation of effects. If lead times are long, the effects may not be immediate, causing compounded delays over time.\n\n8. **Resilience and Backups**: The supply chain's ability to handle disruptions may depend on whether it has backup plans, such as local production in other regions or alternative production lines, which could mitigate the effects of the shutdown.\n\nIn conclusion, the shutdown at Factory A triggers a cascade of supply chain disruptions, from component shortages to potential adjustments by Factory A's parent company, each affecting the overall supply chain dynamics.",
+  "response_length": 2101,
+  "elapsed_seconds": 79.67,
+  "tokens": {
+    "prompt_tokens": 217,
+    "completion_tokens": 959,
+    "total_duration_ms": 79647.95075
+  },
+  "timestamp": "2026-03-06T09:11:20.845003",
+  "score": 3,
+  "score_reason": "The response traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:20:31.378700"
+}

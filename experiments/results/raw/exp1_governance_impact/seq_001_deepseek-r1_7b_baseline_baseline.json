@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "To prove that the square root of 2 is irrational, we use proof by contradiction.\n\nAssume that \\(\\sqrt{2}\\) is rational. Then it can be expressed as a fraction \\(\\frac{a}{b}\\), where \\(a\\) and \\(b\\) are coprime integers (i.e., the fraction is in its simplest form). Squaring both sides, we get:\n\\[\n\\sqrt{2} = \\frac{a}{b} \\implies 2 = \\frac{a^2}{b^2} \\implies 2b^2 = a^2\n\\]\nThis implies that \\(a^2\\) is even. Since the square of an odd number is odd, \\(a\\) must be even. Let \\(a = 2k\\) for some integer \\(k\\). Substituting back, we have:\n\\[\n2b^2 = (2k)^2 \\implies 2b^2 = 4k^2 \\",
+  "response_length": 575,
+  "elapsed_seconds": 86.94,
+  "tokens": {
+    "prompt_tokens": 15,
+    "completion_tokens": 1024,
+    "total_duration_ms": 86908.355708
+  },
+  "timestamp": "2026-03-05T23:40:05.146336",
+  "score": 3,
+  "score_reason": "Extracted from: ```json\n{\n  \"score\": 3,\n  \"reason\": \"The response provides a valid proof by contradiction, covering ",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:41:33.200970"
+}

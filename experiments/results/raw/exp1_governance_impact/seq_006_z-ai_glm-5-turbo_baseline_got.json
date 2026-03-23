@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_z-ai_glm-5-turbo_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "1.  **Analyze the Request:**\n    *   **Task:** Diagnostic reasoning based on blood test results (Hemoglobin 8.2, MCV 68, Serum ferritin 8, TIBC 450).\n    *   **Methodology:** Build a relationship graph following specific steps (Identify factors, Define edges with specific relationship types, Identify feedback loops, Determine central factors, Synthesize analysis).\n    *   **Format:** Strict structure required (FACTORS, EDGES, FEEDBACK LOOPS, CENTRAL FACTORS, SYNTHESIS, ANSWER, CONFIDENCE).\n    *   **Constraint:** Use specific relationship types: causes, enables, blocks, amplifies, depends_on, contradicts.\n\n2.  **Step 1: Identify Factors (at least 4)**\n    *   Factor 1: Iron Deficiency (pathophysiological state)\n    *   Factor 2: Low Hemoglobin (8.2 g/dL)\n    *   Factor 3: Low MCV (68 fL - microcytosis)\n    *   Factor 4: Low Serum Ferritin (8 ng/mL)\n    *   Factor 5: High TIBC (450 \u03bcg/dL)\n    *   Factor 6: Microcytic Anemia (the clinical syndrome)\n    *   *Selection:* I'll use Iron Deficiency, Low Hemoglobin, Low MCV, Low Serum Ferritin, High TIBC. (5 factors, meets the >=4 rule).\n\n3.  **Step 2: Define Edges (using specific relationship types)**\n    *   Iron Deficiency --(causes)--> Low Hemoglobin\n    *   Iron Deficiency --(causes)--> Low MCV\n    *   Iron Deficiency --(causes)--> Low Serum Ferritin\n    *   Iron Deficiency --(causes)--> High TIBC\n    *   Low Serum Ferritin --(enables)--> Iron Deficiency (as a diagnostic marker, it confirms/enables the identification of the state)\n    *   Low Hemoglobin --(depends_on)--> Iron Deficiency (in this specific context, the anemia depends on the lack of iron)\n    *   Low MCV --(depends_on)--> Iron Deficiency\n    *   High TIBC --(depends_on)--> Iron Deficiency\n    *   *Refining to strictly use the allowed types and make logical sense in a diagnostic graph:*\n        *   Iron Deficiency --(causes)--> Low Hemoglobin\n        *   Iron Deficiency --(causes)--> Low MCV\n        *   Iron Deficiency --(causes)--> Low Serum Ferritin\n        *   Iron Deficiency --(causes)--> High TIBC\n        *   Low Hemoglobin --(depends_on)--> Iron Deficiency\n        *   Low MCV --(depends_on)--> Iron Deficiency\n        *   Low Serum Ferritin --(enables)--> Iron Deficiency (acts as the key enabler for the diagnosis)\n        *   High TIBC --(amplifies)--> Low Serum Ferritin (physiologically, low iron stores upregulate transferrin synthesis, which amplifies the observable gap between TIBC and ferritin) - *Wait, maybe keep it simpler.*\n        *   Let's use:\n            *   Iron Deficiency --(causes)--> Low Hemoglobin\n            *   Iron Deficiency --(causes)--> Low MCV\n            *   Iron Deficiency --(causes)--> Low Serum Ferritin\n            *   Iron Deficiency --(causes)--> High TIBC\n            *   Low Serum Ferritin --(enables)--> Diagnosis of Iron Deficiency Anemia\n            *   Low Hemoglobin --(depends_on)--> Iron Deficiency\n            *   Low MCV --(depends_on)--> Iron Deficiency\n            *   High TIBC --(depends_on)--> Iron Deficiency\n            *   Let's stick to the core 5 factors without adding \"Diagnosis\" as a separate node if possible, or add it to make the graph richer.\n            *   Factors: 1. Iron Deficiency, 2. Low Hemoglobin, 3. Low MCV, 4. Low Serum Ferritin, 5. High TIBC.\n            *   Edges:\n                *   Iron Deficiency --(causes)--> Low Hemoglobin\n                *   Iron Deficiency --(causes)--> Low MCV\n                *   Iron Deficiency --(causes)--> Low Serum Ferritin\n                *   Iron Deficiency --(causes)--> High TIBC\n                *   Low Hemoglobin --(depends_on)--> Iron Deficiency\n                *   Low MCV --(depends_on)--> Iron Deficiency\n                *   High TIBC --(amplifies)--> Low Serum",
+  "response_length": 3738,
+  "elapsed_seconds": 9.15,
+  "tokens": {
+    "prompt_tokens": 321,
+    "completion_tokens": 1024,
+    "total_duration_ms": 9154.78
+  },
+  "timestamp": "2026-03-17T14:13:03.949609",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly identifies iron deficiency anemia but skips detailed step-by-step reasoning for each lab value as specified in the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:59:33.007794"
+}

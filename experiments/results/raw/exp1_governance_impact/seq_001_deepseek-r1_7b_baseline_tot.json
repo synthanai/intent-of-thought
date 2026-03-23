@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "**Approach 1: Proof by Contradiction**\n\n**Description:**\nThis approach assumes that the square root of 2 is rational and can be expressed as a fraction of two integers with no common factors. By squaring both sides and analyzing the parity of the numerator and denominator, we derive a contradiction, thereby proving that sqrt(2) is irrational.\n\n**Strengths:**\n- **Clarity:** The proof is straightforward and easy to follow, making it accessible to most students.\n- **Effectiveness:** It directly addresses the properties of rational numbers and uses a classic proof technique.\n- **Memorability:** The structure of the proof is memorable and often taught in basic math courses.\n\n**Weaknesses:**\n- **Complexity:** It doesn't require advanced mathematical concepts, but it doesn't offer much depth for those familiar with more complex proofs.\n- **Rigid Structure:** The proof relies on a specific structure that might not be as flexible for exploring other irrational numbers.\n\n**Suitability:**\n- **High:** Ideal for introducing the concept of irrational numbers and proof techniques.\n\n---\n\n**Approach 2: Infinite Descent**\n\n**Description:**\nThis method assumes that if sqrt(2) is rational, then there exists a smallest pair of integers a and b such that sqrt(2) = a/b. By showing that this leads to an infinitely decreasing sequence of integers, a",
+  "response_length": 1346,
+  "elapsed_seconds": 88.67,
+  "tokens": {
+    "prompt_tokens": 89,
+    "completion_tokens": 1024,
+    "total_duration_ms": 88646.457709
+  },
+  "timestamp": "2026-03-06T00:18:56.273229",
+  "score": 2,
+  "score_reason": "The response outlines the proof by contradiction correctly but lacks detailed steps and does not complete the infinite descent approach.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T08:47:22.569570"
+}

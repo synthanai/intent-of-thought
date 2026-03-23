@@ -1,0 +1,20 @@
+{
+  "run_id": "int_005_deepseek-r1:7b_iot_control",
+  "experiment": "exp4_matched_control",
+  "task_id": "int_005",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_control",
+  "optimal_topology": "got",
+  "ground_truth": "Wolf removal -> deer population explosion -> overgrazing of grass -> grass decline -> rabbit population declines (less food) -> fox population declines (less prey). Oak seedlings also overgrazed by deer -> forest regeneration fails -> regime shift from mixed ecosystem to degraded grassland. This mirrors the actual Yellowstone trophic cascade.",
+  "scoring_rubric": "Score 3 if: traces full trophic cascade through multiple levels with temporal dynamics and regime shift. Score 2 if: gets direct effects (deer explosion) but misses downstream cascades. Score 1 if: only identifies wolf-deer relationship. Score 0 if: treats species independently.",
+  "response": "**Step-by-Step Explanation:**\n\n1. **Understanding the Ecosystem:** The ecosystem includes apex predators (wolves), their prey (deer), intermediate herbivores (rabbits), another predator (foxes), and two primary producers (grass and oak trees).\n\n2. **Impact of Removing Wolves:**\n   - **Deer Population Increase:** Without wolves as top predators, deer populations are expected to increase due to reduced predation.\n   - **Grass Consumption Rise:** Increased deer population leads to higher grass consumption, potentially causing overgrazing and soil degradation.\n\n3. **Effect on Rabbits and Foxes:**\n   - **Rabbits Population:** Removing wolves doesn't directly affect rabbits since they are not preyed upon by wolves. However, if foxes continue to control rabbit populations based on availability.\n   - **",
+  "response_length": 806,
+  "elapsed_seconds": 89.98,
+  "tokens": {
+    "prompt_tokens": 323,
+    "completion_tokens": 1024,
+    "total_duration_ms": 89952.812417
+  },
+  "timestamp": "2026-03-19T14:48:09.864552"
+}

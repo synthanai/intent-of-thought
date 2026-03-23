@@ -1,0 +1,19 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "optimal_topology": "tot",
+  "forced_topology": "got",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "**Recommendation for Sorting a Nearly-Sorted Array of 10,000 Integers**\n\n**1. Insertion Sort:**\n   - **Efficiency for Nearly Sorted Arrays:** Insertion sort excels in scenarios where the array is already nearly sorted. Its average-case time complexity is O(n), making it highly efficient for small or nearly sorted datasets.\n   - **Practical Consideration:** Implementing a binary search variant can further optimize the process, reducing the number of comparisons needed. This makes insertion sort both simple and efficient for this case.\n\n**2. Merge Sort:**\n   - **Stability and Consistency:** Merge sort offers a stable sort with a consistent O(n log n) time complexity. While it is reliable, it may not take full advantage of the nearly sorted nature of the array, leading to slightly higher overhead compared to insertion sort.\n\n**3. QuickSort:**\n   - **Efficiency Potential:** QuickSort typically operates at",
+  "response_length": 914,
+  "elapsed_seconds": 89.17,
+  "timestamp": "2026-03-06T17:38:16.686726",
+  "score": 2,
+  "score_reason": "The response correctly recommends insertion sort for nearly-sorted data and provides reasoning, but the analysis of merge sort is weak and quicksort's explanation is incomplete.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T21:35:57.105508"
+}

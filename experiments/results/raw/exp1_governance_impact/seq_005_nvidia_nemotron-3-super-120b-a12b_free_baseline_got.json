@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_005_nvidia_nemotron-3-super-120b-a12b_free_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "response": "We need to produce a relationship graph analysis of the task: \"Trace the execution of Dijkstra's shortest path algorithm on this graph starting from node A: A-B: 4, A-C: 2, B-D: 3, B-C: 1, C-D: 5, C-E: 7, D-E: 1. List the shortest distance from A to every other node and show each iteration of the algorithm.\"\n\nWe need to identify key factors, entities, variables (at least 4). Then edges with relationship types (causes, enables, blocks, amplifies, depends_on, contradicts). Identify feedback loops or circular dependencies. Determine central factors. Synthesize analysis. Provide answer: the distances and iterations. Provide confidence.\n\nWe need to format exactly as:\n\nFACTORS: [numbered list of key factors]\nEDGES:\n  [Factor A] --(relationship)--> [Factor B]\n  ...\nFEEDBACK LOOPS: [describe any circular dependencies]\nCENTRAL FACTORS: [which factors have the most connections and why]\nSYNTHESIS: [integrated analysis considering all relationships]\nANSWER: [your conclusion]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n\nWe need to include the algorithm tracing in the ANSWER part. Provide distances and each iteration.\n\nNow identify factors: nodes (A,B,C,D,E), edges (weights), priority queue, visited set, distance array, current node, tentative distance, etc. At least 4.\n\nLet's list: 1) Graph structure (nodes and edges with weights). 2) Distance estimates (tentative shortest distances). 3) Priority queue (or min-heap) of unvisited nodes ordered by distance. 4) Visited set (settled nodes). 5) Current node selection. 6) Edge relaxation process. We'll pick at least 4.\n\nWe'll produce edges with relationships: Graph structure enables distance estimates; distance estimates enable priority queue ordering; priority queue enables selection of current node; current node enables edge relaxation; edge relaxation updates distance estimates; distance estimates updates priority queue; visited set blocks re-processing of nodes; etc.\n\nIdentify feedback loops: distance estimates -> priority queue -> current node -> edge relaxation -> distance estimates (a loop). Also visited set influences priority queue (removing visited nodes) etc. Could be considered a feedback loop.\n\nCentral factors: distance estimates and priority queue likely most connected.\n\nNow synthesis: talk about interdependencies.\n\nAnswer: Provide distances: Let's compute Dijkstra.\n\nGraph:\nA-B 4\nA-C 2\nB-D 3\nB-C 1\nC-D 5\nC-E 7\nD-E 1\n\nInitialize distances: dist[A]=0, others = inf.\nUnvisited: {A,B,C,D,E}\nPriority queue: A(0), others inf.\n\nIteration 1: extract A (dist 0). Relax edges from A:\n- to B: tentative 0+4=4 < inf => dist[B]=4\n- to C: 0+2=2 < inf => dist[C]=2\nMark A visited.\n\nVisited: {A}\nPQ: B(4), C(2), D(inf), E(inf)\n\nIteration 2: extract min C (dist 2). Relax edges from C:\n- to A (visited) ignore.\n- to B: 2+1=3 < dist[B]=4 => update dist[B]=3\n- to D: 2+5=7 < inf => dist[D]=7\n- to E: 2+7=9 < inf => dist[E]=9\nMark C visited.\n\nVisited: {A,C}\nPQ: B(3), D(7), E(9)\n\nIteration 3: extract B (dist 3). Relax edges from B:\n- to A visited ignore.\n- to D: 3+3=6 < dist[D]=7 => update dist[D]=6\n- to C visited ignore.\nMark B visited.\n\nVisited: {A,C,B}\nPQ: D(6), E(9)\n\nIteration 4: extract D (dist 6). Relax edges from D:\n- to B visited ignore.\n- to C visited ignore.\n- to E: 6+1=7 < dist[E]=9 => update dist[E]=7\nMark D visited.\n\nVisited: {A,C,B,D}\nPQ: E(7)\n\nIteration 5: extract E (dist 7). Relax edges from E: to C visited, to D visited. Done.\n\nFinal distances: A=0, B=3, C=2, D=6, E=7.\n\nNow produce answer.\n\nNow format.\n\nFACTORS: list maybe:\n\n1. Graph topology (",
+  "response_length": 3526,
+  "elapsed_seconds": 37.19,
+  "tokens": {
+    "prompt_tokens": 348,
+    "completion_tokens": 1024,
+    "total_duration_ms": 37185.83
+  },
+  "timestamp": "2026-03-17T14:09:30.000444",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The model correctly identifies the final shortest distances and provides an iteration trace, but it includes additional unnecessary analysis that makes the steps less clear.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:34:48.696616"
+}

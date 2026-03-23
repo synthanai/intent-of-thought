@@ -1,0 +1,19 @@
+{
+  "run_id": "par_002_mistral_latest_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "optimal_topology": "tot",
+  "forced_topology": "got",
+  "model": "mistral:latest",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "In this analysis, we will identify the key factors, determine their relationships, and synthesize the comparison of three sorting algorithms - Insertion Sort, Merge Sort, and QuickSort - for sorting a nearly-sorted array of 10,000 integers with 5% of elements out of place.\n\n1. Key Factors:\n   - Algorithm (Insertion Sort, Merge Sort, QuickSort)\n   - Input array (10,000 integers, 95% sorted, 5% out of place)\n   - Time Complexity (average and worst-case)\n   - Space Complexity\n   - Stability (whether the order of equal elements is preserved)\n   - Efficiency (computational complexity)\n\n2. Relationships:\n   - Algorithm enables Time Complexity (determines the computational complexity)\n   - Algorithm depends on Space Complexity (determines the required memory)\n   - Stability contradicts some algorithms (QuickSort, for example, is not a stable sort)\n   - Input array blocks the best-case scenario for some algorithms (e.g., QuickSort requires a randomized pivot to perform optimally)\n\n3. Relationship graph:\n   - Algorithm --> Time Complexity\n   - Algorithm --> Space Complexity\n   - Algorithm <-- Input array\n   - Stability <-- Algorithm\n\n4. Feedback loops or circular dependencies:\n   There are no feedback loops or circular dependencies in this relationship graph.\n\n5. Central Factors:\n   - Algorithm is the central factor as it directly impacts Time Complexity, Space Complexity, and Stability.\n   - Input array indirectly impacts the Algorithm through its sorting state.\n\n6. Synthesis:\n   For a nearly-sorted array with 10,000 integers and 5% out of place, all three algorithms can be used. However, in this specific case, QuickSort performs best due to its average-case time complexity of O(n log n) when dealing with a nearly-sorted array.\n\n   - Insertion Sort has a time complexity of O(n^2) in the worst case, making it inefficient for large arrays. However, it has a linear space complexity of O(n) and is stable.\n   - Merge Sort has a time complexity of O(n log n) in both average and worst cases, and a linear space complexity of O(n). It is also stable. However, it requires more comparisons and swaps than QuickSort.\n   - QuickSort, on the other hand, has a time complexity of O(n log n) in the average case, making it the most efficient choice for large arrays. Its space complexity is O(log n) in the best case and O(n) in the worst case. QuickSort is not stable, which means the order of equal elements may be disturbed.\n\nIn conclusion, QuickSort is the best choice for sorting a nearly-sorted array of 10,000 integers with 5% out of place, due to its superior average-case time complexity and efficiency for large arrays. However, consider stability if the order of equal elements is important.",
+  "response_length": 2715,
+  "elapsed_seconds": 62.08,
+  "timestamp": "2026-03-06T17:35:28.296743",
+  "score": 0,
+  "score_reason": "The model incorrectly recommends QuickSort instead of Insertion Sort for nearly-sorted data, and fails to explain why Insertion Sort is optimal in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T21:50:23.615357"
+}

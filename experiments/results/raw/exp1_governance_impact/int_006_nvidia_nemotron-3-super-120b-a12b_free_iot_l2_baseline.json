@@ -1,0 +1,18 @@
+{
+  "run_id": "int_006_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_006",
+  "task_category": "interconnected",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Math faculty cuts -> fewer Math courses offered -> CS loses 30% shared courses (fewer electives) -> Physics loses prerequisites (60% of courses bottlenecked) -> Engineering doubly hit (both Physics and CS degraded). Student effects: Math enrollment drops, Physics students delayed by prereq bottleneck, Engineering enrollment may drop if degree timeline extends. Research: cross-departmental grants involving Math decline, Physics-Math collaborations disrupted.",
+  "scoring_rubric": "Score 3 if: traces full cascade through all 4 departments covering courses, enrollment, AND research. Score 2 if: gets department-level effects but misses some cascades. Score 1 if: only identifies direct Math impact. Score 0 if: treats departments independently.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.09,
+  "tokens": {},
+  "timestamp": "2026-03-17T14:18:50.442425",
+  "backend": "openrouter"
+}

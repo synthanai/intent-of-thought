@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "prompt": "Task: Prove that the square root of 2 is irrational.\n\nProvide your answer with clear reasoning.",
+  "response": "I'll prove that \u221a2 is irrational using a proof by contradiction. Here's the detailed proof:\n\nProof:\n1) Let's assume, for the sake of contradiction, that \u221a2 is rational.\n\n2) If \u221a2 is rational, then it can be expressed as a fraction p/q, where:\n   \u2022 p and q are integers\n   \u2022 p and q have no common factors (are in lowest terms)\n   \u2022 q \u2260 0\n\n3) This means: \u221a2 = p/q\n\n4) Square both sides:\n   2 = p\u00b2/q\u00b2\n\n5) Multiply both sides by q\u00b2:\n   2q\u00b2 = p\u00b2\n\n6) This means p\u00b2 is even (since the left side is even)\n\n7) If p\u00b2 is even, then p must also be even (odd squared is always odd)\n\n8) So p can be written as 2k for some integer k\n\n9) Substitute p = 2k into the equation:\n   2q\u00b2 = (2k)\u00b2\n   2q\u00b2 = 4k\u00b2\n   q\u00b2 = 2k\u00b2\n\n10) This means q\u00b2 is even, which implies q is also even\n\n11) But this contradicts our original assumption that p and q had no common factors\n\n12) Therefore, our initial assumption that \u221a2 is rational must be false\n\nConclusion: \u221a2 is irrational.",
+  "response_length": 945,
+  "elapsed_seconds": 6.25,
+  "tokens": {
+    "prompt_tokens": 33,
+    "completion_tokens": 319,
+    "total_tokens": 352
+  },
+  "timestamp": "2026-03-19T16:03:40.835144",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

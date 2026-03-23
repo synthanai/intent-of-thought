@@ -1,0 +1,16 @@
+{
+  "run_id": "par_002_z-ai_glm-5-turbo_tot",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "optimal_topology": "tot",
+  "forced_topology": "tot",
+  "model": "z-ai/glm-5-turbo",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case, O(1) space, excellent cache locality). Merge sort is O(n log n) always but O(n) extra space. Quicksort has O(n^2) worst case on nearly-sorted if poor pivot selection. For this scenario, insertion sort wins.",
+  "scoring_rubric": "Score 3 if: correct analysis of all 3, identifies insertion sort as best for this case with reasoning. Score 2 if: correct recommendation but missing some analysis dimensions. Score 1 if: generic comparison without scenario-specific reasoning. Score 0 if: wrong recommendation.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 0.09,
+  "timestamp": "2026-03-17T14:23:38.852638",
+  "backend": "openrouter"
+}

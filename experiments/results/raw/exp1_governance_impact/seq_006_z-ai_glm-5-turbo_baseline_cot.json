@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_006_z-ai_glm-5-turbo_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "response": "STEP 1: Evaluate the hemoglobin level to determine if anemia is present. The patient's hemoglobin is 8.2 g/dL, which is significantly below the normal range of 12-16 g/dL. This confirms the presence of anemia and necessitates the next step of classifying the anemia by red blood cell size.\n\nSTEP 2: Evaluate the Mean Corpuscular Volume (MCV) to classify the anemia. The patient's MCV is 68 fL, which is below the normal range of 80-100 fL. This classifies the condition as a microcytic anemia, narrowing the differential diagnosis to iron deficiency, thalassemia, anemia of chronic disease, or sideroblastic anemia, which directs us to check specific iron studies next.\n\nSTEP 3: Evaluate the serum ferritin level to assess the body's total iron stores. The patient's serum ferritin is 8 ng/mL, which is well below the normal range of 20-200 ng/mL. This indicates absolute iron depletion, effectively ruling out anemia of chronic disease (which typically presents with normal or high ferritin) and strongly pointing toward iron deficiency, leading to the final confirmatory test.\n\nSTEP 4: Evaluate the Total Iron Binding Capacity (TIBC) to confirm the iron deficiency pattern. The patient's TIBC is 450 \u03bcg/dL, which is elevated above the normal range of 250-370 \u03bcg/dL. In response to low iron stores, the liver produces more transferrin to maximize iron transport, causing TIBC to rise. This elevated TIBC perfectly complements the low ferritin, confirming the underlying mechanism of the microcytic anemia.\n\nFINAL ANSWER: The most likely diagnosis is Iron Deficiency Anemia.\nCONFIDENCE: HIGH",
+  "response_length": 1591,
+  "elapsed_seconds": 9.77,
+  "tokens": {
+    "prompt_tokens": 181,
+    "completion_tokens": 905,
+    "total_duration_ms": 9765.57
+  },
+  "timestamp": "2026-03-17T14:10:53.064764",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response correctly diagnoses iron deficiency anemia with thorough reasoning through all four lab values as specified in the ground truth.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:57:57.774812"
+}

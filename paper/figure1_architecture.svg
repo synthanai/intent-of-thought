@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4CAF50"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FF9800"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F44336"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="420" fill="white"/>
+
+  <!-- Title -->
+  <text x="480" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Figure 1: Intent of Thought (IoT) Architecture</text>
+
+  <!-- ============ STAGE 1: Reasoning Task ============ -->
+  <rect x="20" y="115" width="120" height="60" rx="10" fill="#E3F2FD" stroke="#1976D2" stroke-width="1.5"/>
+  <text x="80" y="142" text-anchor="middle" font-size="13" font-weight="bold" fill="#1976D2">Reasoning</text>
+  <text x="80" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#1976D2">Task</text>
+
+  <!-- Arrow 1 -->
+  <line x1="140" y1="145" x2="178" y2="145" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============ STAGE 2: IoT Checkpoint ============ -->
+  <rect x="180" y="62" width="195" height="168" rx="8" fill="#E0F2F1" stroke="#00897B" stroke-width="2"/>
+  <text x="277" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#00695C">IoT Checkpoint</text>
+
+  <!-- P -->
+  <rect x="195" y="96" width="165" height="36" rx="5" fill="white" stroke="#00897B" stroke-width="1"/>
+  <text x="210" y="119" font-size="12" font-weight="bold" fill="#00695C">P</text>
+  <text x="228" y="119" font-size="11" fill="#333">Purpose (WHY?)</text>
+
+  <!-- P-bar -->
+  <rect x="195" y="140" width="165" height="36" rx="5" fill="white" stroke="#00897B" stroke-width="1"/>
+  <text x="210" y="163" font-size="12" font-weight="bold" fill="#00695C">P̄</text>
+  <text x="228" y="163" font-size="11" fill="#333">Anti-Purpose (AVOID?)</text>
+
+  <!-- S -->
+  <rect x="195" y="184" width="165" height="36" rx="5" fill="white" stroke="#00897B" stroke-width="1"/>
+  <text x="210" y="207" font-size="12" font-weight="bold" fill="#00695C">S</text>
+  <text x="228" y="207" font-size="11" fill="#333">Success Signal (DONE?)</text>
+
+  <!-- Arrow 2 -->
+  <line x1="375" y1="145" x2="413" y2="145" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="394" y="135" text-anchor="middle" font-size="9" fill="#777">Alg. 1</text>
+
+  <!-- ============ STAGE 3: Topology Selection ============ -->
+  <rect x="415" y="62" width="195" height="168" rx="8" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="512" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#6A1B9A">Topology Selection</text>
+
+  <!-- CoT -->
+  <rect x="430" y="96" width="165" height="28" rx="5" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1"/>
+  <text x="512" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32">Chain-of-Thought</text>
+
+  <!-- ToT -->
+  <rect x="430" y="130" width="165" height="28" rx="5" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+  <text x="512" y="149" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565C0">Tree-of-Thought</text>
+
+  <!-- GoT -->
+  <rect x="430" y="164" width="165" height="28" rx="5" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1"/>
+  <text x="512" y="183" text-anchor="middle" font-size="11" font-weight="bold" fill="#7B1FA2">Graph-of-Thoughts</text>
+
+  <!-- AoT -->
+  <rect x="430" y="198" width="165" height="28" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+  <text x="512" y="217" text-anchor="middle" font-size="11" font-weight="bold" fill="#E65100">Abstraction-of-Thought</text>
+
+  <!-- Arrow 3 -->
+  <line x1="610" y1="145" x2="648" y2="145" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ============ STAGE 4: Reasoning Execution ============ -->
+  <rect x="650" y="105" width="120" height="80" rx="10" fill="#ECEFF1" stroke="#546E7A" stroke-width="1.5"/>
+  <text x="710" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474F">Reasoning</text>
+  <text x="710" y="158" text-anchor="middle" font-size="12" font-weight="bold" fill="#37474F">Execution</text>
+
+  <!-- Arrow 4 -->
+  <line x1="770" y1="145" x2="808" y2="145" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="789" y="135" text-anchor="middle" font-size="9" fill="#777">Alg. 2</text>
+
+  <!-- ============ STAGE 5: Drift Detection ============ -->
+  <rect x="810" y="62" width="150" height="168" rx="8" fill="#FFF8E1" stroke="#F57F17" stroke-width="2"/>
+  <text x="885" y="82" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">Drift</text>
+  <text x="885" y="97" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">Detection</text>
+
+  <!-- Continue -->
+  <rect x="830" y="110" width="110" height="30" rx="5" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1"/>
+  <text x="885" y="130" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E7D32">✓ Continue</text>
+
+  <!-- Re-align -->
+  <rect x="830" y="148" width="110" height="30" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+  <text x="885" y="168" text-anchor="middle" font-size="11" font-weight="bold" fill="#E65100">↺ Re-align</text>
+
+  <!-- Terminate -->
+  <rect x="830" y="186" width="110" height="30" rx="5" fill="#FFEBEE" stroke="#F44336" stroke-width="1"/>
+  <text x="885" y="206" text-anchor="middle" font-size="11" font-weight="bold" fill="#C62828">■ Terminate</text>
+
+  <!-- ============ FEEDBACK LOOP: Re-align back to IoT ============ -->
+  <path d="M 885 178 L 885 280 L 277 280 L 277 235" fill="none" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-amber)"/>
+  <text x="576" y="295" text-anchor="middle" font-size="10" fill="#E65100" font-style="italic">Re-evaluate topology if purpose drifts</text>
+
+  <!-- ============ LABELS ============ -->
+  <!-- Before reasoning -->
+  <rect x="130" y="42" width="140" height="18" rx="3" fill="#E0F2F1"/>
+  <text x="200" y="55" text-anchor="middle" font-size="10" fill="#00695C" font-weight="bold">PRE-REASONING</text>
+
+  <!-- During reasoning -->
+  <rect x="690" y="42" width="140" height="18" rx="3" fill="#FFF8E1"/>
+  <text x="760" y="55" text-anchor="middle" font-size="10" fill="#E65100" font-weight="bold">DURING REASONING</text>
+
+  <!-- Bottom: IoT triple notation -->
+  <text x="277" y="340" text-anchor="middle" font-size="12" fill="#555">IoT = (P, P̄, S)</text>
+
+  <!-- Bottom: legend -->
+  <rect x="180" y="360" width="12" height="12" rx="2" fill="#E0F2F1" stroke="#00897B" stroke-width="1"/>
+  <text x="198" y="371" font-size="10" fill="#555">IoT Specification</text>
+
+  <rect x="330" y="360" width="12" height="12" rx="2" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="1"/>
+  <text x="348" y="371" font-size="10" fill="#555">Topology Selection (Alg. 1)</text>
+
+  <rect x="530" y="360" width="12" height="12" rx="2" fill="#FFF8E1" stroke="#F57F17" stroke-width="1"/>
+  <text x="548" y="371" font-size="10" fill="#555">Drift Detection (Alg. 2)</text>
+
+  <line x1="680" y1="366" x2="720" y2="366" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="728" y="371" font-size="10" fill="#555">Feedback loop</text>
+</svg>

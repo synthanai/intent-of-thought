@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_005_z-ai_glm-5-turbo_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "response": "SELECTED APPROACH: CoT because Dijkstra's algorithm is inherently sequential, where each iteration builds strictly upon the state established in the previous step, requiring a single continuous chain of reasoning without branching.\nPURPOSE CHECK: Follow a single, unbroken logical chain of sequential steps to trace the algorithm and reach the definitive shortest paths.\nANTI-PURPOSE CHECK: I will avoid exploring alternative graph traversal methods (like Bellman-Ford) or branching into \"what-if\" scenarios for node selection before completing the standard Dijkstra sequence.\n\n**Iteration 1:**\n*   **State:** Unvisited nodes = {A, B, C, D, E}. Distances = {A: 0, B: \u221e, C: \u221e, D: \u221e, E: \u221e}.\n*   **Action:** Select the unvisited node with the minimum distance, which is A (distance 0).\n*   **Update Neighbors:** \n    *   Distance to B via A is 0 + 4 = 4. Update dist[B] = 4.\n    *   Distance to C via A is 0 + 2 = 2. Update dist[C] = 2.\n*   **",
+  "response_length": 940,
+  "elapsed_seconds": 11.07,
+  "tokens": {
+    "prompt_tokens": 344,
+    "completion_tokens": 1024,
+    "total_duration_ms": 11074.4
+  },
+  "timestamp": "2026-03-17T14:06:37.215681",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The model correctly applies Dijkstra's algorithm but calculates the wrong shortest distance to B (should be 3 via A-C-B).",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:49:20.147270"
+}

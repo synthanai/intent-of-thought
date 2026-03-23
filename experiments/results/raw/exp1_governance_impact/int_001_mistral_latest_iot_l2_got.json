@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "Approach chosen: graph-of-thought (map factors and edges)\n\nReasoning: The task involves interconnected factors with relationships, as the symptoms presented (chronic fatigue, joint pain, and a butterfly-shaped facial rash) may share a common underlying condition. Thus, it is best to represent these factors and their interactions in a graphical format for a clear visualization of potential connections and feedback loops.\n\n1. Chronic Fatigue:\n   - Causes: Stress, depression, insomnia, anemia, viral infections, thyroid disorders, and autoimmune diseases (e.g., Lupus).\n\n2. Joint Pain:\n   - Causes: Injuries, arthritis, infections, autoimmune diseases (e.g., Rheumatoid Arthritis), and metabolic disorders (e.g., Gout).\n\n3. Butterfly-shaped Facial Rash:\n   - Causes: Lupus, Rosacea, and other dermatological conditions.\n\nNow, let's explore potential shared underlying conditions:\n\n- Autoimmune diseases: Systemic Lupus Erythematosus (SLE)\n  - Symptoms: Chronic fatigue, joint pain, and butterfly-shaped facial rash (malar rash)\n  - Potential systemic effects: Anemia, insomnia, depression, and thyroid disorders\n\n- Metabolic disorders: Gout\n  - Symptoms: Joint pain and chronic fatigue (due to inflammation and joint damage)\n\nNext, let's create a graph to visualize the relationships and interactions between these factors:\n\nNodes:\n- Chronic Fatigue\n- Joint Pain\n- Butterfly-shaped Facial Rash\n- Autoimmune Diseases (SLE)\n- Metabolic Disorders (Gout)\n- Anemia\n- Insomnia\n- Depression\n- Thyroid Disorders\n\nEdges:\n- Chronic Fatigue, Joint Pain, Butterfly-shaped Facial Rash -- Autoimmune Diseases (SLE)\n- Chronic Fatigue, Insomnia, Depression\n- Chronic Fatigue, Anemia\n- Joint Pain, Metabolic Disorders (Gout)\n- Joint Pain, Injuries\n- Butterfly-shaped Facial Rash, Autoimmune Diseases (SLE)\n- Butterfly-shaped Facial Rash, Rosacea\n\nThis graph shows potential interconnections between the presented symptoms and their underlying conditions. However, further investigation and diagnostic tests are necessary to confirm the specific underlying condition in this particular case.",
+  "response_length": 2075,
+  "elapsed_seconds": 50.2,
+  "tokens": {
+    "prompt_tokens": 246,
+    "completion_tokens": 597,
+    "total_duration_ms": 50185.100792
+  },
+  "timestamp": "2026-03-06T08:44:37.457838",
+  "score": 2,
+  "score_reason": "The model correctly identifies SLE as the unifying condition for all symptoms but lacks thorough explanation of how autoimmune inflammation mechanistically links them.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:44:03.655476"
+}

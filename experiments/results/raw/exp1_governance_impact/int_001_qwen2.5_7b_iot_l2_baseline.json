@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen2.5_7b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, I will use the **graph-of-thought** approach. This method is appropriate because the task involves analyzing multiple interconnected factors (chronic fatigue, joint pain, and a butterfly-shaped facial rash) that may share a common underlying condition. It allows me to map out the relationships between these symptoms and explore potential interconnections.\n\n### Graph-of-Thought Analysis\n\n#### Factors and Symptoms\n1. **Chronic Fatigue**\n2. **Joint Pain**\n3. **Butterfly-Shaped Facial Rash**\n\n#### Potential Common Conditions\n1. **Lupus (Systemic Lupus Erythematosus - SLE)**\n2. **Rheumatoid Arthritis (RA)**\n3. **Vitamin Deficiencies (e.g., Vitamin D, B12)**\n4. **Chronic Fatigue Syndrome (CFS)**\n5. **Infections (e.g., Lyme Disease, Mononucleosis)**\n6. **Autoimmune Diseases in General**\n\n#### Interconnections\n\n1. **Chronic Fatigue and Joint Pain**\n   - **Lupus (SLE)**: Lupus can cause both chronic fatigue and joint pain due to inflammation and immune system activity.\n   - **Rheumatoid Arthritis (RA)**: RA is primarily characterized by joint pain but can also lead to fatigue.\n   - **Infections**: Certain infections, such as Lyme Disease, can cause both fatigue and joint pain.\n\n2. **Joint Pain and Butterfly-Shaped Facial Rash**\n   - **Lupus (SLE)**: Lupus can cause a butterfly-shaped rash on the face and joint pain due to the autoimmune response.\n   - **Rheumatoid Arthritis (RA)**: RA can sometimes present with joint pain and rashes, though less commonly than in lupus.\n\n3. **Chronic Fatigue and Butterfly-Shaped Facial Rash**\n   - **Lupus (SLE)**: Lupus can cause both chronic fatigue and a butterfly-shaped rash.\n   - **Chronic Fatigue Syndrome (CFS)**: CFS is characterized by chronic fatigue and can present with various skin symptoms, though not typically a specific facial rash.\n\n4. **All Symptoms (Fatigue, Joint Pain, and Rash)**\n   - **Lupus (SLE)**: This condition is the most likely to encompass all three symptoms: chronic fatigue, joint pain, and a butterfly-shaped facial rash.\n   - **Rheumatoid Arthritis (RA)**: While RA can cause joint pain and possibly fatigue, the rash is less common.\n   - **Infections**: Some infections can cause all three symptoms, but they are not as common or specific as lupus.\n\n### Feedback Loops and Systemic Effects\n- **Lupus (SLE)**: This condition can create a feedback loop where chronic inflammation leads to fatigue, which in turn can exacerbate joint pain and the development of the facial rash.\n- **Joint Pain**: Persistent joint pain can lead to reduced mobility and physical activity, which can contribute to or worsen chronic fatigue.\n- **Fatigue**: Chronic fatigue can affect overall health and immune function, potentially leading to or exacerbating joint pain and rash.\n\n### Conclusion\nGiven the interconnections and the presence of a common underlying condition (Lupus, SLE) that can explain all three symptoms, it is highly likely that these symptoms share a common underlying condition. The relationships between chronic fatigue, joint pain, and the butterfly-shaped facial rash are most strongly supported by the presence of Lupus (SLE).\n\nThe interconnections and feedback loops suggest a systemic effect where each symptom can influence and be influenced by the others, highlighting the importance of a comprehensive and interconnected analysis.",
+  "response_length": 3339,
+  "elapsed_seconds": 63.56,
+  "tokens": {
+    "prompt_tokens": 235,
+    "completion_tokens": 759,
+    "total_duration_ms": 63536.300917
+  },
+  "timestamp": "2026-03-06T07:44:18.493017",
+  "score": 3,
+  "score_reason": "The response correctly identifies lupus/SLE as the unifying condition, explains the mechanistic link between all symptoms through autoimmune inflammation, and warns against treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:06:22.213102"
+}

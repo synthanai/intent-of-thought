@@ -1,0 +1,202 @@
+[
+  {
+    "id": "LEG-01", "domain": "legal", "optimal_topology": "GoT",
+    "task": "Analyse the relationship between three court precedents: Smith v. Jones (2018) establishing broad duty of care, Brown v. State (2019) limiting duty in government contexts, and Garcia v. County (2020) extending Brown. How do they interact for a municipal liability case?",
+    "gold_iot": {
+      "purpose": "Map the precedent relationship network to determine which rulings apply and how they interact",
+      "anti_purpose": "Must not evaluate precedents independently when they modify or contradict each other",
+      "success_signal": "A precedent graph with edges labelled EXTENDS, LIMITS, CONTRADICTS and a synthesis of net effect"
+    },
+    "rationale": "Precedents interact non-linearly. Brown limits Smith; Garcia extends Brown. Graph needed."
+  },
+  {
+    "id": "LEG-02", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Apply the four-factor fair use test (17 U.S.C. 107) to determine whether a parody song that uses 30 seconds of a copyrighted melody qualifies as fair use.",
+    "gold_iot": {
+      "purpose": "Analyse each of the four fair use factors sequentially and reach a conclusion",
+      "anti_purpose": "Must not skip any factor or reach a conclusion before analysing all four",
+      "success_signal": "Analysis of purpose, nature of work, amount used, and market effect, followed by a balanced conclusion"
+    },
+    "rationale": "Standard 4-step legal test. Sequential analysis required."
+  },
+  {
+    "id": "LEG-03", "domain": "legal", "optimal_topology": "ToT",
+    "task": "A tech company is choosing between three IP protection strategies for their AI algorithm: patent, trade secret, or copyright. Compare each strategy across protection scope, duration, enforcement cost, and disclosure requirements.",
+    "gold_iot": {
+      "purpose": "Evaluate three IP protection options across four dimensions to select the best strategy",
+      "anti_purpose": "Must not default to patents without considering trade secret advantages for algorithms",
+      "success_signal": "A comparison matrix with four-dimension scores for each option and a context-specific recommendation"
+    },
+    "rationale": "Three independent legal strategies. Parallel evaluation needed."
+  },
+  {
+    "id": "LEG-04", "domain": "legal", "optimal_topology": "GoT",
+    "task": "Analyse the regulatory interaction between GDPR, the EU AI Act, and the Digital Services Act for a company deploying an AI-powered content moderation system in Europe. How do compliance requirements overlap, conflict, or compound?",
+    "gold_iot": {
+      "purpose": "Map the regulatory overlap network between three EU laws for AI content moderation",
+      "anti_purpose": "Must not treat each regulation independently when requirements interact and potentially conflict",
+      "success_signal": "A regulatory interaction map showing overlapping requirements, conflicts, and a unified compliance strategy"
+    },
+    "rationale": "Three interacting regulatory frameworks. Compliance requirements form a network."
+  },
+  {
+    "id": "LEG-05", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Determine whether a non-compete clause is enforceable under California law. Apply the statutory prohibition (Business and Professions Code 16600), then check for exceptions (sale of business, partnership dissolution, LLC dissolution).",
+    "gold_iot": {
+      "purpose": "Apply the California non-compete analysis sequentially: general rule, then exceptions",
+      "anti_purpose": "Must not jump to exceptions without first establishing the general prohibition",
+      "success_signal": "Step-by-step: state the general rule, check each exception, conclude enforceability"
+    },
+    "rationale": "Sequential legal analysis. Each step depends on the previous finding."
+  },
+  {
+    "id": "LEG-06", "domain": "legal", "optimal_topology": "ToT",
+    "task": "A startup founder is choosing a corporate structure. Evaluate: C-Corp, LLC, and B-Corp across liability protection, tax implications, fundraising ability, and social mission alignment.",
+    "gold_iot": {
+      "purpose": "Compare three corporate structures across four criteria for a mission-driven startup",
+      "anti_purpose": "Must not assume C-Corp is default for startups without evaluating B-Corp advantages for this founder",
+      "success_signal": "A decision matrix comparing all three structures across all four dimensions with a recommendation"
+    },
+    "rationale": "Three structures to evaluate in parallel across multiple criteria."
+  },
+  {
+    "id": "LEG-07", "domain": "legal", "optimal_topology": "GoT",
+    "task": "Analyse how employment law, immigration law, and tax law interact for a company hiring a remote worker who is a foreign national working from a third country. Map the compliance dependencies.",
+    "gold_iot": {
+      "purpose": "Map the multi-jurisdictional legal interaction network for cross-border remote employment",
+      "anti_purpose": "Must not analyse each legal domain in isolation when obligations in one affect compliance in another",
+      "success_signal": "A legal dependency graph showing how employment status affects immigration obligations affects tax treatment and back"
+    },
+    "rationale": "Three legal domains with mutual dependencies. Graph topology needed."
+  },
+  {
+    "id": "LEG-08", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Apply the Howey test to determine whether a cryptocurrency token offering constitutes a security under U.S. law. The token is sold to fund platform development, with returns expected from the team's management efforts.",
+    "gold_iot": {
+      "purpose": "Apply the four-prong Howey test sequentially to determine security classification",
+      "anti_purpose": "Must not conclude without analysing all four prongs: investment of money, common enterprise, expectation of profit, efforts of others",
+      "success_signal": "Four-prong analysis with each element assessed and a final classification with confidence level"
+    },
+    "rationale": "Standard four-prong legal test. Sequential analysis."
+  },
+  {
+    "id": "LEG-09", "domain": "legal", "optimal_topology": "ToT",
+    "task": "A company discovered a data breach affecting 50,000 customers in the EU, US, and Australia. Compare three response strategies: immediate full disclosure, phased disclosure, and regulatory-first notification. Evaluate each across legal compliance, brand impact, and liability exposure.",
+    "gold_iot": {
+      "purpose": "Evaluate three breach response strategies across three dimensions for a multi-jurisdictional incident",
+      "anti_purpose": "Must not assume immediate disclosure is always best without considering multi-jurisdictional timing requirements",
+      "success_signal": "Three strategy evaluations with compliance analysis per jurisdiction and a risk-optimised recommendation"
+    },
+    "rationale": "Three strategies to compare. Parallel evaluation with multi-dimensional criteria."
+  },
+  {
+    "id": "LEG-10", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Trace the procedural steps required to file a patent application in the United States, from invention disclosure through provisional filing, non-provisional filing, examination, office actions, to grant.",
+    "gold_iot": {
+      "purpose": "Describe the sequential patent filing procedure from start to grant",
+      "anti_purpose": "Must not skip procedural steps or present the process as non-sequential",
+      "success_signal": "A complete sequential timeline with each procedural step, timeline, and key decisions"
+    },
+    "rationale": "Purely sequential procedural process. Each step must precede the next."
+  },
+  {
+    "id": "LEG-11", "domain": "legal", "optimal_topology": "GoT",
+    "task": "A social media company faces claims under Section 230, defamation law, and the First Amendment for hosting user-generated content that caused harm. How do these three legal frameworks interact and potentially conflict?",
+    "gold_iot": {
+      "purpose": "Map the legal tension network between three intersecting legal frameworks for content liability",
+      "anti_purpose": "Must not analyse each framework in isolation when Section 230 immunity may conflict with defamation exposure",
+      "success_signal": "A framework interaction map showing where protections overlap, where they conflict, and the net legal position"
+    },
+    "rationale": "Three legal frameworks that interact, conflict, and modify each other."
+  },
+  {
+    "id": "LEG-12", "domain": "legal", "optimal_topology": "ToT",
+    "task": "A software company wants to open-source its core product. Compare three licensing strategies: MIT, Apache 2.0, and AGPL. Evaluate across community adoption, patent protection, competitive moat, and contributor requirements.",
+    "gold_iot": {
+      "purpose": "Compare three open-source licensing options across four strategic dimensions",
+      "anti_purpose": "Must not choose the most permissive license without considering competitive and patent implications",
+      "success_signal": "A licensing comparison matrix with strategic analysis and a recommendation aligned with business goals"
+    },
+    "rationale": "Three independent options, four criteria. Parallel evaluation."
+  },
+  {
+    "id": "LEG-13", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Determine whether an employer violated the WARN Act (Worker Adjustment and Retraining Notification Act) by laying off 80 employees at a single site with 120 total employees, giving 45 days notice.",
+    "gold_iot": {
+      "purpose": "Apply the WARN Act requirements sequentially: threshold check, notice period check, exceptions check",
+      "anti_purpose": "Must not conclude violation without checking whether the employer qualifies for any statutory exceptions",
+      "success_signal": "Step-by-step: employee threshold (100+), layoff threshold (50+/33%), notice requirement (60 days), exception analysis, conclusion"
+    },
+    "rationale": "Sequential statutory test. Each condition must be checked in order."
+  },
+  {
+    "id": "LEG-14", "domain": "legal", "optimal_topology": "GoT",
+    "task": "Analyse how antitrust law, data privacy law, and consumer protection law simultaneously constrain a tech company's proposed acquisition of a competitor with a large user dataset.",
+    "gold_iot": {
+      "purpose": "Map the multi-regulatory constraint network for a data-rich tech acquisition",
+      "anti_purpose": "Must not clear antitrust review without considering that data concentration creates privacy and consumer protection issues",
+      "success_signal": "A regulatory constraint map showing how approval in one domain creates obligations or risks in others"
+    },
+    "rationale": "Three regulatory domains with cross-dependencies. Antitrust approval affects privacy exposure."
+  },
+  {
+    "id": "LEG-15", "domain": "legal", "optimal_topology": "ToT",
+    "task": "A non-profit organisation wants to restructure. Evaluate three options: merge with a similar non-profit, convert to a for-profit social enterprise, or create a hybrid structure with a for-profit subsidiary. Assess tax, governance, and mission implications.",
+    "gold_iot": {
+      "purpose": "Compare three restructuring options across tax, governance, and mission dimensions",
+      "anti_purpose": "Must not evaluate financial viability without assessing mission alignment for each option",
+      "success_signal": "A three-option comparison with dimensional analysis and a recommendation preserving mission integrity"
+    },
+    "rationale": "Three restructuring paths to explore. Parallel evaluation needed."
+  },
+  {
+    "id": "LEG-16", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Apply the reasonable person standard to determine whether a store owner's failure to clear an icy sidewalk within 4 hours of snowfall constitutes negligence, given local ordinance requires clearance within 6 hours.",
+    "gold_iot": {
+      "purpose": "Apply the negligence elements sequentially: duty, breach, causation, damages",
+      "anti_purpose": "Must not find negligence without establishing all four elements",
+      "success_signal": "Four-element analysis with each element assessed against the facts and a conclusion"
+    },
+    "rationale": "Four-element sequential legal test."
+  },
+  {
+    "id": "LEG-17", "domain": "legal", "optimal_topology": "GoT",
+    "task": "A multinational is restructuring its supply chain. Analyse the interaction between trade law (tariffs, export controls), labour law (supplier country regulations), environmental law (carbon border adjustment), and contract law (force majeure clauses across jurisdictions).",
+    "gold_iot": {
+      "purpose": "Map the four-way legal interaction network for supply chain restructuring",
+      "anti_purpose": "Must not optimise for tariff reduction if it creates labour law violations or environmental non-compliance",
+      "success_signal": "A cross-domain legal interaction map with compliance dependencies and a restructuring strategy that satisfies all four domains"
+    },
+    "rationale": "Four legal domains that constrain each other. Optimising one may violate another."
+  },
+  {
+    "id": "LEG-18", "domain": "legal", "optimal_topology": "ToT",
+    "task": "A family is planning their estate. Compare three strategies: revocable living trust, irrevocable trust, and simple will with pour-over provisions. Evaluate across probate avoidance, tax efficiency, flexibility, and cost.",
+    "gold_iot": {
+      "purpose": "Compare three estate planning strategies across four dimensions for a specific family situation",
+      "anti_purpose": "Must not recommend the most complex option without considering whether simpler approaches achieve the goals",
+      "success_signal": "A comparison matrix with four-dimension analysis and a recommendation matched to family circumstances"
+    },
+    "rationale": "Three independent strategies. Parallel comparison across criteria."
+  },
+  {
+    "id": "LEG-19", "domain": "legal", "optimal_topology": "CoT",
+    "task": "Determine the statute of limitations for a breach of written contract claim in New York. The contract was signed in 2019, the breach occurred in 2021, and the plaintiff discovered the breach in 2023.",
+    "gold_iot": {
+      "purpose": "Apply the statute of limitations rules sequentially: identify the limitation period, determine accrual date, check discovery rule, calculate deadline",
+      "anti_purpose": "Must not assume the standard accrual date without checking whether the discovery rule applies",
+      "success_signal": "Step-by-step: limitation period (6 years for written contracts in NY), accrual date analysis, discovery rule check, filing deadline"
+    },
+    "rationale": "Sequential legal calculation with dependent steps."
+  },
+  {
+    "id": "LEG-20", "domain": "legal", "optimal_topology": "GoT",
+    "task": "Analyse the interconnected legal risks of an AI company that trains models on scraped web data: copyright infringement, privacy violations, terms of service breach, and potential regulatory action under the EU AI Act. How do outcomes in one area affect exposure in others?",
+    "gold_iot": {
+      "purpose": "Map the legal risk interaction network for AI training data practices",
+      "anti_purpose": "Must not assess each risk independently when a ruling in one area establishes precedent affecting others",
+      "success_signal": "A risk interaction map showing cross-domain dependencies with probability-weighted exposure estimates"
+    },
+    "rationale": "Four legal risks that interact. A copyright ruling affects privacy exposure and vice versa."
+  }
+]

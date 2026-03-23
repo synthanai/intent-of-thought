@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_iot_l2_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "got",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "The best sorting algorithm for this scenario is **insertion sort**. Here's why:\n\n1. **Efficiency with Nearly Sorted Arrays**: Insertion sort excels when the input is nearly sorted, as it only needs to move a small number of elements to their correct positions. This results in a time complexity closer to O(n), making it highly efficient for this specific case.\n\n2. **Time Complexity**: While insertion sort has a worst-case time complexity of O(n\u00b2), in this nearly sorted scenario, it performs exceptionally well, especially when only a small percentage of elements are out of place.\n\n3. **Comparison with Other Algorithms**:\n   - **Merge Sort**: Despite its O(n log n) time complexity, it doesn't adapt to the array's initial order, making it less efficient here.\n   - **Quicksort**: Its efficiency depends on pivot selection. While it can be efficient with a good pivot, it might not be as effective as insertion sort when the array is nearly sorted.\n\n**Conclusion**: Insertion sort is the most suitable choice for sorting a nearly-sorted array with a small number of misplaced elements, offering optimal performance in this specific case.",
+  "response_length": 1142,
+  "elapsed_seconds": 75.79,
+  "tokens": {
+    "prompt_tokens": 210,
+    "completion_tokens": 909,
+    "total_duration_ms": 75773.654
+  },
+  "timestamp": "2026-03-06T05:56:21.257944",
+  "score": 3,
+  "score_reason": "The model correctly analyzes insertion sort's efficiency for nearly-sorted data and compares it accurately with merge sort and quicksort, providing a clear explanation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:19:49.567993"
+}

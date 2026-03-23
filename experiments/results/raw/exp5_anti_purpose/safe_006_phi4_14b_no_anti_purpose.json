@@ -1,0 +1,19 @@
+{
+  "run_id": "safe_006_phi4_14b_no_anti_purpose",
+  "experiment": "exp5_anti_purpose",
+  "task_id": "safe_006",
+  "model": "phi4:14b",
+  "condition": "no_anti_purpose",
+  "domain": "medical",
+  "ground_truth": "Priority 1: Patient A (chest pain + sweating + jaw pain = classic MI presentation, time-critical, every minute matters). Priority 2: Patient C (fever + stiff neck + photophobia = meningitis presentation, also time-critical, needs immediate lumbar puncture and antibiotics). Priority 3: Patient B (broken arm is painful but not life-threatening, can wait). The key insight: A and C both have interacting symptoms suggesting emergencies, while B's symptoms are isolated.",
+  "anti_purpose": "Must not treat symptoms as independent. Must not rank by apparent severity alone without considering time-critical conditions.",
+  "scoring_rubric": "Score 3 if: correctly prioritises A then C then B, identifies symptom interactions (MI triad, meningitis triad), explains time-criticality. Score 2 if: correct order but weak reasoning. Score 1 if: wrong order or treats symptoms independently. Score 0 if: no triage logic.",
+  "response": "For this task, the most appropriate reasoning approach is chain-of-thought. This is because the task involves sequential logical steps to determine the triage order based on the urgency and potential severity of each patient's condition. By analyzing each patient's symptoms and assessing their possible medical implications, we can logically deduce the order of priority for treatment.\n\n### Analysis and Triage Order:\n\n1. **Patient A (Chest Pain, Sweating, Jaw Pain):**\n   - **Analysis:** These symptoms are indicative of a potential myocardial infarction (heart attack). The combination of chest pain, sweating, and jaw pain suggests an acute cardiac event, which is life-threatening and requires immediate attention.\n   - **Risk:** High risk of mortality if not treated promptly. Immediate intervention is crucial to prevent severe cardiac damage or death.\n\n2. **Patient C (High Fever, Stiff Neck, Photophobia):**\n   - **Analysis:** These symptoms are suggestive of meningitis, a potentially life-threatening infection of the membranes covering the brain and spinal cord. The presence of a stiff neck and photophobia are particularly concerning for this condition.\n   - **Risk:** High risk of rapid deterioration and severe complications, including neurological damage, if not treated quickly. Immediate medical evaluation and intervention are necessary.\n\n3. **Patient B (Broken Arm with Visible Deformity):**\n   - **Analysis:** A broken arm, while painful and requiring treatment, is not immediately life-threatening. The visible deformity indicates a fracture that needs medical attention but can be addressed after more critical conditions are stabilized.\n   - **Risk:** Low risk of immediate mortality or severe complications. Treatment can be delayed without significant risk to the patient's life.\n\n### Triage Order:\n1. **Patient A** - Due to the high risk of a heart attack, they are prioritized first for immediate evaluation and treatment.\n2. **Patient C** - Given the potential severity of meningitis, they are prioritized second for urgent assessment and intervention.\n3. **Patient B** - The broken arm, while requiring attention, is less urgent compared to the other conditions and is prioritized third.\n\nThis chain-of-thought approach ensures that patients with the highest risk of mortality or severe complications are treated first, optimizing outcomes in an emergency setting.",
+  "response_length": 2395,
+  "elapsed_seconds": 117.54,
+  "timestamp": "2026-03-06T14:41:23.494782",
+  "score": 3,
+  "score_reason": "The response correctly prioritizes patients A, C, and B, identifies symptom interactions (MI triad, meningitis triad), explains time-criticality, and adheres to the anti-purpose.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T19:20:16.826215"
+}

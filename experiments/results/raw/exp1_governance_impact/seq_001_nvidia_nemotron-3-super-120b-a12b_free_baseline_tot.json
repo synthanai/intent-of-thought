@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_001_nvidia_nemotron-3-super-120b-a12b_free_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "APPROACH 1: Classic Contradiction (Even\u2011Odd Argument)  \n  Description: Assume \u221a2 = p/q in lowest terms with integers p, q \u2260 0. Squaring gives 2 = p\u00b2/q\u00b2 \u2192 p\u00b2 = 2q\u00b2, so p\u00b2 is even \u2192 p is even. Write p = 2k, substitute to get (2k)\u00b2 = 2q\u00b2 \u2192 4k\u00b2 = 2q\u00b2 \u2192 q\u00b2 = 2k\u00b2, making q\u00b2 even \u2192 q is even. Thus both p and q share a factor 2, contradicting the assumption that p/q is in lowest terms.  \n  Strengths:  \n    - Uses only basic parity arguments, accessible to beginners.  \n    - Very short and elegant; the contradiction appears after just a few algebraic steps.  \n  Weaknesses/Risks:  \n    - Relies on the lemma \u201cif a square is even then its root is even,\u201d which itself needs justification (though simple).  \n    - May feel less insightful for those unfamiliar with number\u2011theoretic parity concepts.  \n  Suitability: HIGH  \n\nAPPROACH 2: Prime Factorization (Fundamental Theorem of Arithmetic)    Description: Suppose \u221a2 = a/b with a, b coprime integers. Then 2 = a\u00b2/b\u00b2 \u21d2 a\u00b2 = 2b\u00b2. In the prime factorization of a\u00b2, every prime appears with an even exponent. The right\u2011hand side has the prime 2 appearing with an odd exponent (one from the factor 2 plus an even exponent from b\u00b2). This mismatch contradicts the uniqueness of prime factorization.  \n  Strengths:  \n    - Highlights the power of the Fundamental Theorem of Arithmetic.  \n    - Generalizes easily to prove \u221an irrational for any non\u2011square n.  \n  Weaknesses/Risks:  \n    - Requires students to be comfortable with prime factorization and exponent parity arguments.  \n    - Slightly more abstract than the even\u2011odd proof, which may obscure the core idea for novices.    Suitability: MEDIUM  \n\nAPPROACH 3: Rational Root Theorem Applied to x\u00b2\u00a0\u2212\u00a02\u00a0=\u00a00  \n  Description: If \u221a2 were rational, it would be a rational root of the polynomial x\u00b2\u00a0\u2212\u00a02\u00a0=\u00a00. By the Rational Root Theorem, any rational root p/q (in lowest terms) must have p dividing the constant term (\u22122) and q dividing the leading coefficient (1). Hence p \u2208 {\u00b11, \u00b12} and q = \u00b11, giving possible roots \u00b11, \u00b12. None of these satisfy x\u00b2\u00a0\u2212\u00a02\u00a0=\u00a00, so no rational root exists; therefore \u221a2 is irrational.  \n  Strengths:  \n    - Connects the problem to a well\u2011known algebraic tool, reinforcing polynomial theory.  \n    - Very quick once the Rational Root Theorem is known; no parity or factorization needed.  \n  Weaknesses/Risks:  \n    - Depends on prior knowledge of the Rational Root Theorem, which may not be available in early number\u2011theory courses.  \n    - Less intuitive about why \u221a2 specifically fails; the argument feels more \u201c",
+  "response_length": 2535,
+  "elapsed_seconds": 13.87,
+  "tokens": {
+    "prompt_tokens": 231,
+    "completion_tokens": 1024,
+    "total_duration_ms": 13874.64
+  },
+  "timestamp": "2026-03-17T13:50:05.047387",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "Extracted from: ```json\n{\n  \"score\": 3,\n  \"reason\": \"The response provides three valid proofs by contradiction for t",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T10:11:00.643498"
+}

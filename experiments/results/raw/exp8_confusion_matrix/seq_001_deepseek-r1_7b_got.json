@@ -1,0 +1,19 @@
+{
+  "run_id": "seq_001_deepseek-r1_7b_got",
+  "experiment": "exp8_confusion_matrix",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "optimal_topology": "cot",
+  "forced_topology": "got",
+  "model": "deepseek-r1:7b",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "The square root of 2 is irrational. Here's a step-by-step proof:\n\n1. **Assumption**: Assume, for contradiction, that \u221a2 is rational. Then it can be expressed as a fraction a/b, where a and b are coprime integers (no common factors other than 1).\n\n2. **Equation**: \u221a2 = a/b \u21d2 2 = a\u00b2/b\u00b2 \u21d2 2b\u00b2 = a\u00b2.\n\n3. **Evenness of a\u00b2**: Since 2b\u00b2 is even, a\u00b2 must be even. Hence, a is even.\n\n4. **Expressing a**: Let a = 2k for some integer k.\n\n5. **Substitution**: Substituting back: 2b\u00b2 = (2k)\u00b2 = 4k\u00b2 \u21d2 b\u00b2 = 2k\u00b2.\n\n6. **Evenness of b\u00b2**: Thus, b\u00b2 is even, implying b is even.\n\n7. **Contradiction**: Both a and b are even, meaning they share a common factor of 2, contradicting the assumption that a and b are coprime.\n\n8. **Conclusion**: The contradiction implies that \u221a2 cannot be expressed as a ratio of two integers, hence \u221a2 is irrational.\n\n**Final Answer**: \u221a2 is irrational.",
+  "response_length": 865,
+  "elapsed_seconds": 75.47,
+  "timestamp": "2026-03-06T15:10:05.191473",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction with all necessary steps clearly outlined and correctly executed.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T22:55:32.604968"
+}

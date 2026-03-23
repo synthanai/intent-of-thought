@@ -1,0 +1,20 @@
+{
+  "run_id": "int_002_deepseek-r1:7b_iot_control",
+  "experiment": "exp4_matched_control",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_control",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Indirect: C can't supply B (B doubly hit). B can't produce final products. D loses supply from both B and C. A's shutdown creates a cascade that affects all nodes, with B hit worst (loses both direct and indirect supply).",
+  "scoring_rubric": "Score 3 if: traces all direct AND indirect effects, identifies B as worst-hit, maps the full cascade. Score 2 if: gets direct effects but misses some indirect cascades. Score 1 if: only identifies direct effects. Score 0 if: misses the interconnected nature.",
+  "response": "The shutdown at Factory A will disrupt the supply chain, leading to production halts at Factories B and C, which in turn affects distributor D's ability to receive products.\n\n**Step-by-Step Explanation:**\n\n1. **Factory A shuts down:** This stops component supply to both Factory B and Factory C.\n2. **Impact on Factory B:** Unable to receive components from Factory A, Factory B cannot assemble its products, leading to a shutdown.\n3. **Impact on Factory C:** Relies solely on Factory A for components; thus, it also shuts down due to lack of supply.\n4. **Effect on Distributor D:** Supplies from both Factories B and C are halted, causing delays in distribution.\n\n**Answer:**\nThe 2-week shutdown at Factory A will result in production stops at Factories B and C, leading to a halt in product delivery to Distributor D.\n\n---\n\n**QUALITY CHECK: YES**\n\n**CONFIDENCE:** HIGH",
+  "response_length": 870,
+  "elapsed_seconds": 75.69,
+  "tokens": {
+    "prompt_tokens": 305,
+    "completion_tokens": 518,
+    "total_duration_ms": 75670.977375
+  },
+  "timestamp": "2026-03-19T14:35:11.444603"
+}

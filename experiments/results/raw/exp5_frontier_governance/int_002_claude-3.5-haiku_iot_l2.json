@@ -1,0 +1,22 @@
+{
+  "run_id": "int_002_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Indirect: C can't supply B (B doubly hit). B can't produce final products. D loses supply from both B and C. A's shutdown creates a cascade that affects all nodes, with B hit worst (loses both direct and indirect supply).",
+  "scoring_rubric": "Score 3 if: traces all direct AND indirect effects, identifies B as worst-hit, maps the full cascade. Score 2 if: gets direct effects but misses some indirect cascades. Score 1 if: only identifies direct effects. Score 0 if: misses the interconnected nature.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the supply_chain reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: In a supply chain: Factory A supplies components to Factory B and Factory C. Factory B assembles products using components from A and C. Factory C produces sub-assemblies using components from A only. All three sell to Distributor D. Factory A announces a 2-week shutdown for maintenance. Trace all direct and indirect effects through the network.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Graph-of-Thought (GoT) because this task involves complex interconnected relationships between multiple supply chain entities with potential cascading effects\n\nPURPOSE CHECK: Trace the comprehensive impact of Factory A's maintenance shutdown across the entire supply network\n\nANTI-PURPOSE CHECK: Avoid making unsupported assumptions or skipping logical inference steps\n\nREASONING GRAPH:\n\nNodes:\n- Factory A (Component Supplier)\n- Factory B (Product Assembler)\n- Factory C (Sub-Assembly Producer)\n- Distributor D (Final Distribution Point)\n\nImpact Propagation:\n1. Direct Impact on Factory A\n   - 2-week complete shutdown\n   - No component supply to Factory B and Factory C\n\n2. Impact on Factory B\n   - Loses 50% component supply from Factory A\n   - Must find alternative sourcing or halt production\n   - Potential production stoppage/reduction\n\n3. Impact on Factory C\n   - Loses 100% component supply from Factory A\n   - Cannot produce sub-assemblies\n   - Complete production halt likely\n\n4. Downstream Impact on Distributor D\n   - Reduced/stopped product availability\n   - Potential supply chain disruption\n   - May need to source from alternative suppliers\n\nANSWER: The 2-week Factory A shutdown will likely cause:\n- Factory B: 50% component supply loss, potential partial production reduction\n- Factory C: Complete production halt\n- Distributor D: Significant supply disruption and potential inventory shortages\n\nSUCCESS SIGNAL MET: YES, comprehensive analysis tracing network-wide effects with clear reasoning\nANTI-PURPOSE VIOLATED: NO, used structured logical inference\nCONFIDENCE: HIGH",
+  "response_length": 1609,
+  "elapsed_seconds": 8.21,
+  "tokens": {
+    "prompt_tokens": 365,
+    "completion_tokens": 373,
+    "total_tokens": 738
+  },
+  "timestamp": "2026-03-19T16:08:14.181395"
+}

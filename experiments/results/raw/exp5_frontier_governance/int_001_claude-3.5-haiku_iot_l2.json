@@ -1,0 +1,22 @@
+{
+  "run_id": "int_001_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes the butterfly rash (malar rash), joint pain (lupus arthritis), and fatigue (chronic inflammation + possible anaemia). Treating them independently would miss the underlying autoimmune process.",
+  "scoring_rubric": "Score 3 if: identifies SLE and maps causal connections between all 3 symptoms. Score 2 if: correct diagnosis but missing some connections. Score 1 if: identifies autoimmune but not SLE specifically. Score 0 if: treats symptoms independently.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the medical reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: A 42-year-old patient presents with chronic fatigue, joint pain, and a butterfly-shaped facial rash. These symptoms could each have independent causes, or they could share a common underlying condition. Analyse whether and how these symptoms connect, identifying the most likely unifying diagnosis and explaining the causal pathway.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Graph-of-Thought (GoT) because the symptoms appear interconnected and require mapping complex relationships between clinical manifestations and potential underlying pathologies.\n\nPURPOSE CHECK: Systematically analyze the patient's symptoms to identify a comprehensive and scientifically sound diagnosis by exploring their potential interconnections.\n\nANTI-PURPOSE CHECK: Avoid making unsupported claims, jumping to conclusions without evidence, or proposing diagnoses without clear reasoning.\n\nGRAPH OF THOUGHT ANALYSIS:\n\nNodes (Key Symptoms/Factors):\n1. Chronic Fatigue\n2. Joint Pain\n3. Butterfly-Shaped Facial Rash\n4. Autoimmune Potential\n5. Inflammatory Processes\n\nEdges (Relationships):\n- Butterfly Rash \u2192 Strong Indicator of Systemic Autoimmune Disease\n- Chronic Fatigue + Joint Pain \u2192 Suggests Inflammatory Condition\n- Interconnected Symptoms \u2192 Potential Lupus (Systemic Lupus Erythematosus)\n\nCausal Pathway Analysis:\n- Immune System Dysregulation\n- Inflammatory Cytokine Overproduction\n- Potential Genetic Predisposition\n- Autoantibody Generation\n\nDiagnostic Evidence Mapping:\n- Butterfly Rash (Malar Rash): Classic Lupus Indicator \u2713\n- Joint Pain: Consistent with Lupus Arthritis \u2713\n- Chronic Fatigue: Common Lupus Manifestation \u2713\n\nANSWER: Most likely diagnosis is Systemic Lupus Erythematosus (SLE)\n\nSUCCESS SIGNAL MET: YES - Reasoning is systematic, evidence-based, and explores symptom interconnections comprehensively\n\nANTI-PURPOSE VIOLATED: NO - No unsupported claims or hallucinations introduced\n\nCONFIDENCE: HIGH - Strong alignment of symptoms with established diagnostic criteria for SLE\n\nRecommended Next Steps:\n1. Confirm with ANA (Antinuclear Antibody) Test\n2. Comprehensive Autoimmune Panel\n3. Rheumatology Consultation",
+  "response_length": 1756,
+  "elapsed_seconds": 9.51,
+  "tokens": {
+    "prompt_tokens": 356,
+    "completion_tokens": 477,
+    "total_tokens": 833
+  },
+  "timestamp": "2026-03-19T16:07:58.268344"
+}

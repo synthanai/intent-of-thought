@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_mistral_latest_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "1. Identify the initial event:\n   - Action: Identify that Factory A, a supplier of components, is experiencing a 2-week shutdown.\n   - Result: Factory A will not produce any components for 2 weeks.\n\n2. Analyze the immediate downstream effects:\n   - Action: Determine how the shutdown at Factory A affects its direct suppliers, i.e., Factory B and Factory C.\n   - Result: Factory B and Factory C will not receive components from Factory A during the shutdown period.\n\n3. Evaluate the impact on Factory B and Factory C:\n   - Action: Assess the consequences of the lack of components on the production processes of Factory B and Factory C.\n   - Result: Factory B and Factory C will experience a halt or slowdown in their production of sub-assemblies during the shutdown period.\n\n4. Analyze the downstream effect on Factory D:\n   - Action: Investigate how the reduced supply of sub-assemblies from Factory B and Factory C will affect Factory D's production of finished products.\n   - Result: Factory D will experience a halt or slowdown in its production of finished products during the shutdown period.\n\n5. Evaluate the feedback loop:\n   - Action: Determine whether Factory A's parent company may need to sell the finished products produced by Factory D to maintain its operations or meet demand.\n   - Result: If Factory A's parent company relies on the sales of finished products produced by Factory D to maintain its operations or meet demand, it will face challenges in meeting its own demands when Factory D experiences a halt or slowdown in production.\n\n6. Analyze the further downstream effects:\n   - Action: Investigate how the challenges faced by Factory A's parent company may impact the companies in its own supply chain.\n   - Result: Depending on the extent of the challenges, Factory A's parent company may experience delays or shortages in component or finished product supply, which can further propagate through its own supply chain.\n\n7. Assess the overall impact on the supply chain:\n   - Action: Summarize the overall effects of Factory A's shutdown on the entire supply chain.\n   - Result: The shutdown at Factory A will lead to a ripple effect throughout the supply chain, causing temporary halts or slowdowns in production at multiple stages, and potentially creating feedback loops that further impact the supply chain's efficiency and stability.",
+  "response_length": 2364,
+  "elapsed_seconds": 47.94,
+  "tokens": {
+    "prompt_tokens": 143,
+    "completion_tokens": 540,
+    "total_duration_ms": 47935.37175
+  },
+  "timestamp": "2026-03-06T09:26:06.429022",
+  "score": 2,
+  "score_reason": "The model output correctly traces all paths (A->B->D, A->C->D), identifies D as double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:05:26.433331"
+}

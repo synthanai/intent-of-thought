@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "**Approach:** Chain-of-thought\n\nI will analyze each sorting algorithm's performance on a nearly-sorted array by considering their time complexities, space requirements, and efficiency in handling nearly-sorted data. I will compare insertion sort, merge sort, and quicksort to determine which is most suitable for the given scenario.\n\n**Analysis:**\n\n1. **Insertion Sort:**\n   - **Time Complexity:** Best case O(n), average and worst case O(n\u00b2).\n   - **Efficiency:** Excellent for nearly-sorted arrays because it only moves elements a few positions, making it very fast in such scenarios.\n   - **Space Complexity:** In-place, requiring minimal extra space.\n\n2. **Merge Sort:**\n   - **Time Complexity:** Consistent O(n log n).\n   - **Efficiency:** While efficient for large datasets, it is not optimal for nearly sorted arrays due to the need to move elements across the entire array.\n   - **Space Complexity:** Requires O(n) extra space, which may be a limitation for 10,000 elements.\n\n3. **Quicksort:**\n   - **Time Complexity:** Average case O(n log n), worst case O(n\u00b2).\n   - **Efficiency:** Can be slow for nearly sorted arrays if the pivot selection is poor, leading to many unnecessary comparisons and swaps.\n   - **Space Complexity:** Requires O(log n) extra space for recursion, which is manageable but not optimal for memory-sensitive applications.\n\n**Conclusion:**\nGiven the nearly-sorted nature of the array and the size of 10,000 elements, **insertion sort** is the most efficient choice. It leverages the existing order of the array, resulting in minimal element movements and optimal performance. Merge sort and quicksort, while generally efficient, do not take full advantage of the array's near-sortedness and may require more computational resources. Therefore, insertion sort is recommended for this specific case.",
+  "response_length": 1829,
+  "elapsed_seconds": 80.02,
+  "tokens": {
+    "prompt_tokens": 210,
+    "completion_tokens": 962,
+    "total_duration_ms": 80004.491709
+  },
+  "timestamp": "2026-03-06T05:34:28.232381",
+  "score": 3,
+  "score_reason": "The response correctly analyzes all three algorithms, provides accurate complexity analysis for nearly-sorted data, and justifies why insertion sort is optimal in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:23:07.370792"
+}

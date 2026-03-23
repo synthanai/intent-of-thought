@@ -1,0 +1,21 @@
+{
+  "run_id": "seq_003_qwen3.5_9b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 156.83,
+  "tokens": {
+    "prompt_tokens": 187,
+    "completion_tokens": 1024,
+    "total_duration_ms": 156810.827
+  },
+  "timestamp": "2026-03-06T02:24:36.475621"
+}

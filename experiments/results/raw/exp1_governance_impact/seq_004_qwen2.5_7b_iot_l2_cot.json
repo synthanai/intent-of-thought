@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_qwen2.5_7b_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because this task requires sequential logical steps to determine when and where the trains meet.\nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer.\nANTI-PURPOSE CHECK: Must not branch into alternative approaches before completing the primary chain.\n\nTo solve this problem, we will follow these steps:\n1. Determine the distance each train travels until they meet.\n2. Calculate the time it takes for them to meet.\n3. Find the meeting point relative to Station A.\n\nStep 1: The first train leaves at 09:00 and travels at 80 km/h, while the second train leaves at 09:30 from a distance of 320 km away and travels at 120 km/h towards each other. By the time the second train starts its journey, the first train has already traveled for 0.5 hours (from 09:00 to 09:30). Therefore, the initial distance between them is reduced by \\(80 \\text{ km/h} \\times 0.5 \\text{ h} = 40 \\text{ km}\\), making the remaining distance 320 - 40 = 280 km.\n\nStep 2: The relative speed at which they are closing the gap is the sum of their speeds, i.e., \\(80 \\text{ km/h} + 120 \\text{ km/h} = 200 \\text{ km/h}\\). To find out how long it takes for them to meet after 09:30, we divide the remaining distance by their relative speed:\n\\[ \\frac{280 \\text{ km}}{200 \\text{ km/h}} = 1.4 \\text{ hours} \\]\n\nStep 3: Adding this time to 09:30 gives us the meeting time:\n\\[ 09:30 + 1.4 \\text{ hours} = 10:54 \\]\n\nTo find how far from Station A they meet, we calculate the distance traveled by the first train in 1.4 hours plus the initial 0.5-hour travel before the second train started:\n\\[ (80 \\text{ km/h} \\times 1.4 \\text{ h}) + (80 \\text{ km/h} \\times 0.5 \\text{ h}) = 112 \\text{ km} + 40 \\text{ km} = 152 \\text{ km} \\]\n\nANSWER: The trains meet at 10:54, and they are 152 km from Station A.\n\nSUCCESS SIGNAL MET: YES\nANTI-PURPOSE VIOLATED: NO\nCONFIDENCE: HIGH",
+  "response_length": 1880,
+  "elapsed_seconds": 50.12,
+  "tokens": {
+    "prompt_tokens": 357,
+    "completion_tokens": 586,
+    "total_duration_ms": 50101.415167
+  },
+  "timestamp": "2026-03-17T14:12:11.437827",
+  "score": 3,
+  "score_reason": "The response correctly calculates the meeting time (10:54) and distance from Station A (152 km) using clear reasoning and sequential logical steps.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:20:57.739100"
+}

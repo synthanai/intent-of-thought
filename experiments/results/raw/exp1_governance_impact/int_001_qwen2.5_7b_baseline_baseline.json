@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen2.5_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "The symptoms described\u2014chronic fatigue, joint pain, and a butterfly-shaped facial rash\u2014can indeed be indicative of a common underlying condition, particularly when considered together. These symptoms are often associated with systemic lupus erythematosus (SLE), a type of autoimmune disease. Let's examine the interconnections between these symptoms in the context of SLE:\n\n1. **Chronic Fatigue**:\n   - **Cause**: Fatigue in SLE can result from the chronic inflammation and immune system activity, which can lead to a general feeling of tiredness that is not relieved by rest.\n   - **Interconnection**: Chronic inflammation can also contribute to the development and exacerbation of joint pain.\n\n2. **Joint Pain**:\n   - **Cause**: Joint pain, or arthralgia, is common in SLE due to inflammation of the joints. This is often a result of the immune system attacking the body's own tissues.\n   - **Interconnection**: The systemic inflammation that causes joint pain can also affect the energy levels and overall well-being, contributing to fatigue.\n\n3. **Butterfly-Shaped Facial Rash**:\n   - **Cause**: The classic \"butterfly rash\" appears on the cheeks and bridge of the nose, often in a symmetrical pattern. It is a hallmark of SLE and is caused by vasculitis (inflammation of blood vessels) that can occur in the skin.\n   - **Interconnection**: The rash is a direct result of the immune system's activity, which can also lead to the other symptoms mentioned, such as fatigue and joint pain, through systemic inflammation.\n\n### Common Underlying Condition: Systemic Lupus Erythematosus (SLE)\n\n**Interconnections**:\n- **Systemic Inflammation**: SLE is characterized by chronic inflammation that can affect multiple organs and systems in the body. This inflammation can manifest as fatigue, joint pain, and skin rashes.\n- **Immune System Dysregulation**: In SLE, the immune system is dysregulated, leading to the production of autoantibodies that can attack the body's own tissues. This dysregulation can cause widespread symptoms, including the ones described.\n- **Vasculitis**: Inflammation of blood vessels (vasculitis) is a common feature in SLE and can lead to a range of symptoms, including skin rashes, joint pain, and fatigue due to reduced blood flow and oxygenation to tissues.\n\n### Diagnostic Considerations:\nGiven the presence of these symptoms, it is crucial to conduct a thorough diagnostic evaluation, which may include:\n- **Clinical Assessment**: Detailed medical history and physical examination.\n- **Blood Tests**: To check for autoantibodies (such as antinuclear antibodies, ANA) and other markers of inflammation.\n- **Imaging and Biopsy**: To assess the extent of joint involvement and skin changes, if necessary.\n\n### Management:\nThe management of SLE would typically involve a multidisciplinary approach, including:\n- **Medication**: Use of immunosuppressive drugs, nonsteroidal anti-inflammatory drugs (NSAIDs) for joint pain, and antimalarial drugs for skin symptoms.\n- **Lifestyle Modifications**: Encouraging regular exercise, stress management, and adequate rest to help manage symptoms.\n- **Regular Monitoring**: Continuous monitoring of disease activity and potential complications.\n\nIn conclusion, the chronic fatigue, joint pain, and butterfly-shaped facial rash are highly suggestive of systemic lupus erythematosus (SLE), and their interconnections are rooted in the systemic nature of the disease and the dysregulation of the immune system.",
+  "response_length": 3471,
+  "elapsed_seconds": 63.83,
+  "tokens": {
+    "prompt_tokens": 89,
+    "completion_tokens": 736,
+    "total_duration_ms": 63815.131916
+  },
+  "timestamp": "2026-03-06T07:43:14.931038",
+  "score": 3,
+  "score_reason": "The response correctly identifies SLE as the unifying condition, explains how all three symptoms are mechanistically linked through autoimmune inflammation, and warns against treating them independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T17:10:41.775782"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_001_nvidia_nemotron-3-super-120b-a12b_free_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "SELECTED APPROACH: CoT because proving the irrationality of \u221a2 follows a single logical chain of reasoning (assume rationality, derive a contradiction) without needing to explore alternative branches or map interconnected factors.\n\nPURPOSE CHECK: Follow a single logical chain of reasoning to reach a definitive answer about whether \u221a2 is irrational.\n\nANTI-PURPOSE CHECK: Avoid branching into alternative approaches or considering multiple proof strategies before completing the primary chain.\n\n[Your full reasoning using the selected approach]\n\n1. Assume, for contradiction, that \u221a2 is rational.  \n2. Then \u221a2 can be expressed as a fraction a/b in lowest terms, where a and b are integers with no common factors other than 1, and b \u2260 0.  \n3. Squaring both sides gives 2 = a\u00b2/b\u00b2, so a\u00b2 = 2b\u00b2.  \n4. Hence a\u00b2 is even (since it equals 2 times an integer).  5. If a\u00b2 is even, then a must be even (the square of an odd number is odd).  \n6. Write a = 2k for some integer k.  7. Substitute into a\u00b2 = 2b\u00b2: (2k)\u00b2 = 2b\u00b2 \u2192 4k\u00b2 = 2b\u00b2 \u2192 divide by 2: 2k\u00b2 = b\u00b2.  \n8. Thus b\u00b2 is even, implying b is also even.  \n9. But if both a and b are even, they share a common factor of 2, contradicting the assumption that a/b is in lowest terms.  \n10. Therefore the initial assumption that \u221a2 is rational must be false.  \n11. Hence \u221a2 is irrational.\n\nANSWER: The square root of 2 is irrational.\n\nSUCCESS SIGNAL MET: YES, because the reasoning proceeds step\u2011by\u2011step along a single logical chain, culminating in a verifiable conclusion (the contradiction proves irrationality).  \nANTI-PURPOSE VIOLATED: NO, we did not branch into alternative approaches before finishing the primary chain.  \nCONFIDENCE: HIGH (the proof is standard and each step follows deductively from the previous one).",
+  "response_length": 1759,
+  "elapsed_seconds": 5.8,
+  "tokens": {
+    "prompt_tokens": 306,
+    "completion_tokens": 570,
+    "total_duration_ms": 5799.01
+  },
+  "timestamp": "2026-03-17T13:49:29.439013",
+  "backend": "openrouter",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction for the irrationality of \u221a2 with all necessary steps clearly outlined and logically connected.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T10:14:17.791000"
+}

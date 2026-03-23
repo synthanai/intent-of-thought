@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_qwen3.5_9b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "qwen3.5:9b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "**Reasoning Approach Selection:**\nI have selected **Chain-of-Thought (CoT)**.\n\n**Justification:**\nThe task requires proving a specific mathematical statement using proof by contradiction. This involves a strict, linear sequence of logical deductions where each step relies directly on the previous one to reach a definitive conclusion. There is",
+  "response_length": 344,
+  "elapsed_seconds": 161.99,
+  "tokens": {
+    "prompt_tokens": 178,
+    "completion_tokens": 1024,
+    "total_duration_ms": 161976.258833
+  },
+  "timestamp": "2026-03-06T00:25:28.635625",
+  "score": 0,
+  "score_reason": "Extracted from: ```json\n{\"score\": 0, \"reason\": \"The response does not address the task of evaluating the proof by co",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T11:38:56.000172"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_mistral_latest_iot_l2_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Second-order: B->D (D loses sub-assemblies from B), C->D (D loses sub-assemblies from C). D is double-hit. Feedback loop: D sells to A's parent company, so D's production halt reduces revenue for A's parent, potentially affecting A's recovery funding. This is a circular dependency.",
+  "scoring_rubric": "Score 3 if: traces all paths (A->B->D, A->C->D), identifies D double-hit, finds the feedback loop to A's parent company. Score 2 if: traces forward paths but misses feedback loop. Score 1 if: only traces immediate A->B, A->C effects. Score 0 if: misses cascading effects entirely.",
+  "response": "Approach: graph-of-thought (map factors and edges)\n\nReasoning:\n1. First, let's map out the initial supply chain:\n   A - components -> B - sub-assemblies -> D - finished products\n   A - components -> C - sub-assemblies -> D - finished products\n\n2. Now, let's consider the 2-week shutdown at Factory A:\n   - Factory A stops supplying components to B and C, creating a ripple effect.\n\n3. Since Factory A no longer supplies components to B, Factory B cannot produce sub-assemblies.\n\n4. Similarly, without components from Factory A, Factory C cannot produce sub-assemblies either.\n\n5. Both factories B and C are unable to supply sub-assemblies to Factory D, which means Factory D cannot produce finished products.\n\n6. Now, the downstream effect: Factory D not producing finished products means Factory A's parent company cannot receive finished products to sell.\n\n7. However, there is a feedback loop to consider: Factory D's inability to produce finished products impacts Factory A's parent company's revenue. This reduced revenue might lead to financial difficulties, potentially forcing Factory A to extend its shutdown period. If the shutdown continues, the lack of components will further impact Factories B and C, potentially leading to extended shutdowns at those factories as well.\n\n8. The extended shutdowns at Factories B, C, and D will compound the issue, prolonging the supply chain disruption.\n\nIn summary, the graph-of-thought approach is ideal for this task because it allows us to map out the interconnected factors in the supply chain and identify the relationships and interactions between them, including feedback loops and systemic effects.",
+  "response_length": 1655,
+  "elapsed_seconds": 33.62,
+  "tokens": {
+    "prompt_tokens": 255,
+    "completion_tokens": 395,
+    "total_duration_ms": 33610.684083
+  },
+  "timestamp": "2026-03-06T09:26:40.047771",
+  "score": 3,
+  "score_reason": "The model correctly traces all paths (A->B->D, A->C->D), identifies D's double-hit, and finds the feedback loop to A's parent company.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:17:52.845290"
+}

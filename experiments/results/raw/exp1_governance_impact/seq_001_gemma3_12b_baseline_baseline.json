@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_gemma3_12b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "response": "Okay, let's prove that the square root of 2 is irrational using proof by contradiction.\n\n**1. Assumption (Contradiction Setup)**\n\nAssume, for the sake of contradiction, that \u221a2 is rational.  This means we can express it as a fraction in its simplest form:\n\n\u221a2 = a/b\n\nwhere 'a' and 'b' are integers, and a/b is in its lowest terms (i.e., 'a' and 'b' have no common factors other than 1).\n\n**2. Manipulation of the Equation**\n\n* Square both sides of the equation:\n   (\u221a2)\u00b2 = (a/b)\u00b2\n   2 = a\u00b2/b\u00b2\n\n* Multiply both sides by b\u00b2:\n   2b\u00b2 = a\u00b2\n\n**3. Deduction about 'a'**\n\nThe equation 2b\u00b2 = a\u00b2 tells us that a\u00b2 is an even number (since it's equal to 2 times another integer, b\u00b2).\n\nIf a\u00b2 is even, then 'a' must also be even.  (This is because the square of an odd number is always odd. If 'a' were odd, a\u00b2 would be odd, contradicting our statement that a\u00b2 is even.)\n\nTherefore, we can write 'a' as:\n\na = 2k  (where 'k' is some integer)\n\n**4. Substitution and Deduction about 'b'**\n\nSubstitute a = 2k back into the equation 2b\u00b2 = a\u00b2:\n\n2b\u00b2 = (2k)\u00b2\n2b\u00b2 = 4k\u00b2\n\nDivide both sides by 2:\n\nb\u00b2 = 2k\u00b2\n\nNow, this equation (b\u00b2 = 2k\u00b2) tells us that b\u00b2 is also an even number.\n\nAgain, if b\u00b2 is even, then 'b' must also be even.\n\n**5. The Contradiction**\n\nWe have now shown:\n\n* 'a' is even.\n* 'b' is even.\n\nThis means that 'a' and 'b' both have a common factor of 2.  However, we initially assumed that a/b was in its lowest terms, meaning 'a' and 'b' have no common factors other than 1. This is a direct contradiction.\n\n**6. Conclusion**\n\nSince our initial assumption that \u221a2 is rational leads to a contradiction, that assumption must be false.  Therefore, \u221a2 is irrational.\n\n**Q.E.D.** (quod erat demonstrandum - which was to be demonstrated)",
+  "response_length": 1721,
+  "elapsed_seconds": 92.39,
+  "tokens": {
+    "prompt_tokens": 21,
+    "completion_tokens": 545,
+    "total_duration_ms": 92337.947083
+  },
+  "timestamp": "2026-03-05T23:48:05.696113",
+  "score": 3,
+  "score_reason": "The response provides a valid proof by contradiction for the irrationality of sqrt(2) with all necessary steps clearly explained.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T09:03:05.894089"
+}

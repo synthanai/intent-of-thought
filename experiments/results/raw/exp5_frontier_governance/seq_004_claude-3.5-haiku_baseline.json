@@ -1,0 +1,22 @@
+{
+  "run_id": "seq_004_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "prompt": "Task: A train leaves Station A at 09:00 travelling at 80 km/h. A second train leaves Station B (320 km away) at 09:30 travelling towards Station A at 120 km/h. At what time do the trains meet, and how far from Station A?\n\nProvide your answer with clear reasoning.",
+  "response": "Let's solve this step by step:\n\n1. First, let's calculate how long the trains have been travelling when they meet:\n\u2022 First train leaves at 09:00\n\u2022 Second train leaves at 09:30 (30 minutes later)\n\n2. Calculate the distance each train travels:\n\u2022 First train: 80 km/h\n\u2022 Second train: 120 km/h\n\n3. When they meet, the total distance between stations (320 km) will be covered\n\n4. Let x be the time (in hours) from 09:00 until they meet\n\n5. Distance first train travels: 80x\n   Distance second train travels: 120(x - 0.5)\n   Total distance = 320 km\n\n6. Equation: 80x + 120(x - 0.5) = 320\n   80x + 120x - 60 = 320\n   200x = 380\n   x = 1.9 hours (1 hour 54 minutes)\n\n7. Distance from Station A:\n   80 \u00d7 1.9 = 152 km\n\n8. Meeting time: 09:00 + 1:54 = 10:54\n\nAnswer: The trains meet at 10:54, 152 km from Station A.",
+  "response_length": 804,
+  "elapsed_seconds": 6.13,
+  "tokens": {
+    "prompt_tokens": 83,
+    "completion_tokens": 296,
+    "total_tokens": 379
+  },
+  "timestamp": "2026-03-19T16:04:24.162790"
+}

@@ -1,0 +1,22 @@
+{
+  "run_id": "par_002_claude-3.5-haiku_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case, O(1) space, excellent cache locality). Merge sort is O(n log n) always but O(n) extra space. Quicksort has O(n^2) worst case on nearly-sorted if poor pivot selection. For this scenario, insertion sort wins.",
+  "scoring_rubric": "Score 3 if: correct analysis of all 3, identifies insertion sort as best for this case with reasoning. Score 2 if: correct recommendation but missing some analysis dimensions. Score 1 if: generic comparison without scenario-specific reasoning. Score 0 if: wrong recommendation.",
+  "prompt": "Task: Compare three sorting algorithms (insertion sort, merge sort, quicksort) for sorting a nearly-sorted array of 10,000 integers where only 50 elements are out of place. Analyse time complexity, space complexity, cache performance, and practical suitability for this specific scenario.\n\nProvide your answer with clear reasoning.",
+  "response": "Here's a comprehensive analysis of insertion sort, merge sort, and quicksort for a nearly-sorted array of 10,000 integers:\n\n1. Insertion Sort\n- Time Complexity: O(n + k), where k is the number of inversions\n- Space Complexity: O(1) - in-place algorithm\n- Best Performance for Nearly-Sorted Arrays \u2713\n\nReasoning:\n- Extremely efficient for nearly-sorted arrays\n- Minimal comparisons and swaps needed\n- Linear time complexity when array is almost sorted\n- Low overhead, excellent cache performance\n- Directly moves misplaced elements to correct position\n\n2. Merge Sort\n- Time Complexity: O(n log n) - consistent regardless of initial order\n- Space Complexity: O(n) - requires additional memory\n- Moderate Performance \u25cb\n\nReasoning:\n- Consistent performance across array configurations\n- Requires full divide-and-conquer approach\n- Additional memory allocation overhead\n- Less efficient for nearly-sorted scenarios\n- Breaks cache locality due to memory copying\n\n3. Quicksort\n- Time Complexity: O(n log n) average, O(n\u00b2) worst case\n- Space Complexity: O(log n) recursive stack\n- Poor Performance for Nearly-Sorted Arrays \u2717\n\nReasoning:\n- Worst-case scenario for nearly-sorted input\n- Pivot selection becomes inefficient\n- Multiple unnecessary partitioning operations\n- High risk of degraded performance\n- Potential quadratic time complexity\n\nRecommendation:\nInsertion Sort is clearly the optimal choice for this specific scenario. Its linear-time behavior and minimal overhead make it exceptionally suited for nearly-sorted arrays with few inversions.\n\nPractical Implementation Considerations:\n- Use insertion sort for arrays < 10,000 elements\n- Consider hybrid approaches for larger datasets\n- Implement adaptive sorting strategies\n\nDetailed Performance Metrics (Estimated):\n```\nAlgorithm       | Time Complexity | Space Complexity | Cache Performance\nInsertion Sort  | O(n + k)        | O(1)             | Excellent\nMerge Sort      | O(n log n)      | O(n)             | Moderate\nQuicksort       | O(n log n)      | O(log n)         | Poor\n```\n\nConclusion:\nFor a nearly-sorted array of 10,000 integers with only 50 elements out of place, insertion sort provides the most efficient and practical sorting solution.",
+  "response_length": 2206,
+  "elapsed_seconds": 10.33,
+  "tokens": {
+    "prompt_tokens": 79,
+    "completion_tokens": 548,
+    "total_tokens": 627
+  },
+  "timestamp": "2026-03-19T16:05:43.463232"
+}

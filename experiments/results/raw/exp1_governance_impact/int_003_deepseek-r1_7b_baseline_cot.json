@@ -1,0 +1,25 @@
+{
+  "run_id": "int_003_deepseek-r1_7b_baseline_cot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_003",
+  "task_category": "interconnected",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "cot",
+  "optimal_topology": "got",
+  "ground_truth": "There is a circular constraint: Q requires government actions to be in context W. Z prohibits Y in context W. X permits Y generally. For a government employee acting officially, Q applies, which forces context W, which triggers Z's prohibition. So Y is prohibited for government actors despite X's general permission. The interaction between Q and Z overrides X.",
+  "scoring_rubric": "Score 3 if: identifies the Q->W->Z chain that overrides X, explains that the general permission (X) is narrowed by the context requirement (Q+Z), correctly concludes prohibition for government actors. Score 2 if: correct conclusion but reasoning unclear. Score 1 if: identifies conflict but wrong conclusion. Score 0 if: applies X without considering Q and Z interaction.",
+  "response": "The analysis concludes that conducting activity Y by the government employee is prohibited under the given laws.\n\n1. **Understanding the Laws:**\n   - **Law X:** Allows any citizen to perform activity Y, regardless of context.\n   - **Law Z:** Prohibits activity Y within context W.\n   - **Law Q:** mandates that all government actions must occur within context W.\n\n2. **Applying the Context:**\n   - The employee's official duties fall under context W due to Law Q.\n\n3. **Evaluating Activity Y:**\n   - Despite Law X allowing Y for citizens, context W (required by Law Q) prohibits Y (per Law Z).\n\n**Conclusion:** Conducting activity Y is prohibited as it violates Law Z within the context W required by Law Q.",
+  "response_length": 707,
+  "elapsed_seconds": 67.51,
+  "tokens": {
+    "prompt_tokens": 122,
+    "completion_tokens": 765,
+    "total_duration_ms": 67486.922125
+  },
+  "timestamp": "2026-03-06T10:47:15.260336",
+  "score": 3,
+  "score_reason": "The response correctly identifies the Q->W->Z chain that overrides X, explains the narrowing of general permission by context, and concludes prohibition for government actors.",
+  "score_consistent": true,
+  "scored_at": "2026-03-17T00:36:59.667549"
+}

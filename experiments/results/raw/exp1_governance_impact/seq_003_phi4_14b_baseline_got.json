@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_003_phi4_14b_baseline_got",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_003",
+  "task_category": "sequential",
+  "model": "phi4:14b",
+  "condition": "baseline",
+  "topology": "got",
+  "optimal_topology": "cot",
+  "ground_truth": "1247 in binary is 10011011111. Steps: 1247/2=623r1, 623/2=311r1, 311/2=155r1, 155/2=77r1, 77/2=38r1, 38/2=19r0, 19/2=9r1, 9/2=4r1, 4/2=2r0, 2/2=1r0, 1/2=0r1. Reading remainders bottom-up: 10011011111.",
+  "scoring_rubric": "Score 3 if: correct binary (10011011111) with valid step-by-step division. Score 2 if: correct answer but steps unclear. Score 1 if: wrong answer but valid method. Score 0 if: wrong method and answer.",
+  "response": "To analyze the task of converting the decimal number 1247 to binary, we'll construct a relationship graph by identifying key factors and their interconnections.\n\n### Step 1: Identify Key Factors\n\n1. **Decimal Number (1247)**: The number to be converted.\n2. **Binary Number**: The result of the conversion.\n3. **Division by 2**: The process used to convert from decimal to binary.\n4. **Remainders**: The remainders obtained during each division step.\n5. **Quotients**: The results of each division step.\n6. **Conversion Process**: The sequence of steps to convert the number.\n7. **Place Value (Binary)**: The position of each bit in the binary number.\n8. **Final Binary Representation**: The complete binary number after all steps.\n\n### Step 2: Determine Relationships\n\n- **Decimal Number (1247) --(is converted to)--> Binary Number**\n- **Decimal Number (1247) --(is divided by)--> Division by 2**\n- **Division by 2 --(produces)--> Quotients**\n- **Division by 2 --(produces)--> Remainders**\n- **Remainders --(form)--> Final Binary Representation**\n- **Quotients --(continue the)--> Conversion Process**\n- **Conversion Process --(depends on)--> Division by 2**\n- **Conversion Process --(uses)--> Remainders**\n- **Place Value (Binary) --(organizes)--> Final Binary Representation**\n- **Final Binary Representation --(is the result of)--> Conversion Process**\n\n### Step 3: Draw Relationships as a List of Edges\n\n1. Decimal Number (1247) --(is converted to)--> Binary Number\n2. Decimal Number (1247) --(is divided by)--> Division by 2\n3. Division by 2 --(produces)--> Quotients\n4. Division by 2 --(produces)--> Remainders\n5. Remainders --(form)--> Final Binary Representation\n6. Quotients --(continue the)--> Conversion Process\n7. Conversion Process --(depends on)--> Division by 2\n8. Conversion Process --(uses)--> Remainders\n9. Place Value (Binary) --(organizes)--> Final Binary Representation\n10. Final Binary Representation --(is the result of)--> Conversion Process\n\n### Step 4: Identify Feedback Loops or Circular Dependencies\n\nThere are no feedback loops or circular dependencies in this process. The conversion follows a linear sequence from the decimal number to the final binary representation.\n\n### Step 5: Determine Central Factors\n\nThe most central factors are:\n\n- **Conversion Process**: It connects to Division by 2, Quotients, Remainders, and Final Binary Representation.\n- **Division by 2**: It connects to Decimal Number, Quotients, and Remainders.\n- **Remainders**: They connect to Division by 2 and Final Binary Representation.\n\n### Step 6: Synthesise Analysis\n\nThe task of converting the decimal number 1247 to binary involves a structured process where the division by 2 is central. Each division step produces a quotient and a remainder. The remainders are crucial as they directly form the binary digits, organized by their place value. The conversion process is linear, with each step depending on the previous division's quotient until the quotient reaches zero. The final binary representation is constructed by reading the remainders from bottom to top (last remainder to first).\n\nIn summary, the conversion process is a systematic sequence where the division by 2 and the collection of remainders are pivotal. The interconnections ensure that each step logically follows from the previous, culminating in the accurate binary representation of the decimal number.",
+  "response_length": 3386,
+  "elapsed_seconds": 137.49,
+  "tokens": {
+    "prompt_tokens": 157,
+    "completion_tokens": 777,
+    "total_duration_ms": 137459.380458
+  },
+  "timestamp": "2026-03-06T03:10:43.851081",
+  "score": 1,
+  "score_reason": "The model provides an explanation of the conversion process but does not include the specific step-by-step division required to reach the correct binary representation.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:27:55.118593"
+}

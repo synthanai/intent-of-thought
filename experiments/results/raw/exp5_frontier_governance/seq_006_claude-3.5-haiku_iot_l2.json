@@ -1,0 +1,22 @@
+{
+  "run_id": "seq_006_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_006",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "cot",
+  "ground_truth": "Step 1: Low Hb (8.2) = anaemia. Step 2: Low MCV (68) = microcytic anaemia. Step 3: Low ferritin (8) = iron stores depleted. Step 4: High TIBC (450) = body trying to absorb more iron. All four findings together = iron deficiency anaemia (IDA). Must investigate cause (blood loss, malabsorption, dietary).",
+  "scoring_rubric": "Score 3 if: correct IDA diagnosis with step-by-step reasoning through all 4 lab values. Score 2 if: correct diagnosis but skips some reasoning steps. Score 1 if: correct direction (anaemia) but wrong type. Score 0 if: wrong or irrelevant diagnosis.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the medical reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: A patient's blood test shows: Hemoglobin 8.2 g/dL (normal 12-16), MCV 68 fL (normal 80-100), Serum ferritin 8 ng/mL (normal 20-200), TIBC 450 \u03bcg/dL (normal 250-370). Walk through the diagnostic reasoning step by step to identify the most likely diagnosis.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Chain-of-Thought (CoT) because this task requires a systematic, sequential analysis of laboratory values to reach a diagnostic conclusion.\n\nPURPOSE CHECK: Accurately diagnose the patient's condition by methodically interpreting blood test results\n\nANTI-PURPOSE CHECK: Avoid making unsupported claims or jumping to conclusions without thorough reasoning\n\nREASONING STEPS:\n1. Hemoglobin Analysis\n- Value: 8.2 g/dL (significantly below normal range of 12-16)\n- Indicates clear anemia\n- Suggests reduced red blood cell oxygen-carrying capacity\n\n2. MCV (Mean Corpuscular Volume) Analysis\n- Value: 68 fL (below normal range of 80-100)\n- Indicates microcytic anemia\n- Small red blood cells suggest iron-related issue\n\n3. Serum Ferritin Analysis\n- Value: 8 ng/mL (well below normal range of 20-200)\n- Indicates severe iron deficiency\n- Low iron storage protein confirms inadequate iron reserves\n\n4. TIBC (Total Iron Binding Capacity) Analysis\n- Value: 450 \u03bcg/dL (above normal range of 250-370)\n- Suggests the body is trying to compensate for low iron\n- Increased transferrin production indicates iron deficiency\n\n5. Diagnostic Synthesis\n- Microcytic anemia\n- Severely low hemoglobin\n- Markedly reduced iron stores\n- Elevated iron-binding capacity\n\nANSWER: Iron Deficiency Anemia\n\nSUCCESS SIGNAL MET: YES - Reasoning follows systematic steps, uses objective data, reaches a clear conclusion supported by multiple laboratory parameters\n\nANTI-PURPOSE VIOLATED: NO - No unsupported claims or guesses were made\n\nCONFIDENCE: HIGH - Diagnosis is strongly supported by comprehensive lab value analysis",
+  "response_length": 1604,
+  "elapsed_seconds": 8.31,
+  "tokens": {
+    "prompt_tokens": 385,
+    "completion_tokens": 418,
+    "total_tokens": 803
+  },
+  "timestamp": "2026-03-19T16:05:06.880659"
+}

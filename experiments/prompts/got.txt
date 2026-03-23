@@ -1,0 +1,23 @@
+Analyse this task by building a relationship graph. Follow these steps:
+
+1. IDENTIFY all key factors, entities, or variables involved (list at least 4)
+2. For each pair of related factors, state the relationship as an edge:
+   "Factor A --(relationship)--> Factor B"
+   Use relationship types: causes, enables, blocks, amplifies, depends_on, contradicts
+3. Identify any feedback loops or circular dependencies
+4. Determine which factors are most central (connected to the most other factors)
+5. Synthesise your analysis, taking interconnections into account rather than treating factors independently
+
+Task: {task_text}
+
+FORMAT YOUR RESPONSE AS:
+FACTORS: [numbered list of key factors]
+EDGES:
+  [Factor A] --(relationship)--> [Factor B]
+  [Factor A] --(relationship)--> [Factor C]
+  ...
+FEEDBACK LOOPS: [describe any circular dependencies]
+CENTRAL FACTORS: [which factors have the most connections and why]
+SYNTHESIS: [integrated analysis considering all relationships]
+ANSWER: [your conclusion]
+CONFIDENCE: [HIGH/MEDIUM/LOW]

@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_mistral_latest_baseline_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "mistral:latest",
+  "condition": "baseline",
+  "topology": "tot",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "Approach 1: Insertion Sort\n1. Description: Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is modeled on how you sort a deck of cards in your hand.\n2. Strengths:\n   - Easy to understand and implement\n   - Efficient for small data sets or nearly-sorted arrays, as it has a linear time complexity of O(n) for arrays that are already sorted or almost sorted.\n3. Weaknesses or Risks:\n   - Poor performance for large data sets as its time complexity is O(n^2) in the worst case\n   - Not suitable for out-of-place elements in large arrays\n4. Suitability: Low for this specific scenario due to the large size of the array (10,000 integers) and the presence of out-of-place elements (5%).\n\nApproach 2: Merge Sort\n1. Description: Merge Sort is a divide-and-conquer algorithm that sorts an array by recursively splitting it into smaller sub-arrays, sorting each sub-array, and then merging them back together.\n2. Strengths:\n   - Stable sorting algorithm, meaning that the relative order of equal elements is preserved\n   - Time complexity is O(n log n) in all cases, making it efficient for large data sets\n3. Weaknesses or Risks:\n   - Requires additional memory to store temporary arrays during the merging process, which can be a problem for large arrays\n   - Not the best choice for small data sets due to the overhead of recursion\n4. Suitability: Medium for this specific scenario. Although the time complexity is optimal, the requirement for additional memory might be a concern for large arrays.\n\nApproach 3: QuickSort\n1. Description: Quicksort is another divide-and-conquer algorithm that sorts an array by selecting a 'pivot' element and partitioning the array around the pivot, recursively sorting the sub-arrays created.\n2. Strengths:\n   - Efficient for large data sets, with a time complexity of O(n log n) in all cases\n   - In-place sorting algorithm, meaning that it does not require additional memory\n3. Weaknesses or Risks:\n   - Sensitive to the choice of pivot, which can lead to a worst-case scenario of O(n^2) time complexity in the presence of an unlucky input array\n   - Not a stable sorting algorithm, meaning that the relative order of equal elements may not be preserved\n4. Suitability: High for this specific scenario. Although Quicksort can have issues with the choice of pivot, the array is nearly sorted (only 5% of elements are out of place), which reduces the likelihood of a worst-case scenario. Additionally, its efficiency for large data sets and in-place sorting make it a good choice.\n\nComparison:\n- Insertion Sort is not suitable for large data sets with out-of-place elements.\n- Merge Sort is a good choice due to its optimal time complexity and stability, but the requirement for additional memory might be a concern for large arrays.\n- Quicksort is a good choice for large data sets, as it is efficient and performs in-place sorting. However, it is not a stable sorting algorithm.\n\nRecommendation: For this specific scenario, QuickSort is the best choice. Although it is not a stable sorting algorithm, the array is nearly sorted, which reduces the likelihood of issues with the choice of pivot. Its efficiency for large data sets and in-place sorting make it the most suitable option.",
+  "response_length": 3268,
+  "elapsed_seconds": 69.92,
+  "tokens": {
+    "prompt_tokens": 149,
+    "completion_tokens": 809,
+    "total_duration_ms": 69905.038291
+  },
+  "timestamp": "2026-03-06T05:28:13.535751",
+  "score": 1,
+  "score_reason": "The model correctly identifies insertion sort as optimal for nearly-sorted data but fails to provide the necessary explanation of why it wins in this case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T05:08:37.866337"
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "int_002_gpt-4o-mini_baseline",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_002",
+  "task_category": "interconnected",
+  "model": "gpt-4o-mini",
+  "model_id": "openai/gpt-4o-mini",
+  "condition": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Direct effects: A->B (B loses components), A->C (C loses components). Indirect: C can't supply B (B doubly hit). B can't produce final products. D loses supply from both B and C. A's shutdown creates a cascade that affects all nodes, with B hit worst (loses both direct and indirect supply).",
+  "scoring_rubric": "Score 3 if: traces all direct AND indirect effects, identifies B as worst-hit, maps the full cascade. Score 2 if: gets direct effects but misses some indirect cascades. Score 1 if: only identifies direct effects. Score 0 if: misses the interconnected nature.",
+  "prompt": "Task: In a supply chain: Factory A supplies components to Factory B and Factory C. Factory B assembles products using components from A and C. Factory C produces sub-assemblies using components from A only. All three sell to Distributor D. Factory A announces a 2-week shutdown for maintenance. Trace all direct and indirect effects through the network.\n\nProvide your answer with clear reasoning.",
+  "response": "When Factory A announces a 2-week shutdown for maintenance, it will have several direct and indirect effects on the entire supply chain, affecting all three factories (A, B, and C) and Distributor D. Let's trace these effects step by step:\n\n### Direct Effects:\n\n1. **Factory A**:\n   - **Shutdown Impact**: Factory A stops producing components for the two weeks, directly halting its output. There will be no new components supplied to Factory B or Factory C during this period.\n\n2. **Factory B**:\n   - **Component Availability**: Factory B relies on components from Factory A to assemble products. During the two-week shutdown, Factory B will face a shortage of components needed for assembly. Depending on their inventory levels prior to the shutdown, this may lead to:\n     - A slowdown in production rates.\n     - A potential halt in assembly if their inventory of components runs out.\n     - The need to communicate with customers about potential delays in product availability.\n\n3. **Factory C**:\n   - **Sub-Assembly Production**: Factory C uses components from Factory A to produce sub-assemblies. Similar to Factory B, the lack of components from A will lead to:\n     - A slowdown or complete halt in sub-assembly production.\n     - Possible inventory shortages for Factory C if they rely on a continuous supply of components from A.\n\n### Indirect Effects:\n\n1. **Factory B's Output to Distributor D**:\n   - **Delayed Shipments**: As Factory B's production slows or stops due to the lack of components, it will be unable to fulfill orders for Distributor D. This could lead to:\n     - Delayed shipments to D.\n     - Possible stockouts at D, affecting their ability to sell finished products to end customers.\n     - A potential loss of sales for Distributor D if they are unable to supply products to their customers.\n\n2. **Factory C's Output to Distributor D**:\n   - **Impact on Sub-Assemblies**: If Factory C cannot produce sub-assemblies due to the lack of components, it may also affect Factory B if B relies on sub-assemblies from C for some of its products. \n   - **Final Product Availability**: If Factory C's sub-assemblies are essential for certain products that B assembles and sells to D, the shortage could further compound the delays experienced by Distributor D.\n\n3. **Distributor D**:\n   - **Inventory Management**: With both Factory B and C facing production issues, Distributor D may need to manage their inventory more actively, potentially leading to:\n     - Increased lead times for customers.\n     - Possible customer dissatisfaction or loss of business if they cannot provide products on time.\n     - The need to seek alternative suppliers, which could disrupt long-term relationships with Factory B and C.\n\n### Summary:\n\nThe shutdown of Factory A for maintenance creates a cascading effect throughout the supply chain. Starting with A's inability to supply components, this leads to production delays at both Factory B and Factory C, which subsequently delays shipments to Distributor D. The entire chain is interconnected, and the shutdown\u2019s impact can lead to inventory shortages, potential loss of sales, and customer dissatisfaction across the board. Each factory may need to strategize around this shutdown, such as increasing inventory levels before planned maintenance or exploring alternative supply options to mitigate the impact.",
+  "response_length": 3368,
+  "elapsed_seconds": 14.63,
+  "tokens": {
+    "prompt_tokens": 85,
+    "completion_tokens": 676,
+    "total_tokens": 761
+  },
+  "timestamp": "2026-03-19T16:01:37.559562",
+  "score": 2,
+  "judge_model": "phi4:14b",
+  "judge_raw": "2\n\nThe model response correctly identifies the direct effects of Factory A's shutdown on"
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_004_z-ai_glm-5-turbo_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the task requires sequential logical steps to calculate distances and times without needing to explore alternative methods or map complex interconnected factors.\nPURPOSE CHECK: Follow a single, continuous logical sequence of mathematical steps to find the exact meeting time and distance from Station A.\nANTI-PURPOSE CHECK: I will avoid exploring alternative solving methods (such as setting up simultaneous equations or using a different reference frame) before finishing the primary step-by-step calculation.\n\nStep 1: Calculate the head start distance of the first train. The first train leaves Station A at 09:00 and travels at 80 km/h. The second train leaves Station B at 09:30. This means the first train travels alone for 30 minutes (0.5 hours). \nDistance = Speed \u00d7 Time = 80 km/h \u00d7 0.5 h = 40 km.\n\nStep 2: Determine the remaining distance",
+  "response_length": 877,
+  "elapsed_seconds": 10.51,
+  "tokens": {
+    "prompt_tokens": 324,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10514.34
+  },
+  "timestamp": "2026-03-17T14:02:38.814164",
+  "backend": "openrouter",
+  "score": 2,
+  "score_reason": "The response correctly calculates the head start distance but stops short of completing the full calculation for meeting time and distance.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:31:07.017285"
+}

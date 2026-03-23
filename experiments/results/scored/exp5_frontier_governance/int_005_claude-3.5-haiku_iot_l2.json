@@ -1,0 +1,25 @@
+{
+  "run_id": "int_005_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "int_005",
+  "task_category": "interconnected",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "got",
+  "ground_truth": "Wolf removal -> deer population explosion -> overgrazing of grass -> grass decline -> rabbit population declines (less food) -> fox population declines (less prey). Oak seedlings also overgrazed by deer -> forest regeneration fails -> regime shift from mixed ecosystem to degraded grassland. This mirrors the actual Yellowstone trophic cascade.",
+  "scoring_rubric": "Score 3 if: traces full trophic cascade through multiple levels with temporal dynamics and regime shift. Score 2 if: gets direct effects (deer explosion) but misses downstream cascades. Score 1 if: only identifies wolf-deer relationship. Score 0 if: treats species independently.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the ecology reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: An ecosystem consists of: wolves (apex predator), deer (herbivore, wolf prey), rabbits (herbivore), foxes (predator of rabbits), grass (primary producer), and oak trees (primary producer). Wolves are removed from the ecosystem by hunting. Trace all direct and indirect ecological effects over a 5-year period, identifying any trophic cascades, competitive dynamics, and potential regime shifts.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Graph-of-Thought (GoT) because this task involves complex, interconnected ecological relationships with multiple species and potential cascading effects that require mapping relationships and interactions dynamically.\n\nPURPOSE CHECK: Systematically analyze the ecological consequences of wolf removal by tracking direct and indirect interactions between species and ecosystem components.\n\nANTI-PURPOSE CHECK: Avoid speculative claims, oversimplification, or making unsupported assertions about ecological dynamics.\n\nGRAPH-OF-THOUGHT ANALYSIS:\n\nNodes:\n1. Wolves (apex predator)\n2. Deer (herbivore)\n3. Rabbits (herbivore)\n4. Foxes (mesopredator)\n5. Grass (primary producer)\n6. Oak trees (primary producer)\n\nInitial Edges/Interactions:\n- Wolves \u2192 Deer (predation control)\n- Deer \u2192 Grass/Oak trees (grazing)\n- Foxes \u2192 Rabbits (predation)\n- Rabbits \u2192 Grass (grazing)\n\nWolf Removal Cascade:\nYear 1-2:\n- Deer population increases without wolf predation control\n- Increased deer grazing pressure on grass/oak trees\n- Potential vegetation reduction\n- Competitive pressure on rabbits increases\n\nYear 3-4:\n- Reduced grass/oak tree biomass\n- Potential shift in plant community composition\n- Rabbit population potentially declines due to increased deer competition\n- Fox population might initially stabilize or slightly increase\n\nYear 5:\n- Potential ecosystem regime shift\n- Reduced plant diversity\n- Altered habitat structure\n- Potential destabilization of mesopredator (fox) population\n\nANSWER: Wolf removal triggers a complex trophic cascade causing deer population expansion, vegetation reduction, potential rabbit population decline, and possible ecosystem regime shift with long-term structural changes.\n\nSUCCESS SIGNAL MET: YES - Provided a systematic, evidence-based analysis of ecological interactions with explicit reasoning steps.\n\nANTI-PURPOSE VIOLATED: NO - Maintained scientific rigor, avoided speculation\n\nCONFIDENCE: HIGH - Analysis based on established ecological principles of trophic interactions and predator-prey dynamics",
+  "response_length": 2048,
+  "elapsed_seconds": 10.0,
+  "tokens": {
+    "prompt_tokens": 380,
+    "completion_tokens": 482,
+    "total_tokens": 862
+  },
+  "timestamp": "2026-03-19T16:09:04.774300",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

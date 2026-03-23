@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_004_gemma3_12b_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_004",
+  "task_category": "sequential",
+  "model": "gemma3:12b",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "By 09:30, Train A has covered 40 km (0.5h \u00d7 80). Remaining gap: 280 km. Closing speed: 80 + 120 = 200 km/h. Time to meet: 280/200 = 1.4h = 1h 24min. Meeting time: 10:54. Distance from A: 40 + (1.4 \u00d7 80) = 152 km.",
+  "scoring_rubric": "Score 3 if: correct time (10:54) and distance (152 km) with clear working. Score 2 if: correct answer with minor gaps in reasoning. Score 1 if: correct method but arithmetic error. Score 0 if: wrong approach.",
+  "response": "SELECTED APPROACH: CoT because the problem requires a sequential calculation of time and distance to find a definitive meeting point.\n\nPURPOSE CHECK: I will determine the time and distance at which the two trains meet, based on their departure times, speeds, and initial separation.\n\nANTI-PURPOSE CHECK: I will not explore alternative solutions or consider different possible scenarios before completing the primary calculation.\n\nHere's my reasoning:\n\n1. **Account for the Head Start:** The first train leaves at 09:00 and the second at 09:30. This means the first train travels for 30 minutes (0.5 hours) before the second train starts.\n\n2. **Distance Covered in the Head Start:** In 0.5 hours, the first train covers a distance of 80 km/h * 0.5 h = 40 km.\n\n3. **Remaining Distance:** The initial distance between the stations was 320 km. After the first train's head start, the remaining distance between the trains is 320 km - 40 km = 280 km.\n\n4. **Relative Speed:** The trains are traveling towards each other, so their speeds add up. The relative speed is 80 km/h + 120 km/h = 200 km/h.\n\n5. **Time to Meet:** To find the time it takes for the trains to meet, we divide the remaining distance by the relative speed: 280 km / 200 km/h = 1.4 hours.\n\n6. **Meeting Time:** The second train left at 09:30. They meet 1.4 hours (1 hour and 24 minutes) later.  Therefore, the meeting time is 09:30 + 1:24 = 10:54.\n\n7. **Distance from Station A:** The first train traveled for a total of 0.5 hours (head start) + 1.4 hours = 1.9 hours.  The distance from Station A is 80 km/h * 1.9 h = 152 km.\n\nANSWER: The trains meet at 10:54, and they meet 152 km from Station A.\n\nSUCCESS SIGNAL MET: YES. I have provided a step-by-step derivation, starting from the initial conditions and ending with a verifiable answer for both the meeting time and distance from Station A. Each step is logically justified.\n\nANTI-PURPOSE VIOLATED: NO. I have followed a single logical chain of reasoning without branching into alternative approaches.\n\nCONFIDENCE: HIGH",
+  "response_length": 2036,
+  "elapsed_seconds": 93.98,
+  "tokens": {
+    "prompt_tokens": 355,
+    "completion_tokens": 568,
+    "total_duration_ms": 93938.710125
+  },
+  "timestamp": "2026-03-17T14:04:52.460034",
+  "score": 3,
+  "score_reason": "The response correctly calculates both the meeting time (10:54) and distance from Station A (152 km) using clear and logical reasoning.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T16:57:18.514722"
+}

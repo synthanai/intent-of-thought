@@ -1,0 +1,25 @@
+{
+  "run_id": "seq_001_claude-3.5-haiku_iot_l2",
+  "experiment": "exp5_frontier_governance",
+  "task_id": "seq_001",
+  "task_category": "sequential",
+  "model": "claude-3.5-haiku",
+  "model_id": "anthropic/claude-3.5-haiku",
+  "condition": "iot_l2",
+  "optimal_topology": "cot",
+  "ground_truth": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Let p = 2k, then 2q^2 = 4k^2, so q^2 = 2k^2, so q is even. Contradiction: p/q not in lowest terms.",
+  "scoring_rubric": "Score 3 if: valid proof by contradiction with all steps. Score 2 if: correct conclusion with minor gaps. Score 1 if: correct direction but incomplete. Score 0 if: wrong or irrelevant.",
+  "prompt": "Before answering, consider the following governance specification for this reasoning task:\n\nPURPOSE: Solve the mathematics reasoning task accurately\nANTI-PURPOSE (what you must avoid): Do not guess, hallucinate facts, or skip reasoning steps\nSUCCESS SIGNAL (how to judge your output): The answer is verifiably correct and the reasoning chain is explicit\n\nSelect the most appropriate reasoning approach:\n- If the task requires sequential logical steps, use chain-of-thought (step by step)\n- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)\n- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)\n\nState which approach you chose and why, then proceed.\n\nTask: Prove that the square root of 2 is irrational.\n\nFORMAT YOUR RESPONSE AS:\nSELECTED APPROACH: [CoT/ToT/GoT] because [reason]\nPURPOSE CHECK: [restate the purpose in your own words]\nANTI-PURPOSE CHECK: [state what you will avoid]\n\n[Your full reasoning using the selected approach]\n\nANSWER: [your final answer]\nSUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]\nANTI-PURPOSE VIOLATED: [YES/NO]\nCONFIDENCE: [HIGH/MEDIUM/LOW]\n",
+  "response": "SELECTED APPROACH: Chain-of-Thought (CoT) because this proof requires a sequential, logical proof by contradiction with clear, step-by-step reasoning.\n\nPURPOSE CHECK: Mathematically prove that \u221a2 cannot be expressed as a ratio of two integers\n\nANTI-PURPOSE CHECK: Avoid making unsupported claims, skipping logical steps, or using imprecise mathematical reasoning\n\nProof by Contradiction:\n1. Assume \u221a2 is rational\n2. If rational, then \u221a2 = a/b, where a and b are integers with no common factors\n3. Square both sides: 2 = a\u00b2/b\u00b2\n4. Multiply both sides by b\u00b2: 2b\u00b2 = a\u00b2\n5. This means a\u00b2 is even, which implies a must be even\n6. Let a = 2k for some integer k\n7. Substituting: 2b\u00b2 = (2k)\u00b2\n8. Simplifying: 2b\u00b2 = 4k\u00b2\n9. Dividing by 2: b\u00b2 = 2k\u00b2\n10. This means b\u00b2 is even, which implies b must be even\n11. But this contradicts our initial assumption that a and b have no common factors\n12. Therefore, our initial assumption must be false\n\nANSWER: \u221a2 is irrational\n\nSUCCESS SIGNAL MET: YES, because the proof uses rigorous logical steps and reaches a definitive conclusion\n\nANTI-PURPOSE VIOLATED: NO, reasoning is precise and mathematically sound\n\nCONFIDENCE: HIGH",
+  "response_length": 1152,
+  "elapsed_seconds": 7.3,
+  "tokens": {
+    "prompt_tokens": 305,
+    "completion_tokens": 343,
+    "total_tokens": 648
+  },
+  "timestamp": "2026-03-19T16:03:48.640213",
+  "score": 3,
+  "judge_model": "phi4:14b",
+  "judge_raw": "3"
+}

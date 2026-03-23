@@ -1,0 +1,26 @@
+{
+  "run_id": "seq_005_z-ai_glm-5-turbo_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "seq_005",
+  "task_category": "sequential",
+  "model": "z-ai/glm-5-turbo",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "cot",
+  "ground_truth": "Shortest distances: A=0, B=3 (via A-C-B), C=2 (via A-C), D=6 (via A-C-B-D), E=7 (via A-C-B-D-E). Iterations: Init A=0. Visit A: C=2, B=4. Visit C(2): B=min(4,2+1)=3. Visit B(3): D=3+3=6. Visit D(6): E=6+1=7. Visit E(7): done.",
+  "scoring_rubric": "Score 3 if: all 4 shortest distances correct with clear iteration trace. Score 2 if: correct final distances but unclear steps. Score 1 if: correct method but some distances wrong. Score 0 if: fundamental misunderstanding of the algorithm.",
+  "response": "ANSWER: The shortest distances from node A to every other node are B: 3, C: 2, D: 6, and E: 7.\nREASONING: We initialize distances as A:0, B:\u221e, C:\u221e, D:\u221e, E:\u221e. In iteration 1, we visit A, updating B to 4 (A-B) and C to 2 (A-C). In iteration 2,",
+  "response_length": 241,
+  "elapsed_seconds": 10.86,
+  "tokens": {
+    "prompt_tokens": 119,
+    "completion_tokens": 1024,
+    "total_duration_ms": 10857.04
+  },
+  "timestamp": "2026-03-17T14:05:35.522292",
+  "backend": "openrouter",
+  "score": 1,
+  "score_reason": "The final distances are correct, but the reasoning is incomplete and does not provide a clear iteration trace as required for full credit.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T17:42:02.534192"
+}

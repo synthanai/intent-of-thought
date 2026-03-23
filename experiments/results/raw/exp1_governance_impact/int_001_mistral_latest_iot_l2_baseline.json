@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_mistral_latest_iot_l2_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "mistral:latest",
+  "condition": "iot_l2",
+  "topology": "baseline",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "Approach: graph-of-thought (map factors and edges)\n\nReasoning:\n\n1. Identify the three symptoms: chronic fatigue, joint pain, and a butterfly-shaped facial rash.\n2. Research common conditions associated with these symptoms:\n   a. Chronic fatigue: chronic fatigue syndrome (CFS), autoimmune disorders, viral infections, thyroid disorders, depression, and others.\n   b. Joint pain: rheumatoid arthritis (RA), osteoarthritis (OA), lupus, gout, and others.\n   c. Butterfly-shaped facial rash: systemic lupus erythematosus (SLE), dermatomyositis, rosacea, and others.\n\n3. Find conditions that share symptoms:\n   a. Chronic fatigue: CFS, autoimmune disorders, viral infections, thyroid disorders, depression, and SLE (systemic lupus erythematosus).\n   b. Joint pain: RA, OA, lupus, gout, and other inflammatory conditions.\n   c. Butterfly-shaped facial rash: SLE, dermatomyositis, and rosacea.\n\n4. Focus on SLE, as it shares all three symptoms and is a systemic autoimmune disorder that affects multiple organs and tissues.\n\n5. Analyze the interconnections between the symptoms in SLE:\n   a. Chronic fatigue: SLE causes inflammation and damage to various organs, including the muscles and immune system, which can lead to persistent fatigue.\n   b. Joint pain: SLE can cause inflammation in the joints, leading to joint pain and swelling.\n   c. Butterfly-shaped facial rash: The rash is a characteristic sign of SLE, often called the \"butterfly rash,\" occurring on the bridge of the nose and the cheeks.\n\n6. Map the relationships between the three symptoms and SLE, creating a graph with factors and edges:\n\n- Systemic Lupus Erythematosus (SLE)\n  - Chronic Fatigue (CF)\n    - Inflammation of muscles and immune system\n  - Joint Pain (JP)\n    - Inflammation in the joints\n  - Butterfly-Shaped Facial Rash (BSFR)\n    - Damage to skin cells on the face\n\n7. Present the relationship map as a graph showing connections, feedback loops, and systemic effects between chronic fatigue, joint pain, butterfly-shaped facial rash, and SLE.",
+  "response_length": 2019,
+  "elapsed_seconds": 50.25,
+  "tokens": {
+    "prompt_tokens": 246,
+    "completion_tokens": 600,
+    "total_duration_ms": 50242.348333
+  },
+  "timestamp": "2026-03-06T07:42:11.095985",
+  "score": 2,
+  "score_reason": "The response identifies SLE as the connector and explains how symptoms are linked through autoimmune inflammation, but it lacks emphasis on the risk of treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T20:34:50.716926"
+}

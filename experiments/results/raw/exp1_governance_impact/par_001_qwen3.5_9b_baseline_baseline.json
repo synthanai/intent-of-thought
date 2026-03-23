@@ -1,0 +1,21 @@
+{
+  "run_id": "par_001_qwen3.5_9b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_001",
+  "task_category": "parallel",
+  "model": "qwen3.5:9b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Must include at least 3 distinct approaches (e.g., WebSocket monolith, event-driven microservices, serverless with pub/sub). Must compare on: scalability, development speed, cost. MVP recommendation should favour simplicity.",
+  "scoring_rubric": "Score 3 if: 3+ distinct architectures, clear trade-off comparison, justified MVP recommendation. Score 2 if: 3 architectures but weak comparison. Score 1 if: fewer than 3 or no comparison. Score 0 if: single architecture or irrelevant.",
+  "response": "",
+  "response_length": 0,
+  "elapsed_seconds": 162.46,
+  "tokens": {
+    "prompt_tokens": 53,
+    "completion_tokens": 1024,
+    "total_duration_ms": 162445.426583
+  },
+  "timestamp": "2026-03-06T03:21:35.393935"
+}

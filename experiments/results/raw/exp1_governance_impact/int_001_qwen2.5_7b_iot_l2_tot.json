@@ -1,0 +1,25 @@
+{
+  "run_id": "int_001_qwen2.5_7b_iot_l2_tot",
+  "experiment": "exp1_governance_impact",
+  "task_id": "int_001",
+  "task_category": "interconnected",
+  "model": "qwen2.5:7b",
+  "condition": "iot_l2",
+  "topology": "tot",
+  "optimal_topology": "got",
+  "ground_truth": "Systemic Lupus Erythematosus (SLE/Lupus) connects all three: autoimmune inflammation causes joint pain (lupus arthritis), fatigue (from chronic inflammation and potential anaemia), and the butterfly rash (malar rash, pathognomonic for SLE). The key insight is that treating symptoms independently would miss the unifying autoimmune mechanism.",
+  "scoring_rubric": "Score 3 if: identifies lupus/SLE as the connector, explains how all three symptoms are mechanistically linked through autoimmune inflammation, warns against treating independently. Score 2 if: identifies lupus but weak on interconnections. Score 1 if: lists conditions for each symptom independently without connecting them. Score 0 if: treats symptoms as unrelated.",
+  "response": "For this task, I will use the graph-of-thought approach. This is because the symptoms (chronic fatigue, joint pain, and a butterfly-shaped facial rash) and potential underlying conditions can be interconnected, and we need to explore the relationships and interactions between these factors.\n\nHere is the relationship map:\n\n1. **Patient Symptoms:**\n   - **Chronic Fatigue** (Node A)\n   - **Joint Pain** (Node B)\n   - **Butterfly-shaped Facial Rash** (Node C)\n\n2. **Potential Underlying Conditions:**\n   - **Systemic Lupus Erythematosus (SLE)** (Node D)\n   - **Chronic Fatigue Syndrome (CFS)** (Node E)\n   - **Rheumatoid Arthritis (RA)** (Node F)\n   - **Cutaneous Lupus Erythematosus (CLE)** (Node G)\n\n3. **Interconnections:**\n   - **Chronic Fatigue (A) - Systemic Lupus Erythematosus (D):** SLE can cause chronic fatigue as one of its common symptoms.\n   - **Joint Pain (B) - Rheumatoid Arthritis (F):** RA is a common cause of joint pain.\n   - **Butterfly-shaped Facial Rash (C) - Systemic Lupus Erythematosus (D):** A classic symptom of SLE is a butterfly-shaped rash.\n   - **Butterfly-shaped Facial Rash (C) - Cutaneous Lupus Erythematosus (G):** CLE is a type of lupus that primarily affects the skin, including the face, often presenting as a butterfly rash.\n   - **Systemic Lupus Erythematosus (D) - Chronic Fatigue Syndrome (E):** SLE can also cause chronic fatigue, and CFS can be a comorbid condition in patients with SLE.\n   - **Chronic Fatigue Syndrome (E) - Rheumatoid Arthritis (F):** While less common, CFS can sometimes co-occur with RA.\n   - **Systemic Lupus Erythematosus (D) - Cutaneous Lupus Erythematosus (G):** SLE can progress to CLE, which manifests as a facial rash.\n\n4. **Feedback Loops:**\n   - **Chronic Fatigue (A) - Systemic Lupus Erythematosus (D) - Joint Pain (B):** SLE can cause chronic fatigue, which may exacerbate joint pain due to systemic inflammation.\n   - **Systemic Lupus Erythematosus (D) - Butterfly-shaped Facial Rash (C) - Chronic Fatigue (A):** The presence of a facial rash and chronic fatigue may indicate SLE, which can then lead to joint pain.\n\nThis graph-of-thought approach allows us to visualize the complex interplay between the patient's symptoms and potential underlying conditions, highlighting the potential for shared underlying conditions like Systemic Lupus Erythematosus and the interconnected nature of the symptoms.",
+  "response_length": 2378,
+  "elapsed_seconds": 52.9,
+  "tokens": {
+    "prompt_tokens": 235,
+    "completion_tokens": 631,
+    "total_duration_ms": 52880.194458
+  },
+  "timestamp": "2026-03-06T08:25:36.203537",
+  "score": 2,
+  "score_reason": "The response identifies SLE as a connector and links symptoms through autoimmune inflammation but lacks emphasis on the unifying mechanism and the warning against treating symptoms independently.",
+  "score_consistent": true,
+  "scored_at": "2026-03-16T23:15:57.918433"
+}

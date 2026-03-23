@@ -1,0 +1,25 @@
+{
+  "run_id": "par_002_deepseek-r1_7b_baseline_baseline",
+  "experiment": "exp1_governance_impact",
+  "task_id": "par_002",
+  "task_category": "parallel",
+  "model": "deepseek-r1:7b",
+  "condition": "baseline",
+  "topology": "baseline",
+  "optimal_topology": "tot",
+  "ground_truth": "Insertion sort is optimal for nearly-sorted data (O(n) best case vs O(n log n) for merge/quick). Must explain WHY insertion sort wins in this case, not just state it.",
+  "scoring_rubric": "Score 3 if: all 3 algorithms analysed with correct complexity for nearly-sorted case, insertion sort correctly recommended with explanation. Score 2 if: correct recommendation but weak analysis. Score 1 if: wrong recommendation but some valid analysis. Score 0 if: no comparison or fundamentally wrong.",
+  "response": "Based on the analysis of the three sorting algorithms for a nearly-sorted array of 10,000 integers with only 5% elements out of place, the best choice is:\n\n**Insertion Sort**\n\n**Explanation:**\n\n1. **Efficiency for Nearly Sorted Data:** Insertion sort excels when the input is nearly sorted because it minimizes the number of comparisons and swaps needed, as each element only moves a small distance.\n\n2. **Time Complexity:** While the worst-case time complexity is O(n\u00b2), the average and best-case time complexity (O(n)) is highly efficient for nearly sorted arrays. The 5% out-of-place elements will result in minimal shifts, making it very fast.\n\n3. **Low Overhead:** Insertion sort has minimal overhead, making it faster than merge sort and quicksort in practice for this specific scenario.\n\n4. **In-place Operation:** It doesn't require extra space, which is beneficial for handling large datasets like 10,000 elements.\n\n5. **Pivot Selection and Constants:** The algorithm's simplicity and lower constant factors contribute to its superior performance in",
+  "response_length": 1058,
+  "elapsed_seconds": 88.25,
+  "tokens": {
+    "prompt_tokens": 60,
+    "completion_tokens": 1024,
+    "total_duration_ms": 88224.894875
+  },
+  "timestamp": "2026-03-06T04:48:13.935034",
+  "score": 2,
+  "score_reason": "The response correctly recommends insertion sort for nearly-sorted data and provides valid reasoning, but it lacks analysis of the other algorithms' complexities in this specific case.",
+  "score_consistent": true,
+  "scored_at": "2026-03-18T04:01:26.665687"
+}
