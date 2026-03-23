@@ -60,6 +60,16 @@ body_tex = re.sub(
 )
 body_tex = body_tex.replace('\\end{minipage}', '')
 
+# 1b. Make all longtables use small font to prevent column overflow
+body_tex = body_tex.replace(
+    r'\begin{longtable}',
+    r'{\small\begin{longtable}'
+)
+body_tex = body_tex.replace(
+    r'\end{longtable}',
+    r'\end{longtable}}'
+)
+
 # 2. Removed overly aggressive \newline header wrapping
 
 
@@ -110,12 +120,18 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \usepackage{lmodern}
 \usepackage{microtype}
 \hyphenpenalty=10000
-\exhyphenpenalty=10000
+\exhyphenpenalty=50
+\tolerance=2000
+\emergencystretch=1.5em
+\sloppy
 \setlength{\parskip}{0.6em}
 \setlength{\parindent}{1.5em}
 
 % Page geometry
 \usepackage[margin=1.8cm]{geometry}
+
+% URL line breaking
+\usepackage{xurl}
 
 % Links
 \usepackage{hyperref}
@@ -151,7 +167,7 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
   Naveen Riaz Mohamed Kani \\
   Independent Researcher, Melbourne, Australia \\
   ORCID: \href{https://orcid.org/0009-0003-9173-2425}{0009-0003-9173-2425} \\
-  \texttt{naveen@synthai.tech}
+  \texttt{naveenriaz@synthai.biz}
 }
 
 \date{March 2026}
@@ -198,5 +214,5 @@ for p in [1, 2]:
 
 pdf = "/tmp/iot_final.pdf"
 if os.path.exists(pdf):
-    os.system('cp /tmp/iot_final.pdf "Intent_of_Thought_v13.pdf"')
-    print(f"\n✅ Build successful: Exported to Intent_of_Thought_v13.pdf")
+    os.system('cp /tmp/iot_final.pdf "Intent_of_Thought.pdf"')
+    print(f"\n✅ Build successful: Exported to Intent_of_Thought.pdf")

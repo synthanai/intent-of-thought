@@ -14,7 +14,7 @@ We evaluate the IoT governance layer through three experiments designed to test 
 | qwen3.5:9b | 9B | Dense | Local (Ollama) |
 | gemma3:12b | 12B | Dense | Local (Ollama) |
 | phi4:14b | 14B | Dense | Local (Ollama) |
-| nvidia/nemotron-3-super-120b | 120B (12B active) | MoE | Cloud (OpenRouter) |
+| nvidia/nemotron-120b | 120B (12B active) | MoE | Cloud (OpenRouter) |
 
 One model (qwen3.5:9b) was excluded from analysis due to insufficient data: 90% of its responses were empty (generation failures), yielding only 1 usable response for the baseline condition. One cloud model (z-ai/glm-5-turbo) was included in the experiment but showed non-significant results (-8.3%, per-task analysis revealed inconsistent directionality; see Section 7). Results reported below are for the 7 models with sufficient data.
 

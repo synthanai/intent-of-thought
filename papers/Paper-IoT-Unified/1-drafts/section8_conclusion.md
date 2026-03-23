@@ -12,7 +12,7 @@ Our experimental evaluation across 705 scored reasoning episodes, 7 models (7B t
 6. Topology misselection without governance is catastrophic (ToT on interconnected tasks: 1.00/3.00).
 7. Governance uplift scales with model need, not model intelligence: frontier models with near-perfect baselines show minimal benefit, while cost-effective distilled models gain significantly.
 
-The longitudinal case study (Section 6) demonstrated the IoT lifecycle emerging organically in SPAR (Structured Persona-Argumentation for Reasoning), a production multi-agent debate system, with each governance component added in response to observed failure modes, independently arriving at the same lifecycle structure formalised in this paper. The SPAR protocol is open-source at https://github.com/synthanai/spar-kit.
+The longitudinal case study (Section 6) demonstrated the IoT lifecycle emerging organically in SPAR (Structured Persona-Argumentation for Reasoning), a production multi-agent debate system, with each governance component added in response to observed failure modes, independently arriving at the same lifecycle structure formalised in this paper. The SPAR protocol is open-source at https://github.com/synthanai/spar-kit and the IoT framework is available at https://github.com/synthanai/intent-of-thought.
 
 We are candid about what this paper does *not* show. At the model scales tested, CoT is a safe default, and the topology selection function's prescriptive value is limited to failure protection. We position this honestly: the framework's contribution is governance uplift and architectural preparedness, not optimal topology prescription.
 
