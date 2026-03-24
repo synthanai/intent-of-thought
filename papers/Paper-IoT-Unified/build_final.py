@@ -119,7 +119,6 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
-\hyphenpenalty=10000
 \exhyphenpenalty=50
 \tolerance=2000
 \emergencystretch=1.5em
@@ -131,7 +130,7 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \usepackage[margin=1.8cm]{geometry}
 
 % URL line breaking
-\usepackage{xurl}
+\usepackage[hyphens]{url}
 
 % Links
 \usepackage{hyperref}

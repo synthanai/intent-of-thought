@@ -55,7 +55,7 @@ Output: Ordered list, most aligned topology first.
 **Table 2: IoT topology selection mapping.**
 
 | Purpose Type | Structural Signal | Recommended Topology | Rationale |
-|:-------------|:------------------|:---------|:---------------------------------|
+|:-------------|:------------------|:---------------------|:---------------------------------|
 | Sequential derivation | Single valid path, step dependencies | CoT | Linear chain; each step builds on the previous |
 | Parallel exploration | Multiple viable approaches, uncertain best path | ToT | Branching enables evaluation of alternatives |
 | Interconnected analysis | Non-linear relationships, feedback loops | GoT | Graph structure supports refinement and merging |

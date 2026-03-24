@@ -9,7 +9,7 @@ Intent elicitation for reasoning governance can be organised as a five-mode hier
 **Table 3: The Capture Spectrum.**
 
 | Mode | Level | Mechanism | Triple Fidelity | Example |
-|------|:-----:|-----------|:-------------------:|---------|
+|:--------------|:-------|:--------------------------------------------|:--------------------------------------------|:------------------------------------------------------|
 | Zero | L0 | System infers intent from task context alone | Low: Purpose inferred, Anti-Purpose absent, Success Signal generic | "Solve this problem" leads to system defaulting to CoT |
 | Implicit | L1 | Lightweight extraction from user phrasing and domain | Medium-low: Purpose extracted, Anti-Purpose partial | "Compare these options carefully" carries an implicit ToT signal |
 | Prompted | L2 | Structured questions elicit Purpose, Anti-Purpose, Success Signal explicitly | Medium-high: full triple, user-specified | System asks: "What must this analysis avoid?" |
@@ -57,7 +57,8 @@ The three failure modes form a diagnostic hierarchy:
 ```
 Algorithm 3: Retrospective Judgement
 
-Input:  Failed trace, original IoT = (Purpose, Anti-Purpose, Success Signal), selected topology
+Input:  Failed trace, selected topology,
+        original IoT = (Purpose, Anti-Purpose, Success Signal)
 Output: Failure mode, reconstructed IoT, corrective action
 
 Step 1. Reconstruct intent from trace.

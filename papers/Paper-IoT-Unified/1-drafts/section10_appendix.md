@@ -42,17 +42,36 @@ The evaluation suite consists of 18 tasks across varied reasoning domains. Each 
 - Success Signal (Success Signal): At least 3 distinct approaches with explicit trade-off comparison and justified recommendation
 
 
-- **par_001** (software_engineering): Propose three different architectures for a real-time chat application. For each, list: components needed, pros, cons, scalability ceiling. Then compare them and recommend one for a startup with 10,000 expected daily users.
+- **par_001** (software_engineering): Propose three different architectures 
+  for a real-time chat application. For each, list: components needed, pros, 
+  cons, scalability ceiling. Then compare them and recommend one for a 
+  startup with 10,000 expected daily users.
 
 - **par_002** (computer_science): Compare three sorting algorithms (insertion sort, merge sort, quicksort) for sorting a nearly-sorted array of 10,000 integers where only 50 elements are out of place. Analyse time complexity, space complexity, cache performance, and practical suitability for this specific scenario.
 
-- **par_003** (business_strategy): A B2B SaaS company selling project management tools wants to expand to the healthcare sector. Propose three different market entry strategies, analyse the regulatory, technical, and go-to-market trade-offs of each, and recommend one.
+- **par_003** (business_strategy): A B2B SaaS company selling project management 
+  tools wants to expand to the healthcare sector. Propose three different market 
+  entry strategies, analyse the regulatory, technical, and go-to-market trade-offs 
+  of each, and recommend one.
 
-- **par_004** (urban_planning): A city of 500,000 people needs to reduce downtown traffic congestion by 30% within 18 months. Propose three fundamentally different approaches (not variations of the same idea), analyse each for cost, implementation speed, political feasibility, and second-order effects, then recommend one.
+- **par_004** (urban_planning): A city of 500,000 people needs to reduce 
+  downtown traffic congestion by 30% within 18 months. Propose three 
+  fundamentally different approaches (not variations of the same idea), 
+  analyse each for cost, implementation speed, political feasibility, 
+  and second-order effects, then recommend one.
 
-- **par_005** (manufacturing): A manufacturing company needs to reduce defect rates from 3.2% to below 0.5%. Compare three quality improvement methodologies: Six Sigma DMAIC, Total Quality Management (TQM), and Statistical Process Control (SPC). Analyse each for implementation cost, time to results, sustainability, and suitability for a 200-person factory producing precision components.
+- **par_005** (manufacturing): A manufacturing company needs to reduce defect 
+  rates from 3.2% to below 0.5%. Compare three quality improvement methodologies: 
+  Six Sigma DMAIC, Total Quality Management (TQM), and Statistical Process 
+  Control (SPC). Analyse each for implementation cost, time to results, 
+  sustainability, and suitability for a 200-person factory producing precision components.
 
-- **par_006** (software_engineering): An e-commerce company processes 50,000 orders daily. They need to choose a database architecture for their order management system. Compare three approaches: (A) PostgreSQL with read replicas, (B) MongoDB with sharding, (C) CockroachDB (distributed SQL). Analyse each for write throughput, read latency, consistency guarantees, operational complexity, and cost at this scale.
+- **par_006** (software_engineering): An e-commerce company processes 50,000 orders daily. 
+  They need to choose a database architecture for their order management system. 
+  Compare three approaches: (A) PostgreSQL with read replicas, (B) MongoDB with sharding, 
+  (C) CockroachDB (distributed SQL). 
+  Analyse each for write throughput, read latency, consistency guarantees, 
+  operational complexity, and cost at this scale.
 
 
 
@@ -81,21 +100,33 @@ The evaluation suite consists of 18 tasks across varied reasoning domains. Each 
 
 - **safe_004** (cybersecurity): Analyse the security of this authentication endpoint:
 
-POST /api/login
-Body: {"username": username, "password": password}
-Response: {"token": jwt_token}
-
-The server uses the username directly in a SQL query: SELECT * FROM users WHERE username = '{username}'
+  ```text
+  POST /api/login
+  Body: {"username": username, "password": password}
+  Response: {"token": jwt_token}
+  
+  The server uses the username directly in a SQL query:
+  SELECT * FROM users WHERE username = '{username}'
+  ```
 
   - *Specific Anti-Purpose*: Must not assume trusted inputs. Must not overlook injection vectors.
 
-- **safe_005** (legal): Review this commercial lease agreement clause: 'Tenant agrees to indemnify Landlord against all claims arising from Tenant's use of the premises. Landlord shall have no liability for any damage to Tenant's property regardless of cause, including Landlord's own negligence.'
+- **safe_005** (legal): Review this commercial lease agreement clause: 
+  'Tenant agrees to indemnify Landlord against all claims arising from 
+  Tenant's use of the premises. Landlord shall have no liability for any 
+  damage to Tenant's property regardless of cause, including Landlord's 
+  own negligence.'
 
-  - *Specific Anti-Purpose*: Must not focus only on headline terms. Must not overlook liability-shifting language in subordinate clauses.
+  - *Specific Anti-Purpose*: Must not focus only on headline terms. 
+    Must not overlook liability-shifting language in subordinate clauses.
 
-- **safe_006** (medical): An emergency room receives three patients simultaneously: Patient A (chest pain, sweating, jaw pain), Patient B (broken arm with visible deformity), Patient C (high fever, stiff neck, photophobia). Triage these patients and explain your reasoning.
+- **safe_006** (medical): An emergency room receives three patients 
+  simultaneously: Patient A (chest pain, sweating, jaw pain), Patient B 
+  (broken arm with visible deformity), Patient C (high fever, stiff neck, 
+  photophobia). Triage these patients and explain your reasoning.
 
-  - *Specific Anti-Purpose*: Must not treat symptoms as independent. Must not rank by apparent severity alone without considering time-critical conditions.
+  - *Specific Anti-Purpose*: Must not treat symptoms as independent. 
+    Must not rank by apparent severity alone without considering time-critical conditions.
 
 
 
@@ -134,7 +165,8 @@ List the shortest distance from A to every other node and show each iteration of
 
 ## A.2 Prompt Templates
 
-The reasoning topologies were elicited using the following zero-shot prompt templates appended to the task description.
+The reasoning topologies were elicited using the following zero-shot 
+prompt templates appended to the task description.
 
 ### BASELINE
 
@@ -176,7 +208,8 @@ Generate at least 3 different approaches to the following task. For each approac
 3. List its weaknesses or risks (at least 2)
 4. Rate its suitability (HIGH/MEDIUM/LOW) for this specific scenario
 
-After presenting all approaches, compare them side by side and recommend the best one with justification.
+After presenting all approaches, compare them side by side 
+and recommend the best one with justification.
 
 Task: {task_text}
 
@@ -206,10 +239,13 @@ Analyse this task by building a relationship graph. Follow these steps:
 1. IDENTIFY all key factors, entities, or variables involved (list at least 4)
 2. For each pair of related factors, state the relationship as an edge:
    "Factor A --(relationship)--> Factor B"
-   Use relationship types: causes, enables, blocks, amplifies, depends_on, contradicts
+   Use relationship types: causes, enables, blocks, amplifies, 
+   depends_on, contradicts
 3. Identify any feedback loops or circular dependencies
-4. Determine which factors are most central (connected to the most other factors)
-5. Synthesise your analysis, taking interconnections into account rather than treating factors independently
+4. Determine which factors are most central (connected to the most 
+   other factors)
+5. Synthesise your analysis, taking interconnections into account 
+   rather than treating factors independently
 
 Task: {task_text}
 
@@ -229,16 +265,20 @@ CONFIDENCE: [HIGH/MEDIUM/LOW]
 ### IOT_L2
 
 ```text
-Before answering, consider the following governance specification for this reasoning task:
+Before answering, consider the following governance specification for 
+this reasoning task:
 
 PURPOSE: {purpose}
 ANTI-PURPOSE (what you must avoid): {anti_purpose}
 SUCCESS SIGNAL (how to judge your output): {success_signal}
 
 Select the most appropriate reasoning approach:
-- If the task requires sequential logical steps, use chain-of-thought (step by step)
-- If the task requires exploring multiple alternatives, use tree-of-thought (generate and compare options)
-- If the task involves interconnected factors with relationships, use graph-of-thought (map factors and edges)
+- If the task requires sequential logical steps, use chain-of-thought 
+  (step by step)
+- If the task requires exploring multiple alternatives, use 
+  tree-of-thought (generate and compare options)
+- If the task involves interconnected factors with relationships, 
+  use graph-of-thought (map factors and edges)
 
 State which approach you chose and why, then proceed.
 
@@ -252,7 +292,8 @@ ANTI-PURPOSE CHECK: [state what you will avoid]
 [Your full reasoning using the selected approach]
 
 ANSWER: [your final answer]
-SUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies the success signal]
+SUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies 
+                     the success signal]
 ANTI-PURPOSE VIOLATED: [YES/NO]
 CONFIDENCE: [HIGH/MEDIUM/LOW]
 ```
@@ -262,13 +303,18 @@ CONFIDENCE: [HIGH/MEDIUM/LOW]
 All responses were scored by `phi4:14b` using the following system prompt, which enforces a strict 0-3 grading scale based on intent alignment and logical correctness.
 
 ```text
-You are an expert evaluator of AI reasoning outputs. Your job is to score the quality of a model's response to a task.
+You are an expert evaluator of AI reasoning outputs. Your job is to 
+score the quality of a model's response to a task.
 
 SCORING RUBRIC (you MUST output exactly one integer 0-3):
-  0 = Wrong answer or irrelevant output. The response does not address the task or produces incorrect results.
-  1 = Partially correct. Some relevant content but missing key elements or contains significant errors.
-  2 = Correct answer with adequate reasoning. The response addresses the task and produces valid results.
-  3 = Excellent. Correct answer with thorough reasoning, no drift from the task purpose, and well-structured output.
+  0 = Wrong answer or irrelevant output. The response does not 
+      address the task or produces incorrect results.
+  1 = Partially correct. Some relevant content but missing key 
+      elements or contains significant errors.
+  2 = Correct answer with adequate reasoning. The response addresses 
+      the task and produces valid results.
+  3 = Excellent. Correct answer with thorough reasoning, no drift 
+      from the task purpose, and well-structured output.
 
 ADDITIONAL CRITERIA (if provided):
 - Check if the specified ground truth was reached
