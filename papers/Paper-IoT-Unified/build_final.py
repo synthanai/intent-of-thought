@@ -140,6 +140,21 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
   urlcolor=blue!60!black
 }
 
+% Math
+\usepackage{amsmath,amssymb}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}  % CRITICAL: defines \real{} for pandoc columns
+\usepackage{float}
+\renewcommand{\arraystretch}{1.3}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{xcolor}
+
 % Pandoc Syntax Highlighting Polyfills
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
@@ -177,20 +192,8 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \newcommand{\AlertTok}[1]{\textbf{\color{red}#1}}
 \newcommand{\ErrorTok}[1]{\textbf{\color{red}#1}}
 
-% Math
-\usepackage{amsmath,amssymb}
-
-% Tables
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{calc}  % CRITICAL: defines \real{} for pandoc columns
-\usepackage{float}
-\renewcommand{\arraystretch}{1.3}
-
-% Graphics
-\usepackage{graphicx}
-\usepackage{xcolor}
+% pdflatex Unicode Char Maps
+\DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}
 
 % Pandoc compatibility: define \tightlist
 \providecommand{\tightlist}{%
