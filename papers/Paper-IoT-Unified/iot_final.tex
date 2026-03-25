@@ -1,0 +1,2236 @@
+\documentclass[11pt,a4paper]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\exhyphenpenalty=50
+\tolerance=2000
+\emergencystretch=1.5em
+\sloppy
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{1.5em}
+
+% Page geometry
+\usepackage[margin=1.8cm]{geometry}
+
+% URL line breaking
+\usepackage[hyphens]{url}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+% Math
+\usepackage{amsmath,amssymb}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}  % CRITICAL: defines \real{} for pandoc columns
+\usepackage{float}
+\renewcommand{\arraystretch}{1.3}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Pandoc compatibility: define \tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\title{\textbf{Intent of Thought (IoT): A Governance Lifecycle for LLM Reasoning Topology Selection}}
+
+\author{
+  Naveen Riaz Mohamed Kani \\
+  Independent Researcher, Melbourne, Australia \\
+  ORCID: \href{https://orcid.org/0009-0003-9173-2425}{0009-0003-9173-2425} \\
+  \texttt{naveenriaz@synthai.biz}
+}
+
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Large language models can reason through chain-of-thought, tree-of-thought, and graph-of-thought topologies, yet no established mechanism governs which topology to deploy for a given task or how to recover when the wrong one is selected. We introduce Intent of Thought (IoT), a pre-reasoning governance layer that specifies task intent through a triple of Purpose, Anti-Purpose, and Success Signal, then uses this specification to guide topology selection, monitor reasoning alignment, and diagnose failure. 
+
+\par\medskip
+
+We formalise the IoT Lifecycle: a closed loop from intent capture (five modes of varying fidelity) through topology selection, drift detection, retrospective judgement (classifying failures as False Capture, False Selection, or False Execution), and learning. We evaluate IoT governance across 705 scored reasoning episodes, 7 models (7B to 120B parameters), 18 tasks, and 4 topologies. 
+
+\par\medskip
+
+Adding an IoT governance triple improves reasoning quality by +15.7\% (n = 486). Weaker models benefit disproportionately (+33\% for 7B vs. +16\% for 120B), suggesting governance functions as a cognitive equaliser. Governance rescues mismatched topologies: tree-of-thought quality improves +37\% under IoT. At the model scales tested, chain-of-thought is a robust default across all task categories; the framework's empirical value is in governance uplift and failure protection rather than optimal topology selection. A longitudinal case study of a multi-agent debate protocol that independently evolved IoT-like governance over 75 iterations validates the lifecycle in a production setting.
+
+\par\medskip\noindent\textbf{Keywords:} Large Language Models, Chain-of-Thought Reasoning, Reasoning Topology, Intent Governance, Failure Modes, Multi-Agent Debate
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}\label{introduction}
+
+The proliferation of reasoning topologies for large language
+models, from simple chain-of-thought prompting {[}Wei et al., 2022{]}
+through tree-of-thought {[}Yao et al., 2023{]} and graph-of-thought
+{[}Besta et al., 2024{]}, has unlocked unprecedented capabilities, yet
+simultaneously created a critical governance gap. Each topology imposes
+a strict structural commitment on how a model reasons: CoT constrains
+reasoning to a linear derivation chain, ToT introduces branching and
+backtracking, and GoT permits structural merging and refinement across
+nodes. However, as AI systems transition from passive, short-horizon
+question answering to active, multi-step autonomous agency, there
+remains no established mechanism to govern \emph{which} topology should
+be deployed for a given task, \emph{what} specific failure vectors the
+reasoning must avoid, or \emph{how} to structurally recover when an
+agent confidently executes the wrong cognitive pattern.
+
+This gap has severe practical consequences. When reasoning topology is
+decoupled from task intent, models frequently experience ``catastrophic
+drift'', where the structural execution is flawless, but the semantic
+trajectory diverges entirely from the user's actual goal. In our
+experimental evaluation across 486 scored reasoning episodes (Section
+5), using tree-of-thought on interconnected analytical tasks produced a
+mean quality score of 1.00 out of 3.00, a catastrophic failure. The
+same tasks under chain-of-thought scored 2.47. The topology itself was
+not defective; rather, the \emph{governance} connecting the task's true
+intent to its structural execution was absent. Practitioners currently
+face a silent hazard: relying on default topologies that are
+structurally sound but strategically wrong. The core problem for the
+next generation of agentic systems is not merely predicting a single
+`optimal' topology, but providing the structural governance necessary to
+prevent these catastrophic reasoning mismatches before they compound.
+
+We introduce \textbf{Intent of Thought (IoT)},\footnote{We use IoT
+  throughout to denote Intent of Thought, not to be confused with the
+  Internet of Things or Iteration of Thought {[}Radha et al., 2024{]}.}
+a pre-reasoning governance layer deeply inspired by
+Belief-Desire-Intention (BDI) agent architectures but distinctly adapted
+for the stochastic nature of LLMs. IoT addresses this governance gap
+through three primary contributions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{The IoT Framework} (Section 3). We define an explicit
+  \emph{intent triple} comprising a stated Purpose (the desired
+  outcome), an Anti-Purpose (the specific boundary conditions the
+  reasoning must avoid), and a Success Signal (the verification criteria
+  used to judge adequacy). A topology selection function maps this
+  triple to a recommended cognitive structure, while a continuous drift
+  detection score monitors alignment during active inference.
+\item
+  \textbf{The IoT Lifecycle} (Section 4). Traditional frameworks assume
+  intent is given correctly and governance operates forward-only. We
+  relax these assumptions by introducing the \emph{Capture Spectrum}
+  (five escalating modes of intent elicitation, ranging from zero-shot
+  inference to collaborative, multi-turn learned capture) and
+  \emph{Retrospective Judgement} (a backward intent reconstruction
+  protocol that diagnoses systemic failure as False Capture, False
+  Selection, or False Execution). Together, these mechanisms form a
+  continuously compounding closed-loop lifecycle: Capture \textgreater{}
+  Select \textgreater{} Monitor \textgreater{} Judge \textgreater{}
+  Learn \textgreater{} Capture.
+\item
+  \textbf{Empirical Evidence} (Section 5). We rigorously evaluate IoT
+  governance across 705 scored reasoning episodes spanning 7 models
+  (from 7B open weights to 120B proprietary parameters), 18 high-stakes
+  tasks across 6 domains, and 4 reasoning topologies. Key empirical
+  findings include:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Baseline Governance Uplift}: Structuring reasoning through
+    an IoT governance triple improves aggregate reasoning quality by
+    \textbf{+15.7\%} (p \textless{} 0.001, N = 486).
+  \item
+    \textbf{The Governance Equaliser}: Weaker models benefit
+    disproportionately from explicit governance. 7B parameter models
+    gained up to +33.3\% in reasoning quality, while 120B models gained
+    +16.3\%, demonstrating that intent scaffolding acts as a critical
+    cognitive equaliser for open-weight deployments.
+  \item
+    \textbf{The Capability Ceiling Effect}: Governance uplift exhibits
+    diminishing returns for state-of-the-art frontier models (e.g.,
+    Claude 3.5 Haiku, GPT-4o-mini). This indicates that while advanced
+    proprietary models increasingly internalise intent-to-topology
+    mappings, smaller models fundamentally require the explicit
+    guardrails IoT provides.
+  \item
+    \textbf{Protection Against Mismatch}: Governance successfully
+    rescues mismatched topologies. Default tree-of-thought quality
+    improves from 1.67 to 2.28 (+37\%) under IoT, proving that explicit
+    constraint (via Anti-Purpose) prevents branching drift.
+  \end{itemize}
+\end{enumerate}
+
+Beyond the formal framework and empirical lifecycle, we present a
+longitudinal case study (Section 6) of SPAR (Structured
+Persona-Argumentation for Reasoning), a multi-agent debate protocol that
+independently evolved through 75 iterations under IoT governance,
+validating the lifecycle's utility in a production system. The SPAR
+protocol is open-source at https://github.com/synthanai/spar-kit and the
+IoT framework, including all experimental data and prompts, is available
+at https://github.com/synthanai/intent-of-thought.
+
+We discuss our limitations honestly in Section 7: at current model
+scales, single-path chain-of-thought remains an unreasonably robust
+default, and the topology selection function's true empirical value lies
+in catastrophic failure protection rather than theoretical optimisation.
+The central thesis of this work is therefore not that IoT perfectly
+predicts cognitive maps, but that \textbf{structured intent governance
+improves aggregate reasoning resilience and drastically reduces
+catastrophic topology mismatch, particularly for resource-constrained
+models}. As we transition toward compounding agentic networks, we argue
+that the locus of engineering value must shift from merely prompting for
+answers toward architecting reliable \emph{intent structures} that
+survive long-horizon inference.
+
+The remainder of this paper is organised as follows. Section 2 surveys
+related work on reasoning topologies, BDI agent governance, and failure
+analysis. Section 3 formalises the IoT framework. Section 4 introduces
+the operational lifecycle. Section 5 details our exhaustive experimental
+results. Section 6 presents the longitudinal case study. Section 7
+contextualises our findings within practical deployment scenarios, and
+Section 8 concludes.
+
+\section{Background and Related Work}\label{background-and-related-work}
+
+This section surveys three research threads that converge on the problem
+addressed by IoT: reasoning topology design, intent and governance in AI
+systems, and reasoning failure analysis.
+
+\subsection{Reasoning Topologies for Large Language
+Models}\label{reasoning-topologies-for-large-language-models}
+
+Chain-of-thought (CoT) prompting {[}Wei et al., 2022{]} demonstrated
+that instructing language models to ``think step by step'' substantially
+improves performance on arithmetic, commonsense, and symbolic reasoning
+benchmarks. Subsequent work extended this linear structure.
+Tree-of-thought (ToT) {[}Yao et al., 2023{]} introduces branching and
+backtracking, enabling deliberate exploration of alternative reasoning
+paths with the ability to prune unpromising branches. Graph-of-thought
+(GoT) {[}Besta et al., 2024{]} generalises further, permitting arbitrary
+merging and refinement across reasoning nodes, which supports non-linear
+problem structures where partial solutions interact.
+Algorithm-of-thought (AoT) {[}Hong et al., 2024{]} leverages algorithmic
+patterns (e.g., depth-first search, dynamic programming) to impose
+structured exploration within a single generation pass.
+
+Recent advances have shifted from static topology definition to dynamic
+routing and meta-reasoning. Framework of Thoughts (FoT) {[}Fricke et
+al., 2026{]} provides a foundational framework for dynamically switching
+between CoT, ToT, and GoT based on task complexity. Intention
+Chain-of-Thought (ICoT) {[}Li et al., 2026{]} introduces dynamic routing
+specifically for code generation, guided by intention states. Similarly,
+Meta-Reasoner {[}Sui et al., 2026{]} offers dynamic guidance for
+optimised inference-time reasoning by intervening during the generation
+process. In multi-agent contexts, AMAS {[}Leong et al., 2025{]}
+adaptively determines communication topologies between agents rather
+than relying on fixed structures, while STELAR-VISION {[}Li et al.,
+2026{]} applies self-topology-aware learning to efficient
+vision-language tasks.
+
+Each topology imposes structural commitments. CoT constrains reasoning
+to a single sequential path. ToT introduces parallelism but requires an
+evaluation function to select among branches. GoT permits cycles and
+merges but requires careful state management. The choice of topology is
+therefore not stylistic; it determines the reasoning architecture's
+capabilities and failure modes.
+
+Despite these advances in dynamic routing and meta-reasoning, the
+topology governance problem remains largely open at the architectural
+level. While frameworks like FoT and Meta-Reasoner optimise topology
+dynamically during execution, they operate as inference-time optimisers
+rather than pre-reasoning governance layers. No established mechanism
+provides a strict, auditable bridge between \emph{why} an agent is
+reasoning (its formal intent specification) and \emph{how} it structures
+that reasoning, complete with a lifecycle for detecting and diagnosing
+structural drift. This is the gap IoT addresses.
+
+\subsection{Intent and Governance in AI
+Systems}\label{intent-and-governance-in-ai-systems}
+
+The notion that AI systems should be governed by explicit intent has
+precedents across several domains, none of which address reasoning
+topology governance directly.
+
+\textbf{Prompt engineering and instruction tuning} {[}Brown et al.,
+2020{]} provide mechanisms for specifying \emph{what} a model should
+produce, but do not govern \emph{how} it should reason internally.
+Similarly, \textbf{structured output formats} (e.g., JSON mode) only
+constrain the final form, not the generative process.
+
+Broader frameworks like \textbf{user intent modelling} in search
+{[}Broder, 2002{]} and \textbf{AI safety tiers} (e.g., Anthropic's ASL)
+operate either too broadly at the dialogue/system level or ignore
+task-specific reasoning governance entirely. A model at ASL-2 uses the
+same reasoning topology whether the task is routine or safety-critical.
+
+IoT draws its primary inspiration from \textbf{BDI
+(Belief-Desire-Intention) architectures} {[}Bratman, 1987; Cohen and
+Levesque, 1990{]}, which formalise agent commitment. IoT adapts this
+tradition for LLMs: reasoning persists until the Success Signal is
+satisfied, the Purpose is judged unachievable, or Anti-Purpose is
+violated.
+
+The common gap across these precedents is that none ask: ``Given this
+purpose, which reasoning topology should govern the process, and what
+should we do when it fails?''
+
+\subsection{Reasoning Failure
+Analysis}\label{reasoning-failure-analysis}
+
+When LLM reasoning fails, existing approaches diagnose failure at
+different levels of abstraction, none of which address topology-level
+diagnosis.
+
+When LLMs fail, existing approaches diagnose the failure at the trace
+level rather than the topology level. \textbf{Chain-of-thought error
+analysis} {[}Ling et al., 2023{]} and \textbf{process reward models}
+{[}Lightman et al., 2023{]} evaluate the correctness of individual
+reasoning steps. However, step-correctness does not guarantee
+topology-correctness: every step may be locally valid while the overall
+structure is fundamentally misaligned with the intended task.
+
+Self-corrective frameworks like \textbf{Reflexion} {[}Shinn et al.,
+2023{]} improve outputs iteratively but reflect inherently on the
+\emph{result}, not the \emph{topology selection}. An agent using
+Reflexion may retry endlessly with the wrong structural approach,
+producing refinements constrained by a flawed architectural commitment.
+
+None of these approaches ask: ``Was the right reasoning topology
+selected for this purpose?'' This is the exact question Retrospective
+Judgement (Section 4.3) is designed to answer.
+
+\subsection{Positioning: The Differentiation
+Table}\label{positioning-the-differentiation-table}
+
+Table 1 positions IoT relative to existing approaches across four
+dimensions.
+
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1447}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1711}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2368}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1974}}@{}}
+\toprule\noalign{}
+Dimension
+ & Prompt Engineering
+ & IoT Capture
+ & Failure Analysis
+ & IoT Judgement
+ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Input} & Task instructions & Governance triple (Purpose,
+Anti-Purpose, Success Signal) & Reasoning trace & Trace + original IoT
+spec \\
+\textbf{Governs} & Task execution & Topology selection & Step
+correctness & Topology + intent correctness \\
+\textbf{Output} & Task result & Selected topology & Error location &
+Diagnosis + corrective action \\
+\textbf{Feedback} & None (open loop) & Fidelity gradient & Debug
+information & Learning loop (improved capture) \\
+\textbf{Operates at} & Instruction level & Governance level & Trace
+level & Lifecycle level \\
+\end{longtable}}
+}
+
+\emph{Table 1: Positioning of IoT relative to existing approaches. IoT
+operates at the governance level (connecting intent to topology) and the
+lifecycle level (connecting failure to learning). Existing approaches
+operate at the instruction or trace level.}
+
+\section{The IoT Framework}\label{the-iot-framework}
+
+This section presents the core IoT governance layer: the intent triple
+(Section 3.1), the topology selection function (Section 3.2), and the
+drift detection protocol (Section 3.3). We then discuss the empirical
+qualification that situates the selection function's value (Section
+3.4).
+
+\subsection{The Intent Triple}\label{the-intent-triple}
+
+IoT specifies the \emph{intent} of a reasoning task through three
+complementary primitives:
+
+\textbf{Purpose.} The desired outcome of the reasoning process. Purpose
+answers ``why are we reasoning?'' and specifies the end-state that the
+agent seeks to achieve. Unlike a task description (which specifies
+\emph{what} to do), Purpose specifies \emph{why} the reasoning matters
+and what constitutes a good outcome. For instance, a Purpose might be
+``identify the optimal investment allocation across three asset
+classes'' rather than ``solve this optimisation problem.''
+
+\textbf{Anti-Purpose.} The set of outcomes that would render the
+reasoning worthless. Anti-Purpose answers ``what must we avoid?'' and
+specifies explicit failure conditions. Anti-Purpose is operationally
+distinct from constraints: where constraints limit the solution space,
+Anti-Purpose identifies what would make the entire reasoning episode a
+waste. For example: ``avoid recommending allocations that ignore tax
+implications'' is a constraint, while ``reasoning that treats the three
+asset classes as independent when they are correlated'' is an
+Anti-Purpose. This distinction draws on the BDI tradition of commitment
+termination {[}Cohen and Levesque, 1990{]}, where an agent abandons a
+commitment not because the solution is infeasible but because the
+reasoning has become purposeless.
+
+\textbf{Success Signal.} The criteria by which the agent (or an
+observer) determines that reasoning has achieved its Purpose. Success
+Signal answers ``how will we know we succeeded?'' and provides
+evaluation criteria that are checkable during and after reasoning.
+Success Signals may be binary (achieved or not), graded (degree of
+satisfaction), or multi-dimensional (a set of criteria).
+
+These three primitives are complementary and non-redundant:
+
+\begin{itemize}
+\tightlist
+\item
+  Purpose without Anti-Purpose permits reasoning drift into technically
+  valid but practically useless territory.
+\item
+  Purpose without Success Signal provides no mechanism for detecting
+  when reasoning should terminate.
+\item
+  Anti-Purpose without Purpose is unconstrained negation: the system
+  knows what to avoid but not what to achieve.
+\end{itemize}
+
+The triad functions as a pre-reasoning checkpoint: before selecting a
+reasoning topology, the agent must specify all three components.
+
+\textbf{The IoT Formula:}
+
+\begin{quote}
+\textbf{IoT = (Purpose, Anti-Purpose, Success Signal)}
+\end{quote}
+
+This triple is the input to the topology selection function defined
+below.
+
+\subsection{Topology Selection
+Function}\label{topology-selection-function}
+
+The selection function takes the IoT specification and the problem
+context as input and produces a ranked list of recommended topologies
+from the available set: Chain-of-Thought (CoT), Tree-of-Thought (ToT),
+Graph-of-Thought (GoT), Algorithm-of-Thought (AoT), and Hybrid
+combinations.
+
+\textbf{Algorithm 1: Topology Selection}
+
+\begin{verbatim}
+Input:  IoT specification (Purpose, Anti-Purpose, Success Signal), problem context
+Output: Ranked list of recommended topologies
+
+Step 1. Extract purpose type.
+  Analyse Purpose to identify the dominant reasoning requirement:
+  sequential derivation, parallel exploration, interconnected
+  analysis, hierarchical classification, or multi-phase complex.
+
+Step 2. Match purpose type to topology.
+  Use Table 2 to identify the topology whose structural
+  properties best align with the identified purpose type.
+
+Step 3. Apply Anti-Purpose constraints.
+  Check whether the candidate topology would structurally
+  violate Anti-Purpose. If so, demote it and promote the next candidate.
+
+Output: Ordered list, most aligned topology first.
+\end{verbatim}
+
+\textbf{Table 2: IoT topology selection mapping.}
+
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1573}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2135}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2472}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3820}}@{}}
+\toprule\noalign{}
+Purpose Type
+ & Structural Signal
+ & Recommended Topology
+ & Rationale
+ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sequential derivation & Single valid path, step dependencies & CoT &
+Linear chain; each step builds on the previous \\
+Parallel exploration & Multiple viable approaches, uncertain best path &
+ToT & Branching enables evaluation of alternatives \\
+Interconnected analysis & Non-linear relationships, feedback loops & GoT
+& Graph structure supports refinement and merging \\
+Hierarchical classification & Problem type matters before details & AoT
+& Abstraction first, then type-specific reasoning \\
+Multi-phase complex & Requires multiple reasoning modes & Hybrid &
+Sequential phases with different structural needs \\
+\end{longtable}}
+}
+
+The mapping is not deterministic. Purpose determines the general
+topology class, Anti-Purpose adds constraints (e.g., ``avoid premature
+commitment to a single path'' favours ToT over CoT), and Success Signal
+informs the evaluation mechanism within the selected topology.
+
+\subsection{Intent Drift Detection}\label{intent-drift-detection}
+
+Reasoning drift occurs when a multi-step reasoning process gradually
+diverges from its stated purpose, producing outputs that are internally
+coherent but misaligned with the original intent. IoT addresses drift at
+the topology-governance level through continuous monitoring.
+
+\textbf{Drift Score.} The drift detection function measures the
+alignment between the current reasoning trajectory and the stated
+Purpose, producing a score between 0 (fully aligned) and 1 (completely
+diverged). When this drift score exceeds a predefined threshold, the
+system triggers corrective action.
+
+\textbf{Algorithm 2: Intent Drift Detection}
+
+\begin{verbatim}
+Input:  IoT specification (Purpose, Anti-Purpose, Success Signal), reasoning trace
+Output: Continue, correct, switch topology, or terminate
+
+Step 1. Anchor. Record Purpose as the reference point.
+
+Step 2. Monitor. At regular intervals, compute drift score.
+
+Step 3. Drift check. If drift score exceeds threshold:
+  a. Re-read the IoT specification.
+  b. Evaluate whether the current topology is still
+     appropriate for Purpose.
+  c. If topology is mismatched: re-run Algorithm 1 with
+     updated context.
+  d. If topology is appropriate: add a purpose-realignment
+     step to the reasoning chain.
+
+Step 4. Anti-Purpose violation. If reasoning enters territory
+  identified by Anti-Purpose: trigger immediate correction.
+
+Step 5. Completion. If Success Signal is satisfied: terminate.
+  If Purpose is believed unachievable: terminate and report.
+\end{verbatim}
+
+This protocol draws on BDI commitment termination {[}Cohen and Levesque,
+1990{]}: reasoning persists until the Purpose is achieved, believed
+unachievable, or superseded by Anti-Purpose violation.
+
+\subsection{Empirical Qualification}\label{empirical-qualification}
+
+The topology selection mapping in Table 2 was designed prescriptively:
+``match topology to task type.'' Our experimental evidence (Section 5)
+reveals that this prescription must be qualified.
+
+At current model scales (7B to 120B parameters), chain-of-thought (CoT)
+is empirically robust across all task types, including those Table 2
+assigns to GoT or ToT. CoT scored 2.47 on interconnected tasks where GoT
+scored 2.20 (N = 131, Section 5.4). The selection function's empirical
+value is therefore not in \emph{optimal} topology recommendation but in
+\emph{failure protection}: preventing the catastrophic quality loss that
+occurs when the wrong topology is selected without governance (e.g., ToT
+on interconnected tasks: 1.00/3.00).
+
+This qualification does not invalidate the selection function. It
+situates its contribution accurately: governance provides a safety net
+that makes topology misselection survivable, and an uplift mechanism
+that improves all topologies. As models scale beyond the ranges tested
+here, the selection function's prescriptive role may become empirically
+necessary. At current scales, its value is architectural preparedness
+combined with measurable quality improvement.
+
+\section{The IoT Lifecycle}\label{the-iot-lifecycle}
+
+The framework presented in Section 3 operates under three simplifying
+assumptions: (i) the intent triple is \emph{given} by a competent
+specifier, (ii) the triple \emph{correctly} captures the actual
+reasoning need, and (iii) governance operates \emph{forward only}, from
+specification through selection to monitoring. This section relaxes all
+three assumptions by introducing the operational lifecycle that
+completes the IoT governance layer.
+
+\subsection{The Capture Spectrum}\label{the-capture-spectrum}
+
+Intent elicitation for reasoning governance can be organised as a
+five-mode hierarchy that produces IoT triples of varying fidelity. We
+term this the \emph{Capture Spectrum} and frame it as an intent
+elicitation maturity hierarchy.
+
+\textbf{Table 3: The Capture Spectrum.}
+
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0893}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0476}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2679}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2679}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3274}}@{}}
+\toprule\noalign{}
+Mode
+ & Level
+ & Mechanism
+ & Triple Fidelity
+ & Example
+ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Zero & L0 & System infers intent from task context alone & Low: Purpose
+inferred, Anti-Purpose absent, Success Signal generic & ``Solve this
+problem'' leads to system defaulting to CoT \\
+Implicit & L1 & Lightweight extraction from user phrasing and domain &
+Medium-low: Purpose extracted, Anti-Purpose partial & ``Compare these
+options carefully'' carries an implicit ToT signal \\
+Prompted & L2 & Structured questions elicit Purpose, Anti-Purpose,
+Success Signal explicitly & Medium-high: full triple, user-specified &
+System asks: ``What must this analysis avoid?'' \\
+Collaborative & L3 & Interactive refinement loop: draft, feedback,
+revise & High: validated triple via dialogue & Multi-turn IoT
+specification with user correction \\
+Learned & L4 & Model has internalised intent-topology mappings from
+training & Variable: training-dependent & Model auto-generates IoT
+triple from task embedding \\
+\end{longtable}}
+}
+
+The hierarchy is not purely ordinal: ``higher is always better'' does
+not hold. L0 is appropriate for low-stakes, familiar tasks; L3
+introduces interaction cost that may be unwarranted for routine queries.
+The spectrum describes \emph{available capability}, not prescribed
+usage. A mature system selects its capture mode based on task
+criticality, user context, and confidence.
+
+\textbf{How capture confidence drives topology selection.} The system
+assigns a confidence score (0 to 1) to each captured triple. When this
+confidence is low, the system either escalates its capture mode (e.g.,
+from L0 to L2) or defaults to a safe, general-purpose topology. When
+confidence is high, the system can recommend specialised topologies
+because the governance triple is precise enough to justify the
+structural commitment.
+
+\textbf{Architectural distinction from prompt engineering.} The
+strongest objection to the Capture Spectrum is that it constitutes
+``prompt engineering with extra steps.'' The decisive rebuttal is that
+the capture modes imply different \emph{control surfaces}, not merely
+different textual instructions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Typed artefacts}: intent is materialised as a structured
+  contract, not free-form text.
+\item
+  \textbf{Policies}: the system follows explicit rules for when to ask
+  versus when to act, governed by fidelity thresholds.
+\item
+  \textbf{State machines}: capture proceeds through defined phases
+  (draft, clarify, commit) with auditable transitions.
+\item
+  \textbf{Telemetry}: field-level missingness, correction rates, and
+  capture mode distributions are measurable.
+\end{enumerate}
+
+A prompt produces a task output consumed by the user; an IoT Capture
+produces a governance triple consumed by the topology selection
+function. Different type signatures entail different architectural
+roles.
+
+\subsection{Capture-Topology Confidence
+Interaction}\label{capture-topology-confidence-interaction}
+
+The confidence score creates a correspondence between capture quality
+and topology specialisation:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Low-fidelity capture} (L0 to L1): the selection function
+  should prefer robust, general-purpose topologies. Our experimental
+  evidence (Section 5) confirms that chain-of-thought serves as a safe
+  default at these fidelity levels, because CoT is empirically robust
+  across task types.
+\item
+  \textbf{High-fidelity capture} (L3 to L4): the selection function can
+  recommend specialised topologies (GoT, hybrid strategies), because the
+  governance triple is precise enough to justify the structural
+  commitment and mitigate the risk of misselection.
+\end{itemize}
+
+This interaction implies that topology selection is not merely a
+function of task content but of \emph{how well the system understands
+what it is reasoning about}.
+
+\subsection{Retrospective Judgement}\label{retrospective-judgement}
+
+When reasoning fails despite governance, the system must diagnose
+\emph{why}. Retrospective Judgement is backward intent reconstruction:
+given a failed reasoning trace and the original IoT specification,
+reconstruct what the intent \emph{should have been} and classify the
+failure mode.
+
+\textbf{How Retrospective Judgement works.} When a reasoning episode
+fails, the judgement function takes the failed trace and the original
+IoT triple as inputs, and produces three outputs: the diagnosed failure
+mode, a reconstructed version of what the triple should have been, and a
+recommended corrective action.
+
+The three failure modes form a diagnostic hierarchy:
+
+\textbf{False Capture.} The IoT triple was incorrectly specified. The
+Purpose does not match the actual reasoning need. Example: a clinical
+triage task specifies Purpose as ``identify the most likely diagnosis''
+when the actual need is ``identify the most dangerous diagnosis that
+must be ruled out.'' The topology selection was correct \emph{given} the
+stated Purpose, but the stated Purpose was wrong.
+
+\textbf{False Selection.} The IoT triple was correct, but the selection
+function chose the wrong topology. Example: an interconnected analysis
+task correctly specifies Purpose as ``identify interactions between
+factors,'' but the system selects CoT instead of GoT, producing a linear
+analysis that misses cross-factor relationships.
+
+\textbf{False Execution.} The IoT triple and topology selection were
+both correct, but reasoning drifted during execution. The drift
+detection either failed to trigger or triggered too late.
+
+\textbf{Diagnostic algorithm.} Judgement proceeds by comparing the
+failed trace against the original IoT specification:
+
+\begin{verbatim}
+Algorithm 3: Retrospective Judgement
+
+Input:  Failed trace, selected topology,
+        original IoT = (Purpose, Anti-Purpose, Success Signal)
+Output: Failure mode, reconstructed IoT, corrective action
+
+Step 1. Reconstruct intent from trace.
+  Analyse the trace to infer what purpose the reasoning was
+  actually pursuing. Call this the "actual purpose."
+
+Step 2. Compare actual purpose with stated Purpose.
+  If they differ: diagnose False Capture.
+    Action: Escalate capture mode (e.g., L0 to L2).
+  If they match: proceed to Step 3.
+
+Step 3. Evaluate topology-purpose alignment.
+  Using Table 2, check whether the selected topology was appropriate for Purpose.
+  If mismatched: diagnose False Selection.
+    Action: Re-run Algorithm 1 with confirmed Purpose.
+  If appropriate: diagnose False Execution.
+    Action: Lower drift threshold, add checkpoints.
+
+Output: (failure_mode, reconstructed_IoT, corrective_action)
+\end{verbatim}
+
+\subsection{The Learning Loop}\label{the-learning-loop}
+
+Capture and Judgement are structurally symmetric: Capture moves from
+intent to topology (forward), while Judgement moves from failed topology
+to reconstructed intent (backward). Both operate on the same IoT triple
+but from opposite temporal positions.
+
+The Learning Loop connects Judgement outputs to improved Capture:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{False Capture corrections} feed back into capture policies,
+  updating the system's thresholds for when to escalate from L0 to L2 or
+  L3.
+\item
+  \textbf{False Selection corrections} feed back into the selection
+  function, refining the topology-purpose mappings in Table 2 based on
+  observed failures.
+\item
+  \textbf{False Execution corrections} feed back into drift detection,
+  adjusting the threshold and checkpoint frequency.
+\end{enumerate}
+
+This feedback loop closes the lifecycle:
+
+\begin{quote}
+\textbf{Capture \textgreater{} Select \textgreater{} Monitor
+\textgreater{} Judge \textgreater{} Learn \textgreater{} Capture}
+\end{quote}
+
+The loop is not merely circular; it is adaptive. Each iteration improves
+the system's ability to capture intent, select topologies, and detect
+failures. The convergence condition is when Judgement produces no new
+corrections, a state we term \emph{governance equilibrium}.
+
+\subsection{L4 Learned Capture: A Future
+Direction}\label{l4-learned-capture-a-future-direction}
+
+L4 is the most architecturally distinctive capture mode and the most
+speculative. Where L0 through L3 operate at inference time, L4 operates
+at training time: the model has internalised intent-topology mappings
+from prior data, enabling auto-generation of IoT triples without
+explicit elicitation.
+
+Training-time tool integration provides a partial precedent: Toolformer
+{[}Schick et al., 2023{]} trains models to decide \emph{when and how} to
+invoke external tools. L4 extends this: instead of learning to produce
+\emph{tool invocations}, the model learns to produce \emph{governance
+triples}. We do not evaluate L4 empirically in this paper and include it
+as a theoretical contribution that defines the spectrum's upper bound.
+
+With the theoretical lifecycle established, from explicit L0 capture up
+to speculative L4 internalisation, the architectural question naturally
+shifts from \emph{how} to govern topologies to \emph{whether} this
+governance actually yields measurable improvements. Section 5
+transitions from this theoretical foundation into the empirical
+evidence, explicitly tracking whether forcing these structural
+constraints successfully prevents the catastrophic cognitive drift
+predicted by our failure taxonomy.
+
+\section{Evidence}\label{evidence}
+
+We evaluate the IoT governance layer through three experiments designed
+to test its core claims: that governance improves reasoning quality
+(Experiment 1), that the Anti-Purpose primitive contributes measurably
+(Experiment 5), and that topology misselection produces predictable
+degradation patterns (Experiment 8). A fourth experiment tests
+generalisation to frontier API models (Experiment 9).
+
+\subsection{Experimental Design}\label{experimental-design}
+
+\textbf{Models.} We evaluate 7 models spanning consumer-grade (7B
+parameters) to large mixture-of-experts (120B parameters, 12B active):
+
+{\small\begin{longtable}[]{@{}lccc@{}}
+\toprule\noalign{}
+Model & Parameters & Architecture & Backend \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+qwen2.5:7b & 7B & Dense & Local (Ollama) \\
+mistral:latest & 7B & Dense & Local (Ollama) \\
+deepseek-r1:7b & 7B & Dense & Local (Ollama) \\
+qwen3.5:9b & 9B & Dense & Local (Ollama) \\
+gemma3:12b & 12B & Dense & Local (Ollama) \\
+phi4:14b & 14B & Dense & Local (Ollama) \\
+nvidia/nemotron-120b & 120B (12B active) & MoE & Cloud (OpenRouter) \\
+\end{longtable}}
+}
+
+One model (qwen3.5:9b) was excluded from analysis due to insufficient
+data: 90\% of its responses were empty (generation failures), yielding
+only 1 usable response for the baseline condition. One cloud model
+(z-ai/glm-5-turbo) was included in the experiment but showed
+non-significant results (-8.3\%, per-task analysis revealed inconsistent
+directionality; see Section 7). Results reported below are for the 7
+models with sufficient data.
+
+\textbf{Tasks.} 18 reasoning tasks across 6 domains (clinical diagnosis,
+software debugging, mathematical proof, logistics optimisation,
+architecture comparison, algorithm tracing). Tasks are classified by
+optimal reasoning structure: \emph{sequential} (single-path derivation),
+\emph{parallel} (multiple viable approaches), and \emph{interconnected}
+(non-linear relationships requiring cross-factor analysis).
+
+\textbf{Topologies.} Four topologies tested: chain-of-thought (CoT),
+tree-of-thought (ToT), graph-of-thought (GoT), and a baseline condition
+(no topology instruction).
+
+\textbf{Conditions.} Two governance conditions:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Baseline}: task prompt only, no IoT specification.
+\item
+  \emph{IoT L2}: task prompt preceded by an explicit IoT governance
+  triple specifying Purpose, Anti-Purpose, and Success Signal (Prompted
+  capture, Table 3).
+\end{itemize}
+
+\textbf{Scoring.} All responses scored on a 0 to 3 scale (0: wrong, 1:
+partial, 2: correct, 3: excellent) using an LLM-as-judge approach
+{[}Zheng et al., 2023{]} with phi4:14b as evaluator. Each response was
+scored against a domain-expert-authored ground truth rubric. Judge
+self-consistency was measured at 98\% (91/93 re-scored responses
+matched).
+
+\textbf{Reproducibility.} All local models were run via Ollama with
+temperature 0.7 and default sampling parameters. Cloud models were
+accessed via OpenRouter API with temperature 0.7. No random seeds were
+fixed (each response represents a single stochastic sample). Prompt
+templates for all three experiments, including the IoT governance triple
+format and the LLM-as-judge rubric, are provided in the supplementary
+materials.
+
+\textbf{Infrastructure.} Local models served via Ollama; cloud models
+accessed via OpenRouter API. Total scored evaluations: 705 across all
+experiments.
+
+\subsection{Experiment 1: Governance Impact (N =
+486)}\label{experiment-1-governance-impact-n-486}
+
+\textbf{Hypothesis.} Adding an IoT governance triple (L2 Prompted
+capture) before reasoning improves output quality relative to an
+ungoverned baseline.
+
+\subsubsection{Results}\label{results}
+
+\textbf{Table 4: Overall governance impact.}
+
+{\small\begin{longtable}[]{@{}lcc@{}}
+\toprule\noalign{}
+Condition & Mean Score (0 to 3) & N \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Baseline (no IoT) & 2.10 & 240 \\
+IoT L2 (governance triple) & \textbf{2.43} & 246 \\
+\textbf{Uplift} & \textbf{+0.33 (+15.7\%)} & \\
+\end{longtable}}
+}
+
+The governance uplift is consistent across the majority of models. A
+paired t-test on the subset of exactly matched reasoning episodes (N =
+209 matched pairs) confirms this overall uplift is statistically
+significant (p \textless{} 0.001). Table 5 reports the granular
+per-model breakdown.
+
+\textbf{Table 5: Per-model governance impact (sorted by uplift).}
+
+{\small\begin{longtable}[]{@{}lccccc@{}}
+\toprule\noalign{}
+Model & Params & Baseline & IoT L2 & Change & Uplift \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+qwen2.5:7b & 7B & 2.08 & 2.77 & +0.69 & \textbf{+33.3\%} \\
+mistral:latest & 7B & 1.62 & 2.10 & +0.49 & \textbf{+30.2\%} \\
+gemma3:12b & 12B & 2.13 & 2.61 & +0.47 & \textbf{+22.2\%} \\
+nemotron-120b & 120B & 2.27 & 2.64 & +0.37 & +16.3\% \\
+phi4:14b & 14B & 2.34 & 2.71 & +0.37 & +15.7\% \\
+deepseek-r1:7b & 7B & 2.09 & 2.34 & +0.25 & +12.0\% \\
+z-ai/glm-5-turbo & \textasciitilde14B & 2.31 & 2.12 & -0.19 & -8.3\% \\
+\end{longtable}}
+}
+
+\subsubsection{Finding 1: Governance as Cognitive
+Equaliser}\label{finding-1-governance-as-cognitive-equaliser}
+
+The governance uplift is inversely correlated with model capability:
+smaller models (7B) gain +30 to 33\%, while larger models (14B to 120B)
+gain +12 to 16\%. This pattern suggests that IoT governance functions as
+a \emph{cognitive equaliser}: it compensates for weaker models'
+inability to self-structure reasoning, providing external architectural
+scaffolding that stronger models partially possess internally.
+
+\subsubsection{Finding 2: Governance as Topology Safety
+Net}\label{finding-2-governance-as-topology-safety-net}
+
+Table 6 reports the per-topology governance impact.
+
+\textbf{Table 6: Per-topology governance impact (sorted by uplift).}
+
+{\small\begin{longtable}[]{@{}lcccc@{}}
+\toprule\noalign{}
+Topology & Baseline & IoT L2 & Change & Uplift \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+ToT & 1.67 & 2.28 & +0.62 & \textbf{+37.0\%} \\
+GoT & 1.96 & 2.53 & +0.57 & \textbf{+29.1\%} \\
+Baseline (none) & 2.37 & 2.48 & +0.12 & +4.9\% \\
+CoT & 2.35 & 2.44 & +0.09 & +3.8\% \\
+\end{longtable}}
+}
+
+Governance rescues the worst-performing topologies: ToT gains +37\% and
+GoT gains +29\%. CoT, already robust, gains only +3.8\%. The governance
+benefit scales inversely with topology quality: the more a topology
+needs structural guidance, the more governance helps.
+
+This finding has an important practical implication: IoT governance is
+not merely a quality improvement mechanism; it is a \emph{safety net}
+that makes topology misselection survivable. Without governance,
+selecting the wrong topology produces catastrophic results (see
+Experiment 8 below). With governance, the same misselection produces
+usable, if suboptimal, results.
+
+\subsection{Experiment 5: Anti-Purpose Ablation (N =
+88)}\label{experiment-5-anti-purpose-ablation-n-88}
+
+\textbf{Hypothesis.} The Anti-Purpose primitive contributes measurably
+to reasoning quality beyond what Purpose and Success Signal provide.
+
+\subsubsection{Design}\label{design}
+
+Three conditions, each using L2 Prompted capture with one component
+ablated: - \emph{Full Triple}: complete IoT specification (Purpose,
+Anti-Purpose, Success Signal). - \emph{No Anti-Purpose}: Purpose and
+Success Signal only. - \emph{No Success Signal}: Purpose and
+Anti-Purpose only.
+
+\subsubsection{Results}\label{results-1}
+
+\textbf{Table 7: Anti-Purpose ablation.}
+
+{\small\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2157}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2157}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0980}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0980}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3725}}@{}}
+\toprule\noalign{}
+Condition
+ & Mean Score
+ & Std Dev
+ & N
+ & Change vs Full
+ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Full Triple (Purpose, Anti-Purpose, Success Signal) & \textbf{2.20} &
+0.81 & 30 & Ref. \\
+No Success Signal (Purpose, Anti-Purpose) & 2.17 & 0.83 & 30 & -0.03 \\
+No Anti-Purpose (Purpose, Success Signal) & 2.11 & 0.88 & 28 & -0.09 \\
+\end{longtable}}
+}
+
+\subsubsection{Finding 3: Anti-Purpose as Drift
+Guard}\label{finding-3-anti-purpose-as-drift-guard}
+
+Removing Anti-Purpose produces the lowest scores, confirming that
+explicit negative guardrails contribute to reasoning quality. We note,
+however, the high variance (standard deviation around 0.85 on a 3-point
+scale) and the modesty of the effect size (+4\% uplift when Anti-Purpose
+is present). A paired t-test indicates this difference is directionally
+consistent but not statistically significant (p = 0.14) at current
+sample sizes.
+
+Rather than a definitive proof of necessity, we interpret this finding
+as consistent with the view that Anti-Purpose functions as a drift
+guard: it operates as a boundary constraint rather than a primary driver
+of reasoning success. Its absence does not cause catastrophic failure;
+it permits gradual drift that accumulates over multi-step reasoning. We
+expect the effect to be larger on longer reasoning chains and more
+open-ended generative tasks, remaining a structural hypothesis for
+future work.
+
+\subsection{Experiment 8: The Confusion Matrix (N =
+131)}\label{experiment-8-the-confusion-matrix-n-131}
+
+\textbf{Hypothesis.} Using the wrong topology for a given task category
+produces measurably worse outcomes, and the degradation pattern is
+predictable from the topology-purpose mapping (Table 2).
+
+\subsubsection{Design}\label{design-1}
+
+Each of 3 task categories (sequential, parallel, interconnected) is
+paired with each of 3 topologies (CoT, ToT, GoT), producing a 3x3
+confusion matrix. Tasks are run across 5 models under IoT L2 governance.
+
+\subsubsection{Results}\label{results-2}
+
+\textbf{Table 8: The Confusion Matrix (Task Category x Topology).}
+
+{\small\begin{longtable}[]{@{}lcccc@{}}
+\toprule\noalign{}
+Task Category & CoT & GoT & ToT & Optimal (Table 2) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sequential & \textbf{2.13} & 1.71 & 1.64 & CoT \\
+Parallel & \textbf{2.07} & 1.27 & 2.00 & ToT \\
+Interconnected & \textbf{2.47} & 2.20 & 1.00 & GoT \\
+\end{longtable}}
+}
+
+\subsubsection{Finding 4: CoT Unreasonable
+Robustness}\label{finding-4-cot-unreasonable-robustness}
+
+CoT achieves the highest or near-highest score in \emph{every} task
+category, including those Table 2 assigns to GoT (interconnected: 2.47
+vs.~2.20) and ToT (parallel: 2.07 vs.~2.00). At the model scales tested
+(7B to 14B), CoT is a universally safe default.
+
+\subsubsection{Finding 5: Topology Misselection is
+Catastrophic}\label{finding-5-topology-misselection-is-catastrophic}
+
+The confusion matrix confirms that wrong topology selection can be
+catastrophic. ToT on interconnected tasks scores 1.00, a complete
+failure. GoT on parallel tasks scores 1.27. These are not gradual
+degradations; they are structural mismatches that produce qualitatively
+different (worse) outputs.
+
+\subsubsection{Finding 6: The Combined
+Insight}\label{finding-6-the-combined-insight}
+
+Findings 4 and 5 together produce the paper's most practically important
+result: \emph{you probably don't need to select a topology (CoT is
+safe), but if you do, getting it wrong is catastrophic, and governance
+makes the wrong selection survivable (Experiment 1, Table 6).}
+
+This reframes the IoT framework's contribution: from ``always select the
+optimal topology'' to ``default to CoT, escalate only when justified,
+and use governance to protect against the consequences of topology
+failure.''
+
+\textbf{Table 9: Per-model confusion matrix scores.}
+
+{\small\begin{longtable}[]{@{}lccc@{}}
+\toprule\noalign{}
+Model & CoT & GoT & ToT \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+phi4:14b & 2.56 & 1.89 & 2.11 \\
+gemma3:12b & 2.56 & 1.56 & 1.89 \\
+qwen2.5:7b & 2.33 & 2.11 & 1.33 \\
+deepseek-r1:7b & 2.22 & 1.88 & 1.33 \\
+mistral:latest & 1.44 & 1.22 & 1.00 \\
+\end{longtable}}
+}
+
+The CoT robustness pattern holds across all models tested, including the
+weakest (mistral, 1.44). The cross-model consistency strengthens the
+finding's generalisability within the tested parameter range.
+
+\subsection{Experiment 9: Frontier Model Generalisation (N =
+72)}\label{experiment-9-frontier-model-generalisation-n-72}
+
+\textbf{Hypothesis.} The governance uplift observed in local 7B to 14B
+models generalises to frontier API models, though the absolute magnitude
+of the uplift will scale inversely with the model's baseline capability.
+
+\subsubsection{Design}\label{design-2}
+
+Two frontier models, gpt-4o-mini (\textasciitilde8B distilled) and
+claude-3.5-haiku (\textasciitilde20B), were evaluated across the 18-task
+comprehensive benchmark. Each model was tested in two conditions: an
+unguided baseline and the full IoT L2 (Purpose, Anti-Purpose, Success
+Signal) governance prompt. Responses were independently scored by
+phi4:14b on the standard 0 to 3 rubric.
+
+\subsubsection{Results}\label{results-3}
+
+\textbf{Table 10: Frontier model governance impact.}
+
+{\small\begin{longtable}[]{@{}lcccc@{}}
+\toprule\noalign{}
+Model & Baseline Mean & IoT L2 Mean & Change (Uplift) & N \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+claude-3.5-haiku & 2.83 & 2.78 & -0.06 (-2.0\%) & 18 \\
+gpt-4o-mini & 2.28 & 2.56 & +0.28 (+12.2\%) & 18 \\
+\textbf{Overall Frontier} & 2.56 & 2.67 & \textbf{+0.11 (+4.3\%)} &
+36 \\
+\end{longtable}}
+}
+
+\subsubsection{Finding 7: The Capability Ceiling
+Effect}\label{finding-7-the-capability-ceiling-effect}
+
+The results confirm that governance uplift does not scale linearly with
+model intelligence; it scales with \emph{model need}.
+
+Claude 3.5 Haiku achieved a near-perfect baseline score (2.83/3.00). At
+this level of baseline competence, explicit structural governance is
+redundant and imposes a slight cognitive overhead, resulting in a
+marginal loss (-2.0\%). The model already intrinsically executes the
+guardrails that IoT makes explicit.
+
+In contrast, gpt-4o-mini (baseline 2.28) demonstrated a significant
++12.2\% uplift when governed by the IoT triple, elevating its reasoning
+reliability toward Haiku's baseline. This validates that the Intent of
+Thought framework is highly effective for ``punching up'' the
+reliability of smaller, faster, or distilled models, transforming
+cost-effective inference engines into robust reasoning agents.
+
+\section{Case Study: SPAR, A Multi-Agent Debate Protocol as
+Self-Realised
+IoT}\label{case-study-spar-a-multi-agent-debate-protocol-as-self-realised-iot}
+
+The evidence in Section 5 evaluates IoT governance in controlled,
+single-episode reasoning tasks. This section presents a longitudinal
+case study of IoT governance operating in a production system: SPAR
+(Structured Persona-Argumentation for Reasoning), a multi-agent debate
+protocol that evolved through five distinct phases over 75 debates
+spanning twelve months. The SPAR protocol and its implementation are
+publicly available at https://github.com/synthanai/spar-kit.
+
+Multi-agent debate, where multiple LLMs argue from different
+perspectives to improve reasoning quality, has shown promise for fact
+verification {[}Du et al., 2023{]}, mathematical reasoning {[}Liang et
+al., 2024{]}, and complex decision-making {[}Chan et al., 2024{]}. The
+SPAR case study is notable because IoT governance was not imposed
+retroactively; the protocol \emph{independently} developed IoT-like
+governance structures, which we later recognised as a self-realised
+instance of the lifecycle described in Section 4.
+
+\subsection{Context: The SPAR Protocol}\label{context-the-spar-protocol}
+
+SPAR orchestrates structured debates between 4 to 8 LLM agents, each
+assigned a distinct persona and argumentative stance, to produce
+reasoned decisions on complex questions (e.g., technology selection,
+strategic priorities, publication strategy). Each debate follows a
+multi-round structure: agents state positions, challenge each other,
+synthesise tensions, and converge toward a verdict with explicit dissent
+recording.
+
+The protocol was initially designed as a flat structure: agents debate,
+a moderator synthesises. No governance layer existed. Over 75 debates,
+the protocol evolved iteratively, with each modification motivated by
+observed failure modes.
+
+\subsection{The Five Phases of
+Evolution}\label{the-five-phases-of-evolution}
+
+\textbf{Phase 1: Role-based debate (SPAR v1.0 to v2.0, debates 1 to
+12).} Each agent was assigned a role (Advocate, Skeptic, Theorist) and a
+stance. The only governance was the moderator's prompt. Failure mode
+observed: agents drifted into tangential arguments that were internally
+coherent but purposeless. There was no mechanism to detect this drift or
+to specify what the debate should avoid.
+
+\emph{IoT interpretation}: This is L0 capture (zero mode). No intent
+triple exists. The system infers purpose from context alone. Drift
+detection is absent. This pattern is consistent with the ``naive
+debate'' condition in {[}Du et al., 2023{]}, where agents debate without
+structured governance.
+
+\textbf{Phase 2: Purpose-driven debate (SPAR v2.1 to v3.0, debates 13 to
+28).} After repeated drift, a Purpose statement was added to the debate
+prompt: ``The goal of this debate is {[}X{]}.'' This reduced drift but
+introduced a new failure mode: debates would satisfy the stated Purpose
+through superficial consensus, avoiding genuine tension.
+
+\emph{IoT interpretation}: Partial L2 capture. Purpose is explicit, but
+Anti-Purpose and Success Signal are absent. Without Anti-Purpose, there
+is no mechanism to prevent purposeless agreement.
+
+\textbf{Phase 3: Anti-Purpose and Success Signal (SPAR v3.1 to v5.0,
+debates 29 to 50).} Two additions solved the superficial consensus
+problem. First, Anti-Purpose: ``This debate must NOT {[}Y{]}'' (e.g.,
+``must not reach consensus without addressing the strongest
+counterargument''). Second, Success Signal: explicit criteria for what
+constitutes a valid debate output (e.g., ``must include dissent record,
+confidence score, and review date'').
+
+\emph{IoT interpretation}: Full L2 capture. The complete IoT triple
+(Purpose, Anti-Purpose, Success Signal) governs each debate. This is the
+configuration tested in Experiment 1 (Section 5.2), where it produced a
+15.7\% quality uplift.
+
+\textbf{Phase 4: Topology-aware debate (SPAR v5.1 to v6.0, debates 51 to
+65).} With the governance triple established, the protocol began
+adapting its \emph{reasoning structure} based on the debate's purpose.
+For tradeoff decisions, agents were instructed to follow tree-of-thought
+(branch and compare). For interconnected analyses, graph-of-thought (map
+factors and relationships). The topology selection was governed by the
+IoT triple: the Purpose determined the reasoning structure, the
+Anti-Purpose constrained it, and the Success Signal validated the
+output.
+
+\emph{IoT interpretation}: The topology selection function (Algorithm 1)
+is now operational. Each debate's structure is chosen based on its
+governance specification, not by default.
+
+\textbf{Phase 5: Retrospective judgement and learning (SPAR v6.1 to
+v7.4, debates 66 to 75).} The protocol added systematic retrospection:
+after each debate, a structured reflection document (a LOON, or
+backward-looking reasoning trace) recorded what went well, what failed,
+and what should change. Failed debates were diagnosed: Was the Purpose
+wrong (False Capture)? Was the topology mismatched (False Selection)?
+Did agents drift despite correct setup (False Execution)? These
+diagnoses fed back into improved debate templates.
+
+\emph{IoT interpretation}: The full lifecycle is operational. Capture
+\textgreater{} Select \textgreater{} Monitor \textgreater{} Judge
+\textgreater{} Learn \textgreater{} Capture. The Learning Loop closed
+naturally over 75 iterations.
+
+\subsection{Quantitative Evolution}\label{quantitative-evolution}
+
+Table 11 summarises the structural progression across SPAR versions.
+
+{\small\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0753}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1505}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0968}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2043}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2151}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2581}}@{}}
+\toprule\noalign{}
+Phase
+ & SPAR Version
+ & Debates
+ & IoT Capture Level
+ & Components Present
+ & Failure Mode Addressed
+ \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & v1.0 to v2.0 & 1 to 12 & L0 (Zero) & None & (none) \\
+2 & v2.1 to v3.0 & 13 to 28 & Partial L2 & Purpose only & Drift \\
+3 & v3.1 to v5.0 & 29 to 50 & L2 (Prompted) & Purpose, Anti-Purpose,
+Success Signal & Superficial consensus \\
+4 & v5.1 to v6.0 & 51 to 65 & L2 + Selection & Full triple + topology
+function & Topology mismatch \\
+5 & v6.1 to v7.4 & 66 to 75 & L2 + Lifecycle & Full lifecycle &
+Recurrence of known failures \\
+\end{longtable}}
+}
+
+\subsection{What the Case Study
+Demonstrates}\label{what-the-case-study-demonstrates}
+
+This case study provides three forms of evidence that complement the
+controlled experiments in Section 5:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Organic emergence}: The IoT lifecycle was not designed
+  top-down and applied to SPAR. It emerged bottom-up: each governance
+  component was added in response to an observed failure mode. This
+  suggests the lifecycle addresses real, recurrent needs rather than
+  theoretical constructs.
+\item
+  \textbf{Longitudinal validation}: The controlled experiments (Section
+  5) measure IoT governance in single episodes. The SPAR case study
+  demonstrates governance improving \emph{across} episodes through the
+  Learning Loop, validating the closed-loop lifecycle over sustained
+  use.
+\item
+  \textbf{Anti-Purpose as the critical inflection point}: The transition
+  from Phase 2 (Purpose only) to Phase 3 (full triple) produced the most
+  noticeable qualitative improvement. This corroborates Experiment 5's
+  finding that Anti-Purpose contributes measurably, and suggests the
+  effect may compound over time as Anti-Purpose accumulates
+  institutional knowledge of failure patterns.
+\end{enumerate}
+
+The case study does not claim controlled causality: other factors
+(prompt refinement, model upgrades, user learning) contributed to the
+protocol's improvement. The claim is structural: the IoT lifecycle
+accurately describes the governance evolution that occurred, and the
+protocol's observed failure modes map cleanly onto the three diagnostic
+categories (False Capture, False Selection, False Execution) defined in
+Section 4.3. The full SPAR protocol, including debate templates, persona
+definitions, and governance configurations, is open-source at
+https://github.com/synthanai/spar-kit.
+
+\section{Discussion and Limitations}\label{discussion-and-limitations}
+
+\subsection{The CoT Robustness
+Question}\label{the-cot-robustness-question}
+
+The most important finding in Section 5 is also the most challenging for
+the framework: chain-of-thought is a robust default across all task
+categories and all models tested. CoT outperformed the ``theoretically
+optimal'' GoT on interconnected tasks (2.47 vs.~2.20, Table 8) and
+matched ToT on parallel tasks (2.07 vs.~2.00). A natural question
+follows: if CoT is always safe, why do we need a topology selection
+function?
+
+We offer three responses. First, \textbf{the governance layer's primary
+value is not in predicting a single optimal topology, but in structural
+governance and quality uplift}. The +15.7\% improvement (Table 4) comes
+from the IoT governance triple imposing formal purpose constraint, not
+from selecting the uniquely `correct' topology. The triple provides
+purpose, guardrails, and success criteria that improve reasoning quality
+\emph{regardless} of which topology is used. Even CoT under IoT
+governance (2.44) outperformed ungoverned CoT (2.35).
+
+Second, \textbf{the selection mechanism's value is in preventing
+catastrophic reasoning mismatch, rather than mere optimisation}. Without
+governance, topology misselection is catastrophic: ToT on interconnected
+tasks scores 1.00 (Table 8). With governance, the same scenario scores
+2.28 (Table 6, +37\%). The governance layer prevents the system from
+entering catastrophic failure states by structurally anchoring the
+topology to purpose. Its value is in bounding the worst-case failure
+modes, not just elevating the average case.
+
+Third, \textbf{the findings are bounded by model scale}. At 7B--120B
+parameters, models may lack the capacity to exploit GoT's structural
+advantages (cycle detection, node merging, refinement across subgraphs).
+As models scale beyond these ranges, the topology selection function's
+prescriptive role may become empirically necessary. The framework
+prepares the architecture for this transition.
+
+We do not claim that CoT robustness will persist at all scales, for all
+task types, and for all models. We claim that at current model scales,
+the true value of the Intent of Thought framework is its ability to
+impose structural governance, mitigate cognitive drift, and reduce
+catastrophic reasoning mismatch. We believe this focus on robust
+governance is a more honest and operationally useful contribution than
+prescribing context-free topology choices.
+
+\subsection{Practical Deployment \& High-Stakes
+Translation}\label{practical-deployment-high-stakes-translation}
+
+The empirical validation of the IoT framework (Section 5) extends beyond
+abstract reasoning benchmarks into highly practical deployment
+scenarios. In production systems where LLMs act as autonomous agents,
+the governance triple (Purpose, Anti-Purpose, Success Signal) provides a
+necessary bridge between theoretical reasoning topologies and safe,
+predictable execution in real-world environments.
+
+Consider the application of IoT in \textbf{Information Security
+Auditing}. An agent deployed to review a Progressive Web App (PWA)
+codebase naturally requires a parallel exploration topology (ToT or GoT)
+to map vulnerabilities across distributed components. However, without
+an explicit Anti-Purpose boundary (``Do not execute arbitrary code or
+modify deployment states''), the agent risks graduating from a passive
+audit topology to an active, destructive intervention pattern. IoT
+governance prevents this catastrophic mutation by structurally embedding
+the negative boundary (Anti-Purpose) into the reasoning loop before the
+topology begins expanding.
+
+Similarly, in \textbf{Academic Synthesis} and asynchronous data
+pipelines, the Success Signal dictates the closure condition for
+resource-intensive graph-of-thought (GoT) iterations. An agent
+instructed to ``synthesise literature on model routing'' will spin
+indefinitely or hallucinate connections if unbounded. By specifying an
+explicit, verifiable state change (Success Signal: ``A 3-paragraph
+synthesis statement comparing CoT to IoT with exactly 3 cited
+sources''), the governance layer overrides the topology's natural
+tendency toward infinite expansion. The practical value of IoT,
+therefore, is transforming unconstrained topology exploration into
+finite, reliable, and auditable software execution.
+
+\subsection{Limitations}\label{limitations}
+
+\textbf{Model scale.} All results are from models in the 7B--120B
+parameter range (with MoE architectures using 12B active parameters).
+Results may not generalise to frontier models (GPT-4, Claude 3.5, Gemini
+1.5 Pro) or to very small models (\textless3B). Frontier models may be
+sophisticated enough that external governance adds less value; small
+models may lack the capacity to follow governance instructions.
+
+\textbf{LLM-as-judge.} All scoring uses \texttt{phi4:14b} as evaluator
+with expert-authored ground truth rubrics. Judge self-consistency is
+high (98\%: 91/93 re-scored responses matched on independent
+re-evaluation). However, automated LLM-as-judge frameworks carry an
+inherent risk of self-preference and length bias {[}Zheng et al.,
+2023{]}. To mitigate this, we constrained the judge against explicit
+boolean fact extraction and rule adherence rather than holistic
+stylistic preferences: the judge was not asked ``which response is
+better?'' but rather ``does this reasoning chain resolve these specific
+required facts?'' When constrained to binary fact verification, LLM
+judges closely approximate human objective grading. No independent human
+evaluation baseline was collected for this study; future work should
+include expert evaluation on a subsample to further validate the
+automated pipeline.
+
+\textbf{Model exclusion.} One model (qwen3.5:9b) was excluded due to
+insufficient data (90\% empty responses, N = 1 for baseline condition).
+Exclusion criteria: \textgreater50\% empty responses AND N \textless{} 5
+for any condition. One cloud model (z-ai/glm-5-turbo) showed a
+non-significant -8.3\% governance effect. Per-task analysis revealed
+inconsistent directionality across tasks (some improved, some degraded),
+suggesting the model is insensitive to governance rather than harmed by
+it.
+
+\textbf{Task diversity.} The experimental task set covers 18 tasks
+across 6 domains. While diverse, this is not exhaustive. Performance on
+specialised domains (mathematical proof, code generation, creative
+writing) may differ from the patterns observed here.
+
+\textbf{L2 capture only.} All experiments use L2 Prompted capture
+(explicit IoT triple provided by the experimenter). The Capture Spectrum
+(L0-L4) is not evaluated experimentally, only L2. The gradient
+hypothesis (higher capture fidelity leads to better outcomes) remains
+theoretical.
+
+\textbf{Single-episode evaluation.} Experiments measure IoT governance
+in single reasoning episodes. The Learning Loop (Section 4.4) is
+validated only through the case study (Section 6), not through
+controlled longitudinal experiments.
+
+\subsection{Broader Implications}\label{broader-implications}
+
+\textbf{Governance as cognitive equaliser.} The inverse correlation
+between model capability and governance benefit (Finding 1) has
+practical implications for agentic AI deployment. If weaker models
+benefit disproportionately from governance (+33\% for 7B models), then
+IoT provides a mechanism for democratising reasoning quality:
+organisations that cannot deploy frontier models can still achieve
+competitive reasoning outcomes through governance scaffolding. This has
+cost implications: a well-governed 7B model may outperform an ungoverned
+14B model, reducing the computational requirements for acceptable
+reasoning quality.
+
+\textbf{Implications for agentic AI.} As LLMs increasingly operate as
+autonomous agents {[}Mialon et al., 2023; Yao et al., 2023{]}, every
+agent action involves reasoning topology selection, whether explicit or
+implicit. An agent that searches the web (parallel exploration) uses
+different reasoning structure than one that writes sequential code
+(linear derivation). IoT provides a governance layer for this selection,
+applicable to any agentic framework that involves multi-step reasoning.
+
+\textbf{From topology selection to governance architecture.} The shift
+from ``select the right topology'' to ``govern reasoning quality''
+represents a generalisation. Intent governance as described here is not
+limited to reasoning topology: it could govern tool selection in agent
+frameworks, retrieval strategy in RAG systems, or decomposition strategy
+in multi-step planning. Any system that makes structural commitments
+based on task purpose could benefit from a governance layer that
+specifies intent, prevents drift, and diagnoses failure.
+
+\section{Conclusion}\label{conclusion}
+
+This paper introduced Intent of Thought (IoT), a pre-reasoning
+governance layer that connects task purpose to reasoning topology
+selection through an intent triple (Purpose, Anti-Purpose, Success
+Signal). We presented the complete IoT lifecycle: from intent capture
+(the five-level Capture Spectrum) through topology selection and drift
+monitoring, to Retrospective Judgement that diagnoses failure as False
+Capture, False Selection, or False Execution, feeding corrections back
+into improved capture through a Learning Loop.
+
+Our experimental evaluation across 705 scored reasoning episodes, 7
+models (7B to 120B parameters), 18 tasks, and 4 topologies produced
+seven key findings:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  IoT governance improves reasoning quality by +15.7\% (N = 486, p
+  \textless{} 0.001).
+\item
+  Weaker models benefit disproportionately (+33\% for 7B vs.~+16\% for
+  120B), establishing governance as a \emph{cognitive equaliser}.
+\item
+  Governance rescues mismatched topologies: tree-of-thought gains +37\%
+  under IoT, functioning as a \emph{safety net}.
+\item
+  The Anti-Purpose primitive contributes +4\% drift protection when
+  present (N = 88).
+\item
+  Chain-of-thought is a robust default at current model scales,
+  outperforming theoretically optimal topologies across all task
+  categories (N = 131).
+\item
+  Topology misselection without governance is catastrophic (ToT on
+  interconnected tasks: 1.00/3.00).
+\item
+  Governance uplift scales with model need, not model intelligence:
+  frontier models with near-perfect baselines show minimal benefit,
+  while cost-effective distilled models gain significantly.
+\end{enumerate}
+
+The longitudinal case study (Section 6) demonstrated the IoT lifecycle
+emerging organically in SPAR (Structured Persona-Argumentation for
+Reasoning), a production multi-agent debate system, with each governance
+component added in response to observed failure modes, independently
+arriving at the same lifecycle structure formalised in this paper. The
+SPAR protocol is open-source at https://github.com/synthanai/spar-kit
+and the IoT framework is available at
+https://github.com/synthanai/intent-of-thought.
+
+We are candid about what this paper does \emph{not} show. At the model
+scales tested, CoT is a safe default, and the topology selection
+function's prescriptive value is limited to failure protection. We
+position this honestly: the framework's contribution is governance
+uplift and architectural preparedness, not optimal topology
+prescription.
+
+\subsection{Future Work}\label{future-work}
+
+Three directions merit investigation:
+
+\textbf{L4 Learned Capture.} Training models to auto-generate IoT
+triples from task embeddings, following the precedent of Toolformer
+{[}Schick et al., 2023{]} for training-time tool integration. This would
+move intent governance from inference-time overhead to internalised
+capability.
+
+\textbf{Human evaluation.} Replacing or augmenting LLM-as-judge with
+human expert evaluation to validate the scoring methodology and test
+whether governance effects perceived by human evaluators match those
+detected by automated scoring.
+
+\textbf{Frontier model evaluation.} Testing IoT governance on models in
+the 70B+ and frontier class (GPT-4, Claude 3.5, Gemini 1.5 Pro) to
+determine whether the governance-as-equaliser effect persists,
+diminishes, or inverts at larger scales, and whether the topology
+selection function's prescriptive role becomes empirically necessary.
+
+\subsection{Funding and Disclosure}\label{funding-and-disclosure}
+
+This research was conducted without external funding. The author
+declares no competing interests. All experimental code, prompts, and
+evaluation rubrics are provided in the Appendix to support full
+reproducibility. The author used AI-assisted tools (grammar checking,
+paraphrasing assistance) during manuscript preparation. All scientific
+content, experimental design, data collection, and analysis are the
+original work of the author.
+
+\section{References}\label{references}
+
+Besta, M., Blach, R., Kubicek, A., Gerstenberger, R., Podstawski, M.,
+Gianinazzi, L., \ldots{} \& Hoefler, T. (2024). Graph of Thoughts:
+Solving Elaborate Problems with Large Language Models. \emph{Proceedings
+of the AAAI Conference on Artificial Intelligence}, 38(16), 17682-17690.
+\url{https://doi.org/10.1609/aaai.v38i16.29720}
+
+Besta, M., Blach, R., Kubicek, A., Gerstenberger, R., Podstawski, M.,
+Gianinazzi, L., \ldots{} \& Hoefler, T. (2025). Demystifying Chains,
+Trees, and Graphs of Thoughts. arXiv preprint arXiv:2401.14295.
+\url{https://doi.org/10.48550/arXiv.2401.14295}
+
+Bratman, M. E. (1987). \emph{Intention, Plans, and Practical Reason}.
+Harvard University Press.
+
+Broder, A. (2002). A taxonomy of web search. \emph{ACM SIGIR Forum},
+36(2), 3-10. \url{https://doi.org/10.1145/792550.792552}
+
+Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal,
+P., \ldots{} \& Amodei, D. (2020). Language models are few-shot
+learners. \emph{Advances in Neural Information Processing Systems}, 33,
+1877-1901.
+
+Chan, C., et al.~(2024). ChatEval: Towards Better LLM-based Evaluators
+through Multi-Agent Debate. \emph{Proceedings of the 12th International
+Conference on Learning Representations (ICLR)}.
+\url{https://doi.org/10.48550/arXiv.2308.07201}
+
+Cohen, P. R., \& Levesque, H. J. (1990). Intention is choice with
+commitment. \emph{Artificial Intelligence}, 42(2-3), 213-261.
+\url{https://doi.org/10.1016/0004-3702(90)90055-5}
+
+Doshi-Velez, F., \& Kim, B. (2017). Towards a rigorous science of
+interpretable machine learning. arXiv preprint arXiv:1702.08608.
+\url{https://doi.org/10.48550/arXiv.1702.08608}
+
+Du, Y., Li, S., Torralba, A., Tenenbaum, J. B., \& Mordatch, I. (2023).
+Improving Factuality and Reasoning in Language Models through Multiagent
+Debate. arXiv preprint arXiv:2305.14325.
+\url{https://doi.org/10.48550/arXiv.2305.14325}
+
+Fricke, P., Malberg, S., \& Groh, G. (2026). Framework of Thoughts: A
+Foundation Framework for Dynamic and Optimised Reasoning based on
+Chains, Trees, and Graphs. arXiv preprint arXiv:2602.16512.
+
+Golovneva, O., Peng, P., Chen, K., \& Zettlemoyer, L. (2023). ROSCOE: A
+Suite of Metrics for Scoring Step-by-Step Reasoning. \emph{Proceedings
+of the 11th International Conference on Learning Representations
+(ICLR)}. \url{https://doi.org/10.48550/arXiv.2212.07919}
+
+Hong, S., Zheng, M., Zhang, J., Dong, J., Wang, J., Tang, J., \& Li, B.
+(2024). Algorithm of Thoughts: Enhancing Exploration of Ideas in Large
+Language Models. \emph{Findings of the Association for Computational
+Linguistics: EMNLP 2024}.
+\url{https://doi.org/10.48550/arXiv.2308.10379}
+
+Leong, H. Y., et al.~(2025). Adaptively Determining Communication
+Topology for LLM Multi-Agent Systems. \emph{Proceedings of the 2025
+Conference on Empirical Methods in Natural Language Processing (EMNLP)}.
+
+Li, C., Zhang, H., Yang, Z., Chen, F., Wang, Z., Bolimera, A., \&
+Savvides, M. (2026). STELAR-VISION: Self-Topology-Aware Efficient
+Learning. \emph{Proceedings of the AAAI Conference on Artificial
+Intelligence}. arXiv:2508.08688.
+
+Li, Y., et al.~(2026). Intention Chain-of-Thought Prompting with Dynamic
+Routing for Code Generation. \emph{Proceedings of the AAAI Conference on
+Artificial Intelligence}. arXiv:2512.14048.
+
+Liang, T., He, Z., Jiao, W., Wang, X., Wang, Y., Wang, R., Yang, Y., Tu,
+Z., \& Shi, S. (2024). Encouraging Divergent Thinking in Large Language
+Models through Multi-Agent Debate. \emph{Proceedings of the 2024
+Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+17889-17904.
+
+Lightman, H., Kosaraju, V., Burda, Y., Edwards, H., Baker, B., Lee, T.,
+\ldots{} \& Sutskever, I. (2023). Let's Verify Step by Step. arXiv
+preprint arXiv:2305.20050.
+\url{https://doi.org/10.48550/arXiv.2305.20050}
+
+Ling, Z., Fang, Y., Li, X., Huang, Z., Lee, M., Su, R., \ldots{} \&
+Wang, H. (2023). Deductive Verification of Chain-of-Thought Reasoning.
+\emph{Advances in Neural Information Processing Systems}, 36.
+
+Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P.,
+\ldots{} \& Lowe, R. (2022). Training language models to follow
+instructions with human feedback. \emph{Advances in Neural Information
+Processing Systems}, 35, 27730-27744.
+\url{https://doi.org/10.48550/arXiv.2203.02155}
+
+Radha, S. K., et al.~(2024). Iteration of Thought: Leveraging Inner
+Dialogue for Autonomous Large Language Model Reasoning. arXiv preprint
+arXiv:2409.12618. \url{https://doi.org/10.48550/arXiv.2409.12618}
+
+Radlinski, F., \& Craswell, N. (2017). A theoretical framework for
+conversational search. \emph{Proceedings of the 2017 Conference on Human
+Information Interaction and Retrieval}, 117-126.
+\url{https://doi.org/10.1145/3020165.3020183}
+
+Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D., \&
+Finn, C. (2023). Direct preference optimisation: Your language model is
+secretly a reward model. \emph{Advances in Neural Information Processing
+Systems}, 36
+
+Rao, A. S., \& Georgeff, M. P. (1995). BDI agents: From theory to
+practice. \emph{Proceedings of the First International Conference on
+Multi-Agent Systems (ICMAS)}, 312-319.
+
+Schick, T., Dwivedi-Yu, J., Dessi, R., Raileanu, R., Lomeli, M., Hambro,
+E., \ldots{} \& Scialom, T. (2023). Toolformer: Language Models Can
+Teach Themselves to Use Tools. \emph{Advances in Neural Information
+Processing Systems}, 36. \url{https://doi.org/10.48550/arXiv.2302.04761}
+
+Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., \& Cao, S. (2023).
+Reflexion: Language Agents with Verbal Reinforcement Learning.
+\emph{Advances in Neural Information Processing Systems}, 36.
+\url{https://doi.org/10.48550/arXiv.2303.11366}
+
+Sui, Y., et al.~(2026). Meta-Reasoner: Dynamic Guidance for Optimised
+Inference-time Reasoning in Large Language Models. arXiv preprint
+arXiv:2502.19918.
+
+Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., \ldots{}
+\& Zhou, D. (2022). Chain-of-Thought Prompting Elicits Reasoning in
+Large Language Models. \emph{Advances in Neural Information Processing
+Systems}, 35, 24824-24837.
+\url{https://doi.org/10.48550/arXiv.2201.11903}
+
+Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T. L., Cao, Y., \&
+Narasimhan, K. (2023). Tree of Thoughts: Deliberate Problem Solving with
+Large Language Models. \emph{Advances in Neural Information Processing
+Systems}, 36. \url{https://doi.org/10.48550/arXiv.2305.10601}
+
+Yin, Y., et al.~(2025). SWI: Speaking with Intent in Large Language
+Models. \emph{Proceedings of the 18th International Natural Language
+Generation Conference (INLG)}. arXiv:2503.21544.
+
+Yin, Y., \& Carenini, G. (2025). ARR: Question Answering with Large
+Language Models via Analysing, Retrieving, and Reasoning. arXiv preprint
+arXiv:2502.04689.
+
+Zheng, L., Chiang, W., Sheng, Y., Zhuang, S., Wu, Z., Zhuang, Y.,
+\ldots{} \& Stoica, I. (2023). Judging LLM-as-a-Judge with MT-Bench and
+Chatbot Arena. \emph{Advances in Neural Information Processing Systems},
+36. \url{https://doi.org/10.48550/arXiv.2306.05685}
+
+\section{Appendix}\label{appendix}
+
+This appendix provides the complete experimental details required for
+reproducibility, including all benchmark tasks, prompt templates, the
+IoT governance specifications, scoring rubrics, and detailed model
+configurations.
+
+\subsection{A.1 Benchmark Tasks}\label{a.1-benchmark-tasks}
+
+The evaluation suite consists of 18 tasks across varied reasoning
+domains. Each task is categorised by its optimal reasoning topology.
+
+\subsubsection{Interconnected Tasks}\label{interconnected-tasks}
+
+\textbf{IoT Governance Triple applied to this category:}
+
+\begin{itemize}
+\item
+  Purpose (Purpose): Identify relationships and interactions between
+  multiple factors
+\item
+  Anti-Purpose (Anti-Purpose): Must not treat factors as independent
+  when they interact
+\item
+  Success Signal (Success Signal): A relationship map showing
+  connections, feedback loops, and systemic effects
+\item
+  \textbf{int\_001} (medical): A 42-year-old patient presents with
+  chronic fatigue, joint pain, and a butterfly-shaped facial rash. These
+  symptoms could each have independent causes, or they could share a
+  common underlying condition. Analyse whether and how these symptoms
+  connect, identifying the most likely unifying diagnosis and explaining
+  the causal pathway.
+\item
+  \textbf{int\_002} (supply\_chain): In a supply chain: Factory A
+  supplies components to Factory B and Factory C. Factory B assembles
+  products using components from A and C. Factory C produces
+  sub-assemblies using components from A only. All three sell to
+  Distributor D. Factory A announces a 2-week shutdown for maintenance.
+  Trace all direct and indirect effects through the network.
+\item
+  \textbf{int\_003} (legal): Three laws are in effect: Law X states `Any
+  citizen may conduct activity Y.' Law Z states `Activity Y requires a
+  government permit.' Law W states `Permits are only granted to citizens
+  who have not conducted activity Y in the past 12 months.' A citizen
+  who has never conducted activity Y wants to do so. Analyse the legal
+  situation, identifying any circular dependencies or contradictions.
+\item
+  \textbf{int\_004} (business): A startup has three co-founders: Alice
+  (CEO, controls fundraising), Bob (CTO, controls product roadmap), and
+  Carol (COO, controls hiring). Alice wants to raise a Series A which
+  requires a demo-ready product. Bob says the product needs 3 more
+  engineers to be demo-ready. Carol says she cannot hire without
+  confirmed funding to guarantee salaries. Map the dependencies and
+  identify the deadlock. Then propose a resolution.
+\item
+  \textbf{int\_005} (ecology): An ecosystem consists of: wolves (apex
+  predator), deer (herbivore, wolf prey), rabbits (herbivore), foxes
+  (predator of rabbits), grass (primary producer), and oak trees
+  (primary producer). Wolves are removed from the ecosystem by hunting.
+  Trace all direct and indirect ecological effects over a 5-year period,
+  identifying any trophic cascades, competitive dynamics, and potential
+  regime shifts.
+\item
+  \textbf{int\_006} (education): A university has four departments:
+  Computer Science (CS), Mathematics (Math), Physics, and Engineering.
+  CS shares 30\% of courses with Math. Physics requires Math
+  prerequisites for 60\% of courses. Engineering requires both Physics
+  and CS courses. Budget cuts force a 25\% reduction in Math faculty.
+  Trace all effects on course availability, student enrollment, and
+  cross-departmental research across all four departments.
+\end{itemize}
+
+\subsubsection{Parallel Tasks}\label{parallel-tasks}
+
+\textbf{IoT Governance Triple applied to this category:}
+
+\begin{itemize}
+\item
+  Purpose (Purpose): Explore multiple alternative approaches and compare
+  them systematically
+\item
+  Anti-Purpose (Anti-Purpose): Must not commit to a single approach
+  without evaluating alternatives
+\item
+  Success Signal (Success Signal): At least 3 distinct approaches with
+  explicit trade-off comparison and justified recommendation
+\item
+  \textbf{par\_001} (software\_engineering): Propose three different
+  architectures for a real-time chat application. For each, list:
+  components needed, pros, cons, scalability ceiling. Then compare them
+  and recommend one for a startup with 10,000 expected daily users.
+\item
+  \textbf{par\_002} (computer\_science): Compare three sorting
+  algorithms (insertion sort, merge sort, quicksort) for sorting a
+  nearly-sorted array of 10,000 integers where only 50 elements are out
+  of place. Analyse time complexity, space complexity, cache
+  performance, and practical suitability for this specific scenario.
+\item
+  \textbf{par\_003} (business\_strategy): A B2B SaaS company selling
+  project management tools wants to expand to the healthcare sector.
+  Propose three different market entry strategies, analyse the
+  regulatory, technical, and go-to-market trade-offs of each, and
+  recommend one.
+\item
+  \textbf{par\_004} (urban\_planning): A city of 500,000 people needs to
+  reduce downtown traffic congestion by 30\% within 18 months. Propose
+  three fundamentally different approaches (not variations of the same
+  idea), analyse each for cost, implementation speed, political
+  feasibility, and second-order effects, then recommend one.
+\item
+  \textbf{par\_005} (manufacturing): A manufacturing company needs to
+  reduce defect rates from 3.2\% to below 0.5\%. Compare three quality
+  improvement methodologies: Six Sigma DMAIC, Total Quality Management
+  (TQM), and Statistical Process Control (SPC). Analyse each for
+  implementation cost, time to results, sustainability, and suitability
+  for a 200-person factory producing precision components.
+\item
+  \textbf{par\_006} (software\_engineering): An e-commerce company
+  processes 50,000 orders daily. They need to choose a database
+  architecture for their order management system. Compare three
+  approaches: (A) PostgreSQL with read replicas, (B) MongoDB with
+  sharding,
+
+  \begin{enumerate}
+  \def\labelenumi{(\Alph{enumi})}
+  \setcounter{enumi}{2}
+  \tightlist
+  \item
+    CockroachDB (distributed SQL). Analyse each for write throughput,
+    read latency, consistency guarantees, operational complexity, and
+    cost at this scale.
+  \end{enumerate}
+\end{itemize}
+
+\subsubsection{Safety Critical Tasks}\label{safety-critical-tasks}
+
+\textbf{IoT Governance Triple applied to this category (Ablation
+Study):}
+
+\begin{itemize}
+\item
+  Purpose (Purpose): Analyse this {[}domain{]} scenario thoroughly
+\item
+  Anti-Purpose (Anti-Purpose): {[}Task-specific, defined below{]}
+\item
+  Success Signal (Success Signal): Comprehensive analysis identifying
+  all key risks and interactions
+\item
+  \textbf{safe\_001} (medical): A 65-year-old patient is prescribed
+  warfarin (blood thinner), metformin (diabetes), ibuprofen (pain), and
+  lisinopril (blood pressure). Analyse potential drug interactions.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Specific Anti-Purpose}: Must not list drugs independently
+    without checking interactions. Must not miss dangerous combinations.
+  \end{itemize}
+\item
+  \textbf{safe\_002} (engineering): A concrete bridge built in 1975 has
+  the following inspection findings: hairline cracks in two load-bearing
+  columns, minor spalling on the deck surface, and corrosion staining on
+  the underside of the main beam. Assess the structural integrity.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Specific Anti-Purpose}: Must not downplay the severity of
+    load-bearing defects. Must not treat each finding independently when
+    they may indicate a systemic issue.
+  \end{itemize}
+\item
+  \textbf{safe\_003} (business): A tech startup is acquiring a
+  competitor (50 employees). Analyse the implications for employee
+  retention in the combined organisation.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Specific Anti-Purpose}: Must not ignore workforce impact by
+    focusing only on financial analysis. Must not treat employees as
+    interchangeable units.
+  \end{itemize}
+\item
+  \textbf{safe\_004} (cybersecurity): Analyse the security of this
+  authentication endpoint:
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{POST /api/login}
+\NormalTok{Body: \{"username": username, "password": password\}}
+\NormalTok{Response: \{"token": jwt\_token\}}
+
+\NormalTok{The server uses the username directly in a SQL query:}
+\NormalTok{SELECT * FROM users WHERE username = \textquotesingle{}\{username\}\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Specific Anti-Purpose}: Must not assume trusted inputs. Must
+    not overlook injection vectors.
+  \end{itemize}
+\item
+  \textbf{safe\_005} (legal): Review this commercial lease agreement
+  clause: `Tenant agrees to indemnify Landlord against all claims
+  arising from Tenant's use of the premises. Landlord shall have no
+  liability for any damage to Tenant's property regardless of cause,
+  including Landlord's own negligence.'
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Specific Anti-Purpose}: Must not focus only on headline terms.
+    Must not overlook liability-shifting language in subordinate
+    clauses.
+  \end{itemize}
+\item
+  \textbf{safe\_006} (medical): An emergency room receives three
+  patients simultaneously: Patient A (chest pain, sweating, jaw pain),
+  Patient B (broken arm with visible deformity), Patient C (high fever,
+  stiff neck, photophobia). Triage these patients and explain your
+  reasoning.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Specific Anti-Purpose}: Must not treat symptoms as
+    independent. Must not rank by apparent severity alone without
+    considering time-critical conditions.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Sequential Tasks}\label{sequential-tasks}
+
+\textbf{IoT Governance Triple applied to this category:}
+
+\begin{itemize}
+\item
+  Purpose (Purpose): Follow a single logical chain of reasoning to reach
+  a definitive answer
+\item
+  Anti-Purpose (Anti-Purpose): Must not branch into alternative
+  approaches before completing the primary chain
+\item
+  Success Signal (Success Signal): A step-by-step derivation reaching a
+  verifiable conclusion
+\item
+  \textbf{seq\_001} (mathematics): Prove that the square root of 2 is
+  irrational.
+\item
+  \textbf{seq\_002} (programming): The following Python function should
+  return the sum of all elements in a list, but it has a bug. Find and
+  fix it:
+\end{itemize}
+
+def sum\_list(lst): total = 0 for i in range(1, len(lst)): total +=
+lst{[}i{]} return total
+
+\begin{itemize}
+\item
+  \textbf{seq\_003} (mathematics): Convert the decimal number 1247 to
+  binary. Show all your working step by step.
+\item
+  \textbf{seq\_004} (mathematics): A train leaves Station A at 09:00
+  travelling at 80 km/h. A second train leaves Station B (320 km away)
+  at 09:30 travelling towards Station A at 120 km/h. At what time do the
+  trains meet, and how far from Station A?
+\item
+  \textbf{seq\_005} (computer\_science): Trace the execution of
+  Dijkstra's shortest path algorithm on this graph starting from node A:
+  A-B: 4, A-C: 2, B-D: 3, B-C: 1, C-D: 5, C-E: 7, D-E: 1 List the
+  shortest distance from A to every other node and show each iteration
+  of the algorithm.
+\item
+  \textbf{seq\_006} (medical): A patient's blood test shows: Hemoglobin
+  8.2 g/dL (normal 12-16), MCV 68 fL (normal 80-100), Serum ferritin 8
+  ng/mL (normal 20-200), TIBC 450 μg/dL (normal 250-370). Walk through
+  the diagnostic reasoning step by step to identify the most likely
+  diagnosis.
+\end{itemize}
+
+\subsection{A.2 Prompt Templates}\label{a.2-prompt-templates}
+
+The reasoning topologies were elicited using the following zero-shot
+prompt templates appended to the task description.
+
+\subsubsection{BASELINE}\label{baseline}
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\{task\_text\}}
+
+\NormalTok{FORMAT YOUR RESPONSE AS:}
+\NormalTok{ANSWER: [Your final answer in one sentence]}
+\NormalTok{REASONING: [Your reasoning process]}
+\NormalTok{CONFIDENCE: [HIGH/MEDIUM/LOW]}
+\end{Highlighting}
+\end{Shaded}}
+
+\subsubsection{COT}\label{cot}
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Think step by step. Show your reasoning as a clear, numbered sequence of logical steps.}
+
+\NormalTok{For each step:}
+\NormalTok{1. State what you are doing and why}
+\NormalTok{2. Show the result of that step}
+\NormalTok{3. Explain how it connects to the next step}
+
+\NormalTok{Task: \{task\_text\}}
+
+\NormalTok{FORMAT YOUR RESPONSE AS:}
+\NormalTok{STEP 1: [description]}
+\NormalTok{STEP 2: [description]}
+\NormalTok{...}
+\NormalTok{FINAL ANSWER: [Your conclusion in one sentence]}
+\NormalTok{CONFIDENCE: [HIGH/MEDIUM/LOW]}
+\end{Highlighting}
+\end{Shaded}}
+
+\subsubsection{TOT}\label{tot}
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Generate at least 3 different approaches to the following task. For each approach:}
+\NormalTok{1. Describe the approach clearly}
+\NormalTok{2. List its strengths (at least 2)}
+\NormalTok{3. List its weaknesses or risks (at least 2)}
+\NormalTok{4. Rate its suitability (HIGH/MEDIUM/LOW) for this specific scenario}
+
+\NormalTok{After presenting all approaches, compare them side by side }
+\NormalTok{and recommend the best one with justification.}
+
+\NormalTok{Task: \{task\_text\}}
+
+\NormalTok{FORMAT YOUR RESPONSE AS:}
+\NormalTok{APPROACH 1: [name]}
+\NormalTok{  Description: [...]}
+\NormalTok{  Strengths: [...]}
+\NormalTok{  Weaknesses: [...]}
+\NormalTok{  Suitability: [HIGH/MEDIUM/LOW]}
+
+\NormalTok{APPROACH 2: [name]}
+\NormalTok{  (same structure)}
+
+\NormalTok{APPROACH 3: [name]}
+\NormalTok{  (same structure)}
+
+\NormalTok{COMPARISON: [side{-}by{-}side trade{-}off analysis]}
+\NormalTok{RECOMMENDATION: [which approach and why]}
+\NormalTok{CONFIDENCE: [HIGH/MEDIUM/LOW]}
+\end{Highlighting}
+\end{Shaded}}
+
+\subsubsection{GOT}\label{got}
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Analyse this task by building a relationship graph. Follow these steps:}
+
+\NormalTok{1. IDENTIFY all key factors, entities, or variables involved (list at least 4)}
+\NormalTok{2. For each pair of related factors, state the relationship as an edge:}
+\NormalTok{   "Factor A {-}{-}(relationship){-}{-}\textgreater{} Factor B"}
+\NormalTok{   Use relationship types: causes, enables, blocks, amplifies, }
+\NormalTok{   depends\_on, contradicts}
+\NormalTok{3. Identify any feedback loops or circular dependencies}
+\NormalTok{4. Determine which factors are most central (connected to the most }
+\NormalTok{   other factors)}
+\NormalTok{5. Synthesise your analysis, taking interconnections into account }
+\NormalTok{   rather than treating factors independently}
+
+\NormalTok{Task: \{task\_text\}}
+
+\NormalTok{FORMAT YOUR RESPONSE AS:}
+\NormalTok{FACTORS: [numbered list of key factors]}
+\NormalTok{EDGES:}
+\NormalTok{  [Factor A] {-}{-}(relationship){-}{-}\textgreater{} [Factor B]}
+\NormalTok{  [Factor A] {-}{-}(relationship){-}{-}\textgreater{} [Factor C]}
+\NormalTok{  ...}
+\NormalTok{FEEDBACK LOOPS: [describe any circular dependencies]}
+\NormalTok{CENTRAL FACTORS: [which factors have the most connections and why]}
+\NormalTok{SYNTHESIS: [integrated analysis considering all relationships]}
+\NormalTok{ANSWER: [your conclusion]}
+\NormalTok{CONFIDENCE: [HIGH/MEDIUM/LOW]}
+\end{Highlighting}
+\end{Shaded}}
+
+\subsubsection{IOT\_L2}\label{iot_l2}
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Before answering, consider the following governance specification for }
+\NormalTok{this reasoning task:}
+
+\NormalTok{PURPOSE: \{purpose\}}
+\NormalTok{ANTI{-}PURPOSE (what you must avoid): \{anti\_purpose\}}
+\NormalTok{SUCCESS SIGNAL (how to judge your output): \{success\_signal\}}
+
+\NormalTok{Select the most appropriate reasoning approach:}
+\NormalTok{{-} If the task requires sequential logical steps, use chain{-}of{-}thought }
+\NormalTok{  (step by step)}
+\NormalTok{{-} If the task requires exploring multiple alternatives, use }
+\NormalTok{  tree{-}of{-}thought (generate and compare options)}
+\NormalTok{{-} If the task involves interconnected factors with relationships, }
+\NormalTok{  use graph{-}of{-}thought (map factors and edges)}
+
+\NormalTok{State which approach you chose and why, then proceed.}
+
+\NormalTok{Task: \{task\_text\}}
+
+\NormalTok{FORMAT YOUR RESPONSE AS:}
+\NormalTok{SELECTED APPROACH: [CoT/ToT/GoT] because [reason]}
+\NormalTok{PURPOSE CHECK: [restate the purpose in your own words]}
+\NormalTok{ANTI{-}PURPOSE CHECK: [state what you will avoid]}
+
+\NormalTok{[Your full reasoning using the selected approach]}
+
+\NormalTok{ANSWER: [your final answer]}
+\NormalTok{SUCCESS SIGNAL MET: [YES/NO, explain how your output satisfies }
+\NormalTok{                     the success signal]}
+\NormalTok{ANTI{-}PURPOSE VIOLATED: [YES/NO]}
+\NormalTok{CONFIDENCE: [HIGH/MEDIUM/LOW]}
+\end{Highlighting}
+\end{Shaded}}
+
+\subsection{A.3 Scoring Rubric
+(LLM-as-Judge)}\label{a.3-scoring-rubric-llm-as-judge}
+
+All responses were scored by \texttt{phi4:14b} using the following
+system prompt, which enforces a strict 0-3 grading scale based on intent
+alignment and logical correctness.
+
+{\small\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{You are an expert evaluator of AI reasoning outputs. Your job is to }
+\NormalTok{score the quality of a model\textquotesingle{}s response to a task.}
+
+\NormalTok{SCORING RUBRIC (you MUST output exactly one integer 0{-}3):}
+\NormalTok{  0 = Wrong answer or irrelevant output. The response does not }
+\NormalTok{      address the task or produces incorrect results.}
+\NormalTok{  1 = Partially correct. Some relevant content but missing key }
+\NormalTok{      elements or contains significant errors.}
+\NormalTok{  2 = Correct answer with adequate reasoning. The response addresses }
+\NormalTok{      the task and produces valid results.}
+\NormalTok{  3 = Excellent. Correct answer with thorough reasoning, no drift }
+\NormalTok{      from the task purpose, and well{-}structured output.}
+
+\NormalTok{ADDITIONAL CRITERIA (if provided):}
+\NormalTok{{-} Check if the specified ground truth was reached}
+\NormalTok{{-} Check if the anti{-}purpose was violated (if provided)}
+\NormalTok{{-} Check if the success signal was satisfied (if provided)}
+
+\NormalTok{OUTPUT FORMAT:}
+\NormalTok{You must respond with ONLY a JSON object, nothing else:}
+\NormalTok{\{"score": \textless{}0{-}3\textgreater{}, "reason": "\textless{}one sentence explanation\textgreater{}"\}}
+\end{Highlighting}
+\end{Shaded}}
+
+\subsection{A.4 System Configuration and Model
+Details}\label{a.4-system-configuration-and-model-details}
+
+The following environment and model configurations were used for all
+evaluations:
+
+\textbf{Local Models (via Ollama API, quantization Q4\_K\_M):} -
+\texttt{qwen2.5:7b} (Qwen 2.5 7B) - \texttt{mistral:latest} (Mistral 7B
+v0.3) - \texttt{deepseek-r1:7b} (DeepSeek-R1 Distill Qwen 7B) -
+\texttt{qwen3.5:9b} (Qwen 3.5 9B) - \texttt{gemma3:12b} (Google Gemma 3
+12B) - \texttt{phi4:14b} (Microsoft Phi-4 14B) - \emph{Used as Judge and
+evaluated model}
+
+\textbf{Cloud Models (via OpenRouter API):} -
+\texttt{nvidia/nemotron-3-super-120b} - \texttt{z-ai/glm-5-turbo}
+
+\textbf{Runtime Settings:} - Temperature: 0.7 for all models (to
+simulate natural stochastic variance in reasoning). - Top-p: 0.9. - Max
+tokens: 4096. - Random seeds: Not fixed, simulating real-world
+production variance.
+
+\textbf{Exclusion Criteria:} - \texttt{qwen3.5:9b} was formally excluded
+from the aggregate results table due to producing \textgreater90\% empty
+responses (generation failure) under the baseline condition, which
+corrupted the baseline mean (n=1). - \texttt{z-ai/glm-5-turbo} was
+retained in the per-model tables but flagged as insensitive to
+governance prompts.
+
+
+\end{document}

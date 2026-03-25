@@ -60,6 +60,10 @@ body_tex = re.sub(
 )
 body_tex = body_tex.replace('\\end{minipage}', '')
 
+# 3. Remove LTcaptype blocks
+body_tex = re.sub(r'\{\\def\\LTcaptype\{none\}[^\n]*\n', '', body_tex)
+body_tex = re.sub(r'(\\end\{longtable\})\n\}', r'\1', body_tex)
+
 # 1b. Make all longtables use small font to prevent column overflow
 body_tex = body_tex.replace(
     r'\begin{longtable}',
@@ -71,11 +75,6 @@ body_tex = body_tex.replace(
 )
 
 # 2. Removed overly aggressive \newline header wrapping
-
-
-# 3. Remove LTcaptype blocks
-body_tex = re.sub(r'\{\\def\\LTcaptype\{none\}[^\n]*\n', '', body_tex)
-body_tex = re.sub(r'(\\end\{longtable\})\n\}', r'\1', body_tex)
 
 # 4. Make code blocks smaller
 body_tex = body_tex.replace(r'\begin{Shaded}', r'{\small\begin{Shaded}')
