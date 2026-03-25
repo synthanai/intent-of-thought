@@ -349,7 +349,6 @@ information & Learning loop (improved capture) \\
 \textbf{Operates at} & Instruction level & Governance level & Trace
 level & Lifecycle level \\
 \end{longtable}}
-}
 
 \emph{Table 1: Positioning of IoT relative to existing approaches. IoT
 operates at the governance level (connecting intent to topology) and the
@@ -483,7 +482,6 @@ Hierarchical classification & Problem type matters before details & AoT
 Multi-phase complex & Requires multiple reasoning modes & Hybrid &
 Sequential phases with different structural needs \\
 \end{longtable}}
-}
 
 The mapping is not deterministic. Purpose determines the general
 topology class, Anti-Purpose adds constraints (e.g., ``avoid premature
@@ -608,7 +606,6 @@ Learned & L4 & Model has internalised intent-topology mappings from
 training & Variable: training-dependent & Model auto-generates IoT
 triple from task embedding \\
 \end{longtable}}
-}
 
 The hierarchy is not purely ordinal: ``higher is always better'' does
 not hold. L0 is appropriate for low-stakes, familiar tasks; L3
@@ -831,7 +828,6 @@ gemma3:12b & 12B & Dense & Local (Ollama) \\
 phi4:14b & 14B & Dense & Local (Ollama) \\
 nvidia/nemotron-120b & 120B (12B active) & MoE & Cloud (OpenRouter) \\
 \end{longtable}}
-}
 
 One model (qwen3.5:9b) was excluded from analysis due to insufficient
 data: 90\% of its responses were empty (generation failures), yielding
@@ -905,7 +901,6 @@ Baseline (no IoT) & 2.10 & 240 \\
 IoT L2 (governance triple) & \textbf{2.43} & 246 \\
 \textbf{Uplift} & \textbf{+0.33 (+15.7\%)} & \\
 \end{longtable}}
-}
 
 The governance uplift is consistent across the majority of models. A
 paired t-test on the subset of exactly matched reasoning episodes (N =
@@ -930,7 +925,6 @@ phi4:14b & 14B & 2.34 & 2.71 & +0.37 & +15.7\% \\
 deepseek-r1:7b & 7B & 2.09 & 2.34 & +0.25 & +12.0\% \\
 z-ai/glm-5-turbo & \textasciitilde14B & 2.31 & 2.12 & -0.19 & -8.3\% \\
 \end{longtable}}
-}
 
 \subsubsection{Finding 1: Governance as Cognitive
 Equaliser}\label{finding-1-governance-as-cognitive-equaliser}
@@ -961,7 +955,6 @@ GoT & 1.96 & 2.53 & +0.57 & \textbf{+29.1\%} \\
 Baseline (none) & 2.37 & 2.48 & +0.12 & +4.9\% \\
 CoT & 2.35 & 2.44 & +0.09 & +3.8\% \\
 \end{longtable}}
-}
 
 Governance rescues the worst-performing topologies: ToT gains +37\% and
 GoT gains +29\%. CoT, already robust, gains only +3.8\%. The governance
@@ -1015,7 +1008,6 @@ Full Triple (Purpose, Anti-Purpose, Success Signal) & \textbf{2.20} &
 No Success Signal (Purpose, Anti-Purpose) & 2.17 & 0.83 & 30 & -0.03 \\
 No Anti-Purpose (Purpose, Success Signal) & 2.11 & 0.88 & 28 & -0.09 \\
 \end{longtable}}
-}
 
 \subsubsection{Finding 3: Anti-Purpose as Drift
 Guard}\label{finding-3-anti-purpose-as-drift-guard}
@@ -1065,7 +1057,6 @@ Sequential & \textbf{2.13} & 1.71 & 1.64 & CoT \\
 Parallel & \textbf{2.07} & 1.27 & 2.00 & ToT \\
 Interconnected & \textbf{2.47} & 2.20 & 1.00 & GoT \\
 \end{longtable}}
-}
 
 \subsubsection{Finding 4: CoT Unreasonable
 Robustness}\label{finding-4-cot-unreasonable-robustness}
@@ -1112,7 +1103,6 @@ qwen2.5:7b & 2.33 & 2.11 & 1.33 \\
 deepseek-r1:7b & 2.22 & 1.88 & 1.33 \\
 mistral:latest & 1.44 & 1.22 & 1.00 \\
 \end{longtable}}
-}
 
 The CoT robustness pattern holds across all models tested, including the
 weakest (mistral, 1.44). The cross-model consistency strengthens the
@@ -1150,7 +1140,6 @@ gpt-4o-mini & 2.28 & 2.56 & +0.28 (+12.2\%) & 18 \\
 \textbf{Overall Frontier} & 2.56 & 2.67 & \textbf{+0.11 (+4.3\%)} &
 36 \\
 \end{longtable}}
-}
 
 \subsubsection{Finding 7: The Capability Ceiling
 Effect}\label{finding-7-the-capability-ceiling-effect}
@@ -1306,7 +1295,6 @@ function & Topology mismatch \\
 5 & v6.1 to v7.4 & 66 to 75 & L2 + Lifecycle & Full lifecycle &
 Recurrence of known failures \\
 \end{longtable}}
-}
 
 \subsection{What the Case Study
 Demonstrates}\label{what-the-case-study-demonstrates}

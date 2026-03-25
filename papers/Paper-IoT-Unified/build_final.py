@@ -188,7 +188,7 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \end{document}
 """
 
-with open("/tmp/iot_final.tex", 'w') as f:
+with open("Intent_of_Thought.tex", 'w') as f:
     f.write(main_tex)
 
 # ===== COMPILE =====
@@ -199,7 +199,7 @@ os.makedirs("/tmp/texmf-var", exist_ok=True)
 for p in [1, 2]:
     print(f"XeLaTeX pass {p}...")
     r = subprocess.run(
-        ["xelatex", "-interaction=nonstopmode", "-output-directory=/tmp", "/tmp/iot_final.tex"],
+        ["xelatex", "-interaction=nonstopmode", "Intent_of_Thought.tex"],
         capture_output=True, text=True, env=env
     )
     for line in r.stdout.split('\n'):
@@ -210,7 +210,6 @@ for p in [1, 2]:
         unique_errors = set(errors)
         print(f"  Errors: {len(unique_errors)} unique")
 
-pdf = "/tmp/iot_final.pdf"
+pdf = "Intent_of_Thought.pdf"
 if os.path.exists(pdf):
-    os.system('cp /tmp/iot_final.pdf "Intent_of_Thought.pdf"')
     print(f"\n✅ Build successful: Exported to Intent_of_Thought.pdf")
