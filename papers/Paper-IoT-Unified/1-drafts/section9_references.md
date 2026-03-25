@@ -30,7 +30,7 @@ Li, C., Zhang, H., Yang, Z., Chen, F., Wang, Z., Bolimera, A., & Savvides, M. (2
 
 Li, Y., et al. (2026). Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation. *Proceedings of the AAAI Conference on Artificial Intelligence*. arXiv:2512.14048.
 
-Liang, T., He, Z., Jiao, W., Wang, X., Wang, Y., Wang, R., & Shi, S. (2023). Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate. arXiv preprint arXiv:2305.19118. <https://doi.org/10.48550/arXiv.2305.19118>
+Liang, T., He, Z., Jiao, W., Wang, X., Wang, Y., Wang, R., Yang, Y., Tu, Z., & Shi, S. (2024). Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate. *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)*, 17889-17904.
 
 Lightman, H., Kosaraju, V., Burda, Y., Edwards, H., Baker, B., Lee, T., ... & Sutskever, I. (2023). Let's Verify Step by Step. arXiv preprint arXiv:2305.20050. <https://doi.org/10.48550/arXiv.2305.20050>
 

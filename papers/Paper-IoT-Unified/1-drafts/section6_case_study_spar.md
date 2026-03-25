@@ -2,7 +2,7 @@
 
 The evidence in Section 5 evaluates IoT governance in controlled, single-episode reasoning tasks. This section presents a longitudinal case study of IoT governance operating in a production system: SPAR (Structured Persona-Argumentation for Reasoning), a multi-agent debate protocol that evolved through five distinct phases over 75 debates spanning twelve months. The SPAR protocol and its implementation are publicly available at https://github.com/synthanai/spar-kit.
 
-Multi-agent debate, where multiple LLMs argue from different perspectives to improve reasoning quality, has shown promise for fact verification [Du et al., 2023], mathematical reasoning [Liang et al., 2023], and complex decision-making [Chan et al., 2024]. The SPAR case study is notable because IoT governance was not imposed retroactively; the protocol *independently* developed IoT-like governance structures, which we later recognised as a self-realised instance of the lifecycle described in Section 4.
+Multi-agent debate, where multiple LLMs argue from different perspectives to improve reasoning quality, has shown promise for fact verification [Du et al., 2023], mathematical reasoning [Liang et al., 2024], and complex decision-making [Chan et al., 2024]. The SPAR case study is notable because IoT governance was not imposed retroactively; the protocol *independently* developed IoT-like governance structures, which we later recognised as a self-realised instance of the lifecycle described in Section 4.
 
 ## 6.1 Context: The SPAR Protocol
 

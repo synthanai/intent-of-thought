@@ -28,4 +28,4 @@ Three directions merit investigation:
 
 ## Funding and Disclosure
 
-This research was conducted without external funding. The author declares no competing interests. All experimental code, prompts, and evaluation rubrics are provided in the Appendix to support full reproducibility.
+This research was conducted without external funding. The author declares no competing interests. All experimental code, prompts, and evaluation rubrics are provided in the Appendix to support full reproducibility. The author used AI-assisted tools (grammar checking, paraphrasing assistance) during manuscript preparation. All scientific content, experimental design, data collection, and analysis are the original work of the author.
