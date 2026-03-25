@@ -1,0 +1,65 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {section}{\numberline {2}Background and Related Work}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Reasoning Topologies for Large Language Models}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Intent and Governance in AI Systems}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reasoning Failure Analysis}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Positioning: The Differentiation Table}{6}{subsection.2.4}%
+\contentsline {section}{\numberline {3}The IoT Framework}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Intent Triple}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Topology Selection Function}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Intent Drift Detection}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Empirical Qualification}{9}{subsection.3.4}%
+\contentsline {section}{\numberline {4}The IoT Lifecycle}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Capture Spectrum}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Capture-Topology Confidence Interaction}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Retrospective Judgement}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}The Learning Loop}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}L4 Learned Capture: A Future Direction}{12}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Evidence}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Experimental Design}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Experiment 1: Governance Impact (N = 486)}{14}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Results}{14}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Finding 1: Governance as Cognitive Equaliser}{14}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Finding 2: Governance as Topology Safety Net}{15}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}Experiment 5: Anti-Purpose Ablation (N = 88)}{15}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Design}{15}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Results}{15}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Finding 3: Anti-Purpose as Drift Guard}{15}{subsubsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.4}Experiment 8: The Confusion Matrix (N = 131)}{16}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Design}{16}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Results}{16}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Finding 4: CoT Unreasonable Robustness}{16}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}Finding 5: Topology Misselection is Catastrophic}{16}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}Finding 6: The Combined Insight}{16}{subsubsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.5}Experiment 9: Frontier Model Generalisation (N = 72)}{17}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Design}{17}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Results}{17}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Finding 7: The Capability Ceiling Effect}{17}{subsubsection.5.5.3}%
+\contentsline {section}{\numberline {6}Case Study: SPAR, A Multi-Agent Debate Protocol as Self-Realised IoT}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Context: The SPAR Protocol}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The Five Phases of Evolution}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Quantitative Evolution}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}What the Case Study Demonstrates}{19}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Discussion and Limitations}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The CoT Robustness Question}{20}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Practical Deployment \& High-Stakes Translation}{20}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Limitations}{21}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Broader Implications}{21}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Conclusion}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Future Work}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Funding and Disclosure}{23}{subsection.8.2}%
+\contentsline {section}{\numberline {9}References}{23}{section.9}%
+\contentsline {section}{\numberline {10}Appendix}{25}{section.10}%
+\contentsline {subsection}{\numberline {10.1}A.1 Benchmark Tasks}{25}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Interconnected Tasks}{25}{subsubsection.10.1.1}%
+\contentsline {subsubsection}{\numberline {10.1.2}Parallel Tasks}{26}{subsubsection.10.1.2}%
+\contentsline {subsubsection}{\numberline {10.1.3}Safety Critical Tasks}{26}{subsubsection.10.1.3}%
+\contentsline {subsubsection}{\numberline {10.1.4}Sequential Tasks}{27}{subsubsection.10.1.4}%
+\contentsline {subsection}{\numberline {10.2}A.2 Prompt Templates}{28}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}BASELINE}{28}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}COT}{28}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {10.2.3}TOT}{28}{subsubsection.10.2.3}%
+\contentsline {subsubsection}{\numberline {10.2.4}GOT}{29}{subsubsection.10.2.4}%
+\contentsline {subsubsection}{\numberline {10.2.5}IOT\_L2}{29}{subsubsection.10.2.5}%
+\contentsline {subsection}{\numberline {10.3}A.3 Scoring Rubric (LLM-as-Judge)}{29}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}A.4 System Configuration and Model Details}{30}{subsection.10.4}%
