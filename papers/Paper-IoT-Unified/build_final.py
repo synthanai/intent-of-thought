@@ -159,7 +159,7 @@ main_tex = r"""\documentclass[11pt,a4paper]{article}
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newenvironment{Highlighting}[]{\ttfamily\raggedright}{\par}
+\newenvironment{Highlighting}{\ttfamily\raggedright}{\par}
 \newcommand{\NormalTok}[1]{#1}
 \newcommand{\KeywordTok}[1]{\textbf{#1}}
 \newcommand{\DataTypeTok}[1]{#1}
